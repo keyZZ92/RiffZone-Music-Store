@@ -1,29 +1,453 @@
-/*reset css*/
-reset {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* =========================
+   Reset y configuración base
+========================= */
+body {
+  background-color: #f0f8ff !important;
 }
-/* Estilo para el header con imagen de fondo */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-/* Overlay para mejorar el contraste */
+/* =========================
+   Header y navegación principal
+========================= */
+header {
+  background: #222;
+  color: #fff;
+  padding: 1rem 0 0.5rem 0;
+  text-align: center;
+}
 
-/* Centrar el contenido del header */
+.logo {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: bold;
+  margin: 0;
+  white-space: nowrap;
+}
 
-/* Estilo para el logo de RaiRock */
+.main-nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+  flex-wrap: wrap; /* Permite que los enlaces bajen a la siguiente línea en pantallas pequeñas */
+  max-width: 90vw;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-/* Efecto hover con zoom para los íconos de la barra de navegación secundaria */
+.main-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+  white-space: nowrap; /* Evita que el texto se parta */
+  font-size: clamp(0.9rem, 1vw, 1.1rem); /* Tamaño adaptable según pantalla */
+}
 
-/* Estilo para las flechas del carrusel */
+.main-nav a:hover,
+.main-nav a:focus {
+  color: #ffc107;
+  outline: none;
+}
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+}
 
-/* Estilo para los indicadores del carrusel */
+/* =========================
+   Footer básico
+========================= */
+footer {
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 2rem;
+  font-size: 0.95rem;
+}
 
-/* Asegurar que el botón de iniciar sesión esté alineado correctamente */
+/* =========================
+   Main: centra todo el contenido principal
+========================= */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 60vh;
+}
 
-/* Ajustes para pantallas pequeñas */
+/* =========================
+   Título principal
+========================= */
+#products-title {
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  font-weight: 700;
+  font-size: 2rem;
+  text-align: center;
+}
 
-/* Estilo para el texto "RaiRock Music Store" */
+/* =========================
+   Barra de navegación secundaria
+========================= */
+.secondary-nav {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: wrap; /* Permite que los enlaces bajen en pantallas pequeñas */
+  max-width: 90vw;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-/* Ajustar el tamaño del carrusel */
+.secondary-nav li a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #007bff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+  font-size: clamp(0.9rem, 1vw, 1.1rem);
+}
 
-/* Hover redes sociales */
+.secondary-nav li a:hover,
+.secondary-nav li a:focus {
+  color: #0056b3;
+  outline: none;
+}
+
+.secondary-nav img {
+  transition: transform 0.3s ease;
+}
+
+.secondary-nav li a:hover img,
+.secondary-nav li a:focus img {
+  transform: scale(1.2);
+}
+
+/* =========================
+   Carrusel de imágenes principal
+========================= */
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  min-width: 300px;
+  min-height: 350px;
+  margin: 0 auto 3rem auto;
+  overflow: visible; /* Permite que las flechas sobresalgan */
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.15);
+}
+
+.carousel-item {
+  display: none;
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+}
+
+.carousel-item.active {
+  display: block;
+}
+
+.carousel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Flechas del carrusel */
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #007bff;
+  font-size: 3rem;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 2px 2px 8px #fff, 0 0 2px #007bff;
+  outline: none;
+  transition: color 0.2s, text-shadow 0.2s;
+  width: 60px;
+  height: 44px;
+}
+
+.carousel-control:hover,
+.carousel-control:focus {
+  color: #0056b3;
+  text-shadow: 2px 2px 12px #fff, 0 0 4px #0056b3;
+  outline: none;
+}
+
+/* Posición horizontal de flechas con margen mínimo y ajuste responsive */
+.carousel-control.prev {
+  left: max(-52px, calc((100% - 600px)/-2 - 52px));
+}
+
+.carousel-control.next {
+  right: max(-52px, calc((100% - 600px)/-2 - 52px));
+}
+
+/* =========================
+   Testimonios (carrusel de opiniones)
+========================= */
+.testimonials-carousel {
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  max-width: 90vw;
+  width: 700px; /* ancho máximo */
+}
+
+.testimonials-carousel h2 {
+  text-align: center;
+}
+
+.testimonials-carousel-inner {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  min-height: 325px; /* Altura fija igual a la tarjeta */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.testimonial-card {
+  width: 100%;
+  max-width: 700px;
+  min-width: 300px;
+  height: 325px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  flex: 1 1 auto;
+  margin-bottom: 3rem;
+  transition: transform 0.2s, box-shadow 0.2s, opacity 0.3s;
+  border: 1px solid #e3e3e3;
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 1;
+  pointer-events: none;
+  box-sizing: border-box;
+}
+
+.testimonial-card.testimonial-active {
+  opacity: 1;
+  position: relative;
+  z-index: 2;
+  pointer-events: auto;
+}
+
+.testimonial-card img {
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  border: 3px solid #007bff22;
+}
+
+.testimonial-card h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.testimonial-card .profession {
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+.testimonial-card .stars {
+  color: #ffc107;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 2px;
+}
+
+.testimonial-card blockquote {
+  font-size: 1rem;
+  color: #333;
+  margin: 0;
+  font-style: italic;
+}
+
+/* Flechas del carrusel de testimonios */
+.testimonial-control {
+  background: none;
+  border: none;
+  color: #007bff;
+  font-size: 3rem;
+  cursor: pointer;
+  transition: color 0.2s, text-shadow 0.2s;
+  text-shadow: 2px 2px 8px #fff, 0 0 2px #007bff;
+  outline: none;
+  position: absolute;
+  top: 40%; /* centrado vertical */
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 60px;
+  height: 44px;
+}
+
+.testimonial-control:hover,
+.testimonial-control:focus {
+  color: #0056b3;
+  text-shadow: 2px 2px 12px #fff, 0 0 4px #0056b3;
+  outline: none;
+}
+
+.testimonial-control.prev {
+  left: -52px; /* fuera del carrusel a la izquierda */
+}
+
+.testimonial-control.next {
+  right: -52px; /* fuera del carrusel a la derecha */
+}
+
+/* =========================
+   Footer básico
+========================= */
+footer {
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 2rem;
+  font-size: 0.95rem;
+}
+
+/* =========================
+   Main: contenedor principal centrado y con padding
+========================= */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 60vh;
+  max-width: 95vw;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
+}
+
+/* =========================
+   Título principal productos
+========================= */
+#products-title {
+  margin: 2rem auto 2rem auto;
+  font-weight: 700;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  text-align: center;
+  max-width: 90vw;
+}
+
+/* =========================
+   Productos: estilos y visualización
+========================= */
+.product-item {
+  display: none; /* Ocultos por defecto */
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+}
+
+.product-item.active {
+  display: block; /* Solo se muestra el activo */
+}
+
+.product-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* =========================
+   Enlaces adaptativos (tamaño de fuente para navegaciones)
+========================= */
+.main-nav a,
+.secondary-nav li a {
+  font-size: clamp(0.85rem, 1vw, 1.1rem);
+}
+
+/* =========================
+   Responsive: ajustes para pantallas pequeñas (móviles y tablets)
+========================= */
+@media (max-width: 768px) {
+  /* Navegación principal: permite bajar enlaces */
+  .main-nav ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  /* Navegación secundaria: igual flex-wrap y centrado */
+  .secondary-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* Carrusel adapta su ancho */
+  .carousel {
+    width: 90vw;
+  }
+
+  /* Flechas carrusel ajustadas a menor margen lateral */
+  .carousel-control.prev {
+    left: -45px;
+  }
+  .carousel-control.next {
+    right: -45px;
+  }
+
+  /* Testimonios: adaptaciones de tamaño y posición */
+  .testimonials-carousel-inner {
+    max-width: 100%;
+    min-width: 0;
+    min-height: auto;
+  }
+  .testimonial-card {
+    max-width: auto !important;
+    min-width: 0;
+    height: auto !important;
+    min-height: auto !important;
+    max-height: none !important;
+  }
+  .testimonial-control.prev {
+    left: -45px;
+    top: 40%;
+    right: auto;
+  }
+  .testimonial-control.next {
+    right: -45px;
+    top: 40%;
+    left: auto;
+  }
+}
