@@ -10,12 +10,11 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, "src")));
 
 // API para productos
-
 // Obtener todos los productos
 app.get("/api/products", (req, res) => {
   // Leer el archivo de productos (catálogo)
   fs.readFile(
-    path.join(__dirname, "backend/data/products.json"),
+    path.join(__dirname, "src/data/products.json"),
     "utf8",
     (err, data) => {
       // Si ocurre un error al leer el archivo, devolver error 500
@@ -40,7 +39,6 @@ app.get("/api/products", (req, res) => {
 });
 
 // API para login y registro (usuarios en archivo JSON)
-
 // Registrar un nuevo usuario
 app.post("/api/register", (req, res) => {
   // Extraer los datos del body de la petición
@@ -156,8 +154,85 @@ app.post("/api/login", (req, res) => {
 // --- ENDPOINTS PARA EL CARRITO ---
 
 // Obtener carrito del usuario
+app.get("/api/cart", (req, res) => {
+  const user = req.query.user || "guest"; // Por defecto, usuario invitado
+
+  // Ruta al archivo donde se almacenan los carritos
+  const cartsPath = path.join(__dirname, "backend/data/carts.json");
+  // Leer el archivo de carritos
+  fs.readFile(cartsPath, "utf8", (err, data) => {
+    // Si ocurre un error al leer el archivo, devuelve error 500
+    if (err) {
+      console.error("Error al leer el archivo de carritos:", err);
+      return res.status(500).json({ error: "Error interno del servidor" });
+    }
+
+    let carts = {};
+    if (data) {
+      try {
+        // Intentar parsear el JSON de carritos
+        carts = JSON.parse(data);
+      } catch (parseError) {
+        // Si el JSON está corrupto, devolver error
+        return res
+          .status(500)
+          .json({ error: "Error al procesar los datos del carrito" });
+      }
+    }
+
+    // Obtener el carrito del usuario (o array vacío si no existe)
+    const cart = carts[user] || [];
+    // Devolver el carrito del usuario
+    res.status(200).json(cart);
+  });
+});
 
 // Guardar carrito del usuario
+app.post("/api/cart", (req, res) => {
+  const user = req.body.user || "guest"; // Por defecto, usuario invitado
+  const items = req.body.items || []; // Items del carrito
+  // Validar que los items sean un array
+  if (!Array.isArray(items)) {
+    return res.status(400).json({ error: "Los items deben ser un array." });
+  }
+
+  // Ruta al archivo donde se almacenan los carritos
+  const cartsPath = path.join(__dirname, "backend/data/carts.json");
+  // Leer el archivo de carritos
+  fs.readFile(cartsPath, "utf8", (err, data) => {
+    if (err && err.code !== "ENOENT") {
+      console.error("Error al leer el archivo de carritos:", err);
+      return res.status(500).json({ error: "Error interno del servidor" });
+    }
+
+    let carts = {};
+    if (data) {
+      try {
+        // Intentar parsear el JSON de carritos
+        carts = JSON.parse(data);
+      } catch (parseError) {
+        // Si el JSON está corrupto, devolver error
+        return res
+          .status(500)
+          .json({ error: "Error al procesar los datos del carrito" });
+      }
+    }
+
+    // Actualizar el carrito del usuario
+    carts[user] = items;
+    // Guardar el carrito actualizado en el archivo
+    fs.writeFile(cartsPath, JSON.stringify(carts, null, 2), (err) => {
+      if (err) {
+        console.error("Error al guardar el carrito:", err);
+        return res
+          .status(500)
+          .json({ error: "No se pudo guardar el carrito." });
+      }
+      // Responder con éxito
+      res.status(200).json({ message: "Carrito guardado correctamente." });
+    });
+  });
+});
 
 // Redirigir la raíz al index.html de pages
 app.get("/", (req, res) => {

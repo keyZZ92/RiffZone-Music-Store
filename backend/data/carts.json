@@ -1,3 +1,11 @@
 {
-  "guest": []
+  "guest": [],
+  "usuarioDemo": [
+    {
+      "id": 1,
+      "nombre": "Guitarra eléctrica",
+      "precio": 299.99,
+      "cantidad": 1
+    }
+  ]
 }
