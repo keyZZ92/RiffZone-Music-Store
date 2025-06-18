@@ -4,15 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RaiRock Music Store</title>
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&display=swap"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
     <!-- Cabecera de la página -->
-    <header>
-            hola
-    </header>
+    
+  <header class="header" role="banner" aria-label="Encabezado principal de RaiRock">
+    <div class="header-container">
+      <div class="logo-section" aria-label="Logo de RaiRock">
+        <img src="../assets/images/logorairock.png" alt="Logo de RaiRock" >
+        <h1>RaiRock Music Store</h1>
+      </div>
+    <!-- barra de navegación pricipal -->
+    <nav class="nav-header" role="navigation" aria-label="barra de navegación principal">
+      <ul class="nav-list" role="menubar">
+        <li role="none"><a href="index.html" role="menuitem" aria-label="i"><i class="bi bi-house-door"></i> Inicio</a></li>
+        <li role="none"><a href="#" role="menuitem" aria-label="servicio"><i class="bi bi-tools"></i> Servicio</a></li>
+        <li role="none"><a href="#" role="menuitem" aria-label="contacto"><i class="bi bi-envelope"></i> Contacto</a></li>
+        <li role="none"><a href="#" role="menuitem" aria-label="sobre Nosotros"><i class="bi bi-info-circle"></i> Sobre Nosotros</a></li>
+        <li role="none"><a href="#" role="menuitem" aria-label="carrito"><i class="bi bi-cart"></i> Carrito</a></li>
+      </ul>
+    </nav>
+    <!-- boton de inicio de sesión -->
+      <button class="login-button" id="btnLogin"data-bs-toggle="modal" data-bs-target="#loginModal"aria-label="Iniciar sesión en la tienda RaiRock">
+        <i class="bi bi-person" aria-hidden="true"></i>
+        Iniciar Sesión
+      </button>
+    </div>
+  </header>
+
 
     <!-- Contenido principal de la página -->
     <main>
@@ -34,12 +57,95 @@
     </main>
 
     <!-- Pre-footer -->
-            <!-- Columna 1: Comprar y pagar de forma segura -->
-            <!-- Columna 2: Ventajas -->
-            <!-- Columna 3: Redes sociales -->
-
+    <section class="pre-footer" aria-label="Información de coctacto">
+        <div class="pre-footer-container">
+        <!-- Columna 1: Comprar y pagar de forma segura -->
+            <div class="pre-footer-column1" aria-labelledby="metodos-pagos">
+                <h3 id="metodos-pagos">Métodos de pago</h3>
+                <div class="payment-methods">
+                    <a href="https://www.paypal.com" target="_blank" rel="noopener" aria-label="PayPal">
+                        <img src="../assets/images/icons8-paypal-48.png" alt="PayPal" />
+                    </a>
+                    <a href="https://www.visa.com" target="_blank" rel="noopener" aria-label="Visa">
+                        <img src="../assets/images/icons8-visa-48 (1).png" alt="Visa" />
+                    </a>
+                    <a href="https://www.mastercard.es" target="_blank" rel="noopener" aria-label="MasterCard">
+                        <img src="../assets/images/icons8-mastercard-48.png" alt="MasterCard" />
+                    </a>
+                    <a href="https://www.americanexpress.com" target="_blank" rel="noopener" aria-label="American Express">
+                        <img src="../assets/images/icons8-american-express-al-cuadrado-48.png" alt="American Express" />
+                    </a>
+                </div>
+            </div>
+   <!-- Columna 2: Ventajas -->
+            <div class="pre-footer-column2" aria-labelledby="ventajas de usar RaiRock Music Store">
+                <h3 id="ventajas-title"> Ventajas de comprar en RaiRock</h3>
+                <ul>
+                    <li>Garantía de calidad</li>
+                    <li>Devolución fácil y rápida</li>
+                    <li>Servicio técnico</li>
+                    <li>Asesoramiento personalizado</li>
+                </ul>
+            </div>
+    <!-- Columna 3: Redes sociales de contacto -->
+            <div class="pre-footer-column3" aria-label="Redes sociales">
+                <h3>Síguenos</h3>
+                <nav aria-label="Redes sociales">
+                    <ul class="social-links">
+                        <li><a href="#" aria-label="Facebook"><img src="../assets/images/RedesSocialesIcons/logofacebook.png" alt="Facebook" /></a></li>
+                        <li><a href="#" aria-label="Twitter"><img src="../assets/images/RedesSocialesIcons/logotwitter.png" alt="Twitter" /></a></li>
+                        <li><a href="#" aria-label="Instagram"><img src="../assets/images/RedesSocialesIcons/logoinstagram.png" alt="Instagram" /></a></li>
+                        <li><a href="#" aria-label="YouTube"><img src="../assets/images/RedesSocialesIcons/logoyoutube.png" alt="YouTube" /></a></li>
+                    </ul>
+                </nav>
+            </div>
+    </div>
+    </section>
     <!-- Footer -->
+    <footer class="footer-principal"role="contentinfo" aria-label="Pie de página principal del sitio">
+        <div class="footer-contenedor">
+        <!-- Logo y nombre -->
+        <div class="footer-logo" aria-label="Logotipo y nombre del sitio">
+        <img src="../assets/images/logorairock.png" alt="Logo de RaiRock">
+        <span>RaiRock Music Store</span>
+        </div>
+        <!-- Texto de derecchos -->
+        <div class="footer-derechos">
+        <small>&copy; 2025 RaiRock. Todos los derechos reservados.</small>
+        </div>
+        </div>
+    </footer>
+
     <!-- Modal de inicio de sesión -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" aria-modal="true">
+        <div class="modal-dialog"  role="document">
+            <div class="modal-content">
+                <form aria-label="Formulario de inicio de sesión">
+                <!--cabecera del modal: titulo y boton de cerrar -->
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="loginModalLabel">Iniciar Sesión</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar ventana de inicio de sesión"></button>
+                </div>
+                <!--cuerpo del modal: formulario de usuario y contraseña -->
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="user" class="form-label">Usuario</label>
+                        <input type="text" class="form-control" id="user" aria-required="true" aria-label="Usuario" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputPassword" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" id="inputPassword" aria-required="true" aria-label="contraseña" required>
+                    </div>
+                <!--footer del modal: boton de entrar y crear usuario -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Entrar">Entrar</button>
+                        <button type="button" class="btn btn-primary" aria-label="Ir a crear nueva cuenta">Crear Usuario</button>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/auth.js"></script>
