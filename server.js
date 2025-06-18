@@ -8,15 +8,14 @@ app.use(bodyParser.json());
 
 // Servir archivos estáticos
 
-app.use(express.static(path.join(__dirname, 'src')));
-
+app.use(express.static(path.join(__dirname, "src")));
 
 // API para productos
 // Obtener todos los productos
 app.get("/api/products", (req, res) => {
   // Leer el archivo de productos (catálogo)
   fs.readFile(
-    path.join(__dirname, "src/data/products.json"),
+    path.join(__dirname, "src/assets/data/products.json"),
     "utf8",
     (err, data) => {
       // Si ocurre un error al leer el archivo, devolver error 500
@@ -51,6 +50,14 @@ app.post("/api/register", (req, res) => {
     return res.status(400).json({
       error: "Los campos username, password y email son obligatorios.",
     });
+  }
+
+  // Validar formato de email simple
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    return res
+      .status(400)
+      .json({ error: "El Email no tiene un formato válido." });
   }
 
   // Ruta al archivo donde se almacenan los usuarios
@@ -110,6 +117,14 @@ app.post("/api/login", (req, res) => {
     return res.status(400).json({
       error: "Los campos email y password son obligatorios.",
     });
+  }
+
+  // Validar formato de email simple
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    return res
+      .status(400)
+      .json({ error: "El Email no tiene un formato válido." });
   }
 
   // Ruta al archivo donde se almacenan los usuarios
@@ -241,8 +256,13 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "src/pages/index.html"));
 });
 
-// Puerto
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Servidor corriendo en http://localhost:${PORT}`);
-});
+module.exports = app; // Exportar la app para pruebas
+// Esto permite que se pueda importar en tests u otros módulos si es necesario
+
+// Para ejecutar el servidor directamente desde este archivo
+if (require.main === module) {
+  const PORT = process.env.PORT || 3000;
+  app.listen(PORT, () => {
+    console.log(`Servidor corriendo en http://localhost:${PORT}`);
+  });
+}
