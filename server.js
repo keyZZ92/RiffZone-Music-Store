@@ -8,8 +8,7 @@ app.use(bodyParser.json());
 
 // Servir archivos estáticos
 
-app.use(express.static(path.join(__dirname, 'src')));
-
+app.use(express.static(path.join(__dirname, "src")));
 
 // API para productos
 // Obtener todos los productos
@@ -257,8 +256,13 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "src/pages/index.html"));
 });
 
-// Puerto
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Servidor corriendo en http://localhost:${PORT}`);
-});
+module.exports = app; // Exportar la app para pruebas
+// Esto permite que se pueda importar en tests u otros módulos si es necesario
+
+// Para ejecutar el servidor directamente desde este archivo
+if (require.main === module) {
+  const PORT = process.env.PORT || 3000;
+  app.listen(PORT, () => {
+    console.log(`Servidor corriendo en http://localhost:${PORT}`);
+  });
+}
