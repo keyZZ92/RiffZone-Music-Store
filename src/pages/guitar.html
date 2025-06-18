@@ -9,20 +9,133 @@
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
-    <!-- Encabezado -->
-    <header>
-        <!-- Botón para regresar a la página principal -->
+  <!-- Header con botón para volver a Home -->
+    <header role="banner" class="py-3 bg-dark text-center">
+    <a href="index.html" class="btn btn-warning" aria-label="Volver a la página principal">Volver a Home</a>
+    </header>
         <!-- Logo y Título -->
         <!-- Contador del carrito -->
     </header>
 
     <!-- Contenido principal -->
-    <main>
-        <!-- Encabezado -->
-            <!-- Menú de Filtros -->
-                <!-- Tarjetas existentes -->
-                <!-- Nuevas tarjetas -->
+    <main role="main" aria-label="Catálogo de guitarras" class="container pb-5">
+    <h2 class="mb-4 text-center">Catálogo de Guitarras</h2>
     
+    <!-- Filtro por categoría -->
+    <nav class="my-4" role="navigation" aria-label="Filtrar por categoría">
+      <ul class="secondary-nav">
+        <li><a href="#">🎸 Guitarras Acústicas</a></li>
+        <li><a href="#">⚡ Guitarras Eléctricas</a></li>
+        <li><a href="#">🎻 Guitarras Clásicas</a></li>
+        <li><a href="#">🎵 Bajos</a></li>
+      </ul>
+    </nav>
+    <!-- Categorías -->
+    <!-- Cards de producto -->
+    <main role="main" class="container">
+      <h1 id="products-title">Catálogo de Guitarras</h1>
+  
+      <div class="row row-cols-1 row-cols-md-3 g-4" role="region" aria-label="Lista de productos de guitarra">
+  
+        <!-- Guitarra acústica -->
+        <div class="col">
+          <div class="card h-100">
+            <img src="../assets/images/guitar7.png" class="card-img-top" alt="Guitarra Acústica de alta calidad" />
+            <div class="card-body">
+              <h5 class="card-title">Guitarra Acústica</h5>
+              <p class="card-text">Guitarra acústica de alta calidad.</p>
+              <p>
+                <span class="text-muted text-decoration-line-through">180€</span>
+                <span class="fw-bold text-danger">150€</span>
+              </p>
+              <button class="btn btn-primary" aria-label="Añadir Guitarra Acústica al carrito">Añadir al carrito</button>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Guitarra eléctrica-->
+        <div class="col">
+          <div class="card h-100">
+            <img src="../assets/images/guitar3.png" class="card-img-top" alt="Guitarra Eléctrica para músicos avanzados" />
+            <div class="card-body">
+              <h5 class="card-title">Guitarra Eléctrica</h5>
+              <p class="card-text">Guitarra eléctrica para músicos avanzados.</p>
+              <p>
+                <span class="text-muted text-decoration-line-through">350€</span>
+                <span class="fw-bold text-danger">300€</span>
+              </p>
+              <button class="btn btn-primary" aria-label="Añadir Guitarra Eléctrica al carrito">Añadir al carrito</button>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Flamenca-->
+        <div class="col">
+          <div class="card h-100">
+            <img src="../assets/images/guitar12.png" class="card-img-top" alt="Guitarra flamenca tradicional" />
+            <div class="card-body">
+              <h5 class="card-title">Guitarra Flamenca</h5>
+              <p class="card-text">Guitarra flamenca con un diseño tradicional.</p>
+              <p>
+                <span class="text-muted text-decoration-line-through">200€</span>
+                <span class="fw-bold text-danger">180€</span>
+              </p>
+              <button class="btn btn-primary" aria-label="Añadir Guitarra Flamenca al carrito">Añadir al carrito</button>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Guitarra Stratocaster-->
+        <div class="col">
+          <div class="card h-100">
+            <img src="../assets/images/guitar2.png" class="card-img-top" alt="Guitarra estilo Stratocaster" />
+            <div class="card-body">
+              <h5 class="card-title">Guitarra Stratocaster</h5>
+              <p class="card-text">Guitarra eléctrica estilo Stratocaster.</p>
+              <p>
+                <span class="text-muted text-decoration-line-through">600€</span>
+                <span class="fw-bold text-danger">550€</span>
+              </p>
+              <button class="btn btn-primary" aria-label="Añadir Guitarra Stratocaster al carrito">Añadir al carrito</button>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Estilo Les PAul-->
+        <div class="col">
+          <div class="card h-100">
+            <img src="../assets/images/guitar1.png" class="card-img-top" alt="Guitarra estilo Les Paul" />
+            <div class="card-body">
+              <h5 class="card-title">Guitarra Les Paul</h5>
+              <p class="card-text">Guitarra eléctrica estilo Les Paul.</p>
+              <p>
+                <span class="text-muted text-decoration-line-through">700€</span>
+                <span class="fw-bold text-danger">650€</span>
+              </p>
+              <button class="btn btn-primary" aria-label="Añadir Guitarra Les Paul al carrito">Añadir al carrito</button>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Heavy Flying-->
+        <div class="col">
+          <div class="card h-100">
+            <img src="../assets/images/guitar13.jpg" class="card-img-top" alt="Guitarra Heavy Flying" />
+            <div class="card-body">
+              <h5 class="card-title">Guitarra Heavy Flying</h5>
+              <p class="card-text">Guitarra clásica con acabados de lujo.</p>
+              <p>
+                <span class="text-muted text-decoration-line-through">900€</span>
+                <span class="fw-bold text-danger">850€</span>
+              </p>
+              <button class="btn btn-primary" aria-label="Añadir Guitarra Heavy Flying al carrito">Añadir al carrito</button>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </main>
+
     <!-- Pre-footer -->
                 <!-- Columna 1: Comprar y pagar de forma segura -->
                 <!-- Columna 2: Ventajas -->
