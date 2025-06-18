@@ -14,7 +14,7 @@ app.use(express.static(path.join(__dirname, "src")));
 app.get("/api/products", (req, res) => {
   // Leer el archivo de productos (catálogo)
   fs.readFile(
-    path.join(__dirname, "src/data/products.json"),
+    path.join(__dirname, "src/assets/data/products.json"),
     "utf8",
     (err, data) => {
       // Si ocurre un error al leer el archivo, devolver error 500
@@ -49,6 +49,14 @@ app.post("/api/register", (req, res) => {
     return res.status(400).json({
       error: "Los campos username, password y email son obligatorios.",
     });
+  }
+
+  // Validar formato de email simple
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    return res
+      .status(400)
+      .json({ error: "El Email no tiene un formato válido." });
   }
 
   // Ruta al archivo donde se almacenan los usuarios
@@ -108,6 +116,14 @@ app.post("/api/login", (req, res) => {
     return res.status(400).json({
       error: "Los campos email y password son obligatorios.",
     });
+  }
+
+  // Validar formato de email simple
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    return res
+      .status(400)
+      .json({ error: "El Email no tiene un formato válido." });
   }
 
   // Ruta al archivo donde se almacenan los usuarios
