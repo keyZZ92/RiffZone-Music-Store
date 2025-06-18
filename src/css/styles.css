@@ -8,6 +8,16 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+/* =========================
+   Reset y configuración base
+========================= */
+body {
+  background-color: #e4ecf4 !important;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /* =========================
