@@ -1,72 +1,134 @@
 /* =========================
    Reset y configuración base
 ========================= */
-body {
-  background-color: #e4ecf4 !important;
-}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
-/* =========================
-   Header y navegación principal
-========================= */
-header {
-  background: #222;
-  color: #fff;
-  padding: 1rem 0 0.5rem 0;
-  text-align: center;
-}
-
-.logo {
-  font-size: clamp(1.5rem, 4vw, 2rem);
-  font-weight: bold;
+html, body {
   margin: 0;
-  white-space: nowrap;
-}
-
-.main-nav ul {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  list-style: none;
   padding: 0;
-  margin: 0 0 1rem auto;
-  margin-right: auto;
-  flex-wrap: wrap;
-  max-width: 90vw;
-}
-
-.main-nav a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.2s;
-  white-space: nowrap;
-}
-
-.main-nav a:hover,
-.main-nav a:focus {
-  color: #ffc107;
-  outline: none;
+  box-sizing: border-box;
+  background-color: #e4ecf4 !important;
 }
 
 /* =========================
-   Footer básico
+   Header y navegación principal (Keyliani + Integración)
 ========================= */
-footer {
-  background: #222;
-  color: #fff;
-  text-align: center;
-  padding: 1rem 0;
-  margin-top: 2rem;
+.header {
+  background-image: url('../assets/images/imagen1.png');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  padding: 2rem 0;
+}
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(44, 41, 41, 0.5);
+}
+.header-container {
+  position: relative;
+  z-index: 1;
+  max-width: 75rem;
+  margin: 0 auto;
+  padding: 0.625rem 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.94);
+  border-radius: 10px;
+  box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.1);
+  font-family:'Oswald', sans-serif;
+}
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+.logo-section img {
+  width: 100px;
+  height: auto;
+}
+.logo-section h1 {
+  font-size: 1.6rem;
+  font-family:'Oswald', sans-serif;
+  color: #222;
+  margin: 0;
+}
+.nav-header {
+  display: flex;
+  align-items: center;
+}
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 1.875rem;
+  margin: 0;
+  padding: 0;
+}
+.nav-list a {
+  text-decoration: none;
+  color: #e89229;
+  font-weight: bold;
   font-size: 0.95rem;
+  position: relative;
+}
+.nav-list a:hover::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 0.125rem;
+  background-color:#e89229 ;
+  bottom: -0.25rem;
+  left: 0;
+}
+.login-button {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: transparent;
+  color: #222;
+  border: 2px solid #222;
+  padding: 0.4rem 1rem;
+  border-radius: 0.25rem;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.95rem;
+  font-weight: bold;
+  transition: background 0.3s, color 0.3s;
+  margin-left: 2rem;
+}
+.login-button:hover {
+  background-color:#222;
+  color: white;
+}
+
+/* Responsive: header */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .nav-list {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .logo-section h1 {
+    font-size: 1.2rem;
+  }
+  .login-button {
+    margin-left: 0;
+  }
 }
 
 /* =========================
-   Main: centra todo el contenido principal
+   Main y títulos
 ========================= */
 main {
   display: flex;
@@ -74,10 +136,6 @@ main {
   align-items: center;
   min-height: 60vh;
 }
-
-/* =========================
-   Título principal
-========================= */
 #products-title {
   margin: 2rem auto;
   font-weight: 800;
@@ -105,7 +163,6 @@ main {
   margin-left: auto;
   margin-right: auto;
 }
-
 .secondary-nav li a {
   display: flex;
   align-items: center;
@@ -116,24 +173,21 @@ main {
   transition: color 0.3s ease;
   white-space: nowrap;
 }
-
 .secondary-nav li a:hover,
 .secondary-nav li a:focus {
   color: #000000;
   outline: none;
 }
-
 .secondary-nav img {
   transition: transform 0.3s ease;
 }
-
 .secondary-nav li a:hover img,
 .secondary-nav li a:focus img {
   transform: scale(1.2);
 }
 
 /* =========================
-   Carrusel de imágenes principal
+   Carrusel de productos
 ========================= */
 .carousel {
   position: relative;
@@ -146,26 +200,21 @@ main {
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
 }
-
 .product-item {
   display: none;
   width: 100%;
   height: 350px;
   object-fit: cover;
 }
-
 .product-item.active {
   display: block;
 }
-
 .carousel img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 10px;
 }
-
-/* Flechas del carrusel */
 .carousel-control {
   position: absolute;
   top: 50%;
@@ -185,18 +234,15 @@ main {
   width: 60px;
   height: 44px;
 }
-
 .carousel-control:hover,
 .carousel-control:focus {
   color: #0056b3;
   text-shadow: 2px 2px 12px #fff, 0 0 4px #0056b3;
   outline: none;
 }
-
 .carousel-control.prev {
   left: max(-52px, calc((100% - 600px) / -2 - 52px));
 }
-
 .carousel-control.next {
   right: max(-52px, calc((100% - 600px) / -2 - 52px));
 }
@@ -213,7 +259,6 @@ main {
   max-width: 90vw;
   width: 700px;
 }
-
 .testimonials-carousel h2 {
   margin: 2rem auto;
   font-weight: 800;
@@ -225,7 +270,6 @@ main {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   letter-spacing: 1px;
 }
-
 .testimonials-carousel-inner {
   position: relative;
   width: 100%;
@@ -236,7 +280,6 @@ main {
   justify-content: center;
   margin-bottom: 1.5rem;
 }
-
 .testimonial-card {
   width: 100%;
   max-width: 450px;
@@ -261,47 +304,39 @@ main {
   pointer-events: none;
   box-sizing: border-box;
 }
-
 .testimonial-card.testimonial-active {
   opacity: 1;
   position: relative;
   z-index: 2;
   pointer-events: auto;
 }
-
 .testimonial-card img {
   border-radius: 50%;
   margin-bottom: 1rem;
   border: 3px solid #007bff22;
 }
-
 .testimonial-card h3 {
   font-size: 1.2rem;
   font-weight: 700;
   margin-bottom: 0.25rem;
 }
-
 .testimonial-card .profession {
   color: #666;
   font-size: 0.95rem;
   margin-bottom: 0.5rem;
 }
-
 .testimonial-card .stars {
   color: #ffc107;
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
   letter-spacing: 2px;
 }
-
 .testimonial-card blockquote {
   font-size: 1rem;
   color: #333;
   margin: 0;
   font-style: italic;
 }
-
-/* Flechas del carrusel de testimonios */
 .testimonial-control {
   background: none;
   border: none;
@@ -318,34 +353,151 @@ main {
   width: 60px;
   height: 44px;
 }
-
 .testimonial-control:hover,
 .testimonial-control:focus {
   color: #0056b3;
   text-shadow: 2px 2px 12px #fff, 0 0 4px #0056b3;
   outline: none;
 }
-
 .testimonial-control.prev {
   left: 70px;
   top: 50%;
 }
-
 .testimonial-control.next {
   right: 70px;
   top: 50%;
 }
 
 /* =========================
-   Enlaces adaptativos (fuente navegación)
+   Pre-footer y footer (Keyliani)
 ========================= */
-.main-nav a,
-.secondary-nav li a {
-  font-size: clamp(0.85rem, 1vw, 1.1rem);
+.fondo-header{
+  background-image: url('../assets/images/imagen1.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: overlay;
+}
+.pre-footer {
+  background-color: black;
+  padding: 2rem 1rem;
+  font-family: Arial, sans-serif;
+}
+.pre-footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+.pre-footer-column1,
+.pre-footer-column2,
+.pre-footer-column3 {
+  flex:1 1 30%;
+  min-width: 250px;
+}
+.pre-footer h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #e89229;
+}
+.payment-methods a img {
+  width: 40px;
+  height: auto;
+  margin-right: 1rem;
+  transition: transform 0.2s ease;
+}
+.payment-methods a:hover img {
+  transform: scale(1.1);
+}
+.pre-footer-column2 ul {
+  list-style: none;
+  padding: 0;
+  margin:0;
+}
+.pre-footer-column2 li {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: #ffffff;
+}
+.pre-footer-column2 li:hover{
+  color: #e89229;
+}
+.social-links {
+  display: flex;
+  gap: 1rem;
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+.social-links li a img {
+  width: 30px;
+  height: auto;
+  transition: transform 0.2s ease;
+}
+.social-links li a:hover img {
+  transform: scale(1.1);
+}
+@media (max-width: 768px) {
+  .pre-footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .pre-footer-column1,
+  .pre-footer-column2,
+  .pre-footer-column3 {
+    width: 100%;
+  }
+}
+
+/* Footer principal */
+.footer-principal {
+  background-color: #000;
+  color: #fff;
+  padding: 1.2rem 0;
+  font-family: Arial, sans-serif;
+}
+.footer-contenedor {
+  max-width: 75rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+.footer-logo img {
+  width: 40px;
+  height: 40px;
+}
+.footer-logo span {
+  font-weight: bold;
+  font-size: 1rem;
+}
+.footer-derechos small {
+  font-size: 0.9rem;
+  color: #ffffff;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .footer-contenedor {
+    flex-direction: row;
+  }
+  .footer-derechos {
+    text-align: right;
+  }
 }
 
 /* =========================
-   Responsive: pantallas pequeñas
+   Responsive: pantallas pequeñas (Integración)
 ========================= */
 @media (max-width: 768px) {
   .main-nav ul {
@@ -353,40 +505,32 @@ main {
     flex-wrap: wrap;
     gap: 1rem;
   }
-
   .secondary-nav {
     flex-wrap: wrap;
     justify-content: center;
   }
-
   .carousel {
     width: 90vw;
   }
-
   .carousel-control.prev {
     left: -45px;
   }
-
   .carousel-control.next {
     right: -45px;
   }
-
   .testimonials-carousel-inner {
     max-width: 100%;
     min-width: 0;
     min-height: auto;
   }
-
   .testimonial-card {
     width: 90vw;
     max-width: 450px;
   }
-
   .testimonial-control.prev {
     left: 5px;
     top: 50%;
   }
-
   .testimonial-control.next {
     right: 5px;
     top: 50%;

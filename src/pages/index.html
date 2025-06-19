@@ -10,18 +10,29 @@
     <link rel="stylesheet" href="../css/styles.css" />
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <nav class="main-nav" aria-label="Navegación principal">
-            <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Tienda</a></li>
-                <li><a href="#">Ofertas</a></li>
-                <li><a href="#">Contacto</a></li>
-                <!-- Añade o quita enlaces -->
-            </ul>
-        </nav>
-        <h1 class="logo">RaiRock Music Store</h1>
+    <!-- Cabecera de la página -->
+    <header class="header" role="banner" aria-label="Encabezado principal de RaiRock">
+        <div class="header-container">
+            <div class="logo-section" aria-label="Logo de RaiRock">
+                <img src="../assets/images/logorairock.png" alt="Logo de RaiRock" >
+                <h1>RaiRock Music Store</h1>
+            </div>
+            <!-- barra de navegación principal -->
+            <nav class="nav-header" role="navigation" aria-label="barra de navegación principal">
+                <ul class="nav-list" role="menubar">
+                    <li role="none"><a href="index.html" role="menuitem" aria-label="Inicio"><i class="bi bi-house-door"></i> Inicio</a></li>
+                    <li role="none"><a href="#" role="menuitem" aria-label="Servicio"><i class="bi bi-tools"></i> Servicio</a></li>
+                    <li role="none"><a href="#" role="menuitem" aria-label="Contacto"><i class="bi bi-envelope"></i> Contacto</a></li>
+                    <li role="none"><a href="#" role="menuitem" aria-label="Sobre Nosotros"><i class="bi bi-info-circle"></i> Sobre Nosotros</a></li>
+                    <li role="none"><a href="#" role="menuitem" aria-label="Carrito"><i class="bi bi-cart"></i> Carrito</a></li>
+                </ul>
+            </nav>
+            <!-- botón de inicio de sesión -->
+            <button class="login-button" id="btnLogin" data-bs-toggle="modal" data-bs-target="#loginModal" aria-label="Iniciar sesión en la tienda RaiRock">
+                <i class="bi bi-person" aria-hidden="true"></i>
+                Iniciar Sesión
+            </button>
+        </div>
     </header>
 
     <!-- Main -->
@@ -47,43 +58,43 @@
         <!-- Carrusel manual productos -->
         <section aria-label="Carrusel de productos destacados" role="region" class="carousel">
             <div role="list" aria-live="polite" aria-atomic="true" aria-relevant="additions removals">
-              <div role="listitem" class="product-item active">
-                  <img src="../assets/images/guitar10.png" alt="Guitarra acústica profesional" />
-              </div>
-              <div role="listitem" class="product-item">
-                <img src="../assets/images/bajo2.png" alt="Bajo profesional" />
-              </div>
-              <div role="listitem" class="product-item">
-                  <img src="../assets/images/drum2.png" alt="Batería acústica profesional" />
-              </div>
-              <div role="listitem" class="product-item">
-                  <img src="../assets/images/key3.jpg" alt="Teclado eléctrico" />
-              </div>
-              <div role="listitem" class="product-item">
-                  <img src="../assets/images/saxo7.png" alt="Saxofón profesional" />
-              </div>
-              <div role="listitem" class="product-item">
-                  <img src="../assets/images/flauta1.png" alt="Flauta profesional" />
-              </div>
-              <div role="listitem" class="product-item">
-                  <img src="../assets/images/trompeta3.png" alt="Trompeta profesional" />
-              </div>
-              <div role="listitem" class="product-item">
-                  <img src="../assets/images/amp5.png" alt="Amplificador de guitarra" />
-              </div>
-              <div role="listitem" class="product-item">
-                  <img src="../assets/images/mesa1.png" alt="Mesa de mezcla" />
-              </div>
-              <div role="listitem" class="product-item">
-                  <img src="../assets/images/imagen4.png" alt="Imagen tienda" />
-              </div>
+                <div role="listitem" class="product-item active">
+                    <img src="../assets/images/guitar10.png" alt="Guitarra acústica profesional" />
+                </div>
+                <div role="listitem" class="product-item">
+                    <img src="../assets/images/bajo2.png" alt="Bajo profesional" />
+                </div>
+                <div role="listitem" class="product-item">
+                    <img src="../assets/images/drum2.png" alt="Batería acústica profesional" />
+                </div>
+                <div role="listitem" class="product-item">
+                    <img src="../assets/images/key3.jpg" alt="Teclado eléctrico" />
+                </div>
+                <div role="listitem" class="product-item">
+                    <img src="../assets/images/saxo7.png" alt="Saxofón profesional" />
+                </div>
+                <div role="listitem" class="product-item">
+                    <img src="../assets/images/flauta1.png" alt="Flauta profesional" />
+                </div>
+                <div role="listitem" class="product-item">
+                    <img src="../assets/images/trompeta3.png" alt="Trompeta profesional" />
+                </div>
+                <div role="listitem" class="product-item">
+                    <img src="../assets/images/amp5.png" alt="Amplificador de guitarra" />
+                </div>
+                <div role="listitem" class="product-item">
+                    <img src="../assets/images/mesa1.png" alt="Mesa de mezcla" />
+                </div>
+                <div role="listitem" class="product-item">
+                    <img src="../assets/images/imagen4.png" alt="Imagen tienda" />
+                </div>
             </div>
-          <button aria-label="Imagen anterior" class="carousel-control prev">‹</button>
-          <button aria-label="Imagen siguiente" class="carousel-control next">›</button>
+            <button aria-label="Imagen anterior" class="carousel-control prev">‹</button>
+            <button aria-label="Imagen siguiente" class="carousel-control next">›</button>
         </section>
 
+        <!-- Secciones de productos (puedes rellenar dinámicamente) -->
         <section id="products-list" aria-label="Listado de productos destacados"></section>
-
         <section id="guitarras" aria-label="Sección Guitarras"></section>
         <section id="baterias" aria-label="Sección Baterías"></section>
         <section id="teclados" aria-label="Sección Teclados"></section>
@@ -119,10 +130,97 @@
         </section>
     </main>
 
+    <!-- Pre-footer -->
+    <section class="pre-footer" aria-label="Información de contacto">
+        <div class="pre-footer-container">
+            <!-- Columna 1: Métodos de pago -->
+            <div class="pre-footer-column1" aria-labelledby="metodos-pagos">
+                <h3 id="metodos-pagos">Métodos de pago</h3>
+                <div class="payment-methods">
+                    <a href="https://www.paypal.com" target="_blank" rel="noopener" aria-label="PayPal">
+                        <img src="../assets/images/icons8-paypal-48.png" alt="PayPal" />
+                    </a>
+                    <a href="https://www.visa.com" target="_blank" rel="noopener" aria-label="Visa">
+                        <img src="../assets/images/icons8-visa-48 (1).png" alt="Visa" />
+                    </a>
+                    <a href="https://www.mastercard.es" target="_blank" rel="noopener" aria-label="MasterCard">
+                        <img src="../assets/images/icons8-mastercard-48.png" alt="MasterCard" />
+                    </a>
+                    <a href="https://www.americanexpress.com" target="_blank" rel="noopener" aria-label="American Express">
+                        <img src="../assets/images/icons8-american-express-al-cuadrado-48.png" alt="American Express" />
+                    </a>
+                </div>
+            </div>
+            <!-- Columna 2: Ventajas -->
+            <div class="pre-footer-column2" aria-labelledby="ventajas de usar RaiRock Music Store">
+                <h3 id="ventajas-title">Ventajas de comprar en RaiRock</h3>
+                <ul>
+                    <li>Garantía de calidad</li>
+                    <li>Devolución fácil y rápida</li>
+                    <li>Servicio técnico</li>
+                    <li>Asesoramiento personalizado</li>
+                </ul>
+            </div>
+            <!-- Columna 3: Redes sociales de contacto -->
+            <div class="pre-footer-column3" aria-label="Redes sociales">
+                <h3>Síguenos</h3>
+                <nav aria-label="Redes sociales">
+                    <ul class="social-links">
+                        <li><a href="#" aria-label="Facebook"><img src="../assets/images/RedesSocialesIcons/logofacebook.png" alt="Facebook" /></a></li>
+                        <li><a href="#" aria-label="Twitter"><img src="../assets/images/RedesSocialesIcons/logotwitter.png" alt="Twitter" /></a></li>
+                        <li><a href="#" aria-label="Instagram"><img src="../assets/images/RedesSocialesIcons/logoinstagram.png" alt="Instagram" /></a></li>
+                        <li><a href="#" aria-label="YouTube"><img src="../assets/images/RedesSocialesIcons/logoyoutube.png" alt="YouTube" /></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 RaiRock Music Store. Todos los derechos reservados.</p>
+    <footer class="footer-principal" role="contentinfo" aria-label="Pie de página principal del sitio">
+        <div class="footer-contenedor">
+            <!-- Logo y nombre -->
+            <div class="footer-logo" aria-label="Logotipo y nombre del sitio">
+                <img src="../assets/images/logorairock.png" alt="Logo de RaiRock">
+                <span>RaiRock Music Store</span>
+            </div>
+            <!-- Texto de derechos -->
+            <div class="footer-derechos">
+                <small>&copy; 2025 RaiRock. Todos los derechos reservados.</small>
+            </div>
+        </div>
     </footer>
+
+    <!-- Modal de inicio de sesión -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true" aria-modal="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <form aria-label="Formulario de inicio de sesión">
+                    <!-- Cabecera del modal: título y botón de cerrar -->
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="loginModalLabel">Iniciar Sesión</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar ventana de inicio de sesión"></button>
+                    </div>
+                    <!-- Cuerpo del modal: formulario de usuario y contraseña -->
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="user" class="form-label">Usuario</label>
+                            <input type="text" class="form-control" id="user" aria-required="true" aria-label="Usuario" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="inputPassword" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="inputPassword" aria-required="true" aria-label="contraseña" required>
+                        </div>
+                        <!-- Footer del modal: botón de entrar y crear usuario -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Entrar">Entrar</button>
+                            <button type="button" class="btn btn-primary" aria-label="Ir a crear nueva cuenta">Crear Usuario</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -131,105 +229,105 @@
 
     <!-- Script carrusel manual productos y testimonios -->
     <script>
-  // Carrusel de productos
-  document.addEventListener('DOMContentLoaded', function() {
-    const items = document.querySelectorAll('.product-item');
-    const prevBtn = document.querySelector('.carousel-control.prev');
-    const nextBtn = document.querySelector('.carousel-control.next');
-    let current = 0;
-    let productInterval;
-
-    function showItem(index) {
-      items.forEach((item, i) => {
-        item.classList.toggle('active', i === index);
-      });
-    }
-
-    function nextProduct() {
-      current = (current + 1) % items.length;
-      showItem(current);
-    }
-
-    function prevProduct() {
-      current = (current - 1 + items.length) % items.length;
-      showItem(current);
-    }
-
-    prevBtn.addEventListener('click', () => {
-      prevProduct();
-      resetProductInterval();
-    });
-
-    nextBtn.addEventListener('click', () => {
-      nextProduct();
-      resetProductInterval();
-    });
-
-    function resetProductInterval() {
-      clearInterval(productInterval);
-      productInterval = setInterval(nextProduct, 4000); // 4 segundos
-    }
-
-    productInterval = setInterval(nextProduct, 4000); // 4 segundos
-  });
-
-  // Carrusel de testimonios
-  document.addEventListener('DOMContentLoaded', function() {
-    const testimonials = document.querySelectorAll('.testimonials-carousel-inner .testimonial-card');
-    const prevTestBtn = document.querySelector('.testimonial-control.prev');
-    const nextTestBtn = document.querySelector('.testimonial-control.next');
-    let currentTest = 0;
-    let testimonialInterval;
-
-    function showTestimonial(index) {
-      testimonials.forEach((item, i) => {
-        item.classList.toggle('testimonial-active', i === index);
-      });
-    }
-
-    function nextTestimonial() {
-      currentTest = (currentTest + 1) % testimonials.length;
-      showTestimonial(currentTest);
-    }
-
-    function prevTestimonial() {
-      currentTest = (currentTest - 1 + testimonials.length) % testimonials.length;
-      showTestimonial(currentTest);
-    }
-
-    prevTestBtn.addEventListener('click', () => {
-      prevTestimonial();
-      resetTestimonialInterval();
-    });
-
-    nextTestBtn.addEventListener('click', () => {
-      nextTestimonial();
-      resetTestimonialInterval();
-    });
-
-    function resetTestimonialInterval() {
-      clearInterval(testimonialInterval);
-      testimonialInterval = setInterval(nextTestimonial, 10000); // 10 segundos
-    }
-
-    testimonialInterval = setInterval(nextTestimonial, 10000); // 10 segundos
-  });
-
-  // Quitar el foco de los controles de ambos carruseles tras hacer clic
-  document.addEventListener('DOMContentLoaded', function() {
     // Carrusel de productos
-    document.querySelectorAll('.carousel-control').forEach(btn => {
-      btn.addEventListener('mouseup', function() {
-        this.blur();
-      });
+    document.addEventListener('DOMContentLoaded', function() {
+        const items = document.querySelectorAll('.product-item');
+        const prevBtn = document.querySelector('.carousel-control.prev');
+        const nextBtn = document.querySelector('.carousel-control.next');
+        let current = 0;
+        let productInterval;
+
+        function showItem(index) {
+            items.forEach((item, i) => {
+                item.classList.toggle('active', i === index);
+            });
+        }
+
+        function nextProduct() {
+            current = (current + 1) % items.length;
+            showItem(current);
+        }
+
+        function prevProduct() {
+            current = (current - 1 + items.length) % items.length;
+            showItem(current);
+        }
+
+        prevBtn.addEventListener('click', () => {
+            prevProduct();
+            resetProductInterval();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            nextProduct();
+            resetProductInterval();
+        });
+
+        function resetProductInterval() {
+            clearInterval(productInterval);
+            productInterval = setInterval(nextProduct, 4000); // 4 segundos
+        }
+
+        productInterval = setInterval(nextProduct, 4000); // 4 segundos
     });
+
     // Carrusel de testimonios
-    document.querySelectorAll('.testimonial-control').forEach(btn => {
-      btn.addEventListener('mouseup', function() {
-        this.blur();
-      });
+    document.addEventListener('DOMContentLoaded', function() {
+        const testimonials = document.querySelectorAll('.testimonials-carousel-inner .testimonial-card');
+        const prevTestBtn = document.querySelector('.testimonial-control.prev');
+        const nextTestBtn = document.querySelector('.testimonial-control.next');
+        let currentTest = 0;
+        let testimonialInterval;
+
+        function showTestimonial(index) {
+            testimonials.forEach((item, i) => {
+                item.classList.toggle('testimonial-active', i === index);
+            });
+        }
+
+        function nextTestimonial() {
+            currentTest = (currentTest + 1) % testimonials.length;
+            showTestimonial(currentTest);
+        }
+
+        function prevTestimonial() {
+            currentTest = (currentTest - 1 + testimonials.length) % testimonials.length;
+            showTestimonial(currentTest);
+        }
+
+        prevTestBtn.addEventListener('click', () => {
+            prevTestimonial();
+            resetTestimonialInterval();
+        });
+
+        nextTestBtn.addEventListener('click', () => {
+            nextTestimonial();
+            resetTestimonialInterval();
+        });
+
+        function resetTestimonialInterval() {
+            clearInterval(testimonialInterval);
+            testimonialInterval = setInterval(nextTestimonial, 10000); // 10 segundos
+        }
+
+        testimonialInterval = setInterval(nextTestimonial, 10000); // 10 segundos
     });
-  });
-  </script>
+
+    // Quitar el foco de los controles de ambos carruseles tras hacer clic
+    document.addEventListener('DOMContentLoaded', function() {
+        // Carrusel de productos
+        document.querySelectorAll('.carousel-control').forEach(btn => {
+            btn.addEventListener('mouseup', function() {
+                this.blur();
+            });
+        });
+        // Carrusel de testimonios
+        document.querySelectorAll('.testimonial-control').forEach(btn => {
+            btn.addEventListener('mouseup', function() {
+                this.blur();
+            });
+        });
+    });
+    </script>
 </body>
 </html>
