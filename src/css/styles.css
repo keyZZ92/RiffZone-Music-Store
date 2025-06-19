@@ -6,7 +6,8 @@
   padding: 0;
   box-sizing: border-box;
 }
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -17,11 +18,12 @@ html, body {
    Header y navegación principal
 ========================= */
 .header {
-  background-image: url('../assets/images/imagen1.png');
+  background-image: url("../assets/images/imagen1.png");
   background-size: cover;
   background-position: center;
   position: relative;
-  padding: 2rem 0;
+  min-height: 260px;
+  padding: 3.5rem 0;
 }
 .header::before {
   content: "";
@@ -45,7 +47,7 @@ html, body {
   background-color: rgba(255, 255, 255, 0.94);
   border-radius: 10px;
   box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.1);
-  font-family:'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
 }
 .logo-section {
   display: flex;
@@ -58,7 +60,7 @@ html, body {
 }
 .logo-section h1 {
   font-size: 1.6rem;
-  font-family:'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   color: #222;
   margin: 0;
 }
@@ -81,11 +83,11 @@ html, body {
   position: relative;
 }
 .nav-list a:hover::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
   height: 0.125rem;
-  background-color:#e89229 ;
+  background-color: #e89229;
   bottom: -0.25rem;
   left: 0;
 }
@@ -98,14 +100,14 @@ html, body {
   border: 2px solid #222;
   padding: 0.4rem 1rem;
   border-radius: 0.25rem;
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   font-size: 0.95rem;
   font-weight: bold;
   transition: background 0.3s, color 0.3s;
   margin-left: 2rem;
 }
 .login-button:hover {
-  background-color:#222;
+  background-color: #222;
   color: white;
 }
 .cart-counter {
@@ -140,48 +142,57 @@ html, body {
 /* =========================
    Diseño cards de guitarra
 ========================= */
-.guitar-card, .card {
+.guitar-card,
+.card {
   border: 1px solid #ddd;
   border-radius: 12px;
   overflow: hidden;
   background-color: #fff;
   transition: transform 0.3s, box-shadow 0.3s;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
-.guitar-card:hover, .card:hover {
+.guitar-card:hover,
+.card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
-.guitar-card img, .card-img-top {
+.guitar-card img,
+.card-img-top {
   width: 100%;
   height: 220px;
   object-fit: cover;
   border-bottom: 1px solid #eee;
 }
-.guitar-card-body, .card-body {
+.guitar-card-body,
+.card-body {
   padding: 1rem;
 }
-.guitar-card h5, .card-title {
+.guitar-card h5,
+.card-title {
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
   color: #222;
 }
-.guitar-card p, .card-text {
+.guitar-card p,
+.card-text {
   font-size: 0.9rem;
   color: #666;
   margin-bottom: 1rem;
 }
-.price-regular, .text-decoration-line-through {
+.price-regular,
+.text-decoration-line-through {
   color: #999;
   text-decoration: line-through;
   margin-right: 0.5rem;
 }
-.price-offer, .fw-bold.text-danger {
+.price-offer,
+.fw-bold.text-danger {
   color: #e53935;
   font-weight: bold;
   font-size: 1.1rem;
 }
-.guitar-card .btn-add, .btn-primary {
+.guitar-card .btn-add,
+.btn-primary {
   background-color: #007bff;
   color: white;
   border: none;
@@ -190,14 +201,16 @@ html, body {
   cursor: pointer;
   transition: background-color 0.3s;
 }
-.guitar-card .btn-add:hover, .btn-primary:hover {
+.guitar-card .btn-add:hover,
+.btn-primary:hover {
   background-color: #0056b3;
 }
 
 /* =========================
    Filtros de categorías
 ========================= */
-.guitar-filter, .secondary-nav {
+.guitar-filter,
+.secondary-nav {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
@@ -430,8 +443,8 @@ html, body {
 /* =========================
    Pre-footer y footer
 ========================= */
-.fondo-header{
-  background-image: url('../assets/images/imagen1.png');
+.fondo-header {
+  background-image: url("../assets/images/imagen1.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -445,21 +458,34 @@ html, body {
 .pre-footer-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: stretch;
+  gap: 2.5rem 3rem;
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 1100px;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 .pre-footer-column1,
 .pre-footer-column2,
 .pre-footer-column3 {
-  flex:1 1 30%;
-  min-width: 250px;
+  flex: 1 1 320px;
+  min-width: 260px;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+  padding: 1.2rem 1rem;
+  box-sizing: border-box;
+  align-items: flex-start;
 }
 .pre-footer h3 {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  margin-bottom: 1.1rem;
   color: #e89229;
+  text-align: left;
 }
 .payment-methods a img {
   width: 40px;
@@ -473,14 +499,14 @@ html, body {
 .pre-footer-column2 ul {
   list-style: none;
   padding: 0;
-  margin:0;
+  margin: 0;
 }
 .pre-footer-column2 li {
   margin-bottom: 0.5rem;
   font-size: 1rem;
   color: #ffffff;
 }
-.pre-footer-column2 li:hover{
+.pre-footer-column2 li:hover {
   color: #e89229;
 }
 .social-links {
@@ -501,12 +527,15 @@ html, body {
 @media (max-width: 768px) {
   .pre-footer-container {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
+    gap: 1.5rem;
   }
   .pre-footer-column1,
   .pre-footer-column2,
   .pre-footer-column3 {
-    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    padding: 1rem 0.5rem;
   }
 }
 
@@ -594,4 +623,28 @@ html, body {
     right: 5px;
     top: 50%;
   }
+}
+
+/* =========================
+   Centrando títulos y contenedores
+========================= */
+#products-title,
+.testimonials-carousel h2 {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  display: block;
+}
+
+main,
+.testimonials-carousel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+#products-title {
+  margin-top: 3.5rem;
 }
