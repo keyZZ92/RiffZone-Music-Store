@@ -1,6 +1,4 @@
-/* =========================
-   Reset y configuración base
-========================= */
+
 * {
   margin: 0;
   padding: 0;
@@ -14,21 +12,6 @@ body {
   background-color: #e4ecf4 !important;
 }
 
-/* =========================
-   Estilos titulos h2
-========================= */
-
-h2 {
-  margin: 2rem auto;
-  font-weight: 800;
-  font-size: clamp(2rem, 4vw, 3rem);
-  text-align: center;
-  max-width: 90vw;
-  font-family: "Oswald", sans-serif;
-  color: #111;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  letter-spacing: 1px;
-}
 
 /* =========================
    Header y navegación principal
@@ -291,46 +274,5 @@ h2 {
   }
   .footer-derechos {
     text-align: right;
-  }
-}
-
-/* =========================
-   Responsive: pantallas pequeñas
-========================= */
-@media (max-width: 768px) {
-  .main-nav ul {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-  .secondary-nav {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .carousel {
-    width: 90vw;
-  }
-  .carousel-control.prev {
-    left: -45px;
-  }
-  .carousel-control.next {
-    right: -45px;
-  }
-  .testimonials-carousel-inner {
-    max-width: 100%;
-    min-width: 0;
-    min-height: auto;
-  }
-  .testimonial-card {
-    width: 90vw;
-    max-width: 450px;
-  }
-  .testimonial-control.prev {
-    left: 5px;
-    top: 50%;
-  }
-  .testimonial-control.next {
-    right: 5px;
-    top: 50%;
   }
 }
