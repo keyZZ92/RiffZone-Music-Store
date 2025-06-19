@@ -9,42 +9,144 @@
     <link rel="stylesheet" href="../css/guitar.css">
 </head>
 <body>
+    <!-- Header con logo, navegación y botón volver a Home -->
     <header class="header" role="banner" aria-label="Encabezado secundario de RaiRock">
-    <div class="header-container-guitar">
-      <div class="logo-section" aria-label="Logo de RaiRock">
-        <img src="../assets/images/logorairock.png" alt="Logo de RaiRock" >
-        <h1>Guitarras</h1>
-      </div>
-    <!-- Botón para volver al inicio -->
-     <div class="header-volver-inicio">
-          <nav class="nav-header" role="navigation" aria-label="barra de navegación principal">
-      <ul class="nav-list" role="menubar">
-        <li role="none"><a href="index.html" role="menuitem" aria-label="i"><i class="bi bi-house-door"></i> Inicio</a></li>
-        <li role="none"><a href="#" role="menuitem" aria-label="servicio"><i class="bi bi-tools"></i> Servicio</a></li>
-        <li role="none"><a href="#" role="menuitem" aria-label="contacto"><i class="bi bi-envelope"></i> Contacto</a></li>
-      </ul>
-    </nav>
-    </div>
-     <!-- Derecha: contador del carrito -->
-    <div class="cart-counter" aria-label="Carrito de compras">
-      <i class="bi bi-cart"></i>
-      <span id="cart-count">3</span>
-    </div>
-    
-    </div>
-  </header>
+        <div class="header-container-guitar">
+            <div class="logo-section" aria-label="Logo de RaiRock">
+                <img src="../assets/images/logorairock.png" alt="Logo de RaiRock" >
+                <h1>Guitarras</h1>
+            </div>
+            <!-- Botón para volver al inicio -->
+            <div class="header-volver-inicio">
+                <a href="index.html" class="btn btn-warning" aria-label="Volver a la página principal">
+                    <i class="bi bi-house-door"></i> Volver a Home
+                </a>
+                <nav class="nav-header" role="navigation" aria-label="barra de navegación principal">
+                    <ul class="nav-list" role="menubar">
+                        <li role="none"><a href="#" role="menuitem" aria-label="servicio"><i class="bi bi-tools"></i> Servicio</a></li>
+                        <li role="none"><a href="#" role="menuitem" aria-label="contacto"><i class="bi bi-envelope"></i> Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- Derecha: contador del carrito -->
+            <div class="cart-counter" aria-label="Carrito de compras">
+                <i class="bi bi-cart"></i>
+                <span id="cart-count">3</span>
+            </div>
+        </div>
+    </header>
 
     <!-- Contenido principal -->
-    <main>
-        <!-- Encabezado -->
-            <!-- Menú de Filtros -->
-                <!-- Tarjetas existentes -->
-                <!-- Nuevas tarjetas -->
-    
-     <!-- Pre-footer -->
-    <section class="pre-footer" aria-label="Información de coctacto">
+    <main role="main" aria-label="Catálogo de guitarras" class="container pb-5">
+        <h2 class="mb-4 text-center">Catálogo de Guitarras</h2>
+        <!-- Filtro por categoría -->
+        <nav class="my-4" role="navigation" aria-label="Filtrar por categoría">
+            <ul class="secondary-nav">
+                <li><a href="#">🎸 Guitarras Acústicas</a></li>
+                <li><a href="#">⚡ Guitarras Eléctricas</a></li>
+                <li><a href="#">🎻 Guitarras Clásicas</a></li>
+                <li><a href="#">🎵 Bajos</a></li>
+            </ul>
+        </nav>
+        <!-- Cards de producto -->
+        <div class="row row-cols-1 row-cols-md-3 g-4" role="region" aria-label="Lista de productos de guitarra">
+            <!-- Guitarra acústica -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="../assets/images/guitar7.png" class="card-img-top" alt="Guitarra Acústica de alta calidad" />
+                    <div class="card-body">
+                        <h5 class="card-title">Guitarra Acústica</h5>
+                        <p class="card-text">Guitarra acústica de alta calidad.</p>
+                        <p>
+                            <span class="text-muted text-decoration-line-through">180€</span>
+                            <span class="fw-bold text-danger">150€</span>
+                        </p>
+                        <button class="btn btn-primary" aria-label="Añadir Guitarra Acústica al carrito">Añadir al carrito</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Guitarra eléctrica-->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="../assets/images/guitar3.png" class="card-img-top" alt="Guitarra Eléctrica para músicos avanzados" />
+                    <div class="card-body">
+                        <h5 class="card-title">Guitarra Eléctrica</h5>
+                        <p class="card-text">Guitarra eléctrica para músicos avanzados.</p>
+                        <p>
+                            <span class="text-muted text-decoration-line-through">350€</span>
+                            <span class="fw-bold text-danger">300€</span>
+                        </p>
+                        <button class="btn btn-primary" aria-label="Añadir Guitarra Eléctrica al carrito">Añadir al carrito</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Flamenca-->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="../assets/images/guitar12.png" class="card-img-top" alt="Guitarra flamenca tradicional" />
+                    <div class="card-body">
+                        <h5 class="card-title">Guitarra Flamenca</h5>
+                        <p class="card-text">Guitarra flamenca con un diseño tradicional.</p>
+                        <p>
+                            <span class="text-muted text-decoration-line-through">200€</span>
+                            <span class="fw-bold text-danger">180€</span>
+                        </p>
+                        <button class="btn btn-primary" aria-label="Añadir Guitarra Flamenca al carrito">Añadir al carrito</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Guitarra Stratocaster-->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="../assets/images/guitar2.png" class="card-img-top" alt="Guitarra estilo Stratocaster" />
+                    <div class="card-body">
+                        <h5 class="card-title">Guitarra Stratocaster</h5>
+                        <p class="card-text">Guitarra eléctrica estilo Stratocaster.</p>
+                        <p>
+                            <span class="text-muted text-decoration-line-through">600€</span>
+                            <span class="fw-bold text-danger">550€</span>
+                        </p>
+                        <button class="btn btn-primary" aria-label="Añadir Guitarra Stratocaster al carrito">Añadir al carrito</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Estilo Les Paul-->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="../assets/images/guitar1.png" class="card-img-top" alt="Guitarra estilo Les Paul" />
+                    <div class="card-body">
+                        <h5 class="card-title">Guitarra Les Paul</h5>
+                        <p class="card-text">Guitarra eléctrica estilo Les Paul.</p>
+                        <p>
+                            <span class="text-muted text-decoration-line-through">700€</span>
+                            <span class="fw-bold text-danger">650€</span>
+                        </p>
+                        <button class="btn btn-primary" aria-label="Añadir Guitarra Les Paul al carrito">Añadir al carrito</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Heavy Flying-->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="../assets/images/guitar13.jpg" class="card-img-top" alt="Guitarra Heavy Flying" />
+                    <div class="card-body">
+                        <h5 class="card-title">Guitarra Heavy Flying</h5>
+                        <p class="card-text">Guitarra clásica con acabados de lujo.</p>
+                        <p>
+                            <span class="text-muted text-decoration-line-through">900€</span>
+                            <span class="fw-bold text-danger">850€</span>
+                        </p>
+                        <button class="btn btn-primary" aria-label="Añadir Guitarra Heavy Flying al carrito">Añadir al carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Pre-footer -->
+    <section class="pre-footer" aria-label="Información de contacto">
         <div class="pre-footer-container">
-        <!-- Columna 1: Comprar y pagar de forma segura -->
+            <!-- Columna 1: Métodos de pago -->
             <div class="pre-footer-column1" aria-labelledby="metodos-pagos">
                 <h3 id="metodos-pagos">Métodos de pago</h3>
                 <div class="payment-methods">
@@ -62,9 +164,9 @@
                     </a>
                 </div>
             </div>
-   <!-- Columna 2: Ventajas -->
+            <!-- Columna 2: Ventajas -->
             <div class="pre-footer-column2" aria-labelledby="ventajas de usar RaiRock Music Store">
-                <h3 id="ventajas-title"> Ventajas de comprar en RaiRock</h3>
+                <h3 id="ventajas-title">Ventajas de comprar en RaiRock</h3>
                 <ul>
                     <li>Garantía de calidad</li>
                     <li>Devolución fácil y rápida</li>
@@ -72,7 +174,7 @@
                     <li>Asesoramiento personalizado</li>
                 </ul>
             </div>
-    <!-- Columna 3: Redes sociales de contacto -->
+            <!-- Columna 3: Redes sociales de contacto -->
             <div class="pre-footer-column3" aria-label="Redes sociales">
                 <h3>Síguenos</h3>
                 <nav aria-label="Redes sociales">
@@ -84,20 +186,20 @@
                     </ul>
                 </nav>
             </div>
-    </div>
+        </div>
     </section>
     <!-- Footer -->
-    <footer class="footer-principal"role="contentinfo" aria-label="Pie de página principal del sitio">
+    <footer class="footer-principal" role="contentinfo" aria-label="Pie de página principal del sitio">
         <div class="footer-contenedor">
-        <!-- Logo y nombre -->
-        <div class="footer-logo" aria-label="Logotipo y nombre del sitio">
-        <img src="../assets/images/logorairock.png" alt="Logo de RaiRock">
-        <span>RaiRock Music Store</span>
-        </div>
-        <!-- Texto de derecchos -->
-        <div class="footer-derechos">
-        <small>&copy; 2025 RaiRock. Todos los derechos reservados.</small>
-        </div>
+            <!-- Logo y nombre -->
+            <div class="footer-logo" aria-label="Logotipo y nombre del sitio">
+                <img src="../assets/images/logorairock.png" alt="Logo de RaiRock">
+                <span>RaiRock Music Store</span>
+            </div>
+            <!-- Texto de derechos -->
+            <div class="footer-derechos">
+                <small>&copy; 2025 RaiRock. Todos los derechos reservados.</small>
+            </div>
         </div>
     </footer>
 
@@ -105,8 +207,6 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/cart.js"></script>
-
     <!-- Modal de Producto Añadido -->
-		
 </body>
 </html>
