@@ -29,39 +29,42 @@
           />
           <h1>Guitarras</h1>
         </div>
-        <!-- Botón para volver al inicio -->
-        <div class="header-volver-inicio">
-          <a
-            href="index.html"
-            class="btn btn-warning"
-            aria-label="Volver a la página principal"
-          >
-            <i class="bi bi-house-door"></i> Volver a Home
-          </a>
-          <nav
-            class="nav-header"
-            role="navigation"
-            aria-label="barra de navegación principal"
-          >
-            <ul class="nav-list" role="menubar">
-              <li role="none">
-                <a href="#" role="menuitem" aria-label="servicio"
-                  ><i class="bi bi-tools"></i> Servicio</a
-                >
-              </li>
-              <li role="none">
-                <a href="#" role="menuitem" aria-label="contacto"
-                  ><i class="bi bi-envelope"></i> Contacto</a
-                >
-              </li>
-            </ul>
-          </nav>
-        </div>
         <!-- Derecha: contador del carrito -->
         <div class="cart-counter" aria-label="Carrito de compras">
           <i class="bi bi-cart"></i>
           <span id="cart-count">3</span>
         </div>
+        <!--barra de navegacion-->
+        <nav role="navigation" aria-label="Categorías de productos">
+          <ul class="nav-header-guitar">
+             <!-- Botón para volver al inicio -->
+          <li role="none">
+              <div class="header-volver-inicio">
+                <a href="index.html"
+                class="btn btn-warning"
+                aria-label="Volver a la página principal">
+                <i class="bi bi-house-door"></i> Inicio
+                </a>
+              </div>
+            </li>
+            <li role="none">
+              <a href="#" role="menuitem" aria-label="Servicio"
+                ><i class="bi bi-tools"></i> Servicio</a
+              >
+            </li>
+            <li role="none">
+              <a href="#" role="menuitem" aria-label="Contacto"
+                ><i class="bi bi-envelope"></i> Contacto</a
+              >
+            </li>
+            <li role="none">
+              <a href="#" role="menuitem" aria-label="Sobre Nosotros"
+                ><i class="bi bi-info-circle"></i> Sobre Nosotros</a
+              >
+            </li>
+        </ul>
+          </nav>
+        
       </div>
     </header>
 
