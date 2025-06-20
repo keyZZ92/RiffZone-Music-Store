@@ -37,11 +37,6 @@
         >
           <ul class="nav-list" role="menubar">
             <li role="none">
-              <a href="/pages/index.html" role="menuitem" aria-label="Inicio"
-                ><i class="bi bi-house-door"></i> Inicio</a
-              >
-            </li>
-            <li role="none">
               <a href="#" role="menuitem" aria-label="Servicio"
                 ><i class="bi bi-tools"></i> Servicio</a
               >
@@ -67,10 +62,11 @@
         <button
         class="login-button"
         id="btnLogin"
-        onclick="location.href='../pages/index.html';"
-        aria-label="Volver a la tienda RiffZone Music Store">
+          data-bs-toggle="modal"
+          data-bs-target="#loginModal"
+        aria-label="Iniciar sesión en la tienda RiffZone Music Store">
       <i class="bi bi-person" aria-hidden="true"></i>
-      Volver
+      Inicio de Sesión
       </button>
       </div>
     </header>
@@ -78,6 +74,15 @@
 
     <!-- Contenido principal -->
     <main role="main" aria-label="Catálogo de guitarras" class="container pb-5">
+        <!-- botón de volver-->
+        <button
+        class="volver-button"
+        id="btnvolver"
+        onclick="location.href='../pages/index.html';"
+        aria-label="Volver a la tienda RiffZone Music Store">
+      <i class="bi bi-arrow-left"></i>
+      Volver
+      </button>
       <h2 id="products-title">Catálogo de Guitarras</h2>
       <!-- Filtro por categoría -->
       <nav role="navigation" aria-label="Categorías de productos">

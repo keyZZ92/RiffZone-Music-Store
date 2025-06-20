@@ -136,6 +136,28 @@ body {
 /* =========================
    Diseño cards de guitarra
 ========================= */
+/*boton de volver */
+.volver-button {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: transparent;
+  color: #222;
+  border: 2px solid #222;
+  padding: 0.4rem 1rem;
+  border-radius: 0.25rem;
+  font-family: "Oswald", sans-serif;
+  font-size: 0.95rem;
+  font-weight: bold;
+  transition: background 0.3s, color 0.3s;
+  margin-right: 50rem;
+  margin-top: 2rem;
+}
+.volver-button:hover {
+  background-color: #222;
+  color: white;
+}
+
 .guitar-card,
 .card {
   border: 1px solid #ddd;
@@ -530,7 +552,7 @@ body {
 
 /* Footer principal */
 .footer-principal {
-  background-color: #000;
+  background-color: #2222;
   color: #fff;
   padding: 1.2rem 0;
   font-family: Arial, sans-serif;
