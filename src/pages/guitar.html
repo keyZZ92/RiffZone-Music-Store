@@ -1,44 +1,502 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guitarras y Bajos - RaiRock Music Store</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="../css/styles.css">
-</head>
-<body>
-    <!-- Encabezado -->
-    <header>
-        <!-- Botón para regresar a la página principal -->
-        <!-- Logo y Título -->
-        <!-- Contador del carrito -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guitarras y Bajos - RiffZone Music Store</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <!-- Header con logo, navegación y botón volver a Home -->
+    <header
+      class="header"
+      role="banner"
+      aria-label="Encabezado principal de RiffZone Music Store"
+    >
+      <div class="header-container">
+        <div class="logo-section" aria-label="Logo de RiffZone Music Store">
+          <a
+            href="/pages/index.html"
+            style="
+              display: flex;
+              align-items: center;
+              gap: 0.2rem;
+              text-decoration: none;
+            "
+          >
+            <img
+              src="../assets/images/logo RiffZone.png"
+              alt="Logo de RiffZone Music Store"
+            />
+            <h1>RiffZone Music Store</h1>
+          </a>
+        </div>
+        <!-- barra de navegación principal -->
+        <nav
+          class="nav-header"
+          role="navigation"
+          aria-label="barra de navegación principal"
+        >
+          <ul class="nav-list" role="menubar">
+            <li role="none">
+              <a href="#" role="menuitem" aria-label="Servicio"
+                ><i class="bi bi-tools"></i> Servicio</a
+              >
+            </li>
+            <li role="none">
+              <a href="#" role="menuitem" aria-label="Contacto"
+                ><i class="bi bi-envelope"></i> Contacto</a
+              >
+            </li>
+            <li role="none">
+              <a href="#" role="menuitem" aria-label="Sobre Nosotros"
+                ><i class="bi bi-info-circle"></i> Sobre Nosotros</a
+              >
+            </li>
+            <li role="none">
+              <a href="#" role="menuitem" aria-label="Carrito"
+                ><i class="bi bi-cart"></i> Carrito</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <!-- botón de inicio de sesión -->
+        <button
+          class="login-button"
+          id="btnLogin"
+          data-bs-toggle="modal"
+          data-bs-target="#loginModal"
+          aria-label="Iniciar sesión en la tienda RiffZone Music Store"
+        >
+          <i class="bi bi-person" aria-hidden="true"></i>
+          Iniciar Sesión
+        </button>
+      </div>
     </header>
 
     <!-- Contenido principal -->
-    <main>
-        <!-- Encabezado -->
-            <!-- Menú de Filtros -->
-                <!-- Tarjetas existentes -->
-                <!-- Nuevas tarjetas -->
-    
-    <!-- Pre-footer -->
-                <!-- Columna 1: Comprar y pagar de forma segura -->
-                <!-- Columna 2: Ventajas -->
-                <!-- Columna 3: Redes sociales -->
-                
-    <!-- Footer -->
-    <footer>
+    <main role="main" aria-label="Catálogo de guitarras" class="container pb-5">
+      <!-- botón de volver-->
+      <button
+        class="volver-button"
+        id="btnvolver"
+        onclick="location.href='../pages/index.html';"
+        aria-label="Volver a la tienda RiffZone Music Store"
+      >
+        <i class="bi bi-arrow-left"></i>
+        Volver
+      </button>
+      <h2 id="products-title">Catálogo de Guitarras</h2>
+      <!-- Filtro por categoría -->
+      <nav role="navigation" aria-label="Categorías de productos">
+        <ul class="secondary-nav">
+          <li>
+            <a href="/pages/guitar.html" aria-label="Guitarras"
+              ><img
+                src="../assets/images/iconos/iconGuitarra.png"
+                alt="Icono guitarra"
+                width="24"
+                height="24"
+              />
+              Guitarras</a
+            >
+          </li>
+          <li>
+            <a href="#bajos" aria-label="Bajos"
+              ><img
+                src="../assets/images/iconos/iconBajo.png"
+                alt="Icono bajo"
+                width="24"
+                height="24"
+              />
+              Bajos</a
+            >
+          </li>
+          <li>
+            <a href="#baterias" aria-label="Baterías"
+              ><img
+                src="../assets/images/iconos/iconBateria.png"
+                alt="Icono batería"
+                width="24"
+                height="24"
+              />
+              Baterías</a
+            >
+          </li>
+          <li>
+            <a href="#teclados" aria-label="Teclados"
+              ><img
+                src="../assets/images/iconos/iconTeclado.png"
+                alt="Icono teclado"
+                width="24"
+                height="24"
+              />
+              Teclados</a
+            >
+          </li>
+          <li>
+            <a href="#saxofon" aria-label="Saxofones"
+              ><img
+                src="../assets/images/iconos/iconSaxo.png"
+                alt="Icono saxofón"
+                width="24"
+                height="24"
+              />
+              Saxofones</a
+            >
+          </li>
+          <li>
+            <a href="#flautas" aria-label="Flautas"
+              ><img
+                src="../assets/images/iconos/iconFlauta.png"
+                alt="Icono flauta"
+                width="24"
+                height="24"
+              />
+              Flautas</a
+            >
+          </li>
+          <li>
+            <a href="#trompetas" aria-label="Trompetas"
+              ><img
+                src="../assets/images/iconos/iconTrompeta.png"
+                alt="Icono trompeta"
+                width="24"
+                height="24"
+              />
+              Trompetas</a
+            >
+          </li>
+          <li>
+            <a href="#altavoces" aria-label="Altavoces"
+              ><img
+                src="../assets/images/iconos/iconAltavoz.png"
+                alt="Icono altavoz"
+                width="24"
+                height="24"
+              />
+              Altavoces</a
+            >
+          </li>
+          <li>
+            <a href="#mesas" aria-label="Mesas de mezcla"
+              ><img
+                src="../assets/images/iconos/iconMesa.png"
+                alt="Icono mesa de mezcla"
+                width="24"
+                height="24"
+              />
+              Mesas de mezcla</a
+            >
+          </li>
+        </ul>
+      </nav>
+      <!-- Cards de producto -->
+      <div
+        class="row row-cols-1 row-cols-md-3 g-4"
+        role="region"
+        aria-label="Lista de productos de guitarra"
+      >
+        <!-- Guitarra acústica -->
+        <div class="col">
+          <div class="card h-100">
+            <img
+              src="../assets/images/guitar7.png"
+              class="card-img-top"
+              alt="Guitarra Acústica de alta calidad"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Guitarra Acústica</h5>
+              <p class="card-text">Guitarra acústica de alta calidad.</p>
+              <p>
+                <span class="text-muted text-decoration-line-through"
+                  >180€</span
+                >
+                <span class="fw-bold text-danger">150€</span>
+              </p>
+              <button
+                class="btn btn-primary"
+                aria-label="Añadir Guitarra Acústica al carrito"
+              >
+                Añadir al carrito
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Guitarra eléctrica-->
+        <div class="col">
+          <div class="card h-100">
+            <img
+              src="../assets/images/guitar3.png"
+              class="card-img-top"
+              alt="Guitarra Eléctrica para músicos avanzados"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Guitarra Eléctrica</h5>
+              <p class="card-text">
+                Guitarra eléctrica para músicos avanzados.
+              </p>
+              <p>
+                <span class="text-muted text-decoration-line-through"
+                  >350€</span
+                >
+                <span class="fw-bold text-danger">300€</span>
+              </p>
+              <button
+                class="btn btn-primary"
+                aria-label="Añadir Guitarra Eléctrica al carrito"
+              >
+                Añadir al carrito
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Flamenca-->
+        <div class="col">
+          <div class="card h-100">
+            <img
+              src="../assets/images/guitar12.png"
+              class="card-img-top"
+              alt="Guitarra flamenca tradicional"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Guitarra Flamenca</h5>
+              <p class="card-text">
+                Guitarra flamenca con un diseño tradicional.
+              </p>
+              <p>
+                <span class="text-muted text-decoration-line-through"
+                  >200€</span
+                >
+                <span class="fw-bold text-danger">180€</span>
+              </p>
+              <button
+                class="btn btn-primary"
+                aria-label="Añadir Guitarra Flamenca al carrito"
+              >
+                Añadir al carrito
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Guitarra Stratocaster-->
+        <div class="col">
+          <div class="card h-100">
+            <img
+              src="../assets/images/guitar2.png"
+              class="card-img-top"
+              alt="Guitarra estilo Stratocaster"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Guitarra Stratocaster</h5>
+              <p class="card-text">Guitarra eléctrica estilo Stratocaster.</p>
+              <p>
+                <span class="text-muted text-decoration-line-through"
+                  >600€</span
+                >
+                <span class="fw-bold text-danger">550€</span>
+              </p>
+              <button
+                class="btn btn-primary"
+                aria-label="Añadir Guitarra Stratocaster al carrito"
+              >
+                Añadir al carrito
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Estilo Les Paul-->
+        <div class="col">
+          <div class="card h-100">
+            <img
+              src="../assets/images/guitar1.png"
+              class="card-img-top"
+              alt="Guitarra estilo Les Paul"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Guitarra Les Paul</h5>
+              <p class="card-text">Guitarra eléctrica estilo Les Paul.</p>
+              <p>
+                <span class="text-muted text-decoration-line-through"
+                  >700€</span
+                >
+                <span class="fw-bold text-danger">650€</span>
+              </p>
+              <button
+                class="btn btn-primary"
+                aria-label="Añadir Guitarra Les Paul al carrito"
+              >
+                Añadir al carrito
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Heavy Flying-->
+        <div class="col">
+          <div class="card h-100">
+            <img
+              src="../assets/images/guitar13.jpg"
+              class="card-img-top"
+              alt="Guitarra Heavy Flying"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Guitarra Heavy Flying</h5>
+              <p class="card-text">Guitarra clásica con acabados de lujo.</p>
+              <p>
+                <span class="text-muted text-decoration-line-through"
+                  >900€</span
+                >
+                <span class="fw-bold text-danger">850€</span>
+              </p>
+              <button
+                class="btn btn-primary"
+                aria-label="Añadir Guitarra Heavy Flying al carrito"
+              >
+                Añadir al carrito
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
 
+    <!-- Pre-footer -->
+    <section class="pre-footer" aria-label="Información de contacto">
+      <div class="pre-footer-container">
+        <!-- Columna 1: Métodos de pago -->
+        <div class="pre-footer-column1" aria-labelledby="metodos-pagos">
+          <h3 id="metodos-pagos">Métodos de pago</h3>
+          <div class="payment-methods">
+            <a
+              href="https://www.paypal.com"
+              target="_blank"
+              rel="noopener"
+              aria-label="PayPal"
+            >
+              <img src="../assets/images/icons8-paypal-48.png" alt="PayPal" />
+            </a>
+            <a
+              href="https://www.visa.com"
+              target="_blank"
+              rel="noopener"
+              aria-label="Visa"
+            >
+              <img src="../assets/images/icons8-visa-48 (1).png" alt="Visa" />
+            </a>
+            <a
+              href="https://www.mastercard.es"
+              target="_blank"
+              rel="noopener"
+              aria-label="MasterCard"
+            >
+              <img
+                src="../assets/images/icons8-mastercard-48.png"
+                alt="MasterCard"
+              />
+            </a>
+            <a
+              href="https://www.americanexpress.com"
+              target="_blank"
+              rel="noopener"
+              aria-label="American Express"
+            >
+              <img
+                src="../assets/images/icons8-american-express-al-cuadrado-48.png"
+                alt="American Express"
+              />
+            </a>
+          </div>
+        </div>
+        <!-- Columna 2: Ventajas -->
+        <div
+          class="pre-footer-column2"
+          aria-labelledby="ventajas de usar RiffZone Music Store"
+        >
+          <h3 id="ventajas-title">
+            Ventajas de comprar en RiffZone Music Store
+          </h3>
+          <ul>
+            <li>Garantía de calidad</li>
+            <li>Devolución fácil y rápida</li>
+            <li>Servicio técnico</li>
+            <li>Asesoramiento personalizado</li>
+          </ul>
+        </div>
+        <!-- Columna 3: Redes sociales de contacto -->
+        <div class="pre-footer-column3" aria-label="Redes sociales">
+          <h3>Síguenos</h3>
+          <nav aria-label="Redes sociales">
+            <ul class="social-links">
+              <li>
+                <a href="#" aria-label="Facebook"
+                  ><img
+                    src="../assets/images/RedesSocialesIcons/logofacebook.png"
+                    alt="Facebook"
+                /></a>
+              </li>
+              <li>
+                <a href="#" aria-label="Twitter"
+                  ><img
+                    src="../assets/images/RedesSocialesIcons/logotwitter.png"
+                    alt="Twitter"
+                /></a>
+              </li>
+              <li>
+                <a href="#" aria-label="Instagram"
+                  ><img
+                    src="../assets/images/RedesSocialesIcons/logoinstagram.png"
+                    alt="Instagram"
+                /></a>
+              </li>
+              <li>
+                <a href="#" aria-label="YouTube"
+                  ><img
+                    src="../assets/images/RedesSocialesIcons/logoyoutube.png"
+                    alt="YouTube"
+                /></a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer
+      class="footer-principal"
+      role="contentinfo"
+      aria-label="Pie de página principal del sitio"
+    >
+      <div class="footer-contenedor">
+        <!-- Logo y nombre -->
+        <div class="footer-logo" aria-label="Logotipo y nombre del sitio">
+          <img
+            src="../assets/images/logo RiffZone.png"
+            alt="Logo de RiffZone Music Store"
+          />
+          <span>RiffZone Music Store</span>
+        </div>
+        <!-- Texto de derechos -->
+        <div class="footer-derechos">
+          <small
+            >&copy; 2025 RiffZone Music Store. Todos los derechos
+            reservados.</small
+          >
+        </div>
+      </div>
     </footer>
 
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/cart.js"></script>
-
     <!-- Modal de Producto Añadido -->
-		
-</body>
+  </body>
 </html>
