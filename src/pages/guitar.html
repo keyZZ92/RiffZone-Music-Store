@@ -4,14 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Guitarras y Bajos - RiffZone Music Store</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
-    />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&display=swap" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" />
     <link rel="stylesheet" href="../css/styles.css" />
   </head>
   <body>
@@ -62,9 +57,13 @@
               >
             </li>
             <li role="none">
-              <a href="#" role="menuitem" aria-label="Carrito"
-                ><i class="bi bi-cart"></i> Carrito</a
-              >
+              <div class="ms-auto"></div>
+                <a href="/pages/carrito.html" role="menuitem" aria-label="Carrito">
+                <i class="bi bi-cart">
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cart-count">
+                    0
+                    </span>
+                </i> Carrito</a>   
             </li>
           </ul>
         </nav>
@@ -94,7 +93,8 @@
         <i class="bi bi-arrow-left"></i>
         Volver
       </button>
-      <h2 id="products-title">Catálogo de Guitarras</h2>
+      <!-- Título principal -->
+      <h2 id="products-title" class="main-title">Catálogo de Guitarras</h2>
       <!-- Filtro por categoría -->
       <nav role="navigation" aria-label="Categorías de productos">
         <ul class="secondary-nav">
@@ -200,171 +200,8 @@
         </ul>
       </nav>
       <!-- Cards de producto -->
-      <div
-        class="row row-cols-1 row-cols-md-3 g-4"
-        role="region"
-        aria-label="Lista de productos de guitarra"
-      >
-        <!-- Guitarra acústica -->
-        <div class="col">
-          <div class="card h-100">
-            <img
-              src="../assets/images/guitar7.png"
-              class="card-img-top"
-              alt="Guitarra Acústica de alta calidad"
-            />
-            <div class="card-body">
-              <h5 class="card-title">Guitarra Acústica</h5>
-              <p class="card-text">Guitarra acústica de alta calidad.</p>
-              <p>
-                <span class="text-muted text-decoration-line-through"
-                  >180€</span
-                >
-                <span class="fw-bold text-danger">150€</span>
-              </p>
-              <button
-                class="btn btn-primary"
-                aria-label="Añadir Guitarra Acústica al carrito"
-              >
-                Añadir al carrito
-              </button>
-            </div>
-          </div>
-        </div>
-        <!-- Guitarra eléctrica-->
-        <div class="col">
-          <div class="card h-100">
-            <img
-              src="../assets/images/guitar3.png"
-              class="card-img-top"
-              alt="Guitarra Eléctrica para músicos avanzados"
-            />
-            <div class="card-body">
-              <h5 class="card-title">Guitarra Eléctrica</h5>
-              <p class="card-text">
-                Guitarra eléctrica para músicos avanzados.
-              </p>
-              <p>
-                <span class="text-muted text-decoration-line-through"
-                  >350€</span
-                >
-                <span class="fw-bold text-danger">300€</span>
-              </p>
-              <button
-                class="btn btn-primary"
-                aria-label="Añadir Guitarra Eléctrica al carrito"
-              >
-                Añadir al carrito
-              </button>
-            </div>
-          </div>
-        </div>
-        <!-- Flamenca-->
-        <div class="col">
-          <div class="card h-100">
-            <img
-              src="../assets/images/guitar12.png"
-              class="card-img-top"
-              alt="Guitarra flamenca tradicional"
-            />
-            <div class="card-body">
-              <h5 class="card-title">Guitarra Flamenca</h5>
-              <p class="card-text">
-                Guitarra flamenca con un diseño tradicional.
-              </p>
-              <p>
-                <span class="text-muted text-decoration-line-through"
-                  >200€</span
-                >
-                <span class="fw-bold text-danger">180€</span>
-              </p>
-              <button
-                class="btn btn-primary"
-                aria-label="Añadir Guitarra Flamenca al carrito"
-              >
-                Añadir al carrito
-              </button>
-            </div>
-          </div>
-        </div>
-        <!-- Guitarra Stratocaster-->
-        <div class="col">
-          <div class="card h-100">
-            <img
-              src="../assets/images/guitar2.png"
-              class="card-img-top"
-              alt="Guitarra estilo Stratocaster"
-            />
-            <div class="card-body">
-              <h5 class="card-title">Guitarra Stratocaster</h5>
-              <p class="card-text">Guitarra eléctrica estilo Stratocaster.</p>
-              <p>
-                <span class="text-muted text-decoration-line-through"
-                  >600€</span
-                >
-                <span class="fw-bold text-danger">550€</span>
-              </p>
-              <button
-                class="btn btn-primary"
-                aria-label="Añadir Guitarra Stratocaster al carrito"
-              >
-                Añadir al carrito
-              </button>
-            </div>
-          </div>
-        </div>
-        <!-- Estilo Les Paul-->
-        <div class="col">
-          <div class="card h-100">
-            <img
-              src="../assets/images/guitar1.png"
-              class="card-img-top"
-              alt="Guitarra estilo Les Paul"
-            />
-            <div class="card-body">
-              <h5 class="card-title">Guitarra Les Paul</h5>
-              <p class="card-text">Guitarra eléctrica estilo Les Paul.</p>
-              <p>
-                <span class="text-muted text-decoration-line-through"
-                  >700€</span
-                >
-                <span class="fw-bold text-danger">650€</span>
-              </p>
-              <button
-                class="btn btn-primary"
-                aria-label="Añadir Guitarra Les Paul al carrito"
-              >
-                Añadir al carrito
-              </button>
-            </div>
-          </div>
-        </div>
-        <!-- Heavy Flying-->
-        <div class="col">
-          <div class="card h-100">
-            <img
-              src="../assets/images/guitar13.jpg"
-              class="card-img-top"
-              alt="Guitarra Heavy Flying"
-            />
-            <div class="card-body">
-              <h5 class="card-title">Guitarra Heavy Flying</h5>
-              <p class="card-text">Guitarra clásica con acabados de lujo.</p>
-              <p>
-                <span class="text-muted text-decoration-line-through"
-                  >900€</span
-                >
-                <span class="fw-bold text-danger">850€</span>
-              </p>
-              <button
-                class="btn btn-primary"
-                aria-label="Añadir Guitarra Heavy Flying al carrito"
-              >
-                Añadir al carrito
-              </button>
-            </div>
-          </div>
-        </div>
+      <div id="guitar-products" class="row row-cols-1 row-cols-md-3 g-4" role="region" aria-label="Lista de productos de guitarra">
+
       </div>
     </main>
 
@@ -501,10 +338,155 @@
       </div>
     </footer>
 
+    <!-- Modal de inicio de sesión -->
+    <div
+      class="modal fade"
+      id="loginModal"
+      tabindex="-1"
+      aria-labelledby="loginModalLabel"
+      aria-hidden="true"
+      aria-modal="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <form aria-label="Formulario de inicio de sesión">
+            <!-- Cabecera del modal: título y botón de cerrar -->
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="loginModalLabel">
+                Iniciar Sesión
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Cerrar ventana de inicio de sesión"
+              ></button>
+            </div>
+            <!-- Cuerpo del modal: formulario de usuario y contraseña -->
+            <div class="modal-body">
+              <div class="mb-3">
+                <label for="user" class="form-label">Usuario</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="user"
+                  aria-required="true"
+                  aria-label="Usuario"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="inputPassword" class="form-label">Contraseña</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="inputPassword"
+                  aria-required="true"
+                  aria-label="contraseña"
+                  required
+                />
+              </div>
+              <!-- Footer del modal: botón de entrar y crear usuario -->
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                  aria-label="Entrar"
+                >
+                  Entrar
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  aria-label="Ir a crear nueva cuenta"
+                >
+                  Crear Usuario
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/cart.js"></script>
     <!-- Modal de Producto Añadido -->
+    <!-- Contador del carrito -->
+    <script src="../js/cart.js"></script>
+    <script src="../js/cart.js"></script>
+    <script>
+      // Guarda la URL actual como última página visitada
+      localStorage.setItem('ultimaPagina', window.location.href);
+
+      // Cargar productos de guitarra y bajos dinámicamente
+      fetch('../assets/data/products.json')
+        .then(res => res.json())
+        .then(data => {
+          // Filtrar guitarras y bajos
+          const guitarras = data.filter(p =>
+            p.category && (p.category.includes('guitar') || p.category.includes('basses'))
+          );
+          const contenedor = document.getElementById('guitar-products');
+          guitarras.forEach(producto => {
+            const card = document.createElement('div');
+            card.className = 'col';
+            card.innerHTML = `
+              <div class="card h-100">
+                <img src="${producto.image}" class="card-img-top" alt="${producto.name}">
+                <div class="card-body">
+                  <h5 class="card-title">${producto.name}</h5>
+                  <p class="card-text">${producto.description || ''}</p>
+                  <p>
+                    <span class="text-muted text-decoration-line-through">${producto.price}€</span>
+                    <span class="fw-bold text-danger">${producto.offerPrice}€</span>
+                  </p>
+                  <button
+                    class="btn btn-primary btn-add-cart"
+                    data-producto='${JSON.stringify({
+                      id: producto.id,
+                      nombre: producto.name,
+                      precio: producto.offerPrice,
+                      image: producto.image,
+                      description: producto.description
+                    })}'
+                    aria-label="Añadir ${producto.name} al carrito"
+                  >
+                    Añadir al carrito
+                  </button>
+                </div>
+              </div>
+            `;
+            contenedor.appendChild(card);
+          });
+
+          // Añadir funcionalidad a los botones
+          document.querySelectorAll('.btn-add-cart').forEach(btn => {
+            btn.addEventListener('click', function () {
+              const producto = JSON.parse(this.getAttribute('data-producto'));
+              let carrito = localStorage.getItem('carrito');
+              carrito = carrito ? JSON.parse(carrito) : [];
+              // Buscar si ya existe el producto
+              const idx = carrito.findIndex(p => p.id === producto.id);
+              if (idx !== -1) {
+                carrito[idx].cantidad += 1;
+              } else {
+                producto.cantidad = 1;
+                carrito.push(producto);
+              }
+              localStorage.setItem('carrito', JSON.stringify(carrito));
+              if (typeof actualizarContadorCarrito === 'function') {
+                actualizarContadorCarrito();
+              }
+              // Feedback visual
+              this.textContent = "¡Añadido!";
+              setTimeout(() => { this.textContent = "Añadir al carrito"; }, 1000);
+            });
+          });
+        });
+    </script>
   </body>
 </html>
