@@ -251,6 +251,7 @@ app.post("/api/cart", (req, res) => {
   });
 });
 
+
 // formulario de contacto
 app.post("/api/contacto", (req, res) => {
   const { nombre, email, mensaje, telefono } = req.body;
@@ -284,6 +285,13 @@ app.post("/api/contacto", (req, res) => {
       res.status(200).json({ mensaje: "Mensaje recibido correctamente." });
     });
   });
+});
+
+
+// Endpoint para obtener la clave de la API de Google Maps
+app.get("/api/google-maps-key", (req, res) => {
+  const googleMapsApiKey = "AIzaSyBZixuMMJuXiVXq7GItB6L3puwHJ2wf77E"; // Reemplaza con tu clave real
+  res.json({ apiKey: googleMapsApiKey });
 });
 
 
