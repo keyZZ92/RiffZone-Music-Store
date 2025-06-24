@@ -251,6 +251,12 @@ app.post("/api/cart", (req, res) => {
   });
 });
 
+// Endpoint para obtener la clave de la API de Google Maps
+app.get("/api/google-maps-key", (req, res) => {
+  const googleMapsApiKey = "AIzaSyBZixuMMJuXiVXq7GItB6L3puwHJ2wf77E"; // Reemplaza con tu clave real
+  res.json({ apiKey: googleMapsApiKey });
+});
+
 // Redirigir la raíz al index.html de pages
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "src/pages/index.html"));
