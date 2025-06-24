@@ -976,3 +976,26 @@ main,
 .team-card-info-panel h5 {
   margin-bottom: 1rem;
 }
+
+#map {
+  max-width: 100%; /* Asegura que no se desborde */
+  width: 90vw; /* Ancho relativo a la ventana */
+  height: 300px;
+  margin: 2rem auto 0;
+  background: #e9ecef;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  font-size: 1.2rem;
+  box-sizing: border-box; /* Incluye padding y border en el ancho */
+  padding: 0 1rem; /* Espaciado interno para evitar desbordes */
+}
+
+@media (max-width: 768px) {
+  #map {
+    width: calc(100% - 2rem); /* Ajusta el ancho para pantallas pequeñas */
+    margin: 2rem 1rem 0; /* Márgenes laterales para evitar desbordes */
+  }
+}

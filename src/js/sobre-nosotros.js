@@ -21,6 +21,7 @@ $(document).ready(function () {
       script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&callback=initMap`;
       script.async = true;
       script.defer = true;
+      script.setAttribute("loading", "lazy");
       document.body.appendChild(script);
     })
     .catch((error) => {
@@ -40,7 +41,8 @@ $(document).ready(function () {
       streetViewControl: false,
       fullscreenControl: false,
     });
-    var marker = new google.maps.Marker({
+
+    const marker = new google.maps.Marker({
       position: madrid,
       map: map,
       title: "RiffZone Music Store (Ubicación ficticia)",
