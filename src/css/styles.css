@@ -734,3 +734,88 @@ main,
   transform: none !important;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
+
+/* Mejorar estilo de las cards del carrito */
+#cart-items .card-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1rem 1.2rem;
+}
+
+#cart-items .card-title {
+  font-weight: bold;
+  font-size: 1.15rem;
+  color: #222;
+  margin-bottom: 0.3rem;
+}
+
+#cart-items .card-text {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 0.2rem;
+  font-weight: 500;
+}
+
+#cart-items .card-body > div:first-child {
+  flex: 1 1 auto;
+}
+
+#cart-items .d-flex.flex-column.gap-2 {
+  gap: 0.5rem !important;
+  align-items: flex-end;
+  min-width: 48px;
+}
+
+#cart-items .btn {
+  font-size: 1rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+/* Botón añadir (verde) y eliminar (rojo) del carrito: colores claros y símbolos bien visibles */
+#cart-items .btn-success {
+  background-color: #28a745;
+  color: #fff;
+  border: 2px solid #28a745;
+  font-weight: bold;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+}
+#cart-items .btn-danger {
+  background-color: #dc3545;
+  color: #fff;
+  border: 2px solid #dc3545;
+  font-weight: bold;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+}
+/* Cambios al hacer hover: fondo blanco, borde de color, símbolo negro */
+#cart-items .btn-success:hover {
+  background-color: #fff !important;
+  color: #28a745 !important;
+  border: 2px solid #28a745 !important;
+  opacity: 1;
+}
+#cart-items .btn-danger:hover {
+  background-color: #fff !important;
+  color: #dc3545 !important;
+  border: 2px solid #dc3545 !important;
+  opacity: 1;
+}
+
+#cart-items .col-md-2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 0.2rem 0.5rem 0.5rem;
+}
+
+#cart-items .img-fluid {
+  max-width: 70px;
+  max-height: 70px;
+  border-radius: 8px;
+  border: 1px solid #eee;
+  background: #fafafa;
+}
+

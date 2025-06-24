@@ -88,6 +88,7 @@
     <div class="mt-4 d-flex gap-3">
       <button class="btn btn-primary" onclick="window.location.href='index.html'">Volver a Home</button>
       <button class="btn btn-secondary" id="seguir-comprando">Seguir comprando</button>
+      <button class="btn btn-success" id="btn-pagar">Pagar</button>
     </div>
   </div>
 
@@ -234,7 +235,7 @@
       </div>
     </footer>
 
-    <!-- Modal de inicio de sesión -->
+    <!-- Modal de inicio de sesión para acciones restringidas -->
     <div
       class="modal fade"
       id="loginModal"
@@ -245,63 +246,28 @@
     >
       <div class="modal-dialog" role="document">
         <div class="modal-content">
-          <form aria-label="Formulario de inicio de sesión">
-            <!-- Cabecera del modal: título y botón de cerrar -->
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="loginModalLabel">
-                Iniciar Sesión
-              </h1>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Cerrar ventana de inicio de sesión"
-              ></button>
-            </div>
-            <!-- Cuerpo del modal: formulario de usuario y contraseña -->
-            <div class="modal-body">
-              <div class="mb-3">
-                <label for="user" class="form-label">Usuario</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="user"
-                  aria-required="true"
-                  aria-label="Usuario"
-                  required
-                />
-              </div>
-              <div class="mb-3">
-                <label for="inputPassword" class="form-label">Contraseña</label>
-                <input
-                  type="password"
-                  class="form-control"
-                  id="inputPassword"
-                  aria-required="true"
-                  aria-label="contraseña"
-                  required
-                />
-              </div>
-              <!-- Footer del modal: botón de entrar y crear usuario -->
-              <div class="modal-footer">
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  data-bs-dismiss="modal"
-                  aria-label="Entrar"
-                >
-                  Entrar
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-primary"
-                  aria-label="Ir a crear nueva cuenta"
-                >
-                  Crear Usuario
-                </button>
-              </div>
-            </div>
-          </form>
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="loginModalLabel">
+              ¿Tienes cuenta?
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Cerrar ventana de inicio de sesión"
+            ></button>
+          </div>
+          <div class="modal-body">
+            Inicia sesión para continuar.
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="window.location.href='login.html'"> <!-- Cambia 'login.html' por la URL de tu página de inicio de sesión -->
+              Ir a iniciar sesión
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -311,15 +277,27 @@
   <script src="../js/cart.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-        // Botón "Seguir comprando"
-        const btnSeguir = document.getElementById('seguir-comprando');
-        if (btnSeguir) {
+      // Botón "Seguir comprando"
+      const btnSeguir = document.getElementById('seguir-comprando');
+      if (btnSeguir) {
         btnSeguir.addEventListener('click', function () {
-            const ultima = localStorage.getItem('ultimaPagina') || 'index.html';
-            window.location.href = ultima;
+          const ultima = localStorage.getItem('ultimaPagina') || 'index.html';
+          window.location.href = ultima;
         });
-        }
+      }
+      // Botón "Pagar"
+      const btnPagar = document.getElementById('btn-pagar');
+      if (btnPagar) {
+        btnPagar.addEventListener('click', function () {
+          if (typeof requireLogin === 'function') {
+            if (requireLogin()) {
+              alert('¡Gracias por tu compra! (Simulación de pago)');
+              // Aquí puedes añadir la lógica real de pago o redirección
+            }
+          }
+        });
+      }
     });
   </script>
-  </body>
+</body>
 </html>
