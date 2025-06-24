@@ -251,11 +251,49 @@ app.post("/api/cart", (req, res) => {
   });
 });
 
+
+// formulario de contacto
+app.post("/api/contacto", (req, res) => {
+  const { nombre, email, mensaje, telefono } = req.body;
+  console.log("Datos recibidos:", req.body);
+
+  if (!nombre || !email || !mensaje) {
+    return res.status(400).json({ error: "Todos los campos son obligatorios." });
+  }
+
+  const contacto = { nombre, email, mensaje, telefono: telefono || "", fecha: new Date().toISOString() };
+  const contactosPath = path.join(__dirname, "backend/data/contacto.json");
+
+  fs.readFile(contactosPath, "utf8", (err, data) => {
+    let contactos = [];
+    if (!err && data) {
+      try {
+        contactos = JSON.parse(data);
+      } catch (parseErr) {
+        console.error("Error al parsear contactos anteriores:", parseErr);
+      }
+    }
+
+    contactos.push(contacto);
+
+    fs.writeFile(contactosPath, JSON.stringify(contactos, null, 2), (err) => {
+      if (err) {
+        console.error("Error al guardar contacto:", err);
+        return res.status(500).json({ error: "No se pudo guardar el mensaje." });
+      }
+
+      res.status(200).json({ mensaje: "Mensaje recibido correctamente." });
+    });
+  });
+});
+
+
 // Endpoint para obtener la clave de la API de Google Maps
 app.get("/api/google-maps-key", (req, res) => {
   const googleMapsApiKey = "AIzaSyBZixuMMJuXiVXq7GItB6L3puwHJ2wf77E"; // Reemplaza con tu clave real
   res.json({ apiKey: googleMapsApiKey });
 });
+
 
 // Redirigir la raíz al index.html de pages
 app.get("/", (req, res) => {
