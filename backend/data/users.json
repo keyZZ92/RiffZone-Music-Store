@@ -3,5 +3,41 @@
     "username": "testuser",
     "password": "testpassword",
     "email": "testuser@email.com"
+  },
+  {
+    "username": "JoséManuel",
+    "password": "Martos",
+    "email": "jmmartos@email.com"
+  },
+  {
+    "username": "AaronPesqueira",
+    "password": "Fariña",
+    "email": "apesqueira@email.com"
+  },
+  {
+    "username": "KeylianiOliver",
+    "password": "Oliver",
+    "email": "koliver@email.com"
+  },
+  {
+    "username": "AndreaBoedo",
+    "password": "Arnedo",
+    "email": "abarnedo@email.com"
+  },
+ {
+    "username": "RamonRamos",
+    "password": "contratarnosporfa",
+    "email": "rramos@email.com"
+  },
+ {
+    "username": "IvanGarcia",
+    "password": "equipocontratado",
+    "email": "igarcia@email.com"
+  },
+ {
+    "username": "IvonneMorgan",
+    "password": "yoosapoyoequipo",
+    "email": "imorgan@email.com"
   }
-]
+ 
+ ]

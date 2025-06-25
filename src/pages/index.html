@@ -91,7 +91,7 @@
         <!-- botón de inicio de sesión -->
         <button
           class="login-button"
-          id="btnLogin"
+          id="loginBtn"
           data-bs-toggle="modal"
           data-bs-target="#loginModal"
           aria-label="Iniciar sesión en la tienda RiffZone Music Store"
@@ -491,86 +491,196 @@
       </div>
     </footer>
 
-    <!-- Modal de inicio de sesión -->
-    <div
-      class="modal fade"
-      id="loginModal"
-      tabindex="-1"
-      aria-labelledby="loginModalLabel"
-      aria-hidden="true"
-      aria-modal="true"
-    >
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <form aria-label="Formulario de inicio de sesión">
-            <!-- Cabecera del modal: título y botón de cerrar -->
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="loginModalLabel">
-                Iniciar Sesión
-              </h1>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Cerrar ventana de inicio de sesión"
-              ></button>
-            </div>
-            <!-- Cuerpo del modal: formulario de usuario y contraseña -->
-            <div class="modal-body">
-              <div class="mb-3">
-                <label for="user" class="form-label">Usuario</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="user"
-                  aria-required="true"
-                  aria-label="Usuario"
-                  required
-                />
-              </div>
-              <div class="mb-3">
-                <label for="inputPassword" class="form-label">Contraseña</label>
-                <input
-                  type="password"
-                  class="form-control"
-                  id="inputPassword"
-                  aria-required="true"
-                  aria-label="contraseña"
-                  required
-                />
-              </div>
-              <!-- Footer del modal: botón de entrar y crear usuario -->
-              <div class="modal-footer">
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  data-bs-dismiss="modal"
-                  aria-label="Entrar"
-                >
-                  Entrar
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-primary"
-                  aria-label="Ir a crear nueva cuenta"
-                >
-                  Crear Usuario
-                </button>
-              </div>
-            </div>
-          </form>
+<!-- Botón para abrir modal de inicio de sesión se encuentra en header para no duplicarlo -->
+
+
+<!-- Saludo al usuario -->
+<span id="userWelcome" style="display:none; margin-left: 15px;">
+  Hola, <span id="userName"></span>
+</span>
+
+<!-- Botón para cerrar sesión -->
+<button id="logoutBtn" class="btn btn-danger" style="display:none; margin-left: 15px;">
+  Cerrar sesión
+</button>
+
+<!-- Modal de inicio de sesión -->
+  <div
+    class="modal fade"
+    id="loginModal"
+    tabindex="-1"
+    aria-labelledby="loginModalLabel"
+    aria-modal="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <form id="loginForm" aria-label="Formulario de inicio de sesión">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="loginModalLabel">Iniciar Sesión</h1>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Cerrar ventana de inicio de sesión"></button>
         </div>
-      </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              aria-required="true"
+              aria-label="Correo electrónico"
+              required/>
+          </div>
+          <div class="mb-3">
+            <label for="inputPassword" class="form-label">Contraseña</label>
+            <input
+              type="password"
+              class="form-control"
+              id="inputPassword"
+              aria-required="true"
+              aria-label="Contraseña"
+              required/>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-secondary" aria-label="Entrar">
+            Entrar </button>
+          <button
+            type="button"
+            class="btn btn-primary"
+            aria-label="Ir a crear nueva cuenta">
+            Crear Usuario </button>
+        </div>
+      </form>
     </div>
+  </div>
+</div>
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/auth.js"></script>
+<<<<<<< integracion-prueba
     <script src="../js/app.js"></script>
     <script src="../js/utils.js"></script>
     <!-- Carrusel de imágenes -->
     <script src="../js/carrusel.js"></script>
         <!-- Contador del carrito -->
     <script src="../js/cart.js"></script>    
+=======
+    <script src="../js/login.js"></script>
+    
+    <!-- Script carrusel manual productos y testimonios -->
+    <script>
+      // Carrusel de productos
+      document.addEventListener("DOMContentLoaded", function () {
+        const items = document.querySelectorAll(".product-item");
+        const prevBtn = document.querySelector(".carousel-control.prev");
+        const nextBtn = document.querySelector(".carousel-control.next");
+        let current = 0;
+        let productInterval;
+
+        function showItem(index) {
+          items.forEach((item, i) => {
+            item.classList.toggle("active", i === index);
+          });
+        }
+
+        function nextProduct() {
+          current = (current + 1) % items.length;
+          showItem(current);
+        }
+
+        function prevProduct() {
+          current = (current - 1 + items.length) % items.length;
+          showItem(current);
+        }
+
+        prevBtn.addEventListener("click", () => {
+          prevProduct();
+          resetProductInterval();
+        });
+
+        nextBtn.addEventListener("click", () => {
+          nextProduct();
+          resetProductInterval();
+        });
+
+        function resetProductInterval() {
+          clearInterval(productInterval);
+          productInterval = setInterval(nextProduct, 4000); // 4 segundos
+        }
+
+        productInterval = setInterval(nextProduct, 4000); // 4 segundos
+      });
+
+      // Carrusel de testimonios
+      document.addEventListener("DOMContentLoaded", function () {
+        const testimonials = document.querySelectorAll(
+          ".testimonials-carousel-inner .testimonial-card"
+        );
+        const dotsContainer = document.querySelector(".testimonial-dots");
+        let currentTest = 0;
+        let testimonialInterval;
+
+        // Crear puntos dinámicamente
+        testimonials.forEach((_, i) => {
+          const dot = document.createElement("button");
+          dot.className = "testimonial-dot" + (i === 0 ? " active" : "");
+          dot.type = "button";
+          dot.setAttribute("aria-label", `Ver testimonio ${i + 1}`);
+          dot.addEventListener("click", () => {
+            showTestimonial(i);
+            resetTestimonialInterval();
+            dot.blur(); // <-- Añade esta línea para quitar el foco tras pulsar
+          });
+          dotsContainer.appendChild(dot);
+        });
+        const dots = dotsContainer.querySelectorAll(".testimonial-dot");
+
+        function showTestimonial(index) {
+          testimonials.forEach((item, i) => {
+            item.classList.toggle("testimonial-active", i === index);
+            dots[i].classList.toggle("active", i === index);
+          });
+          currentTest = index;
+        }
+
+        function nextTestimonial() {
+          showTestimonial((currentTest + 1) % testimonials.length);
+        }
+
+        function resetTestimonialInterval() {
+          clearInterval(testimonialInterval);
+          testimonialInterval = setInterval(nextTestimonial, 10000);
+        }
+
+        testimonialInterval = setInterval(nextTestimonial, 10000);
+      });
+
+      // Quitar el foco de los controles de ambos carruseles tras hacer clic
+      document.addEventListener("DOMContentLoaded", function () {
+        // Carrusel de productos
+        document.querySelectorAll(".carousel-control").forEach((btn) => {
+          btn.addEventListener("mouseup", function () {
+            this.blur();
+          });
+        });
+        // Carrusel de testimonios
+        document.querySelectorAll(".testimonial-control").forEach((btn) => {
+          btn.addEventListener("mouseup", function () {
+            this.blur();
+          });
+        });
+      });
+    </script>
+    <!-- Contador del carrito -->
+    <script src="../js/cart.js"></script>
+    <script>
+      // Guarda la URL actual como última página visitada
+      localStorage.setItem('ultimaPagina', window.location.href);
+    </script>
+>>>>>>> grupo2_ms_dev_andrea_b
   </body>
 </html>
