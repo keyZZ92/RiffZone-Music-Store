@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>RiffZone Music Store</title>
+    <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&display=swap"
+    />
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/contact.css" />
+</head>
+
+<body>
+    <!-- Cabecera de la página -->
+    <header
+        class="header"
+        role="banner"
+        aria-label="Encabezado principal de RiffZone Music Store">
+        <div class="header-container">
+            <div class="logo-section" aria-label="Logo de RiffZone Music Store">
+            <a
+            href="/pages/index.html"
+            style="
+                display: flex;
+                align-items: center;
+                gap: 0.2rem;
+                text-decoration: none;
+            "
+            >
+            <img
+                src="../assets/images/logo RiffZone.png"
+                alt="Logo de RiffZone Music Store"
+            />
+            <h1>RiffZone Music Store</h1>
+            </a>
+        </div>
+        <!-- barra de navegación principal -->
+        <nav
+            class="nav-header"
+            role="navigation"
+            aria-label="barra de navegación principal"
+        >
+            <ul class="nav-list" role="menubar">
+            <li role="none">
+                <a href="#" role="menuitem" aria-label="Servicio"
+                ><i class="bi bi-tools"></i> Servicio</a
+                >
+            </li>
+            <li role="none">
+                <a href="../pages/contact.html" role="menuitem" aria-label="Contacto"
+                ><i class="bi bi-envelope"></i> Contacto</a
+                >
+            </li>
+            <li role="none">
+                <a
+                href="/pages/sobre-nosotros.html"
+                role="menuitem"
+                aria-label="Sobre Nosotros"
+                >
+                <i class="bi bi-info-circle"></i> Sobre Nosotros
+                </a>
+            </li>
+            <li role="none">
+                <div class="ms-auto"></div>
+                <a
+                href="/pages/carrito.html"
+                role="menuitem"
+                aria-label="Carrito"
+                >
+                <i class="bi bi-cart">
+                    <span
+                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                    id="cart-count"
+                    >
+                    0
+                    </span>
+                </i>
+                Carrito</a
+                >
+            </li>
+            </ul>
+        </nav>
+            <!-- botón de inicio de sesión -->
+            <button
+                class="login-button"
+                id="btnLogin"
+                data-bs-toggle="modal"
+                data-bs-target="#loginModal"
+                aria-label="Iniciar sesión en la tienda RiffZone Music Store">
+                <i class="bi bi-person" aria-hidden="true"></i>
+                Inicio de Sesión
+            </button>
+        </div>
+    </header>
+<main class="zona-contacto">
+    <div class="contacto-contenedor">
+        <!-- botón de volver-->
+    <button
+        class="volver-button"
+        id="btnvolver"
+        onclick="location.href='../pages/index.html';"
+        aria-label="Volver a la tienda RiffZone Music Store">
+        <i class="bi bi-arrow-left"></i>
+        Volver
+    </button>
+    <!-- FORMULARIO -->
+    <form id="formContacto" class="formulario-box" novalidate role="form" aria-labelledby="Contacto">
+        <h2 id="tituloContacto" class="mb-4">Formulario de contacto</h2>
+        <!-- Nombre -->
+        <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre<span aria-hidden="true">*</span></label>
+            <input
+            type="text"
+            class="form-control"
+            id="nombre"
+            name="nombre"
+            required
+            aria-required="true"
+            aria-label="Nombre completo"
+            aria-describedby="errorNombre"/>
+            <div id="errorNombre" class="invalid-feedback" role="alert">El nombre es obligatorio (mínimo 2 caracteres).</div>
+        </div>
+        <!-- Email -->
+        <div class="mb-3">
+            <label for="email" class="form-label">Correo electrónico <span aria-hidden="true">*</span></label>
+            <input
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            required
+            aria-required="true"
+            aria-label="Correo electrónico"
+            aria-describedby="errorEmail"/>
+            <div id="errorEmail" class="invalid-feedback" role="alert">Introduce un correo válido.</div>
+        </div>
+        <!-- Asunto -->
+        <div class="mb-3">
+            <label for="asunto" class="form-label">Asunto</label>
+            <select
+            class="form-select"
+            id="asunto"
+            name="asunto"
+            aria-label="Selecciona un asunto para enviar el mensaje">
+            <option value="">Selecciona una opción</option>
+            <option value="consulta">Consulta</option>
+            <option value="sugerencia">Sugerencia</option>
+            <option value="soporte">Soporte</option>
+            <option value="otro">Otro</option>
+            </select>
+        </div>
+        <!-- Mensaje -->
+        <div class="mb-3">
+            <label for="mensaje" class="form-label">Mensaje <span aria-hidden="true">*</span></label>
+            <textarea
+            class="form-control"
+            id="mensaje"
+            name="mensaje"
+            rows="4"
+            required
+            aria-required="true"
+            aria-label="Mensaje"
+            aria-describedby="errorMensaje"></textarea>
+            <div id="contadorMensaje" class="form-text text-end" aria-live="polite">0 / 100 caracteres</div>
+            <div id="errorMensaje" class="invalid-feedback" role="alert">El mensaje es obligatorio (mínimo 10 caracteres de longitud).</div>
+        </div>
+        <!-- Teléfono -->
+        <div class="mb-3">
+            <label for="telefono" class="form-label">Teléfono</label>
+            <input
+            type="text"
+            class="form-control"
+            id="telefono"
+            name="telefono"
+            aria-label="Teléfono de contacto"
+            aria-describedby="errorTelefono"/>
+            <div id="errorTelefono" class="invalid-feedback" role="alert">El teléfono debe tener al menos 7 dígitos válidos.</div>
+        </div>
+        <!-- Botón -->
+        <button type="submit" class="btn btn-primary" aria-label="Enviar formulario de contacto">Enviar</button>
+        <!-- Mensaje de éxito -->
+        <div
+            id="mensajeExito"
+            class="alert alert-success mt-3 d-none"
+            role="status"
+            aria-live="polite">Mensaje enviado correctamente.
+        </div>
+    </form>
+
+    <!-- HORARIO -->
+    <aside class="horario-box" aria-labelledby="horaio">
+        <div class="logo-horario" aria-label="Logo de RiffZone Music Store">
+            <a href="/pages/index.html">
+            <img
+                src="../assets/images/logo RiffZone.png"
+                alt="Logo de RiffZone Music Store"/>
+            </a>
+        </div>
+    <h3 id="tituloHorario">Horario de atención</h3>
+    <p>
+        Lunes a Viernes: 9:30 - 18:30<br>
+        Sábados: 10:00 - 14:00<br>
+        Domingos: Cerrado
+    </p>
+    </aside>
+    </div>
+</main>
+<!-- Pre-footer -->
+    <section class="pre-footer" aria-label="Información de contacto">
+        <div class="pre-footer-container">
+        <!-- Columna 1: Métodos de pago -->
+        <div class="pre-footer-column1" aria-labelledby="metodos-pagos">
+            <h3 id="metodos-pagos">Métodos de pago</h3>
+            <div class="payment-methods">
+            <a
+                href="https://www.paypal.com"
+                target="_blank"
+                rel="noopener"
+                aria-label="PayPal">
+                <img src="../assets/images/icons8-paypal-48.png" alt="PayPal" />
+            </a>
+            <a
+                href="https://www.visa.com"
+                target="_blank"
+                rel="noopener"
+                aria-label="Visa">
+                <img src="../assets/images/icons8-visa-48 (1).png" alt="Visa" />
+            </a>
+            <a
+                href="https://www.mastercard.es"
+                target="_blank"
+                rel="noopener"
+                aria-label="MasterCard">
+                <img src="../assets/images/icons8-mastercard-48.png" alt="MasterCard"/>
+            </a>
+            <a
+                href="https://www.americanexpress.com"
+                target="_blank"
+                rel="noopener"
+                aria-label="American Express">
+                <img src="../assets/images/icons8-american-express-al-cuadrado-48.png" alt="American Express"/>
+            </a>
+            </div>
+        </div>
+        <!-- Columna 2: Ventajas -->
+        <div
+            class="pre-footer-column2"
+            aria-labelledby="ventajas de usar RiffZone Music Store"
+            >
+            <h3 id="ventajas-title">
+            Ventajas de comprar en RiffZone Music Store
+            </h3>
+            <ul>
+                <li>Garantía de calidad</li>
+                <li>Devolución fácil y rápida</li>
+                <li>Servicio técnico</li>
+                <li>Asesoramiento personalizado</li>
+            </ul>
+        </div>
+        <!-- Columna 3: Redes sociales de contacto -->
+        <div class="pre-footer-column3" aria-label="Redes sociales">
+            <h3>Síguenos</h3>
+            <nav aria-label="Redes sociales">
+            <ul class="social-links">
+                <li>
+                <a href="#" aria-label="Facebook">
+                    <img src="../assets/images/RedesSocialesIcons/logofacebook.png" alt="Facebook"/></a>
+                </li>
+                <li>
+                <a href="#" aria-label="Twitter">
+                    <img src="../assets/images/RedesSocialesIcons/logotwitter.png" alt="Twitter"/></a>
+                </li>
+                <li>
+                <a href="#" aria-label="Instagram">
+                    <img src="../assets/images/RedesSocialesIcons/logoinstagram.png" alt="Instagram"/></a>
+                </li>
+                <li>
+                <a href="#" aria-label="YouTube">
+                    <img src="../assets/images/RedesSocialesIcons/logoyoutube.png"alt="YouTube"/></a>
+                </li>
+            </ul>
+            </nav>
+        </div>
+    </div>
+    </section>
+    <!-- Footer -->
+    <footer
+        class="footer-principal"
+        role="contentinfo"
+        aria-label="Pie de página principal del sitio"
+        >
+    <div class="footer-contenedor">
+    <!-- Logo y nombre -->
+        <div class="footer-logo" aria-label="Logotipo y nombre del sitio">
+            <img src="../assets/images/logo RiffZone.png" alt="Logo de RiffZone Music Store"/>
+            <span>RiffZone Music Store</span>
+        </div>
+        <!-- Texto de derechos -->
+        <div class="footer-derechos">
+            <small>&copy; 2025 RiffZone Music Store. Todos los derechos reservados.</small>
+        </div>
+    </div>
+    </footer>
+
+<!-- Modal de inicio de sesión -->
+    <div
+        class="modal fade"
+        id="loginModal"
+        tabindex="-1"
+        aria-labelledby="loginModalLabel"
+        aria-hidden="true"
+        aria-modal="true">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <form aria-label="Formulario de inicio de sesión">
+            <!-- Cabecera del modal: título y botón de cerrar -->
+            <div class="modal-header">
+            <h1 class="modal-title fs-5" id="loginModalLabel">
+                Iniciar Sesión
+            </h1>
+            <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Cerrar ventana de inicio de sesión">
+            </button>
+            </div>
+            <!-- Cuerpo del modal: formulario de usuario y contraseña -->
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label for="user" class="form-label">Usuario</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="user"
+                        aria-required="true"
+                        aria-label="Usuario"
+                        required/>
+                </div>
+                <div class="mb-3">
+                    <label for="inputPassword" class="form-label">Contraseña</label>
+                    <input
+                        type="password"
+                        class="form-control"
+                        id="inputPassword"
+                        aria-required="true"
+                        aria-label="contraseña"
+                        required/>
+                </div>
+            <!-- Footer del modal: botón de entrar y crear usuario -->
+                <div class="modal-footer">
+                    <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                    aria-label="Entrar">Entrar
+                    </button>
+                    <button
+                    type="button"
+                    class="btn btn-primary"
+                    aria-label="Ir a crear nueva cuenta">Crear Usuario
+                    </button>
+                </div>
+            </div>
+        </form>
+        </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/app.js"></script>
+
+    <!-- Script -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../js/contact.js"></script>
+    <!-- Contador del carrito -->
+    <script src="../js/cart.js"></script> 
+</body>
+</html>
