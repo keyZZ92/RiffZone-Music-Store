@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 
+=======
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&display=swap");
+/* =========================
+   Reset y configuración base
+========================= */
+>>>>>>> 112127e1703a90c1888598415a285a714dd12a7b
 * {
   margin: 0;
   padding: 0;
@@ -10,8 +17,13 @@ body {
   padding: 0;
   box-sizing: border-box;
   background-color: #e4ecf4 !important;
+<<<<<<< HEAD
 }
 
+=======
+  overflow-x: hidden;
+}
+>>>>>>> 112127e1703a90c1888598415a285a714dd12a7b
 
 /* =========================
    Header y navegación principal
@@ -67,6 +79,7 @@ body {
   display: flex;
   align-items: center;
 }
+
 .nav-list {
   list-style: none;
   display: flex;
@@ -76,13 +89,17 @@ body {
 }
 .nav-list a {
   text-decoration: none;
-  color: #e89229;
+  color: #007bff;
   font-weight: bold;
   font-size: 0.95rem;
   position: relative;
 }
 .nav-list a:hover {
+<<<<<<< HEAD
  background-color: rgba(233, 146, 41, 0.1);
+=======
+  color: #000000;
+>>>>>>> 112127e1703a90c1888598415a285a714dd12a7b
 }
 .login-button {
   display: flex;
@@ -117,11 +134,11 @@ body {
   .header-container,
   .header-container-guitar {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 1rem;
   }
   .nav-list {
-    flex-direction: column;
+    flex-direction: row;
     gap: 1rem;
   }
   .logo-section h1 {
@@ -132,6 +149,332 @@ body {
   }
 }
 
+<<<<<<< HEAD
+=======
+/* =========================
+   Diseño cards de guitarra
+========================= */
+/*boton de volver */
+.volver-button {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: transparent;
+  color: #222;
+  border: 2px solid #222;
+  padding: 0.4rem 1rem;
+  border-radius: 0.25rem;
+  font-family: "Oswald", sans-serif;
+  font-size: 0.95rem;
+  font-weight: bold;
+  transition: background 0.3s, color 0.3s;
+  margin-right: 50rem;
+  margin-top: 2rem;
+}
+.volver-button:hover {
+  background-color: #222;
+  color: white;
+}
+
+.guitar-card,
+.card {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #fff;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+.guitar-card:hover,
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.guitar-card img,
+.card-img-top {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-bottom: 1px solid #eee;
+}
+.guitar-card-body,
+.card-body {
+  padding: 1rem;
+}
+.guitar-card h5,
+.card-title {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+.guitar-card p,
+.card-text {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+.price-regular,
+.text-decoration-line-through {
+  color: #999;
+  text-decoration: line-through;
+  margin-right: 0.5rem;
+}
+.price-offer,
+.fw-bold.text-danger {
+  color: #e53935;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+.guitar-card .btn-add,
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.guitar-card .btn-add:hover,
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* =========================
+   Filtros de categorías
+========================= */
+.guitar-filter,
+.secondary-nav {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 2rem auto;
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  max-width: 90vw;
+}
+.guitar-filter button {
+  background: #f8f9fa;
+  border: 1px solid #ccc;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.guitar-filter button:hover,
+.guitar-filter button:focus {
+  background-color: #007bff;
+  color: white;
+  outline: none;
+}
+.secondary-nav li a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #007bff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+.secondary-nav li a:hover,
+.secondary-nav li a:focus {
+  color: #000000;
+  outline: none;
+}
+.secondary-nav img {
+  transition: transform 0.3s ease;
+}
+.secondary-nav li a:hover img,
+.secondary-nav li a:focus img {
+  transform: scale(1.2);
+}
+
+/* =========================
+   Carrusel de productos
+========================= */
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  min-width: 300px;
+  min-height: 350px;
+  margin: 0 auto 3rem auto;
+  overflow: visible;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+}
+
+.product-item {
+  display: none;
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+}
+
+.product-item.active {
+  display: block;
+}
+
+.carousel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 50px;
+  height: 50px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.carousel-control:hover,
+.carousel-control:focus {
+  background-color: #000;
+  color: #fff;
+  transform: translateY(-50%) scale(1.1);
+  outline: none;
+}
+
+.carousel-control.prev {
+  left: -60px;
+}
+.carousel-control.next {
+  right: -60px;
+}
+
+/* =========================
+   Testimonios (carrusel de opiniones)
+========================= */
+.testimonials-carousel {
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  max-width: 90vw;
+  width: 700px;
+}
+.testimonials-carousel h2 {
+  margin: 2rem auto;
+  font-weight: 800;
+  font-size: clamp(2rem, 4vw, 3rem);
+  text-align: center;
+  max-width: 90vw;
+  font-family: "Oswald", sans-serif;
+  color: #111;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  letter-spacing: 1px;
+}
+.testimonials-carousel-inner {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  min-height: 325px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+.testimonial-card {
+  width: 100%;
+  max-width: 450px;
+  min-width: 300px;
+  height: 325px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  flex: 1 1 auto;
+  margin-bottom: 3rem;
+  transition: transform 0.2s, box-shadow 0.2s, opacity 0.3s;
+  border: 1px solid #e3e3e3;
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 1;
+  pointer-events: none;
+  box-sizing: border-box;
+}
+.testimonial-card.testimonial-active {
+  opacity: 1;
+  position: relative;
+  z-index: 2;
+  pointer-events: auto;
+}
+.testimonial-card img {
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  border: 3px solid #007bff22;
+}
+.testimonial-card h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+.testimonial-card .profession {
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+.testimonial-card .stars {
+  color: #ffc107;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 2px;
+}
+.testimonial-card blockquote {
+  font-size: 1rem;
+  color: #333;
+  margin: 0;
+  font-style: italic;
+}
+.testimonial-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.7rem;
+  margin-top: -2.2rem;
+  margin-bottom: 2.5rem;
+  z-index: 3;
+  position: relative;
+}
+.testimonial-dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #ccc;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  outline: none;
+  display: inline-block;
+}
+.testimonial-dot.active,
+.testimonial-dot:focus {
+  background: #007bff;
+  transform: scale(1.2);
+}
+>>>>>>> 112127e1703a90c1888598415a285a714dd12a7b
 
 /* =========================
    Pre-footer y footer
@@ -180,13 +523,21 @@ body {
   color: #e89229;
   text-align: left;
 }
-.payment-methods a img {
+.payment-methods {
+  display: flex;
+  gap: 1rem;
+  padding: 0;
+  list-style: none;
+  margin: 0;
+  align-items: center;
+}
+.payment-methods li a img,
+.social-links li a img {
   width: 40px;
   height: auto;
-  margin-right: 1rem;
   transition: transform 0.2s ease;
 }
-.payment-methods a:hover img {
+.payment-methods li a:hover img {
   transform: scale(1.1);
 }
 .pre-footer-column2 ul {
@@ -198,6 +549,7 @@ body {
   margin-bottom: 0.5rem;
   font-size: 1rem;
   color: #ffffff;
+  cursor: pointer;
 }
 .pre-footer-column2 li:hover {
   color: #e89229;
@@ -234,7 +586,7 @@ body {
 
 /* Footer principal */
 .footer-principal {
-  background-color: #000;
+  background-color: #222;
   color: #fff;
   padding: 1.2rem 0;
   font-family: Arial, sans-serif;
@@ -276,3 +628,394 @@ body {
     text-align: right;
   }
 }
+<<<<<<< HEAD
+=======
+
+/* =========================
+   Responsive: pantallas pequeñas
+========================= */
+@media (max-width: 768px) {
+  .main-nav ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .secondary-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .carousel {
+    width: 90vw;
+  }
+  .carousel-control.prev {
+    left: -59px;
+  }
+  .carousel-control.next {
+    right: -59px;
+  }
+  .testimonials-carousel-inner {
+    max-width: 100%;
+    min-width: 0;
+    min-height: auto;
+  }
+  .testimonial-card {
+    width: 90vw;
+    max-width: 450px;
+  }
+  .testimonial-control.prev {
+    left: 5px;
+    top: 50%;
+  }
+  .testimonial-control.next {
+    right: 5px;
+    top: 50%;
+  }
+}
+
+/* =========================
+   Centrando títulos y contenedores
+========================= */
+#products-title,
+.testimonials-carousel h2 {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  display: block;
+}
+
+main,
+.testimonials-carousel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.main-title {
+  margin: 2rem auto;
+  font-weight: 800;
+  font-size: clamp(2rem, 4vw, 3rem);
+  text-align: center;
+  max-width: 90vw;
+  font-family: "Oswald", sans-serif;
+  color: #111;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  letter-spacing: 1px;
+}
+
+.carrito-title {
+  text-align: left !important;
+  margin-left: 0 !important;
+}
+
+#products-title {
+  margin-top: 3.5rem;
+}
+
+/* Quitar efectos de hover en las cards del carrito */
+#cart-items .card,
+#cart-items .card:hover {
+  box-shadow: none !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+#cart-items .img-fluid {
+  transition: none !important;
+}
+
+#cart-items .card:hover .img-fluid {
+  transform: none !important;
+}
+
+/* Efecto zoom solo en la imagen de producto en guitar.html */
+#guitar-products .card-img-top {
+  transition: transform 0.3s cubic-bezier(0.4, 2, 0.6, 1);
+  object-fit: cover;
+  width: 100%;
+  height: 220px;
+  display: block;
+  border-radius: 0;
+}
+
+#guitar-products .card:hover .card-img-top {
+  transform: scale(1.12);
+  z-index: 1;
+}
+
+#guitar-products .card {
+  overflow: hidden;
+  transition: none !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+#guitar-products .card:hover {
+  transform: none !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================
+   Estilos generales para la sección "Acerca de"
+========================= */
+.about-section {
+  text-align: center;
+}
+
+.about-description {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.about-store-name {
+  font-weight: bold;
+  color: #1a237e;
+  font-size: 1.15em;
+}
+
+.about-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto 1.5rem auto;
+}
+.about-logo img {
+  max-width: 180px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================
+   Estilos para las cards del equipo
+========================= */
+.team-card {
+  border: 1px solid #ddd;
+  border-radius: 14px;
+  overflow: hidden;
+  background-color: #fff;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  min-height: 100%;
+}
+.team-card:hover,
+.team-card:focus-within {
+  /* Eliminar efecto de hover para evitar cambios de tamaño/posición */
+  transform: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+.team-img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  border-bottom: 1px solid #eee;
+}
+.team-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1a237e;
+  margin-bottom: 0.2rem;
+}
+.team-role {
+  font-size: 1rem;
+  color: #e89229;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+.team-short-desc {
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 1rem;
+}
+.btn-ver-mas {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+.team-more-info {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0 auto;
+  background: #f5f7fa;
+  border-radius: 0 0 14px 14px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  padding: 1.1rem 1rem 1.2rem 1rem;
+  font-size: 0.98rem;
+  color: #333;
+  z-index: 2;
+  min-height: 60px;
+  max-width: 95%;
+  left: 2.5%;
+  right: 2.5%;
+  display: none;
+}
+.card {
+  position: relative;
+  overflow: visible;
+}
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.card:hover,
+.card:focus,
+.team-card:hover,
+.team-card:focus-within {
+  /* Eliminar cualquier efecto de hover para todas las cards */
+  transform: none !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+  transition: none !important;
+  z-index: auto !important;
+}
+
+/* Mejorar estilo de las cards del carrito */
+#cart-items .card-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1rem 1.2rem;
+}
+
+#cart-items .card-title {
+  font-weight: bold;
+  font-size: 1.15rem;
+  color: #222;
+  margin-bottom: 0.3rem;
+}
+
+#cart-items .card-text {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 0.2rem;
+  font-weight: 500;
+}
+
+#cart-items .card-body > div:first-child {
+  flex: 1 1 auto;
+}
+
+#cart-items .d-flex.flex-column.gap-2 {
+  gap: 0.5rem !important;
+  align-items: flex-end;
+  min-width: 48px;
+}
+
+#cart-items .btn {
+  font-size: 1rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+/* Botón añadir (verde) y eliminar (rojo) del carrito: colores claros y símbolos bien visibles */
+#cart-items .btn-success {
+  background-color: #28a745;
+  color: #fff;
+  border: 2px solid #28a745;
+  font-weight: bold;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+}
+#cart-items .btn-danger {
+  background-color: #dc3545;
+  color: #fff;
+  border: 2px solid #dc3545;
+  font-weight: bold;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+}
+/* Cambios al hacer hover: fondo blanco, borde de color, símbolo negro */
+#cart-items .btn-success:hover {
+  background-color: #fff !important;
+  color: #28a745 !important;
+  border: 2px solid #28a745 !important;
+  opacity: 1;
+}
+#cart-items .btn-danger:hover {
+  background-color: #fff !important;
+  color: #dc3545 !important;
+  border: 2px solid #dc3545 !important;
+  opacity: 1;
+}
+
+#cart-items .col-md-2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 0.2rem 0.5rem 0.5rem;
+}
+
+#cart-items .img-fluid {
+  max-width: 70px;
+  max-height: 70px;
+  border-radius: 8px;
+  border: 1px solid #eee;
+  background: #fafafa;
+}
+
+/* Animación lateral para info extra en cards del equipo */
+.team-card-info-panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  box-shadow: -4px 0 16px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1.2rem 1.2rem 1.2rem;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.7, 0.3, 0.3, 1), opacity 0.3s;
+}
+.team-card-info-panel.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0);
+}
+.team-card-info-panel .btn-cerrar-info {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 20;
+}
+.team-card-info-panel h5 {
+  margin-bottom: 1rem;
+}
+
+#map {
+  max-width: 100%; /* Asegura que no se desborde */
+  width: 90vw; /* Ancho relativo a la ventana */
+  height: 300px;
+  margin: 2rem auto 0;
+  background: #e9ecef;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  font-size: 1.2rem;
+  box-sizing: border-box; /* Incluye padding y border en el ancho */
+  padding: 0 1rem; /* Espaciado interno para evitar desbordes */
+}
+
+@media (max-width: 768px) {
+  #map {
+    width: calc(100% - 2rem); /* Ajusta el ancho para pantallas pequeñas */
+    margin: 2rem 1rem 0; /* Márgenes laterales para evitar desbordes */
+  }
+}
+>>>>>>> 112127e1703a90c1888598415a285a714dd12a7b
