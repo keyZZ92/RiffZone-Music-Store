@@ -70,6 +70,7 @@ body {
   display: flex;
   align-items: center;
 }
+
 .nav-list {
   list-style: none;
   display: flex;
@@ -79,13 +80,13 @@ body {
 }
 .nav-list a {
   text-decoration: none;
-  color: #e89229;
+  color: #007bff;
   font-weight: bold;
   font-size: 0.95rem;
   position: relative;
 }
 .nav-list a:hover {
-  background-color: rgba(233, 146, 41, 0.1);
+  color: #000000;
 }
 .login-button {
   display: flex;
@@ -120,11 +121,11 @@ body {
   .header-container,
   .header-container-guitar {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 1rem;
   }
   .nav-list {
-    flex-direction: column;
+    flex-direction: row;
     gap: 1rem;
   }
   .logo-section h1 {
