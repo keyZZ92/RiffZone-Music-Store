@@ -2,6 +2,7 @@ const express = require("express");
 const path = require("path");
 const fs = require("fs");
 const bodyParser = require("body-parser");
+const nodemailer = require("nodemailer");
 
 const app = express();
 app.use(bodyParser.json());
@@ -257,9 +258,7 @@ app.post("/api/contacto", (req, res) => {
   console.log("Datos recibidos:", req.body);
 
   if (!nombre || !email || !mensaje) {
-    return res
-      .status(400)
-      .json({ error: "Todos los campos son obligatorios." });
+    return res.status(400).json({ error: "Todos los campos son obligatorios." });
   }
 
   const contacto = {
@@ -269,6 +268,7 @@ app.post("/api/contacto", (req, res) => {
     telefono: telefono || "",
     fecha: new Date().toISOString(),
   };
+
   const contactosPath = path.join(__dirname, "backend/data/contacto.json");
 
   fs.readFile(contactosPath, "utf8", (err, data) => {
@@ -286,12 +286,40 @@ app.post("/api/contacto", (req, res) => {
     fs.writeFile(contactosPath, JSON.stringify(contactos, null, 2), (err) => {
       if (err) {
         console.error("Error al guardar contacto:", err);
-        return res
-          .status(500)
-          .json({ error: "No se pudo guardar el mensaje." });
+        return res.status(500).json({ error: "No se pudo guardar el mensaje." });
       }
 
-      res.status(200).json({ mensaje: "Mensaje recibido correctamente." });
+      // Envío de correo
+      const transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+          user: 'riffzonemusicstore@gmail.com',
+          pass: 'clwi algp blim osmd'
+        }
+      });
+
+      const mailOptions = {
+        from: '"RiffZone Contacto" <riffzonemusicstore@gmail.com>',
+        to: 'riffzonemusicstore@gmail.com',
+        subject: 'Mensaje de contacto recibido de RiffZone Contacto',
+        text: `
+        Nombre: ${nombre}
+        Email: ${email}
+        Teléfono: ${telefono || "opcional"}
+        Mensaje:
+        ${mensaje}
+        `
+      };
+
+      transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+          console.error("Error al enviar el correo:", error);
+          return res.status(500).json({ error: "Mensaje guardado, pero error al enviar correo." });
+        } else {
+          console.log("Correo enviado:", info.response);
+          return res.status(200).json({ mensaje: "Mensaje recibido y correo enviado." });
+        }
+      });
     });
   });
 });
