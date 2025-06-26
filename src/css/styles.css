@@ -110,24 +110,15 @@ body {
   color: white;
 }
 
+/* Saludo usuario en header */
 .greeting {
-  font-family: "Oswald", sans-serif;
-  font-size: 1.1rem;
-  font-weight: bold;
-  color: #222;
-  margin-left: 2rem;
-  padding: 0.4rem 1rem;
-  border: 2px solid transparent;
-  border-radius: 0.25rem;
-  display: inline-block;
-  transition: color 0.3s;
-  user-select: none;
+  font-size: 0.95rem;
+  font-weight: 400;
+  margin: 0 0.5rem;
+  color: #333;
+  vertical-align: middle;
 }
 
-.greeting:hover {
-  color: #555;
-  cursor: default;
-}
 /* Estilo para el icono del carrito */
 .cart-counter {
   display: flex;

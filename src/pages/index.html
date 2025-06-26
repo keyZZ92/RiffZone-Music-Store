@@ -56,7 +56,10 @@
               >
             </li>
             <li role="none">
-              <a href="../pages/contact.html" role="menuitem" aria-label="Contacto"
+              <a
+                href="../pages/contact.html"
+                role="menuitem"
+                aria-label="Contacto"
                 ><i class="bi bi-envelope"></i> Contacto</a
               >
             </li>
@@ -88,17 +91,38 @@
             </li>
           </ul>
         </nav>
-        <!-- botón de inicio de sesión -->
-        <button
-          class="login-button"
-          id="loginBtn"
-          data-bs-toggle="modal"
-          data-bs-target="#loginModal"
-          aria-label="Iniciar sesión en la tienda RiffZone Music Store"
+        <!-- botón de inicio de sesión y usuario -->
+        <div
+          class="user-actions"
+          style="
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-left: 1rem;
+          "
         >
-          <i class="bi bi-person" aria-hidden="true"></i>
-          Iniciar Sesión
-        </button>
+          <span id="userWelcome" class="greeting" style="display: none">
+            Hola, <span id="userName"></span>
+          </span>
+          <button
+            class="btn btn-danger"
+            id="logoutBtn"
+            style="display: none"
+            aria-label="Cerrar sesión en la tienda RiffZone Music Store"
+          >
+            Cerrar sesión
+          </button>
+          <button
+            class="login-button"
+            id="loginBtn"
+            data-bs-toggle="modal"
+            data-bs-target="#loginModal"
+            aria-label="Iniciar sesión en la tienda RiffZone Music Store"
+          >
+            <i class="bi bi-person" aria-hidden="true"></i>
+            Iniciar Sesión
+          </button>
+        </div>
       </div>
     </header>
 
@@ -491,86 +515,85 @@
       </div>
     </footer>
 
-<!-- Botón para abrir modal de inicio de sesión se encuentra en header para no duplicarlo -->
+    <!-- Botón para abrir modal de inicio de sesión se encuentra en header para no duplicarlo -->
 
-
-<!-- Saludo al usuario -->
-<span id="userWelcome" class="greeting" style="display:none; margin-left: 15px;">
-  Hola, <span id="userName"></span>
-</span>
-
-<!-- Botón para cerrar sesión -->
-<button id="logoutBtn" class="btn btn-danger" style="display:none; margin-left: 15px;">
-  Cerrar sesión
-</button>
-
-<!-- Modal de inicio de sesión -->
-  <div
-    class="modal fade"
-    id="loginModal"
-    tabindex="-1"
-    aria-labelledby="loginModalLabel"
-    aria-modal="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <form id="loginForm" aria-label="Formulario de inicio de sesión">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="loginModalLabel">Iniciar Sesión</h1>
-          <button
-            type="button"
-            class="btn-close"
-            data-bs-dismiss="modal"
-            aria-label="Cerrar ventana de inicio de sesión"></button>
+    <!-- Modal de inicio de sesión -->
+    <div
+      class="modal fade"
+      id="loginModal"
+      tabindex="-1"
+      aria-labelledby="loginModalLabel"
+      aria-modal="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <form id="loginForm" aria-label="Formulario de inicio de sesión">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="loginModalLabel">
+                Iniciar Sesión
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Cerrar ventana de inicio de sesión"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  aria-required="true"
+                  aria-label="Correo electrónico"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="inputPassword" class="form-label">Contraseña</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="inputPassword"
+                  aria-required="true"
+                  aria-label="Contraseña"
+                  required
+                />
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="submit"
+                class="btn btn-secondary"
+                aria-label="Entrar"
+              >
+                Entrar
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                aria-label="Ir a crear nueva cuenta"
+              >
+                Crear Usuario
+              </button>
+            </div>
+          </form>
         </div>
-        <div class="modal-body">
-          <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
-            <input
-              type="email"
-              class="form-control"
-              id="email"
-              aria-required="true"
-              aria-label="Correo electrónico"
-              required/>
-          </div>
-          <div class="mb-3">
-            <label for="inputPassword" class="form-label">Contraseña</label>
-            <input
-              type="password"
-              class="form-control"
-              id="inputPassword"
-              aria-required="true"
-              aria-label="Contraseña"
-              required/>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-secondary" aria-label="Entrar">
-            Entrar </button>
-          <button
-            type="button"
-            class="btn btn-primary"
-            aria-label="Ir a crear nueva cuenta">
-            Crear Usuario </button>
-        </div>
-      </form>
+      </div>
     </div>
-  </div>
-</div>
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/auth.js"></script>
-<<<<<<< integracion-prueba
-    <script src="../js/app.js"></script>
     <script src="../js/utils.js"></script>
     <!-- Carrusel de imágenes -->
     <script src="../js/carrusel.js"></script>
-        <!-- Contador del carrito -->
-    <script src="../js/cart.js"></script>    
-=======
+    <!-- Contador del carrito -->
+    <script src="../js/cart.js"></script>
     <script src="../js/login.js"></script>
-    
+
     <!-- Script carrusel manual productos y testimonios -->
     <script>
       // Carrusel de productos
@@ -675,12 +698,9 @@
         });
       });
     </script>
-    <!-- Contador del carrito -->
-    <script src="../js/cart.js"></script>
     <script>
       // Guarda la URL actual como última página visitada
-      localStorage.setItem('ultimaPagina', window.location.href);
+      localStorage.setItem("ultimaPagina", window.location.href);
     </script>
->>>>>>> grupo2_ms_dev_andrea_b
   </body>
 </html>
