@@ -19,5 +19,19 @@
     "mensaje": "Hola, me interesa una guitarra",
     "telefono": "1234567",
     "fecha": "2025-06-26T19:17:59.151Z"
+  },
+  {
+    "nombre": "Josefina",
+    "email": "josefina@example.com",
+    "mensaje": "Hola, me interesa una guitarra",
+    "telefono": "1234567",
+    "fecha": "2025-06-26T20:09:41.460Z"
+  },
+  {
+    "nombre": "Josefina",
+    "email": "josefina@example.com",
+    "mensaje": "Hola, me interesa una guitarra",
+    "telefono": "1234567",
+    "fecha": "2025-06-26T20:41:35.474Z"
   }
 ]
