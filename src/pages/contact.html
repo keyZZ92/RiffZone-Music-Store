@@ -16,7 +16,6 @@
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
     />
-    <link rel="stylesheet" href="../css/styles.css" />
     <link rel="stylesheet" href="../css/contact.css" />
 </head>
 
@@ -45,51 +44,38 @@
             </a>
         </div>
         <!-- barra de navegación principal -->
-        <nav
-            class="nav-header"
-            role="navigation"
-            aria-label="barra de navegación principal"
-        >
-            <ul class="nav-list" role="menubar">
-            <li role="none">
-                <a href="#" role="menuitem" aria-label="Servicio"
-                ><i class="bi bi-tools"></i> Servicio</a
-                >
-            </li>
-            <li role="none">
-                <a href="../pages/contact.html" role="menuitem" aria-label="Contacto"
-                ><i class="bi bi-envelope"></i> Contacto</a
-                >
-            </li>
-            <li role="none">
-                <a
-                href="/pages/sobre-nosotros.html"
-                role="menuitem"
-                aria-label="Sobre Nosotros"
-                >
-                <i class="bi bi-info-circle"></i> Sobre Nosotros
-                </a>
-            </li>
-            <li role="none">
-                <div class="ms-auto"></div>
-                <a
-                href="/pages/carrito.html"
-                role="menuitem"
-                aria-label="Carrito"
-                >
-                <i class="bi bi-cart">
-                    <span
-                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
-                    id="cart-count"
-                    >
-                    0
-                    </span>
-                </i>
-                Carrito</a
-                >
-            </li>
-            </ul>
-        </nav>
+    <nav class="navbar navbar-expand-md nav-header" role="navigation" aria-label="barra de navegación principal">
+                <div class="container-fluid d-flex flex-wrap justify-content-between align-items-center"> <!--convertir en flexbox-->
+                    <!-- Botón hamburguesa -->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav" aria-controls="menuNav" aria-expanded="false" aria-label="Mostrar navegación">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <!-- Zona colapsable -->
+                        <div class="collapse navbar-collapse justify-content-center" id="menuNav">
+                            <ul class="navbar-nav mb-2 mb-md-0 nav-list" role="menubar">
+                                <li class="nav-item" role="none">
+                                    <a class="nav-link" href="#" role="menuitem" aria-label="Servicio"><i class="bi bi-tools"></i> Servicio</a>
+                                </li>
+                                <li class="nav-item" role="none">
+                                    <a class="nav-link" href="../pages/contact.html" role="menuitem" aria-label="Contacto"><i class="bi bi-envelope"></i> Contacto</a>
+                                </li>
+                                <li class="nav-item" role="none">
+                                    <a class="nav-link" href="/pages/sobre-nosotros.html" role="menuitem" aria-label="Sobre Nosotros"><i class="bi bi-info-circle"></i> Sobre Nosotros</a>
+                                </li>
+                            </ul>
+                        </div>
+                            <!-- Carrito siempre visible, alineado a la derecha -->
+                                <div class=" nav-item carrito-visible">
+                                    <a class="nav-link position-relative" href="/pages/carrito.html" role="menuitem" aria-label="Carrito">
+                                    <i class="bi bi-cart">
+                                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cart-count">0</span>
+                                    </i>
+                                    Carrito
+                                    </a>
+                                </div>
+                </div>
+            </nav>
             <!-- botón de inicio de sesión -->
             <button
                 class="login-button"
@@ -104,15 +90,6 @@
     </header>
 <main class="zona-contacto">
     <div class="contacto-contenedor">
-        <!-- botón de volver-->
-    <button
-        class="volver-button"
-        id="btnvolver"
-        onclick="location.href='../pages/index.html';"
-        aria-label="Volver a la tienda RiffZone Music Store">
-        <i class="bi bi-arrow-left"></i>
-        Volver
-    </button>
     <!-- FORMULARIO -->
     <form id="formContacto" class="formulario-box" novalidate role="form" aria-labelledby="Contacto">
         <h2 id="tituloContacto" class="mb-4">Formulario de contacto</h2>
@@ -273,19 +250,19 @@
             <nav aria-label="Redes sociales">
             <ul class="social-links">
                 <li>
-                <a href="#" aria-label="Facebook">
+                <a href="https://www.facebook.com/profile.php?id=61577710023966&locale=es_ES" aria-label="Facebook">
                     <img src="../assets/images/RedesSocialesIcons/logofacebook.png" alt="Facebook"/></a>
                 </li>
                 <li>
-                <a href="#" aria-label="Twitter">
+                <a href="https://x.com/RiffzoneMStore" aria-label="Twitter">
                     <img src="../assets/images/RedesSocialesIcons/logotwitter.png" alt="Twitter"/></a>
                 </li>
                 <li>
-                <a href="#" aria-label="Instagram">
+                <a href="https://www.instagram.com/riffzone_music_store/" aria-label="Instagram">
                     <img src="../assets/images/RedesSocialesIcons/logoinstagram.png" alt="Instagram"/></a>
                 </li>
                 <li>
-                <a href="#" aria-label="YouTube">
+                <a href="https://www.youtube.com/@RiffZoneMusicStore" aria-label="YouTube">
                     <img src="../assets/images/RedesSocialesIcons/logoyoutube.png"alt="YouTube"/></a>
                 </li>
             </ul>

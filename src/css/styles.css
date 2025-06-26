@@ -88,6 +88,8 @@ body {
 .nav-list a:hover {
   color: #000000;
 }
+
+/* estilo para login y saludo*/
 .login-button {
   display: flex;
   align-items: center;
@@ -107,6 +109,17 @@ body {
   background-color: #222;
   color: white;
 }
+
+/* Saludo usuario en header */
+.greeting {
+  font-size: 0.95rem;
+  font-weight: 400;
+  margin: 0 0.5rem;
+  color: #333;
+  vertical-align: middle;
+}
+
+/* Estilo para el icono del carrito */
 .cart-counter {
   display: flex;
   align-items: center;
