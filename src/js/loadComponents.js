@@ -9,6 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
         headerPlaceholder.innerHTML = html;
         // Vuelve a inicializar los scripts de sesión tras cargar el header
         if (typeof initAuth === "function") initAuth();
+        // Actualiza el contador del carrito tras cargar el header
+        if (typeof actualizarContadorCarrito === "function") actualizarContadorCarrito();
         // Inicializa el menú hamburguesa tras cargar el header
         if (typeof initHeaderMenu === "function") {
           initHeaderMenu();
