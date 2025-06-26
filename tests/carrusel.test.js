@@ -15,6 +15,8 @@ describe('carrusel.js', () => {
       <div class="testimonial-dots"></div>
     `;
     jest.useFakeTimers();
+    require('../src/js/carrusel.js');
+    document.dispatchEvent(new Event('DOMContentLoaded'));
   });
 
   afterEach(() => {
@@ -23,7 +25,6 @@ describe('carrusel.js', () => {
   });
 
   it('activa el siguiente producto al hacer click en next', () => {
-    require('../src/js/carrusel.js');
     const items = document.querySelectorAll('.product-item');
     const nextBtn = document.querySelector('.carousel-control.next');
     items[0].classList.add('active');
@@ -33,7 +34,6 @@ describe('carrusel.js', () => {
   });
 
   it('activa el testimonio siguiente tras intervalo', () => {
-    require('../src/js/carrusel.js');
     const testimonials = document.querySelectorAll('.testimonial-card');
     testimonials[0].classList.add('testimonial-active');
     jest.advanceTimersByTime(10000);
