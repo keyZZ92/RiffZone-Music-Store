@@ -39,9 +39,17 @@ app.get("/api/products", (req, res) => {
     }
   );
 });
+// Servir el archivo register.html cuando se solicite la ruta /register.html
+app.get('/register.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'src/pages/register.html'));    
+});   
 
-// API para login y registro (usuarios en archivo JSON)
-// Registrar un nuevo usuario
+// Servir index.html para login
+app.get('/index.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'src', 'pages', 'index.html'));
+});
+
+// POST /api/register: registrar un nuevo usuario
 app.post("/api/register", (req, res) => {
   // Extraer los datos del body de la petición
   const { username, password, email } = req.body;
@@ -53,7 +61,7 @@ app.post("/api/register", (req, res) => {
     });
   }
 
-  // Validar formato de email simple
+  // Validar formato simple de email
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(email)) {
     return res
@@ -66,7 +74,6 @@ app.post("/api/register", (req, res) => {
 
   // Leer el archivo de usuarios
   fs.readFile(usersPath, "utf8", (err, data) => {
-    // Si ocurre un error distinto a que el archivo no exista, devolver error
     if (err && err.code !== "ENOENT") {
       console.error("Error al leer el archivo de usuarios:", err);
       return res.status(500).json({ error: "Error interno del servidor" });
@@ -75,17 +82,15 @@ app.post("/api/register", (req, res) => {
     let users = [];
     if (data) {
       try {
-        // Intentar parsear el JSON de usuarios
         users = JSON.parse(data);
       } catch (parseError) {
-        // Si el JSON está corrupto, devolver error
         return res
           .status(500)
           .json({ error: "Error al procesar los datos de usuarios" });
       }
     }
 
-    // Comprobar si el username o email ya existen en la base de datos
+    // Comprobar si el username o email ya existen
     const exists = users.some(
       (u) => u.username === username || u.email === email
     );
@@ -93,11 +98,13 @@ app.post("/api/register", (req, res) => {
       return res.status(409).json({ error: "El usuario o email ya existen." });
     }
 
-    // Añadir el nuevo usuario al array
+    // Añadir el nuevo usuario
     users.push({ username, password, email });
-    // Guardar el array actualizado en el archivo
+
+    // Guardar el array actualizado en el archivo JSON
     fs.writeFile(usersPath, JSON.stringify(users, null, 2), (err) => {
       if (err) {
+        console.error("Error al guardar usuario:", err);
         return res
           .status(500)
           .json({ error: "No se pudo guardar el usuario." });
@@ -107,7 +114,6 @@ app.post("/api/register", (req, res) => {
     });
   });
 });
-
 // Login
 app.post("/api/login", (req, res) => {
   // Extraer los datos del body de la petición
