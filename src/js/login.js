@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 "user",
                 JSON.stringify({
                   email: data.user.email,
-                  name: data.user.username,
+                  username: data.user.username,
                 })
               );
   
