@@ -20,111 +20,7 @@
   </head>
   <body>
     <!-- Cabecera de la página -->
-    <header
-      class="header"
-      role="banner"
-      aria-label="Encabezado principal de RiffZone Music Store"
-    >
-      <div class="header-container">
-        <div class="logo-section" aria-label="Logo de RiffZone Music Store">
-          <a
-            href="/pages/index.html"
-            style="
-              display: flex;
-              align-items: center;
-              gap: 0.2rem;
-              text-decoration: none;
-            "
-          >
-            <img
-              src="../assets/images/logo RiffZone.png"
-              alt="Logo de RiffZone Music Store"
-            />
-            <h1>RiffZone Music Store</h1>
-          </a>
-        </div>
-        <!-- barra de navegación principal -->
-        <nav
-          class="nav-header"
-          role="navigation"
-          aria-label="barra de navegación principal"
-        >
-          <ul class="nav-list" role="menubar">
-            <li role="none">
-              <a href="#" role="menuitem" aria-label="Servicio"
-                ><i class="bi bi-tools"></i> Servicio</a
-              >
-            </li>
-            <li role="none">
-              <a
-                href="../pages/contact.html"
-                role="menuitem"
-                aria-label="Contacto"
-                ><i class="bi bi-envelope"></i> Contacto</a
-              >
-            </li>
-            <li role="none">
-              <a
-                href="/pages/sobre-nosotros.html"
-                role="menuitem"
-                aria-label="Sobre Nosotros"
-                ><i class="bi bi-info-circle"></i> Sobre Nosotros</a
-              >
-            </li>
-            <li role="none">
-              <div class="ms-auto"></div>
-              <a
-                href="/pages/carrito.html"
-                role="menuitem"
-                aria-label="Carrito"
-              >
-                <i class="bi bi-cart">
-                  <span
-                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
-                    id="cart-count"
-                  >
-                    0
-                  </span>
-                </i>
-                Carrito</a
-              >
-            </li>
-          </ul>
-        </nav>
-        <!-- botón de inicio de sesión y usuario -->
-        <div
-          class="user-actions"
-          style="
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-left: 1rem;
-          "
-        >
-          <span id="userWelcome" class="greeting" style="display: none">
-            Hola, <span id="userName"></span>
-          </span>
-          <button
-            class="btn btn-danger"
-            id="logoutBtn"
-            style="display: none"
-            aria-label="Cerrar sesión en la tienda RiffZone Music Store"
-          >
-            Cerrar sesión
-          </button>
-          <button
-            class="login-button"
-            id="loginBtn"
-            data-bs-toggle="modal"
-            data-bs-target="#loginModal"
-            aria-label="Iniciar sesión en la tienda RiffZone Music Store"
-          >
-            <i class="bi bi-person" aria-hidden="true"></i>
-            Iniciar Sesión
-          </button>
-        </div>
-      </div>
-    </header>
+    <div id="header-placeholder"></div>
 
     <!-- Main -->
     <main>
@@ -593,6 +489,116 @@
     <!-- Contador del carrito -->
     <script src="../js/cart.js"></script>
     <script src="../js/login.js"></script>
+    <script src="../js/loadComponents.js"></script>
+
+    <!-- Script carrusel manual productos y testimonios -->
+    <script>
+      // Carrusel de productos
+      document.addEventListener("DOMContentLoaded", function () {
+        const items = document.querySelectorAll(".product-item");
+        const prevBtn = document.querySelector(".carousel-control.prev");
+        const nextBtn = document.querySelector(".carousel-control.next");
+        let current = 0;
+        let productInterval;
+
+        function showItem(index) {
+          items.forEach((item, i) => {
+            item.classList.toggle("active", i === index);
+          });
+        }
+
+        function nextProduct() {
+          current = (current + 1) % items.length;
+          showItem(current);
+        }
+
+        function prevProduct() {
+          current = (current - 1 + items.length) % items.length;
+          showItem(current);
+        }
+
+        prevBtn.addEventListener("click", () => {
+          prevProduct();
+          resetProductInterval();
+        });
+
+        nextBtn.addEventListener("click", () => {
+          nextProduct();
+          resetProductInterval();
+        });
+
+        function resetProductInterval() {
+          clearInterval(productInterval);
+          productInterval = setInterval(nextProduct, 4000); // 4 segundos
+        }
+
+        productInterval = setInterval(nextProduct, 4000); // 4 segundos
+      });
+
+      // Carrusel de testimonios
+      document.addEventListener("DOMContentLoaded", function () {
+        const testimonials = document.querySelectorAll(
+          ".testimonials-carousel-inner .testimonial-card"
+        );
+        const dotsContainer = document.querySelector(".testimonial-dots");
+        let currentTest = 0;
+        let testimonialInterval;
+
+        // Crear puntos dinámicamente
+        testimonials.forEach((_, i) => {
+          const dot = document.createElement("button");
+          dot.className = "testimonial-dot" + (i === 0 ? " active" : "");
+          dot.type = "button";
+          dot.setAttribute("aria-label", `Ver testimonio ${i + 1}`);
+          dot.addEventListener("click", () => {
+            showTestimonial(i);
+            resetTestimonialInterval();
+            dot.blur(); // <-- Añade esta línea para quitar el foco tras pulsar
+          });
+          dotsContainer.appendChild(dot);
+        });
+        const dots = dotsContainer.querySelectorAll(".testimonial-dot");
+
+        function showTestimonial(index) {
+          testimonials.forEach((item, i) => {
+            item.classList.toggle("testimonial-active", i === index);
+            dots[i].classList.toggle("active", i === index);
+          });
+          currentTest = index;
+        }
+
+        function nextTestimonial() {
+          showTestimonial((currentTest + 1) % testimonials.length);
+        }
+
+        function resetTestimonialInterval() {
+          clearInterval(testimonialInterval);
+          testimonialInterval = setInterval(nextTestimonial, 10000);
+        }
+
+        testimonialInterval = setInterval(nextTestimonial, 10000);
+      });
+
+      // Quitar el foco de los controles de ambos carruseles tras hacer clic
+      document.addEventListener("DOMContentLoaded", function () {
+        // Carrusel de productos
+        document.querySelectorAll(".carousel-control").forEach((btn) => {
+          btn.addEventListener("mouseup", function () {
+            this.blur();
+          });
+        });
+        // Carrusel de testimonios
+        document.querySelectorAll(".testimonial-control").forEach((btn) => {
+          btn.addEventListener("mouseup", function () {
+            this.blur();
+          });
+        });
+      });
+    </script>
+    <script>
+      // Guarda la URL actual como última página visitada
+      localStorage.setItem("ultimaPagina", window.location.href);
+    </script>
   </body>
 </html>
 

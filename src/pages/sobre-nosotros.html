@@ -16,85 +16,7 @@
     <link rel="stylesheet" href="../css/sobre-nosotros.css" />
   </head>
   <body>
-    <!-- Cabecera de la página -->
-    <header
-      class="header"
-      role="banner"
-      aria-label="Encabezado principal de RiffZone Music Store"
-    >
-      <div class="header-container">
-        <div class="logo-section" aria-label="Logo de RiffZone Music Store">
-          <a
-            href="/pages/index.html"
-            style="
-              display: flex;
-              align-items: center;
-              gap: 0.2rem;
-              text-decoration: none;
-            "
-          >
-            <img
-              src="../assets/images/logo RiffZone.png"
-              alt="Logo de RiffZone Music Store"
-            />
-            <h1>RiffZone Music Store</h1>
-          </a>
-        </div>
-        <!-- barra de navegación principal -->
-        <nav
-          class="nav-header"
-          role="navigation"
-          aria-label="barra de navegación principal"
-        >
-          <ul class="nav-list" role="menubar">
-            <li role="none">
-              <a href="#" role="menuitem" aria-label="Servicio"
-                ><i class="bi bi-tools"></i> Servicio</a
-              >
-            </li>
-            <li role="none">
-              <a href="../pages/contact.html" role="menuitem" aria-label="Contacto"
-                ><i class="bi bi-envelope"></i> Contacto</a
-              >
-            </li>
-            <li role="none">
-              <a href="../pages/sobre-nosotros.html" role="menuitem" aria-label="Sobre Nosotros"
-                ><i class="bi bi-info-circle"></i> Sobre Nosotros</a
-              >
-            </li>
-            <li role="none">
-              <div class="ms-auto"></div>
-              <a
-                href="/pages/carrito.html"
-                role="menuitem"
-                aria-label="Carrito"
-              >
-                <i class="bi bi-cart">
-                  <span
-                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
-                    id="cart-count"
-                  >
-                    0
-                  </span>
-                </i>
-                Carrito</a
-              >
-            </li>
-          </ul>
-        </nav>
-        <!-- botón de inicio de sesión -->
-        <button
-          class="login-button"
-          id="btnLogin"
-          data-bs-toggle="modal"
-          data-bs-target="#loginModal"
-          aria-label="Iniciar sesión en la tienda RiffZone Music Store"
-        >
-          <i class="bi bi-person" aria-hidden="true"></i>
-          Iniciar Sesión
-        </button>
-      </div>
-    </header>
+    <div id="header-placeholder"></div>
 
     <!-- Contenido principal Sobre Nosotros -->
     <main id="main-sobre-nosotros" role="main">
@@ -532,6 +454,7 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="../js/sobre-nosotros.js"></script>
     <!-- Contador del carrito -->
-    <script src="../js/cart.js"></script> 
+    <script src="../js/cart.js"></script>
+    <script src="../js/loadComponents.js"></script>
   </body>
 </html>
