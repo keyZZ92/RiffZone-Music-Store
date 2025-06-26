@@ -162,7 +162,8 @@ app.post("/api/login", (req, res) => {
     }
     // Si las credenciales son correctas, devolver el usuario
     res.status(200).json({
-      message: "Login exitoso.",
+      message: `¡Hola, ${user.username}! Login exitoso.`, // Mensaje de bienvenida
+      // Devolver solo los datos necesarios del usuario para evitar exponer la contraseña
       user: { username: user.username, email: user.email },
     });
   });

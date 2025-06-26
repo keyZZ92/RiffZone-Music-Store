@@ -67,18 +67,27 @@
             </li>
           </ul>
         </nav>
-        <!-- botón de inicio de sesión -->
-        <button
-          class="login-button"
-          id="btnLogin"
-          data-bs-toggle="modal"
-          data-bs-target="#loginModal"
-          aria-label="Iniciar sesión en la tienda RiffZone Music Store"
-        >
-          <i class="bi bi-person" aria-hidden="true"></i>
-          Iniciar Sesión
-        </button>
-      </div>
+
+ <!-- Botón para iniciar sesión -->
+    <button
+class="login-button"
+id="loginBtn"
+data-bs-toggle="modal"
+data-bs-target="#loginModal"
+>
+  <i class="bi bi-person"></i> Iniciar Sesión
+</button>
+
+<!-- Saludo al usuario -->
+  <span id="userWelcome" style="display: none; margin-left: 15px;">
+  Hola, <span id="userName"></span>
+</span>
+
+<!-- Botón para cerrar sesión -->
+  <button id="logoutBtn" class="btn btn-danger" style="display: none; margin-left: 15px;">
+  Cerrar sesión
+</button>
+
     </header>
 
     <!-- Contenido principal -->
