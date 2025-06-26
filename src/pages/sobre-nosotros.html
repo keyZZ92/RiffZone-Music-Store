@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sobre Nosotros - RiffZone Music Store</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/sobre-nosotros.css" />
+  </head>
+  <body>
+    <!-- Cabecera de la página -->
+    <header
+      class="header"
+      role="banner"
+      aria-label="Encabezado principal de RiffZone Music Store"
+    >
+      <div class="header-container">
+        <div class="logo-section" aria-label="Logo de RiffZone Music Store">
+          <a
+            href="/pages/index.html"
+            style="
+              display: flex;
+              align-items: center;
+              gap: 0.2rem;
+              text-decoration: none;
+            "
+          >
+            <img
+              src="../assets/images/logo RiffZone.png"
+              alt="Logo de RiffZone Music Store"
+            />
+            <h1>RiffZone Music Store</h1>
+          </a>
+        </div>
+        <!-- barra de navegación principal -->
+        <nav
+          class="nav-header"
+          role="navigation"
+          aria-label="barra de navegación principal"
+        >
+          <ul class="nav-list" role="menubar">
+            <li role="none">
+              <a href="#" role="menuitem" aria-label="Servicio"
+                ><i class="bi bi-tools"></i> Servicio</a
+              >
+            </li>
+            <li role="none">
+              <a href="../pages/contact.html" role="menuitem" aria-label="Contacto"
+                ><i class="bi bi-envelope"></i> Contacto</a
+              >
+            </li>
+            <li role="none">
+              <a href="../pages/sobre-nosotros.html" role="menuitem" aria-label="Sobre Nosotros"
+                ><i class="bi bi-info-circle"></i> Sobre Nosotros</a
+              >
+            </li>
+            <li role="none">
+              <div class="ms-auto"></div>
+              <a
+                href="/pages/carrito.html"
+                role="menuitem"
+                aria-label="Carrito"
+              >
+                <i class="bi bi-cart">
+                  <span
+                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                    id="cart-count"
+                  >
+                    0
+                  </span>
+                </i>
+                Carrito</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <!-- botón de inicio de sesión -->
+        <button
+          class="login-button"
+          id="btnLogin"
+          data-bs-toggle="modal"
+          data-bs-target="#loginModal"
+          aria-label="Iniciar sesión en la tienda RiffZone Music Store"
+        >
+          <i class="bi bi-person" aria-hidden="true"></i>
+          Iniciar Sesión
+        </button>
+      </div>
+    </header>
+
+    <!-- Contenido principal Sobre Nosotros -->
+    <main id="main-sobre-nosotros" role="main">
+      <section
+        class="about-section container py-4 text-center"
+        role="region"
+        aria-label="Sobre RiffZone Music Store"
+      >
+        <h2 class="about-title">Sobre Nosotros</h2>
+        <p class="about-description">
+          <span class="about-store-name">RiffZone Music Store</span> es una
+          tienda especializada en instrumentos musicales y equipamiento
+          profesional, comprometida con la calidad, la atención personalizada y
+          la pasión por la música. Nuestro equipo está formado por músicos y
+          profesionales del sector, siempre dispuestos a asesorarte y ayudarte a
+          encontrar el instrumento perfecto para ti. ¡Descubre nuestra historia
+          y conoce a quienes hacen posible RiffZone!
+        </p>
+        <div class="about-logo">
+          <img
+            src="../assets/images/logo RiffZone.png"
+            alt="Logo de RiffZone Music Store"
+          />
+        </div>
+      </section>
+      <!-- Cards de los miembros del equipo (se añadirán a continuación) -->
+      <section
+        class="team-section container py-4"
+        role="region"
+        aria-label="Nuestro equipo"
+      >
+        <h2 class="main-title mb-4">Nuestro equipo</h2>
+        <div class="row justify-content-center" id="team-cards">
+          <div class="col-12 col-sm-6 col-lg-3 mb-4">
+            <div class="card h-100 text-center position-relative team-card">
+              <img
+                src="../assets/images/sobre-nosotros/keyliany.jpg"
+                class="card-img-top"
+                alt="Foto de Keyliany Olivier, Gerente"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Keyliany Olivier</h5>
+                <p class="card-text text-primary fw-bold">
+                  Gerente y fundadora
+                </p>
+                <p class="card-text">
+                  Apasionada de la música y la gestión, lidera RiffZone con
+                  energía y visión.
+                </p>
+                <button class="btn btn-outline-primary btn-ver-mas">
+                  Ver más
+                </button>
+              </div>
+              <div class="team-card-info-panel">
+                <button
+                  class="btn btn-outline-secondary btn-cerrar-info"
+                  aria-label="Cerrar información"
+                >
+                  &times;
+                </button>
+                <h5 class="card-title">Keyliany Olivier</h5>
+                <p class="text-gray-700 text-sm leading-relaxed">
+                  Con más de 15 años en el sector musical y empresarial,
+                  Keyliany ha liderado proyectos innovadores en tiendas
+                  especializadas. Fundadora de RiffZone, destaca por su visión
+                  estratégica, atención al detalle y compromiso con la calidad.
+                  Cree firmemente en el poder de la música para transformar
+                  vidas y en la importancia de ofrecer un asesoramiento cercano,
+                  personalizado y adaptado a las necesidades de cada persona.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3 mb-4">
+            <div class="card h-100 text-center position-relative team-card">
+              <img
+                src="../assets/images/sobre-nosotros/jmanuel.jpg"
+                class="card-img-top"
+                alt="Foto de José Manuel Martos, Técnico de sonido"
+              />
+              <div class="card-body">
+                <h5 class="card-title">José Manuel Martos</h5>
+                <p class="card-text text-primary fw-bold">Técnico de sonido</p>
+                <p class="card-text">
+                  Especialista en audio y mantenimiento, siempre dispuesto a
+                  ayudar.
+                </p>
+                <button class="btn btn-outline-primary btn-ver-mas">
+                  Ver más
+                </button>
+              </div>
+              <div class="team-card-info-panel">
+                <button
+                  class="btn btn-outline-secondary btn-cerrar-info"
+                  aria-label="Cerrar información"
+                >
+                  &times;
+                </button>
+                <h5 class="card-title">José Manuel Martos</h5>
+                <p class="text-gray-700 text-sm leading-relaxed">
+                  Con más de 10 años de experiencia, José Manuel asegura que
+                  cada equipo suene impecable. Ha trabajado en estudios de
+                  grabación y escenarios en vivo, lo que le permite ofrecer
+                  soluciones técnicas rápidas y precisas. Su profundo
+                  conocimiento del audio profesional garantiza un soporte
+                  eficaz, y su pasión por el detalle asegura que cada cliente
+                  reciba siempre el mejor servicio posible, sin importar su
+                  nivel o presupuesto.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3 mb-4">
+            <div class="card h-100 text-center position-relative team-card">
+              <img
+                src="../assets/images/sobre-nosotros/andrea.jpg"
+                class="card-img-top"
+                alt="Foto de Andrea Boedo, Atención al cliente"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Andrea Boedo</h5>
+                <p class="card-text text-primary fw-bold">
+                  Atención al cliente
+                </p>
+                <p class="card-text">
+                  Tu primera sonrisa en la tienda, resolutiva y cercana.
+                </p>
+                <button class="btn btn-outline-primary btn-ver-mas">
+                  Ver más
+                </button>
+              </div>
+              <div class="team-card-info-panel">
+                <button
+                  class="btn btn-outline-secondary btn-cerrar-info"
+                  aria-label="Cerrar información"
+                >
+                  &times;
+                </button>
+                <h5 class="card-title">Andrea Boedo</h5>
+                <p class="text-gray-700 text-sm leading-relaxed">
+                  Andrea es la primera sonrisa que te recibe. Especialista en
+                  atención al cliente, combina empatía, comunicación y pasión
+                  por la música para hacer de cada visita una experiencia
+                  agradable y profesional. Gestiona pedidos, asesoramiento y
+                  consultas con dedicación, y está siempre dispuesta a ayudar a
+                  músicos de todos los niveles con amabilidad, eficacia y un
+                  enfoque personalizado que hace sentir a cada cliente como en
+                  casa.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3 mb-4">
+            <div class="card h-100 text-center position-relative team-card">
+              <img
+                src="../assets/images/sobre-nosotros/aaron.png"
+                class="card-img-top"
+                alt="Foto de Aarón Pesqueira, Especialista en instrumentos"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Aarón Pesqueira</h5>
+                <p class="card-text text-primary fw-bold">
+                  Especialista en instrumentos
+                </p>
+                <p class="card-text">
+                  Músico profesional, te asesora para elegir el instrumento
+                  ideal.
+                </p>
+                <button class="btn btn-outline-primary btn-ver-mas">
+                  Ver más
+                </button>
+              </div>
+              <div class="team-card-info-panel">
+                <button
+                  class="btn btn-outline-secondary btn-cerrar-info"
+                  aria-label="Cerrar información"
+                >
+                  &times;
+                </button>
+                <h5 class="card-title">Aarón Pesqueira</h5>
+                <p class="text-gray-700 text-sm leading-relaxed">
+                  Aarón es músico profesional y experto en instrumentos. Su
+                  amplia experiencia como guitarrista y asesor le permite
+                  recomendar el equipo ideal según el estilo de cada cliente.
+                  Siempre actualizado en novedades del mercado, transmite su
+                  pasión por la música en cada recomendación. Su objetivo es
+                  crear una conexión única con quienes buscan un sonido
+                  auténtico, ayudando a cada músico a encontrar el instrumento
+                  que mejor se adapte a su forma de expresarse.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Mapa de ubicación ficticia (se añadirá después) -->
+      <section
+        class="map-section container py-4 text-center"
+        role="region"
+        aria-label="Ubicación de la tienda"
+      >
+        <h2 class="about-title">¿Dónde estamos?</h2>
+        <div
+          id="map"
+          style="
+            width: 600px;
+            height: 300px;
+            margin: 2rem auto 0;
+            background: #e9ecef;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+            font-size: 1.2rem;
+          "
+        >
+          Aquí aparecerá el mapa de nuestra ubicación ficticia.
+        </div>
+      </section>
+    </main>
+
+    <!-- Pre-footer -->
+    <section class="pre-footer" aria-label="Información de contacto">
+      <div class="pre-footer-container">
+        <!-- Columna 1: Métodos de pago -->
+        <div class="pre-footer-column1" aria-labelledby="metodos-pagos">
+          <h3 id="metodos-pagos">Métodos de pago</h3>
+          <ul class="payment-methods">
+            <li>
+              <a
+                href="https://www.paypal.com"
+                target="_blank"
+                rel="noopener"
+                aria-label="PayPal"
+              >
+                <img src="../assets/images/icons8-paypal-48.png" alt="PayPal" />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.visa.com"
+                target="_blank"
+                rel="noopener"
+                aria-label="Visa"
+              >
+                <img src="../assets/images/icons8-visa-48 (1).png" alt="Visa" />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.mastercard.es"
+                target="_blank"
+                rel="noopener"
+                aria-label="MasterCard"
+              >
+                <img
+                  src="../assets/images/icons8-mastercard-48.png"
+                  alt="MasterCard"
+                />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.americanexpress.com"
+                target="_blank"
+                rel="noopener"
+                aria-label="American Express"
+              >
+                <img
+                  src="../assets/images/icons8-american-express-al-cuadrado-48.png"
+                  alt="American Express"
+                />
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- Columna 2: Ventajas -->
+        <div
+          class="pre-footer-column2"
+          aria-labelledby="ventajas de usar RiffZone"
+        >
+          <h3 id="ventajas-title">
+            Ventajas de comprar en RiffZone Music Store
+          </h3>
+          <ul>
+            <li>Garantía de calidad</li>
+            <li>Devolución fácil y rápida</li>
+            <li>Servicio técnico</li>
+            <li>Asesoramiento personalizado</li>
+          </ul>
+        </div>
+        <!-- Columna 3: Redes sociales de contacto -->
+        <div class="pre-footer-column3" aria-label="Redes sociales">
+          <h3>Síguenos</h3>
+          <nav aria-label="Redes sociales">
+            <ul class="social-links">
+              <li>
+                <a href="#" aria-label="Facebook"
+                  ><img
+                    src="../assets/images/RedesSocialesIcons/logofacebook.png"
+                    alt="Facebook"
+                /></a>
+              </li>
+              <li>
+                <a href="#" aria-label="Twitter"
+                  ><img
+                    src="../assets/images/RedesSocialesIcons/logotwitter.png"
+                    alt="Twitter"
+                /></a>
+              </li>
+              <li>
+                <a href="#" aria-label="Instagram"
+                  ><img
+                    src="../assets/images/RedesSocialesIcons/logoinstagram.png"
+                    alt="Instagram"
+                /></a>
+              </li>
+              <li>
+                <a href="#" aria-label="YouTube"
+                  ><img
+                    src="../assets/images/RedesSocialesIcons/logoyoutube.png"
+                    alt="YouTube"
+                /></a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+      class="footer-principal"
+      role="contentinfo"
+      aria-label="Pie de página principal del sitio"
+    >
+      <div class="footer-contenedor">
+        <!-- Logo y nombre -->
+        <div class="footer-logo" aria-label="Logotipo y nombre del sitio">
+          <img
+            src="../assets/images/logo RiffZone.png"
+            alt="Logo de RiffZone Music Store"
+          />
+          <span>RiffZone Music Store</span>
+        </div>
+        <!-- Texto de derechos -->
+        <div class="footer-derechos">
+          <small
+            >&copy; 2025 RiffZone Music Store. Todos los derechos
+            reservados.</small
+          >
+        </div>
+      </div>
+    </footer>
+
+    <!-- Modal de inicio de sesión -->
+    <div
+      class="modal fade"
+      id="loginModal"
+      tabindex="-1"
+      aria-labelledby="loginModalLabel"
+      aria-hidden="true"
+      aria-modal="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <form aria-label="Formulario de inicio de sesión">
+            <!-- Cabecera del modal: título y botón de cerrar -->
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="loginModalLabel">
+                Iniciar Sesión
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Cerrar ventana de inicio de sesión"
+              ></button>
+            </div>
+            <!-- Cuerpo del modal: formulario de usuario y contraseña -->
+            <div class="modal-body">
+              <div class="mb-3">
+                <label for="user" class="form-label">Usuario</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="user"
+                  aria-required="true"
+                  aria-label="Usuario"
+                  required
+                  autocomplete="username"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="inputPassword" class="form-label">Contraseña</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="inputPassword"
+                  aria-required="true"
+                  aria-label="contraseña"
+                  required
+                  autocomplete="current-password"
+                />
+              </div>
+              <!-- Footer del modal: botón de entrar y crear usuario -->
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                  aria-label="Entrar"
+                >
+                  Entrar
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  aria-label="Ir a crear nueva cuenta"
+                >
+                  Crear Usuario
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="../js/sobre-nosotros.js"></script>
+    <!-- Contador del carrito -->
+    <script src="../js/cart.js"></script> 
+  </body>
+</html>

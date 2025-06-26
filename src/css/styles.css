@@ -13,6 +13,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   background-color: #e4ecf4 !important;
+  overflow-x: hidden;
 }
 
 /* =========================
@@ -69,6 +70,7 @@ body {
   display: flex;
   align-items: center;
 }
+
 .nav-list {
   list-style: none;
   display: flex;
@@ -78,13 +80,13 @@ body {
 }
 .nav-list a {
   text-decoration: none;
-  color: #e89229;
+  color: #007bff;
   font-weight: bold;
   font-size: 0.95rem;
   position: relative;
 }
 .nav-list a:hover {
-  background-color: rgba(233, 146, 41, 0.1);
+  color: #000000;
 }
 
 /* estilo para login y saludo*/
@@ -141,11 +143,11 @@ body {
   .header-container,
   .header-container-guitar {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 1rem;
   }
   .nav-list {
-    flex-direction: column;
+    flex-direction: row;
     gap: 1rem;
   }
   .logo-section h1 {
@@ -338,7 +340,7 @@ body {
   width: 50px;
   height: 50px;
   border: none;
-  background-color: #007bff; 
+  background-color: #007bff;
   color: white;
   display: flex;
   align-items: center;
@@ -650,7 +652,7 @@ body {
     width: 90vw;
   }
   .carousel-control.prev {
-     left: -59px;
+    left: -59px;
   }
   .carousel-control.next {
     right: -59px;
@@ -733,7 +735,7 @@ main,
 
 /* Efecto zoom solo en la imagen de producto en guitar.html */
 #guitar-products .card-img-top {
-  transition: transform 0.3s cubic-bezier(.4,2,.6,1);
+  transition: transform 0.3s cubic-bezier(0.4, 2, 0.6, 1);
   object-fit: cover;
   width: 100%;
   height: 220px;
@@ -749,10 +751,274 @@ main,
 #guitar-products .card {
   overflow: hidden;
   transition: none !important;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 #guitar-products .card:hover {
   transform: none !important;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================
+   Estilos generales para la sección "Acerca de"
+========================= */
+.about-section {
+  text-align: center;
+}
+
+.about-description {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.about-store-name {
+  font-weight: bold;
+  color: #1a237e;
+  font-size: 1.15em;
+}
+
+.about-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto 1.5rem auto;
+}
+.about-logo img {
+  max-width: 180px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================
+   Estilos para las cards del equipo
+========================= */
+.team-card {
+  border: 1px solid #ddd;
+  border-radius: 14px;
+  overflow: hidden;
+  background-color: #fff;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  min-height: 100%;
+}
+.team-card:hover,
+.team-card:focus-within {
+  /* Eliminar efecto de hover para evitar cambios de tamaño/posición */
+  transform: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+.team-img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  border-bottom: 1px solid #eee;
+}
+.team-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1a237e;
+  margin-bottom: 0.2rem;
+}
+.team-role {
+  font-size: 1rem;
+  color: #e89229;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+.team-short-desc {
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 1rem;
+}
+.btn-ver-mas {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+.team-more-info {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0 auto;
+  background: #f5f7fa;
+  border-radius: 0 0 14px 14px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  padding: 1.1rem 1rem 1.2rem 1rem;
+  font-size: 0.98rem;
+  color: #333;
+  z-index: 2;
+  min-height: 60px;
+  max-width: 95%;
+  left: 2.5%;
+  right: 2.5%;
+  display: none;
+}
+.card {
+  position: relative;
+  overflow: visible;
+}
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.card:hover,
+.card:focus,
+.team-card:hover,
+.team-card:focus-within {
+  /* Eliminar cualquier efecto de hover para todas las cards */
+  transform: none !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+  transition: none !important;
+  z-index: auto !important;
+}
+
+/* Mejorar estilo de las cards del carrito */
+#cart-items .card-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1rem 1.2rem;
+}
+
+#cart-items .card-title {
+  font-weight: bold;
+  font-size: 1.15rem;
+  color: #222;
+  margin-bottom: 0.3rem;
+}
+
+#cart-items .card-text {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 0.2rem;
+  font-weight: 500;
+}
+
+#cart-items .card-body > div:first-child {
+  flex: 1 1 auto;
+}
+
+#cart-items .d-flex.flex-column.gap-2 {
+  gap: 0.5rem !important;
+  align-items: flex-end;
+  min-width: 48px;
+}
+
+#cart-items .btn {
+  font-size: 1rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+/* Botón añadir (verde) y eliminar (rojo) del carrito: colores claros y símbolos bien visibles */
+#cart-items .btn-success {
+  background-color: #28a745;
+  color: #fff;
+  border: 2px solid #28a745;
+  font-weight: bold;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+}
+#cart-items .btn-danger {
+  background-color: #dc3545;
+  color: #fff;
+  border: 2px solid #dc3545;
+  font-weight: bold;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+}
+/* Cambios al hacer hover: fondo blanco, borde de color, símbolo negro */
+#cart-items .btn-success:hover {
+  background-color: #fff !important;
+  color: #28a745 !important;
+  border: 2px solid #28a745 !important;
+  opacity: 1;
+}
+#cart-items .btn-danger:hover {
+  background-color: #fff !important;
+  color: #dc3545 !important;
+  border: 2px solid #dc3545 !important;
+  opacity: 1;
+}
+
+#cart-items .col-md-2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 0.2rem 0.5rem 0.5rem;
+}
+
+#cart-items .img-fluid {
+  max-width: 70px;
+  max-height: 70px;
+  border-radius: 8px;
+  border: 1px solid #eee;
+  background: #fafafa;
+}
+
+/* Animación lateral para info extra en cards del equipo */
+.team-card-info-panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  box-shadow: -4px 0 16px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1.2rem 1.2rem 1.2rem;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.7, 0.3, 0.3, 1), opacity 0.3s;
+}
+.team-card-info-panel.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0);
+}
+.team-card-info-panel .btn-cerrar-info {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 20;
+}
+.team-card-info-panel h5 {
+  margin-bottom: 1rem;
+}
+
+#map {
+  max-width: 100%; /* Asegura que no se desborde */
+  width: 90vw; /* Ancho relativo a la ventana */
+  height: 300px;
+  margin: 2rem auto 0;
+  background: #e9ecef;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  font-size: 1.2rem;
+  box-sizing: border-box; /* Incluye padding y border en el ancho */
+  padding: 0 1rem; /* Espaciado interno para evitar desbordes */
+}
+
+@media (max-width: 768px) {
+  #map {
+    width: calc(100% - 2rem); /* Ajusta el ancho para pantallas pequeñas */
+    margin: 2rem 1rem 0; /* Márgenes laterales para evitar desbordes */
+  }
 }
