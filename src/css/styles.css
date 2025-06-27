@@ -138,7 +138,7 @@ body {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: #007bff;
+  color: #000;
   font-weight: 600;
   text-decoration: none;
   transition: color 0.3s ease;
@@ -146,14 +146,17 @@ body {
 }
 .secondary-nav li a:hover,
 .secondary-nav li a:focus {
-  color: #000000;
+  color: #007bff;
   outline: none;
 }
 .secondary-nav img {
-  transition: transform 0.3s ease;
+  filter: grayscale(0%) brightness(0) saturate(100%) invert(32%) sepia(99%)
+    saturate(749%) hue-rotate(181deg) brightness(97%) contrast(101%);
+  transition: filter 0.3s, transform 0.3s;
 }
 .secondary-nav li a:hover img,
 .secondary-nav li a:focus img {
+  filter: none;
   transform: scale(1.2);
 }
 
