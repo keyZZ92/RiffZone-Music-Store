@@ -25,6 +25,6 @@ function initAuth() {
   }
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  initAuth();
-});
+// document.addEventListener("DOMContentLoaded", () => {
+//   initAuth();
+// });

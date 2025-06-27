@@ -217,24 +217,47 @@
         class="map-section container py-4 text-center"
         role="region"
         aria-label="Ubicación de la tienda"
+        style="margin-bottom: 2.5rem"
       >
         <h2 class="about-title">¿Dónde estamos?</h2>
-        <div
-          id="map"
-          style="
-            width: 600px;
-            height: 300px;
-            margin: 2rem auto 0;
-            background: #e9ecef;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #888;
-            font-size: 1.2rem;
-          "
-        >
-          Aquí aparecerá el mapa de nuestra ubicación ficticia.
+        <div class="row justify-content-center align-items-start">
+          <div class="col-md-7 mb-3 mb-md-0">
+            <div
+              id="map"
+              style="
+                width: 100%;
+                height: 300px;
+                background: #e9ecef;
+                border-radius: 8px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #888;
+                font-size: 1.2rem;
+              "
+            >
+              Aquí aparecerá el mapa de nuestra ubicación ficticia.
+            </div>
+          </div>
+          <div class="col-md-5 text-start info-contacto">
+            <h3 class="mb-2">Dirección y contacto</h3>
+            <p>
+              <strong>Dirección:</strong> Calle Ejemplo, 123<br />
+              28000 Madrid, España
+            </p>
+            <p>
+              <strong>Teléfono:</strong>
+              <a href="tel:+34911222333">911 222 333</a><br />
+              <strong>Email:</strong>
+              <a href="mailto:info@riffzone.com">info@riffzone.com</a>
+            </p>
+            <p>
+              <strong>Horario:</strong><br />
+              Lunes a Viernes: 9:30 - 18:30<br />
+              Sábados: 10:00 - 14:00<br />
+              Domingos: Cerrado
+            </p>
+          </div>
         </div>
       </section>
     </main>
@@ -455,6 +478,7 @@
     <!-- <script src="../js/app.js"></script> -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="../js/sobre-nosotros.js"></script>
+    <script src="../js/login.js"></script>
     <!-- Contador del carrito -->
     <script src="../js/cart.js"></script>
     <script src="../js/loadComponents.js"></script>

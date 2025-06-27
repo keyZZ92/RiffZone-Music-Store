@@ -23,9 +23,26 @@
   padding: 0 1rem;
 }
 
+.info-contacto {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.5rem 1.5rem 1rem 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.map-section {
+  margin-bottom: 2.5rem !important;
+}
+
 @media (max-width: 768px) {
   #map {
     width: calc(100% - 2rem);
     margin: 2rem 1rem 0;
+  }
+  .info-contacto {
+    margin-top: 2rem;
+    padding: 1rem;
   }
 }
