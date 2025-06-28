@@ -3,8 +3,14 @@ $(document).ready(function () {
   $(".team-card .btn-ver-mas").on("click", function (e) {
     e.preventDefault();
     var $card = $(this).closest(".team-card");
+
+    // Ocultar todos los paneles de información activos
+    $(".team-card-info-panel.active").removeClass("active");
+
+    // Mostrar el panel de la tarjeta actual
     $card.find(".team-card-info-panel").addClass("active");
   });
+
   // Ocultar panel lateral al hacer clic en cerrar
   $(".team-card .btn-cerrar-info").on("click", function (e) {
     e.preventDefault();
