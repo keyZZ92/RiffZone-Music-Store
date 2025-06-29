@@ -29,4 +29,14 @@ document.addEventListener("DOMContentLoaded", () => {
         // --- FIN ---
       });
   }
+
+  // Footer
+  const footerPlaceholder = document.getElementById("footer-placeholder");
+  if (footerPlaceholder) {
+    fetch("../components/footer.html")
+      .then((res) => res.text())
+      .then((html) => {
+        footerPlaceholder.innerHTML = html;
+      });
+  }
 });

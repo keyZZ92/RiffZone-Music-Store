@@ -852,3 +852,104 @@ main,
     margin: 2rem 1rem 0; /* Márgenes laterales para evitar desbordes */
   }
 }
+
+/* =========================
+   Formulario de registro
+========================= */
+.zona-registro {
+  background-color: #e4ecf4;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+}
+.registro-contenedor {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.registro-box {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 2.5rem 2rem 2rem 2rem;
+  width: 100%;
+  max-width: 540px;
+  font-family: "Oswald", sans-serif;
+}
+.registro-titulo {
+  border-left: 4px solid #e89229;
+  padding-left: 0.7rem;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-family: "Oswald", sans-serif;
+  color: #222;
+  text-align: left;
+}
+.registro-titulo span {
+  color: #e89229;
+}
+.registro-box label {
+  font-family: "Oswald", sans-serif;
+  font-weight: 500;
+  color: #222;
+}
+.registro-box input,
+.registro-box select,
+.registro-box textarea {
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  font-family: inherit;
+  margin-bottom: 0.5rem;
+  background: #f8fafc;
+  transition: border-color 0.2s;
+}
+.registro-box input:focus,
+.registro-box select:focus,
+.registro-box textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+.registro-btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.7rem 2.2rem;
+  font-size: 1.1rem;
+  font-family: "Oswald", sans-serif;
+  font-weight: 700;
+  transition: background 0.2s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+.registro-btn:hover {
+  background-color: #0056b3;
+}
+.registro-box .invalid-feedback {
+  color: #e53935;
+  font-size: 0.95rem;
+  margin-top: -0.3rem;
+  margin-bottom: 0.7rem;
+}
+.registro-box .form-text {
+  color: #888;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+@media (max-width: 600px) {
+  .registro-box {
+    padding: 1.2rem 0.5rem;
+    max-width: 98vw;
+  }
+  .registro-titulo {
+    font-size: 1.3rem;
+    padding-left: 0.4rem;
+  }
+}
