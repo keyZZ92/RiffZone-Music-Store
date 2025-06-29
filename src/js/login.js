@@ -53,36 +53,9 @@ function initializeLogin() {
 
   // Lógica para registro
   if (registerBtn) {
-    registerBtn.addEventListener("click", () => {
-      const email = prompt("Introduce tu email:");
-      const username = prompt("Introduce tu nombre de usuario:");
-      const password = prompt("Introduce tu contraseña:");
-
-      if (!email || !username || !password) {
-        alert("Por favor completa todos los campos");
-        return;
-      }
-
-      fetch("http://localhost:3000/api/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({ email, password, username }),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.user) {
-            alert("Usuario registrado con éxito");
-          } else {
-            alert(data.error || "Error al registrar usuario");
-          }
-        })
-        .catch((error) => {
-          console.error("Error en registro:", error);
-          alert("Error al conectar con el servidor.");
-        });
+    registerBtn.addEventListener("click", (e) => {
+      // Redirige directamente a la página de registro sin prompts ni validaciones
+      window.location.href = "register.html";
     });
   }
 

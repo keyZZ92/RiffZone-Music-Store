@@ -5,6 +5,7 @@
   "main": "src/js/app.js",
   "scripts": {
     "start": "node server.js",
+    "dev:server": "nodemon server.js",
     "dev": "live-server src",
     "build": "echo 'Build step not defined'",
     "test": "jest"
