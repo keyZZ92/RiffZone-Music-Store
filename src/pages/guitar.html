@@ -17,6 +17,7 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
     />
     <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/header.css" />
   </head>
   <body>
     <div id="header-placeholder"></div>
@@ -36,124 +37,19 @@
       <!-- Título principal -->
       <h2 id="products-title" class="main-title">Catálogo de Guitarras</h2>
       <!-- Filtro por categoría -->
-      <nav role="navigation" aria-label="Categorías de productos">
-        <ul class="secondary-nav">
-          <li>
-            <a href="/pages/guitar.html" aria-label="Guitarras"
-              ><img
-                src="../assets/images/iconos/iconGuitarra.png"
-                alt="Icono guitarra"
-                width="24"
-                height="24"
-              />
-              Guitarras</a
-            >
-          </li>
-          <li>
-            <a href="#bajos" aria-label="Bajos"
-              ><img
-                src="../assets/images/iconos/iconBajo.png"
-                alt="Icono bajo"
-                width="24"
-                height="24"
-              />
-              Bajos</a
-            >
-          </li>
-          <li>
-            <a href="#baterias" aria-label="Baterías"
-              ><img
-                src="../assets/images/iconos/iconBateria.png"
-                alt="Icono batería"
-                width="24"
-                height="24"
-              />
-              Baterías</a
-            >
-          </li>
-          <li>
-            <a href="#teclados" aria-label="Teclados"
-              ><img
-                src="../assets/images/iconos/iconTeclado.png"
-                alt="Icono teclado"
-                width="24"
-                height="24"
-              />
-              Teclados</a
-            >
-          </li>
-          <li>
-            <a href="#saxofon" aria-label="Saxofones"
-              ><img
-                src="../assets/images/iconos/iconSaxo.png"
-                alt="Icono saxofón"
-                width="24"
-                height="24"
-              />
-              Saxofones</a
-            >
-          </li>
-          <li>
-            <a href="#flautas" aria-label="Flautas"
-              ><img
-                src="../assets/images/iconos/iconFlauta.png"
-                alt="Icono flauta"
-                width="24"
-                height="24"
-              />
-              Flautas</a
-            >
-          </li>
-          <li>
-            <a href="#trompetas" aria-label="Trompetas"
-              ><img
-                src="../assets/images/iconos/iconTrompeta.png"
-                alt="Icono trompeta"
-                width="24"
-                height="24"
-              />
-              Trompetas</a
-            >
-          </li>
-          <li>
-            <a href="#altavoces" aria-label="Altavoces"
-              ><img
-                src="../assets/images/iconos/iconAltavoz.png"
-                alt="Icono altavoz"
-                width="24"
-                height="24"
-              />
-              Altavoces</a
-            >
-          </li>
-          <li>
-            <a href="#mesas" aria-label="Mesas de mezcla"
-              ><img
-                src="../assets/images/iconos/iconMesa.png"
-                alt="Icono mesa de mezcla"
-                width="24"
-                height="24"
-              />
-              Mesas de mezcla</a
-            >
-          </li>
-        </ul>
-      </nav>
+      <div id="products-nav-placeholder"></div>
       <!-- Cards de producto -->
-      <div
-        id="guitar-products"
-        class="row row-cols-1 row-cols-md-3 g-4"
-        role="region"
-        aria-label="Lista de productos de guitarra"
-      ></div>
+      <div class="row row-cols-1 row-cols-md-3 g-4" id="guitar-products"></div>
     </main>
 
-    <!-- Pre-footer -->
-    <section class="pre-footer" aria-label="Información de contacto">
+    <section
+      class="pre-footer"
+      aria-label="Información adicional y redes sociales"
+    >
       <div class="pre-footer-container">
         <!-- Columna 1: Métodos de pago -->
-        <div class="pre-footer-column1" aria-labelledby="metodos-pagos">
-          <h3 id="metodos-pagos">Métodos de pago</h3>
+        <div class="pre-footer-column1" aria-label="Métodos de pago aceptados">
+          <h3>Métodos de pago</h3>
           <div class="payment-methods">
             <a
               href="https://www.paypal.com"
@@ -257,105 +153,15 @@
         </div>
       </div>
     </section>
-    <!-- Footer -->
-    <footer
-      class="footer-principal"
-      role="contentinfo"
-      aria-label="Pie de página principal del sitio"
-    >
-      <div class="footer-contenedor">
-        <!-- Logo y nombre -->
-        <div class="footer-logo" aria-label="Logotipo y nombre del sitio">
-          <img
-            src="../assets/images/logo RiffZone.png"
-            alt="Logo de RiffZone Music Store"
-          />
-          <span>RiffZone Music Store</span>
-        </div>
-        <!-- Texto de derechos -->
-        <div class="footer-derechos">
-          <small
-            >&copy; 2025 RiffZone Music Store. Todos los derechos
-            reservados.</small
-          >
-        </div>
-      </div>
-    </footer>
 
-    <!-- Modal de inicio de sesión -->
-    <div
-      class="modal fade"
-      id="loginModal"
-      tabindex="-1"
-      aria-labelledby="loginModalLabel"
-      aria-hidden="true"
-      aria-modal="true"
-    >
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <form aria-label="Formulario de inicio de sesión">
-            <!-- Cabecera del modal: título y botón de cerrar -->
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="loginModalLabel">
-                Iniciar Sesión
-              </h1>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Cerrar ventana de inicio de sesión"
-              ></button>
-            </div>
-            <!-- Cuerpo del modal: formulario de usuario y contraseña -->
-            <div class="modal-body">
-              <div class="mb-3">
-                <label for="user" class="form-label">Usuario</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="user"
-                  aria-required="true"
-                  aria-label="Usuario"
-                  required
-                />
-              </div>
-              <div class="mb-3">
-                <label for="inputPassword" class="form-label">Contraseña</label>
-                <input
-                  type="password"
-                  class="form-control"
-                  id="inputPassword"
-                  aria-required="true"
-                  aria-label="contraseña"
-                  required
-                />
-              </div>
-              <!-- Footer del modal: botón de entrar y crear usuario -->
-              <div class="modal-footer">
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  data-bs-dismiss="modal"
-                  aria-label="Entrar"
-                >
-                  Entrar
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-primary"
-                  aria-label="Ir a crear nueva cuenta"
-                  onclick="window.location.href='register.html'"
-                >
-                  Crear Usuario
-                </button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
 
     <!-- Scripts -->
+    <script>
+      window.PRODUCT_CATEGORY = ["guitar", "basses"];
+      window.PRODUCT_CONTAINER_ID = "guitar-products";
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/auth.js"></script>
     <!-- <script src="../js/app.js"></script> -->

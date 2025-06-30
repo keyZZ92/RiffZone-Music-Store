@@ -138,7 +138,7 @@ body {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: #007bff;
+  color: #000;
   font-weight: 600;
   text-decoration: none;
   transition: color 0.3s ease;
@@ -146,14 +146,17 @@ body {
 }
 .secondary-nav li a:hover,
 .secondary-nav li a:focus {
-  color: #000000;
+  color: #007bff;
   outline: none;
 }
 .secondary-nav img {
-  transition: transform 0.3s ease;
+  filter: grayscale(0%) brightness(0) saturate(100%) invert(32%) sepia(99%)
+    saturate(749%) hue-rotate(181deg) brightness(97%) contrast(101%);
+  transition: filter 0.3s, transform 0.3s;
 }
 .secondary-nav li a:hover img,
 .secondary-nav li a:focus img {
+  filter: none;
   transform: scale(1.2);
 }
 
@@ -592,7 +595,9 @@ main,
 }
 
 /* Efecto zoom solo en la imagen de producto en guitar.html */
-#guitar-products .card-img-top {
+#guitar-products .card-img-top,
+#drum-products .card-img-top,
+#keyboard-products .card-img-top {
   transition: transform 0.3s cubic-bezier(0.4, 2, 0.6, 1);
   object-fit: cover;
   width: 100%;
@@ -601,51 +606,26 @@ main,
   border-radius: 0;
 }
 
-#guitar-products .card:hover .card-img-top {
+#guitar-products .card:hover .card-img-top,
+#drum-products .card:hover .card-img-top,
+#keyboard-products .card:hover .card-img-top {
   transform: scale(1.12);
   z-index: 1;
 }
 
-#guitar-products .card {
+#guitar-products .card,
+#drum-products .card,
+#keyboard-products .card {
   overflow: hidden;
   transition: none !important;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-#guitar-products .card:hover {
+#guitar-products .card:hover,
+#drum-products .card:hover,
+#keyboard-products .card:hover {
   transform: none !important;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-}
-
-/* =========================
-   Estilos generales para la sección "Acerca de"
-========================= */
-.about-section {
-  text-align: center;
-}
-
-.about-description {
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.about-store-name {
-  font-weight: bold;
-  color: #1a237e;
-  font-size: 1.15em;
-}
-
-.about-logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 2rem auto 1.5rem auto;
-}
-.about-logo img {
-  max-width: 180px;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 }
 
 /* =========================
@@ -878,5 +858,106 @@ main,
   #map {
     width: calc(100% - 2rem); /* Ajusta el ancho para pantallas pequeñas */
     margin: 2rem 1rem 0; /* Márgenes laterales para evitar desbordes */
+  }
+}
+
+/* =========================
+   Formulario de registro
+========================= */
+.zona-registro {
+  background-color: #e4ecf4;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+}
+.registro-contenedor {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.registro-box {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 2.5rem 2rem 2rem 2rem;
+  width: 100%;
+  max-width: 540px;
+  font-family: "Oswald", sans-serif;
+}
+.registro-titulo {
+  border-left: 4px solid #e89229;
+  padding-left: 0.7rem;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-family: "Oswald", sans-serif;
+  color: #222;
+  text-align: left;
+}
+.registro-titulo span {
+  color: #e89229;
+}
+.registro-box label {
+  font-family: "Oswald", sans-serif;
+  font-weight: 500;
+  color: #222;
+}
+.registro-box input,
+.registro-box select,
+.registro-box textarea {
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  font-family: inherit;
+  margin-bottom: 0.5rem;
+  background: #f8fafc;
+  transition: border-color 0.2s;
+}
+.registro-box input:focus,
+.registro-box select:focus,
+.registro-box textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+.registro-btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.7rem 2.2rem;
+  font-size: 1.1rem;
+  font-family: "Oswald", sans-serif;
+  font-weight: 700;
+  transition: background 0.2s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+.registro-btn:hover {
+  background-color: #0056b3;
+}
+.registro-box .invalid-feedback {
+  color: #e53935;
+  font-size: 0.95rem;
+  margin-top: -0.3rem;
+  margin-bottom: 0.7rem;
+}
+.registro-box .form-text {
+  color: #888;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+@media (max-width: 600px) {
+  .registro-box {
+    padding: 1.2rem 0.5rem;
+    max-width: 98vw;
+  }
+  .registro-titulo {
+    font-size: 1.3rem;
+    padding-left: 0.4rem;
   }
 }
