@@ -1,11 +1,7 @@
-<<<<<<< HEAD
-
-=======
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&display=swap");
 /* =========================
    Reset y configuración base
 ========================= */
->>>>>>> 112127e1703a90c1888598415a285a714dd12a7b
 * {
   margin: 0;
   padding: 0;
@@ -17,132 +13,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   background-color: #e4ecf4 !important;
-<<<<<<< HEAD
-}
-
-=======
   overflow-x: hidden;
-}
->>>>>>> 112127e1703a90c1888598415a285a714dd12a7b
-
-/* =========================
-   Header y navegación principal
-========================= */
-.header {
-  background-image: url("../assets/images/imagen1.png");
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  min-height: 260px;
-  padding: 3.5rem 0;
-}
-.header::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(44, 41, 41, 0.5);
-}
-.header-container,
-.header-container-guitar {
-  position: relative;
-  z-index: 1;
-  max-width: 75rem;
-  margin: 0 auto;
-  padding: 0.625rem 2.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: rgba(255, 255, 255, 0.94);
-  border-radius: 10px;
-  box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.1);
-  font-family: "Oswald", sans-serif;
-}
-.logo-section {
-  display: flex;
-  align-items: center;
-  gap: 0.2rem;
-}
-.logo-section img {
-  width: 100px;
-  height: auto;
-}
-.logo-section h1 {
-  font-size: 1.6rem;
-  font-family: "Oswald", sans-serif;
-  color: #222;
-  margin: 0;
-}
-.nav-header {
-  display: flex;
-  align-items: center;
-}
-
-.nav-list {
-  list-style: none;
-  display: flex;
-  gap: 1.875rem;
-  margin: 0;
-  padding: 0;
-}
-.nav-list a {
-  text-decoration: none;
-  color: #007bff;
-  font-weight: bold;
-  font-size: 0.95rem;
-  position: relative;
-}
-.nav-list a:hover {
-  color: #000000;
-}
-.login-button {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  background: transparent;
-  color: #222;
-  border: 2px solid #222;
-  padding: 0.4rem 1rem;
-  border-radius: 0.25rem;
-  font-family: "Oswald", sans-serif;
-  font-size: 0.95rem;
-  font-weight: bold;
-  transition: background 0.3s, color 0.3s;
-  margin-left: 2rem;
-}
-.login-button:hover {
-  background-color: #222;
-  color: white;
-}
-.cart-counter {
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-  font-size: 1.2rem;
-  color: #e89229;
-  font-weight: bold;
-}
-
-/* Responsive: header */
-@media (max-width: 768px) {
-  .header-container,
-  .header-container-guitar {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-  }
-  .nav-list {
-    flex-direction: row;
-    gap: 1rem;
-  }
-  .logo-section h1 {
-    font-size: 1.2rem;
-  }
-  .login-button {
-    margin-left: 0;
-  }
 }
 
 /* =========================
@@ -471,7 +342,6 @@ body {
   background: #007bff;
   transform: scale(1.2);
 }
->>>>>>> 112127e1703a90c1888598415a285a714dd12a7b
 
 /* =========================
    Pre-footer y footer
@@ -625,8 +495,6 @@ body {
     text-align: right;
   }
 }
-<<<<<<< HEAD
-=======
 
 /* =========================
    Responsive: pantallas pequeñas
@@ -992,7 +860,6 @@ main,
     margin: 2rem 1rem 0; /* Márgenes laterales para evitar desbordes */
   }
 }
->>>>>>> 112127e1703a90c1888598415a285a714dd12a7b
 
 /* =========================
    Formulario de registro
