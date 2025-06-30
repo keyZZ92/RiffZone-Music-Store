@@ -595,7 +595,9 @@ main,
 }
 
 /* Efecto zoom solo en la imagen de producto en guitar.html */
-#guitar-products .card-img-top {
+#guitar-products .card-img-top,
+#drum-products .card-img-top,
+#keyboard-products .card-img-top {
   transition: transform 0.3s cubic-bezier(0.4, 2, 0.6, 1);
   object-fit: cover;
   width: 100%;
@@ -604,18 +606,24 @@ main,
   border-radius: 0;
 }
 
-#guitar-products .card:hover .card-img-top {
+#guitar-products .card:hover .card-img-top,
+#drum-products .card:hover .card-img-top,
+#keyboard-products .card:hover .card-img-top {
   transform: scale(1.12);
   z-index: 1;
 }
 
-#guitar-products .card {
+#guitar-products .card,
+#drum-products .card,
+#keyboard-products .card {
   overflow: hidden;
   transition: none !important;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-#guitar-products .card:hover {
+#guitar-products .card:hover,
+#drum-products .card:hover,
+#keyboard-products .card:hover {
   transform: none !important;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
