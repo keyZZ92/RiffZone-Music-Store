@@ -30,6 +30,18 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   }
 
+  // Products-nav
+  const productsNavPlaceholder = document.getElementById(
+    "products-nav-placeholder"
+  );
+  if (productsNavPlaceholder) {
+    fetch("../components/products-nav.html")
+      .then((res) => res.text())
+      .then((html) => {
+        productsNavPlaceholder.innerHTML = html;
+      });
+  }
+
   // Footer
   const footerPlaceholder = document.getElementById("footer-placeholder");
   if (footerPlaceholder) {
