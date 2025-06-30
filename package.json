@@ -5,6 +5,7 @@
   "main": "src/js/app.js",
   "scripts": {
     "start": "node server.js",
+    "dev:server": "nodemon server.js",
     "dev": "live-server src",
     "build": "echo 'Build step not defined'",
     "test": "jest"
@@ -19,14 +20,19 @@
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
     "express": "^4.21.2",
     "jest": "^30.0.0",
     "nodemailer": "^7.0.3",
-    "save-dev": "^0.0.1-security",
-    "supertest": "^7.1.1"
+    "save-dev": "^0.0.1-security"
   },
   "devDependencies": {
+    "jest-environment-jsdom": "^30.0.2",
     "live-server": "^1.2.0",
-    "nodemon": "^3.1.10"
+    "nodemon": "^3.1.10",
+    "supertest": "^7.1.1"
+  },
+  "directories": {
+    "test": "tests"
   }
 }

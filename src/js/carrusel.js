@@ -49,6 +49,9 @@
         let currentTest = 0;
         let testimonialInterval;
 
+        // Limpiar puntos anteriores para evitar duplicados
+        dotsContainer.innerHTML = "";
+
         // Crear puntos dinámicamente
         testimonials.forEach((_, i) => {
           const dot = document.createElement("button");
