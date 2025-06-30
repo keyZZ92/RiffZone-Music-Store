@@ -1,5 +1,4 @@
 <!-- Header común para todas las páginas -->
-<link rel="stylesheet" href="../css/header.css" />
 <header
   class="header"
   role="banner"
@@ -113,6 +112,83 @@
       </li>
     </ul>
   </nav>
+  <!-- Modal de inicio de sesión -->
+  <div
+    class="modal fade"
+    id="loginModal"
+    tabindex="-1"
+    aria-labelledby="loginModalLabel"
+    aria-hidden="true"
+    aria-modal="true"
+  >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <form id="loginForm" aria-label="Formulario de inicio de sesión">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="loginModalLabel">
+              Iniciar Sesión
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Cerrar ventana de inicio de sesión"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="loginEmail" class="form-label">Email</label>
+              <input
+                type="email"
+                class="form-control"
+                id="loginEmail"
+                aria-required="true"
+                aria-label="Correo electrónico"
+                autocomplete="username"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="loginPassword" class="form-label">Contraseña</label>
+              <div class="input-group">
+                <input
+                  type="password"
+                  class="form-control"
+                  id="loginPassword"
+                  aria-required="true"
+                  aria-label="Contraseña"
+                  autocomplete="current-password"
+                  required
+                />
+                <button
+                  type="button"
+                  class="btn btn-outline-secondary"
+                  id="togglePassword"
+                  tabindex="-1"
+                  aria-label="Mostrar u ocultar contraseña"
+                >
+                  <i class="bi bi-eye" id="togglePasswordIcon"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-secondary" aria-label="Entrar">
+              Entrar
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              aria-label="Ir a crear nueva cuenta"
+              onclick="window.location.href='register.html'"
+            >
+              Crear Usuario
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 </header>
 <script>
   // Mostrar/ocultar menú hamburguesa y mobile-nav
@@ -139,4 +215,23 @@
     document.addEventListener("DOMContentLoaded", checkHamburger);
     checkHamburger();
   })();
+  // Mostrar/ocultar contraseña en el login
+  document.addEventListener("DOMContentLoaded", function () {
+    var toggleBtn = document.getElementById("togglePassword");
+    var passwordInput = document.getElementById("loginPassword");
+    var icon = document.getElementById("togglePasswordIcon");
+    if (toggleBtn && passwordInput && icon) {
+      toggleBtn.addEventListener("click", function () {
+        if (passwordInput.type === "password") {
+          passwordInput.type = "text";
+          icon.classList.remove("bi-eye");
+          icon.classList.add("bi-eye-slash");
+        } else {
+          passwordInput.type = "password";
+          icon.classList.remove("bi-eye-slash");
+          icon.classList.add("bi-eye");
+        }
+      });
+    }
+  });
 </script>

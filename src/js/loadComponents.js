@@ -10,7 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
         // Vuelve a inicializar los scripts de sesión tras cargar el header
         if (typeof initAuth === "function") initAuth();
         // Actualiza el contador del carrito tras cargar el header
-        if (typeof actualizarContadorCarrito === "function") actualizarContadorCarrito();
+        if (typeof actualizarContadorCarrito === "function")
+          actualizarContadorCarrito();
         // Inicializa el menú hamburguesa tras cargar el header
         if (typeof initHeaderMenu === "function") {
           initHeaderMenu();
@@ -23,6 +24,31 @@ document.addEventListener("DOMContentLoaded", () => {
           };
           document.body.appendChild(script);
         }
+        // --- INICIO: Inicializar login tras cargar header ---
+        if (typeof initializeLogin === "function") initializeLogin();
+        // --- FIN ---
+      });
+  }
+
+  // Products-nav
+  const productsNavPlaceholder = document.getElementById(
+    "products-nav-placeholder"
+  );
+  if (productsNavPlaceholder) {
+    fetch("../components/products-nav.html")
+      .then((res) => res.text())
+      .then((html) => {
+        productsNavPlaceholder.innerHTML = html;
+      });
+  }
+
+  // Footer
+  const footerPlaceholder = document.getElementById("footer-placeholder");
+  if (footerPlaceholder) {
+    fetch("../components/footer.html")
+      .then((res) => res.text())
+      .then((html) => {
+        footerPlaceholder.innerHTML = html;
       });
   }
 });

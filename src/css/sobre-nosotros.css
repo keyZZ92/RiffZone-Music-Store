@@ -1,5 +1,36 @@
 /* Estilos específicos para la página "Sobre Nosotros" */
 
+/* =========================
+   Estilos generales para la sección "Acerca de"
+========================= */
+.about-section {
+  text-align: center;
+}
+
+.about-description {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.about-store-name {
+  font-weight: bold;
+  color: #1a237e;
+  font-size: 1.15em;
+}
+
+.about-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto 1.5rem auto;
+}
+.about-logo img {
+  max-width: 180px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
 .about-title {
   text-align: center;
   font-size: 2rem;

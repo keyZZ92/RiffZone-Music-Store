@@ -40,13 +40,13 @@ app.get("/api/products", (req, res) => {
   );
 });
 // Servir el archivo register.html cuando se solicite la ruta /register.html
-app.get('/register.html', (req, res) => {
-  res.sendFile(path.join(__dirname, 'src/pages/register.html'));    
-});   
+app.get("/register.html", (req, res) => {
+  res.sendFile(path.join(__dirname, "src/pages/register.html"));
+});
 
 // Servir index.html para login
-app.get('/index.html', (req, res) => {
-  res.sendFile(path.join(__dirname, 'src', 'pages', 'index.html'));
+app.get("/index.html", (req, res) => {
+  res.sendFile(path.join(__dirname, "src", "pages", "index.html"));
 });
 
 // POST /api/register: registrar un nuevo usuario
@@ -114,6 +114,7 @@ app.post("/api/register", (req, res) => {
     });
   });
 });
+
 // Login
 app.post("/api/login", (req, res) => {
   // Extraer los datos del body de la petición
@@ -167,12 +168,35 @@ app.post("/api/login", (req, res) => {
     if (!user) {
       return res.status(401).json({ error: "Credenciales inválidas." });
     }
-    // Si las credenciales son correctas, devolver el usuario
-    res.status(200).json({
-      message: `¡Hola, ${user.username}! Login exitoso.`, // Mensaje de bienvenida
-      // Devolver solo los datos necesarios del usuario para evitar exponer la contraseña
-      user: { username: user.username, email: user.email },
-    });
+
+    // Actualizar el estado de isLoggedIn para todos los usuarios
+    const updatedUsers = users.map((u) => ({
+      ...u,
+      // Establecer isLogged a true solo para el usuario que inicia sesión
+      isLogged: u.email === user.email,
+    }));
+
+    // Guardar el array de usuarios actualizado de nuevo en el archivo
+    fs.writeFile(
+      usersPath,
+      JSON.stringify(updatedUsers, null, 2),
+      (writeErr) => {
+        if (writeErr) {
+          console.error("Error al actualizar el estado del usuario:", writeErr);
+          // Opcional: decidir si se debe devolver un error o continuar
+          return res
+            .status(500)
+            .json({ error: "Error interno al actualizar el estado." });
+        }
+
+        // Si las credenciales son correctas, devolver el usuario
+        res.status(200).json({
+          message: `¡Hola, ${user.username}! Login exitoso.`, // Mensaje de bienvenida
+          // Devolver solo los datos necesarios del usuario
+          user: { username: user.username, email: user.email },
+        });
+      }
+    );
   });
 });
 
@@ -265,7 +289,9 @@ app.post("/api/contacto", (req, res) => {
   console.log("Datos recibidos:", req.body);
 
   if (!nombre || !email || !mensaje) {
-    return res.status(400).json({ error: "Todos los campos son obligatorios." });
+    return res
+      .status(400)
+      .json({ error: "Todos los campos son obligatorios." });
   }
 
   const contacto = {
@@ -293,38 +319,44 @@ app.post("/api/contacto", (req, res) => {
     fs.writeFile(contactosPath, JSON.stringify(contactos, null, 2), (err) => {
       if (err) {
         console.error("Error al guardar contacto:", err);
-        return res.status(500).json({ error: "No se pudo guardar el mensaje." });
+        return res
+          .status(500)
+          .json({ error: "No se pudo guardar el mensaje." });
       }
 
       // Envío de correo
       const transporter = nodemailer.createTransport({
-        service: 'gmail',
+        service: "gmail",
         auth: {
-          user: 'riffzonemusicstore@gmail.com',
-          pass: 'clwi algp blim osmd'
-        }
+          user: "riffzonemusicstore@gmail.com",
+          pass: "clwi algp blim osmd",
+        },
       });
 
       const mailOptions = {
         from: '"RiffZone Contacto" <riffzonemusicstore@gmail.com>',
-        to: 'riffzonemusicstore@gmail.com',
-        subject: 'Mensaje de contacto recibido de RiffZone Contacto',
+        to: "riffzonemusicstore@gmail.com",
+        subject: "Mensaje de contacto recibido de RiffZone Contacto",
         text: `
         Nombre: ${nombre}
         Email: ${email}
         Teléfono: ${telefono || "opcional"}
         Mensaje:
         ${mensaje}
-        `
+        `,
       };
 
       transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
           console.error("Error al enviar el correo:", error);
-          return res.status(500).json({ error: "Mensaje guardado, pero error al enviar correo." });
+          return res
+            .status(500)
+            .json({ error: "Mensaje guardado, pero error al enviar correo." });
         } else {
           console.log("Correo enviado:", info.response);
-          return res.status(200).json({ mensaje: "Mensaje recibido y correo enviado." });
+          return res
+            .status(200)
+            .json({ mensaje: "Mensaje recibido y correo enviado." });
         }
       });
     });
