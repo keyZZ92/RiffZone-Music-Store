@@ -31,4 +31,4 @@ Thumbs.db
 .vscode/
 
 # Archivos de datos de la aplicación
-backend/data/users.json
+# backend/data/users.json
