@@ -34,7 +34,7 @@ body {
 }
 
 .formulario-box {
-  flex: 1 1 600px;
+  flex: 1 1 700px;
   background: #ffffff;
   padding: 2rem;
   border-radius: 1rem;
@@ -56,7 +56,7 @@ body {
 }
 
 .horario-box {
-  flex: 0 0 250px;
+  flex: 0 0 150px;
   background: #f1f9ff;
   padding: 3rem;
   border-radius: 1rem;
@@ -93,6 +93,13 @@ body {
   .contacto-contenedor {
     width: calc(100% - 2rem);
     margin: 2rem 1rem 0;
+  }
+}
+@media (min-width: 992px) {
+.contacto-contenedor{
+  flex-wrap: nowrap;
+  width: 70%;
+  justify-content: space-between;
   }
 }
 

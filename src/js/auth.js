@@ -1,3 +1,9 @@
+// Configuración de endpoint para login/logout
+const API_BASE_URL =
+  window.location.hostname === "localhost"
+    ? "http://localhost:3000"
+    : "https://music-store-node-2-484977869651.europe-southwest1.run.app";
+
 // Extrae la lógica de actualización de UI de sesión a una función global
 function initAuth() {
   const userData = localStorage.getItem("user");
@@ -19,8 +25,19 @@ function initAuth() {
   }
   if (logoutBtn) {
     logoutBtn.onclick = function () {
-      localStorage.removeItem("user");
-      window.location.reload();
+      // Llamada al backend para desloguear a todos
+      fetch(`${API_BASE_URL}/api/logout`, {
+        method: "POST",
+      })
+        .then(() => {
+          localStorage.removeItem("user");
+          window.location.reload();
+        })
+        .catch(() => {
+          // Si falla, igual limpiamos localStorage
+          localStorage.removeItem("user");
+          window.location.reload();
+        });
     };
   }
 }
