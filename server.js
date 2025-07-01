@@ -98,8 +98,12 @@ app.post("/api/register", (req, res) => {
       return res.status(409).json({ error: "El usuario o email ya existen." });
     }
 
-    // Añadir el nuevo usuario
-    users.push({ username, password, email });
+    // Añadir el nuevo usuario con todos los campos recibidos y isLogged: false
+    const nuevoUsuario = {
+      ...req.body,
+      isLogged: false,
+    };
+    users.push(nuevoUsuario);
 
     // Guardar el array actualizado en el archivo JSON
     fs.writeFile(usersPath, JSON.stringify(users, null, 2), (err) => {

@@ -82,6 +82,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Preparar datos para enviar
     const usuario = {
+      username: form.nombre.value.trim(),
+      password: form.password.value,
+      email: form.email.value.trim(),
+      // Puedes añadir el resto de campos si quieres guardarlos en el futuro
       nombre: form.nombre.value.trim(),
       apellidos: form.apellidos.value.trim(),
       telefono: form.telefono.value.trim(),
@@ -89,8 +93,6 @@ document.addEventListener("DOMContentLoaded", function () {
       region: form.region.value.trim(),
       fechaNacimiento: form.fechaNacimiento.value,
       direccion: form.direccion.value.trim(),
-      email: form.email.value.trim(),
-      password: form.password.value,
     };
 
     // Enviar datos al backend
@@ -106,7 +108,9 @@ document.addEventListener("DOMContentLoaded", function () {
         return res.json();
       })
       .then((data) => {
-        alert(data.mensaje);
+        alert(
+          data.message || data.mensaje || "Usuario registrado correctamente."
+        );
         form.reset();
         // Quitar estilos de error si los hubiese
         campos.forEach((campo) => clearError(campo));
