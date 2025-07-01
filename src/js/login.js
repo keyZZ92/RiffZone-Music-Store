@@ -6,6 +6,12 @@ function initializeLogin() {
     "button[aria-label='Ir a crear nueva cuenta']"
   );
 
+  // Configuración de endpoint para login/logout
+  const API_BASE_URL =
+    window.location.hostname === "localhost"
+      ? "http://localhost:3000"
+      : "https://music-store-node-2-484977869651.europe-southwest1.run.app";
+
   // Lógica para login
   if (loginForm) {
     loginForm.addEventListener("submit", (event) => {
@@ -19,7 +25,7 @@ function initializeLogin() {
         return;
       }
 
-      fetch("http://localhost:3000/api/login", {
+      fetch(`${API_BASE_URL}/api/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
