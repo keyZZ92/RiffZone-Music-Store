@@ -19,8 +19,19 @@ function initAuth() {
   }
   if (logoutBtn) {
     logoutBtn.onclick = function () {
-      localStorage.removeItem("user");
-      window.location.reload();
+      // Llamada al backend para desloguear a todos
+      fetch("http://localhost:3000/api/logout", {
+        method: "POST",
+      })
+        .then(() => {
+          localStorage.removeItem("user");
+          window.location.reload();
+        })
+        .catch(() => {
+          // Si falla, igual limpiamos localStorage
+          localStorage.removeItem("user");
+          window.location.reload();
+        });
     };
   }
 }

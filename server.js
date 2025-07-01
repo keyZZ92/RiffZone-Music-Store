@@ -384,3 +384,39 @@ if (require.main === module) {
     console.log(`Servidor corriendo en http://localhost:${PORT}`);
   });
 }
+
+// --- LOGOUT: poner todos los usuarios a isLogged: false ---
+app.post("/api/logout", (req, res) => {
+  const usersPath = path.join(__dirname, "backend/data/users.json");
+  fs.readFile(usersPath, "utf8", (err, data) => {
+    if (err) {
+      console.error("Error al leer el archivo de usuarios:", err);
+      return res.status(500).json({ error: "Error interno del servidor" });
+    }
+    let users = [];
+    try {
+      users = JSON.parse(data);
+    } catch (parseError) {
+      return res
+        .status(500)
+        .json({ error: "Error al procesar los datos de usuarios" });
+    }
+    // Poner todos a isLogged: false
+    const updatedUsers = users.map((u) => ({ ...u, isLogged: false }));
+    fs.writeFile(
+      usersPath,
+      JSON.stringify(updatedUsers, null, 2),
+      (writeErr) => {
+        if (writeErr) {
+          console.error("Error al actualizar usuarios:", writeErr);
+          return res
+            .status(500)
+            .json({ error: "Error interno al actualizar usuarios" });
+        }
+        res
+          .status(200)
+          .json({ message: "Todos los usuarios deslogueados correctamente." });
+      }
+    );
+  });
+});
