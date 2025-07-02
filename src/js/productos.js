@@ -29,9 +29,7 @@ fetch("../assets/data/products.json")
         producto.name
       }">
           <div class="card-body">
-          <h5 class="card-title">
-          <a href="product-detail.html?id=${producto.id}">${producto.name}</a>
-        </h5>
+          <h5 class="card-title">${producto.name}</h5>
             <p class="card-text">${producto.description || ""}</p>
             <p>
               <span class="text-muted text-decoration-line-through">${
@@ -44,6 +42,7 @@ fetch("../assets/data/products.json")
                 class="btn btn-outline-secondary btn-detail flex-fill"
                 type="button"
                 aria-label="Ver detalle de ${producto.name}"
+                data-id="${producto.id}"
               >
                 <i class="bi bi-eye me-2"></i>Ver detalle
               </button>
@@ -94,13 +93,20 @@ fetch("../assets/data/products.json")
         }, 1000);
       });
     });
+    // Añadir funcionalidad al botón Ver detalle
+    document.querySelectorAll(".btn-detail").forEach((btn) => {
+      btn.addEventListener("click", function () {
+        const id = this.getAttribute("data-id");
+        window.location.href = `product-detail.html?id=${id}`;
+      });
+    });
   });
 
 // Utilidades para carrito por usuario (igual que en cart.js)
 function getCurrentUsername() {
-  return localStorage.getItem('username');
+  return localStorage.getItem("username");
 }
 function getCarritoKey() {
   const username = getCurrentUsername();
-  return username ? `carrito_${username}` : 'carrito';
+  return username ? `carrito_${username}` : "carrito";
 }
