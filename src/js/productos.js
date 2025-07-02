@@ -37,19 +37,28 @@ fetch("../assets/data/products.json")
               }€</span>
               <span class="fw-bold text-danger">${producto.offerPrice}€</span>
             </p>
-            <button
-              class="btn btn-primary btn-add-cart"
-              data-producto='${JSON.stringify({
-                id: producto.id,
-                nombre: producto.name,
-                precio: producto.offerPrice,
-                image: producto.image,
-                description: producto.description,
-              })}'
-              aria-label="Añadir ${producto.name} al carrito"
-            >
-              Añadir al carrito
-            </button>
+            <div class="d-flex gap-2 justify-content-between">
+              <button
+                class="btn btn-outline-secondary btn-detail flex-fill"
+                type="button"
+                aria-label="Ver detalle de ${producto.name}"
+              >
+                <i class="bi bi-eye me-2"></i>Ver detalle
+              </button>
+              <button
+                class="btn btn-primary btn-add-cart flex-fill"
+                data-producto='${JSON.stringify({
+                  id: producto.id,
+                  nombre: producto.name,
+                  precio: producto.offerPrice,
+                  image: producto.image,
+                  description: producto.description,
+                })}'
+                aria-label="Añadir ${producto.name} al carrito"
+              >
+                <i class="bi bi-cart-plus me-2"></i>Añadir al carrito
+              </button>
+            </div>
           </div>
         </div>
       `;

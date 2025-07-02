@@ -951,6 +951,20 @@ main,
   font-size: 0.95rem;
   margin-bottom: 0.5rem;
 }
+.btn-detail.registro-style {
+  background: #fff;
+  color: #e89229;
+  border: 2px solid #e89229;
+  font-family: "Oswald", sans-serif;
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s;
+}
+.btn-detail.registro-style:hover,
+.btn-detail.registro-style:focus {
+  background: #e89229;
+  color: #fff;
+  border-color: #e89229;
+}
 @media (max-width: 600px) {
   .registro-box {
     padding: 1.2rem 0.5rem;
