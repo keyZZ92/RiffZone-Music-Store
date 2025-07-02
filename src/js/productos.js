@@ -69,7 +69,9 @@ fetch("../assets/data/products.json")
     document.querySelectorAll(".btn-add-cart").forEach((btn) => {
       btn.addEventListener("click", function () {
         const producto = JSON.parse(this.getAttribute("data-producto"));
-        let carrito = localStorage.getItem("carrito");
+        // Usar la clave correcta según usuario
+        const key = getCarritoKey();
+        let carrito = localStorage.getItem(key);
         carrito = carrito ? JSON.parse(carrito) : [];
         // Buscar si ya existe el producto
         const idx = carrito.findIndex((p) => p.id === producto.id);
@@ -79,7 +81,7 @@ fetch("../assets/data/products.json")
           producto.cantidad = 1;
           carrito.push(producto);
         }
-        localStorage.setItem("carrito", JSON.stringify(carrito));
+        localStorage.setItem(key, JSON.stringify(carrito));
         if (typeof actualizarContadorCarrito === "function") {
           actualizarContadorCarrito();
         }
@@ -91,3 +93,12 @@ fetch("../assets/data/products.json")
       });
     });
   });
+
+// Utilidades para carrito por usuario (igual que en cart.js)
+function getCurrentUsername() {
+  return localStorage.getItem('username');
+}
+function getCarritoKey() {
+  const username = getCurrentUsername();
+  return username ? `carrito_${username}` : 'carrito';
+}
