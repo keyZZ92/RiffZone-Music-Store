@@ -1,7 +1,8 @@
 // cart.js
 // Función de comprobación de login
 function requireLogin() {
-  if (!localStorage.getItem("isLoggedIn")) {
+  // Considera logueado si existe 'user' o 'username' en localStorage
+  if (!localStorage.getItem("user") && !localStorage.getItem("username")) {
     // Mostrar modal de login si existe en la página
     const modalEl = document.getElementById("loginModal");
     if (modalEl && typeof bootstrap !== "undefined") {
@@ -15,10 +16,28 @@ function requireLogin() {
   return true;
 }
 
-// Obtener carrito desde localStorage
+// Obtener el usuario actual
+function getCurrentUsername() {
+  return localStorage.getItem("username");
+}
+
+// Obtener la clave de carrito según usuario
+function getCarritoKey() {
+  const username = getCurrentUsername();
+  return username ? `carrito_${username}` : "carrito";
+}
+
+// Obtener carrito desde localStorage (por usuario)
 function obtenerCarrito() {
-  const carrito = localStorage.getItem("carrito");
+  const key = getCarritoKey();
+  const carrito = localStorage.getItem(key);
   return carrito ? JSON.parse(carrito) : [];
+}
+
+// Guardar carrito en localStorage (por usuario)
+function guardarCarrito(carrito) {
+  const key = getCarritoKey();
+  localStorage.setItem(key, JSON.stringify(carrito));
 }
 
 // Mostrar productos en el carrito
@@ -90,7 +109,7 @@ function aumentarCantidad(index) {
   if (!requireLogin()) return;
   const carrito = obtenerCarrito();
   carrito[index].cantidad += 1;
-  localStorage.setItem("carrito", JSON.stringify(carrito));
+  guardarCarrito(carrito);
   actualizarContadorCarrito();
   mostrarProductosCarrito();
 }
@@ -100,7 +119,7 @@ function eliminarProducto(index) {
   if (!requireLogin()) return;
   const carrito = obtenerCarrito();
   carrito.splice(index, 1);
-  localStorage.setItem("carrito", JSON.stringify(carrito));
+  guardarCarrito(carrito);
   actualizarContadorCarrito();
   mostrarProductosCarrito();
 }

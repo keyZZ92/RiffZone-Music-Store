@@ -36,6 +36,7 @@ function initializeLogin() {
         .then((res) => res.json())
         .then((data) => {
           if (data.user) {
+            // Guardar usuario en localStorage
             localStorage.setItem(
               "user",
               JSON.stringify({
@@ -43,6 +44,18 @@ function initializeLogin() {
                 username: data.user.username,
               })
             );
+            // Guardar username plano para el carrito por usuario
+            localStorage.setItem("username", data.user.username);
+
+            // Migrar carrito temporal si existe
+            const tempCarrito = localStorage.getItem("carrito");
+            if (tempCarrito) {
+              localStorage.setItem(
+                `carrito_${data.user.username}`,
+                tempCarrito
+              );
+              localStorage.removeItem("carrito");
+            }
 
             alert("Login exitoso. Redirigiendo a la página principal...");
             window.location.href = "../pages/index.html";
