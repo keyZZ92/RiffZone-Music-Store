@@ -39,19 +39,28 @@ fetch("../assets/data/products.json")
               }€</span>
               <span class="fw-bold text-danger">${producto.offerPrice}€</span>
             </p>
-            <button
-              class="btn btn-primary btn-add-cart"
-              data-producto='${JSON.stringify({
-                id: producto.id,
-                nombre: producto.name,
-                precio: producto.offerPrice,
-                image: producto.image,
-                description: producto.description,
-              })}'
-              aria-label="Añadir ${producto.name} al carrito"
-            >
-              Añadir al carrito
-            </button>
+            <div class="d-flex gap-2 justify-content-between">
+              <button
+                class="btn btn-outline-secondary btn-detail flex-fill"
+                type="button"
+                aria-label="Ver detalle de ${producto.name}"
+              >
+                <i class="bi bi-eye me-2"></i>Ver detalle
+              </button>
+              <button
+                class="btn btn-primary btn-add-cart flex-fill"
+                data-producto='${JSON.stringify({
+                  id: producto.id,
+                  nombre: producto.name,
+                  precio: producto.offerPrice,
+                  image: producto.image,
+                  description: producto.description,
+                })}'
+                aria-label="Añadir ${producto.name} al carrito"
+              >
+                <i class="bi bi-cart-plus me-2"></i>Añadir al carrito
+              </button>
+            </div>
           </div>
         </div>
       `;
@@ -62,7 +71,9 @@ fetch("../assets/data/products.json")
     document.querySelectorAll(".btn-add-cart").forEach((btn) => {
       btn.addEventListener("click", function () {
         const producto = JSON.parse(this.getAttribute("data-producto"));
-        let carrito = localStorage.getItem("carrito");
+        // Usar la clave correcta según usuario
+        const key = getCarritoKey();
+        let carrito = localStorage.getItem(key);
         carrito = carrito ? JSON.parse(carrito) : [];
         // Buscar si ya existe el producto
         const idx = carrito.findIndex((p) => p.id === producto.id);
@@ -72,7 +83,7 @@ fetch("../assets/data/products.json")
           producto.cantidad = 1;
           carrito.push(producto);
         }
-        localStorage.setItem("carrito", JSON.stringify(carrito));
+        localStorage.setItem(key, JSON.stringify(carrito));
         if (typeof actualizarContadorCarrito === "function") {
           actualizarContadorCarrito();
         }
@@ -84,3 +95,12 @@ fetch("../assets/data/products.json")
       });
     });
   });
+
+// Utilidades para carrito por usuario (igual que en cart.js)
+function getCurrentUsername() {
+  return localStorage.getItem('username');
+}
+function getCarritoKey() {
+  const username = getCurrentUsername();
+  return username ? `carrito_${username}` : 'carrito';
+}

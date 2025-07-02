@@ -31,11 +31,26 @@ function initAuth() {
       })
         .then(() => {
           localStorage.removeItem("user");
+          localStorage.removeItem("username");
+          // Limpiar carrito del usuario logueado
+          const keys = Object.keys(localStorage);
+          keys.forEach((key) => {
+            if (key.startsWith("carrito_")) {
+              localStorage.removeItem(key);
+            }
+          });
           window.location.reload();
         })
         .catch(() => {
-          // Si falla, igual limpiamos localStorage
           localStorage.removeItem("user");
+          localStorage.removeItem("username");
+          // Limpiar carrito del usuario logueado
+          const keys = Object.keys(localStorage);
+          keys.forEach((key) => {
+            if (key.startsWith("carrito_")) {
+              localStorage.removeItem(key);
+            }
+          });
           window.location.reload();
         });
     };
