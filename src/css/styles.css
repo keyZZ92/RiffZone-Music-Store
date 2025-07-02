@@ -594,11 +594,12 @@ main,
   transform: none !important;
 }
 
-/* Efecto zoom solo en la imagen de producto en guitar.html */
+/* Efecto zoom en la imagen de producto en todas las páginas de catálogo y en el buscador */
 #guitar-products .card-img-top,
 #drum-products .card-img-top,
-#keyboard-products .card-img-top {
-  transition: transform 0.3s cubic-bezier(0.4, 2, 0.6, 1);
+#keyboard-products .card-img-top,
+#catalog-products .card-img-top {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   object-fit: cover;
   width: 100%;
   height: 220px;
@@ -608,24 +609,26 @@ main,
 
 #guitar-products .card:hover .card-img-top,
 #drum-products .card:hover .card-img-top,
-#keyboard-products .card:hover .card-img-top {
+#keyboard-products .card:hover .card-img-top,
+#catalog-products .card:hover .card-img-top {
   transform: scale(1.12);
   z-index: 1;
 }
 
 #guitar-products .card,
 #drum-products .card,
-#keyboard-products .card {
+#keyboard-products .card,
+#catalog-products .card {
   overflow: hidden;
-  transition: none !important;
+  transition: box-shadow 0.2s;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 #guitar-products .card:hover,
 #drum-products .card:hover,
-#keyboard-products .card:hover {
-  transform: none !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+#keyboard-products .card:hover,
+#catalog-products .card:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
 }
 
 /* =========================
@@ -974,4 +977,64 @@ main,
     font-size: 1.3rem;
     padding-left: 0.4rem;
   }
+}
+
+/* =========================
+   Estilos para el formulario de búsqueda
+========================= */
+.catalog-search-form {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.advanced-filters {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  z-index: 100;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  min-width: 320px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  max-width: 700px;
+  width: max-content;
+  align-items: flex-end;
+}
+.advanced-filters label {
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-right: 0.5rem;
+  color: #222;
+}
+.advanced-filters select,
+.advanced-filters input {
+  min-width: 120px;
+  margin-bottom: 0.5rem;
+}
+.advanced-filters .form-select,
+.advanced-filters .form-control {
+  font-size: 0.98rem;
+}
+.advanced-filters .brand-filter {
+  min-width: 140px;
+}
+.advanced-filters .sort-filter {
+  min-width: 160px;
+}
+.catalog-search-form button[type="submit"] {
+  margin-left: 0.5rem;
+}
+.visually-hidden {
+  display: none !important;
+}
+.catalog-search-form:focus-within .advanced-filters,
+.catalog-search-form .advanced-filters:focus-within {
+  display: flex !important;
 }
