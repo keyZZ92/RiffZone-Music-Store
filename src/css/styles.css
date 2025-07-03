@@ -356,13 +356,12 @@ body {
 .pre-footer {
   background-color: black;
   padding: 2rem 1rem;
-  font-family: Arial, sans-serif;
+  font-family: 'Oswald', sans-serif;
 }
 .pre-footer-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: stretch;
   gap: 2.5rem 3rem;
   margin: 0 auto;
   max-width: 1100px;
@@ -374,10 +373,6 @@ body {
 .pre-footer-column3 {
   flex: 1 1 320px;
   min-width: 260px;
-  max-width: 350px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
   background: rgba(255, 255, 255, 0.03);
   border-radius: 10px;
   padding: 1.2rem 1rem;
@@ -397,11 +392,12 @@ body {
   list-style: none;
   margin: 0;
   align-items: center;
+  flex-wrap:wrap ;
 }
 .payment-methods li a img,
 .social-links li a img {
   width: 40px;
-  height: auto;
+  height: 40px;
   transition: transform 0.2s ease;
 }
 .payment-methods li a:hover img {
@@ -427,10 +423,12 @@ body {
   padding: 0;
   list-style: none;
   margin: 0;
+  flex-wrap: wrap;
 }
 .social-links li a img {
   width: 30px;
   height: auto;
+  object-fit: contain;
   transition: transform 0.2s ease;
 }
 .social-links li a:hover img {
@@ -439,15 +437,24 @@ body {
 @media (max-width: 768px) {
   .pre-footer-container {
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
+    text-align: center;
     gap: 1.5rem;
   }
   .pre-footer-column1,
   .pre-footer-column2,
   .pre-footer-column3 {
     max-width: 100%;
-    min-width: 0;
-    padding: 1rem 0.5rem;
+   flex: 1 1 100%;
+  }
+    .payment-methods,
+  .social-links {
+    justify-content: center;
+  }
+
+  .pre-footer-column2 ul {
+    padding-left: 0;
+    list-style-position: inside;
   }
 }
 
