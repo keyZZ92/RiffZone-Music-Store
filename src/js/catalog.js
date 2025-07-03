@@ -161,10 +161,17 @@ function renderProducts(products) {
   const container = document.getElementById("catalog-products");
   if (!container) return;
   container.innerHTML = "";
+  // Quitar la clase de centrado antes de renderizar
+  container.classList.remove("centered-products");
   if (!hasSearched) return;
   if (products.length === 0) {
     container.innerHTML = "<p>No se encontraron productos.</p>";
     return;
+  }
+  // Si estamos en buscador.html y hay 1 o 2 productos, centrar
+  const isBuscador = window.location.pathname.includes("buscador.html");
+  if (isBuscador && (products.length === 1 || products.length === 2)) {
+    container.classList.add("centered-products");
   }
   products.forEach(product => {
     const col = document.createElement("div");
