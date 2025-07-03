@@ -1,0 +1,93 @@
+
+.offcanvas.offcanvas-start {
+  background-color: #f8f9fa;
+  width: 260px;
+  padding: 1.5rem 1rem;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Oswald', sans-serif;
+}
+
+
+.offcanvas-header {
+  border-bottom: 1px solid #e89229;
+  margin-bottom: 1rem;
+}
+
+.offcanvas-title {
+  font-size: 1.80rem;
+  font-weight: 700;
+  font-family: "Oswald", sans-serif;
+  cursor: pointer;
+}
+
+
+.menu-lateral {
+  padding: 0;
+  margin: 0;
+}
+
+.menu-lateral li {
+  margin-bottom: 1rem;
+}
+
+
+.menu-lateral a {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #212529;
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s, color 0.3s;
+  font-size: 1rem;
+  font-family: "Oswald", sans-serif;
+}
+
+.menu-lateral a i {
+  font-size: 1.5rem;
+  font-family: "Oswald", sans-serif;
+  color:#007bff;
+  transition: color 0.3s;
+}
+
+
+.menu-lateral a:hover {
+  background-color:#e89229;
+  color: #000;
+}
+
+.menu-lateral a:hover i {
+  color: white;
+}
+
+.btn-close {
+  outline: none;
+}
+
+.pre-footer-barra{
+   color: #212529;
+    text-align:start;
+    justify-content:start;
+  align-items:start;
+  margin-bottom: 15rem;
+  font-family: "Oswald", sans-serif;
+}
+
+.footer-contenedor-barra{
+    color: #212529;
+    text-align:start;
+    justify-content:start;
+  align-items:start;
+  margin-bottom: 5rem;
+  font-family: "Oswald", sans-serif;
+}
+
+.pre-footer-barra h3{
+ font-family: "Oswald", sans-serif;
+ color: #212529;
+ font-size: 1.80rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
