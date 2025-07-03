@@ -42,21 +42,24 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   }
 
-
   // sidebar de service
-fetch('../components/service.html')
-  .then(res => res.text())
-  .then(html => {
-    document.getElementById('sidebar-placeholder').innerHTML = html;
-
-    setTimeout(() => {
-      const sidebarElement = document.getElementById('offcanvasServicios');
-      if (sidebarElement) {
-        const offcanvas = new bootstrap.Offcanvas(sidebarElement);
-        offcanvas.show();
-      }
-    }, 100);
-  });
+  const sidebarPlaceholder = document.getElementById("sidebar-placeholder");
+  if (sidebarPlaceholder) {
+    fetch("../components/service.html")
+      .then((res) => res.text())
+      .then((html) => {
+        sidebarPlaceholder.innerHTML = html;
+        setTimeout(() => {
+          const sidebarElement = document.getElementById("offcanvasServicios");
+          if (sidebarElement) {
+            const offcanvas = new bootstrap.Offcanvas(sidebarElement);
+            offcanvas.show();
+          }
+        }, 100);
+      });
+  } else {
+    // console.warn('sidebar-placeholder no encontrado en el DOM.'); // Silenciado para evitar aviso en consola
+  }
 
   // Footer
   const footerPlaceholder = document.getElementById("footer-placeholder");
