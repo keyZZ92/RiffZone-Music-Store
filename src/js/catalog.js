@@ -161,14 +161,12 @@ function renderProducts(products) {
   const container = document.getElementById("catalog-products");
   if (!container) return;
   container.innerHTML = "";
-  // Quitar la clase de centrado antes de renderizar
   container.classList.remove("centered-products");
   if (!hasSearched) return;
   if (products.length === 0) {
     container.innerHTML = "<p>No se encontraron productos.</p>";
     return;
   }
-  // Si estamos en buscador.html y hay 1 o 2 productos, centrar
   const isBuscador = window.location.pathname.includes("buscador.html");
   if (isBuscador && (products.length === 1 || products.length === 2)) {
     container.classList.add("centered-products");
@@ -187,14 +185,22 @@ function renderProducts(products) {
               ? `<span class='badge bg-success'>Oferta</span> <span class='price-regular text-decoration-line-through'>$${product.price}</span> <span class='price-offer fw-bold text-danger'>$${product.offerPrice}</span>`
               : `<span class='price-offer fw-bold'>$${product.price}</span>`}
           </p>
-          <button class="btn btn-primary mt-auto btn-add-cart" data-product='${JSON.stringify(product)}' aria-label="Añadir ${product.name} al carrito">
-            Añadir a la cesta
-          </button>
+          <div class="d-flex gap-2 mt-auto">
+            <button class="btn btn-outline-secondary btn-detail flex-fill" type="button" aria-label="Ver detalle de ${product.name}">
+              <i class="bi bi-eye me-2"></i>Ver detalle
+            </button>
+            <button class="btn btn-primary btn-add-cart flex-fill" data-product='${JSON.stringify(product)}' aria-label="Añadir ${product.name} a la cesta">
+              <i class="bi bi-cart-plus me-2"></i>Añadir a la cesta
+            </button>
+          </div>
         </div>
       </div>
     `;
     // Navegación accesible a detalle
-    col.querySelector('.product-card').addEventListener('click', () => goToProductDetail(product));
+    col.querySelector('.btn-detail').addEventListener('click', (e) => {
+      e.stopPropagation();
+      goToProductDetail(product);
+    });
     col.querySelector('.product-card').addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
@@ -218,10 +224,7 @@ function renderProducts(products) {
 
 // Simulación de navegación a detalle (puedes cambiar por tu lógica real)
 function goToProductDetail(product) {
-  // Si tienes página de detalle, redirige:
-  // window.location.href = `detalle.html?id=${product.id}`;
-  // Si no, muestra modal accesible:
-  alert(`Detalles de ${product.name}:\n\n${product.description}\nMarca: ${product.brand || '-'}\nPrecio: $${product.offerPrice && product.offerPrice < product.price ? product.offerPrice : product.price}`);
+  window.location.href = `product-detail.html?id=${product.id}`;
 }
 
 // Exportar para inicializar tras cargar el header
