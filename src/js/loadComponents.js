@@ -57,8 +57,6 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         }, 100);
       });
-  } else {
-    // console.warn('sidebar-placeholder no encontrado en el DOM.'); // Silenciado para evitar aviso en consola
   }
 
   // Footer
