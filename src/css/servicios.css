@@ -107,7 +107,14 @@
   font-size: 1rem;
   transition: color 0.3s;
 }
-@media (max-width: 767.98px) {
+
+.servicio-body{
+  font-size: medium;
+  font-weight:lighter;
+  font-size: 0.9rem;
+  font-family: sans-serif;
+}
+@media (max-width: 900px) {
   .section-servicios {
     flex-direction: column;
     align-items: center;
