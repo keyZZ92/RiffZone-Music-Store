@@ -1,5 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("registroForm");
+  if (!form) {
+    // Si no existe el formulario, no hacer nada (evita error en páginas sin registro)
+    return;
+  }
 
   function setError(input, message) {
     input.classList.add("is-invalid");
@@ -126,8 +130,4 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// Configuración de endpoint para login/register/logout
-const API_BASE_URL =
-  window.location.hostname === "localhost"
-    ? "http://localhost:3000"
-    : "https://music-store-node-2-484977869651.europe-southwest1.run.app";
+// Elimina la declaración duplicada de API_BASE_URL, usará la global de auth.js

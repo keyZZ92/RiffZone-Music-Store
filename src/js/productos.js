@@ -20,6 +20,12 @@ fetch("../assets/data/products.json")
           : p.category.includes(CATEGORY))
     );
     const contenedor = document.getElementById(CONTAINER_ID);
+    if (!contenedor) {
+      console.warn(
+        `Contenedor de productos con id '${CONTAINER_ID}' no encontrado en el DOM. No se renderizan productos.`
+      );
+      return;
+    }
     productos.forEach((producto) => {
       const card = document.createElement("div");
       card.className = "col";
