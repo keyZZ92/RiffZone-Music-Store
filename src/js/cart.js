@@ -133,7 +133,12 @@ function eliminarProducto(index) {
 
 // Añadir producto al carrito (accesible globalmente)
 function agregarAlCarrito(producto) {
-  if (!requireLogin()) return;
+  // Permitir agregar al carrito sin login en buscador.html
+  if (window.location.pathname.includes("buscador.html")) {
+    // No requerir login
+  } else {
+    if (!requireLogin()) return;
+  }
   // Normalizar propiedades
   const prod = {
     nombre: producto.name || producto.nombre || "Producto",
