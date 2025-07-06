@@ -323,7 +323,7 @@
 
 @media (max-width: 900px) {
   .greeting {
-    display: none; /* Ocultar saludo en móvil */
+    display: none;
   }
 
   .user-actions {
@@ -339,15 +339,20 @@
   /* Estilo de botones de usuario como iconos */
   .login-button,
   #logoutBtn {
-    background: transparent !important;
-    border: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    min-width: unset !important;
+    background: transparent;
+    border: 2px solid #e89229;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    min-width: unset;
     height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
+    color: #222;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+    gap: 0.5rem;
   }
 
   /* Tamaño de los iconos de usuario y carrito */
@@ -356,19 +361,22 @@
   .cart-link i {
     font-size: 1.7rem !important; /* Tamaño grande y consistente */
     color: #e89229 !important;
+    transition: color 0.3s;
   }
 
-  /* Eliminar el hover de fondo en los botones de icono */
+  /* Unificación del hover del botón de iniciar sesión en móvil y escritorio */
   .login-button:hover,
   #logoutBtn:hover {
-    background-color: transparent !important;
+    background-color: #e89229 !important;
+    color: #fff !important;
+    border-color: #e89229 !important;
   }
 
-  /* Opcional: añadir un efecto de opacidad en hover para feedback */
   .login-button:hover i,
   #logoutBtn:hover i,
   .cart-link:hover i {
-    opacity: 0.8;
+    color: #fff !important;
+    opacity: 1;
   }
 }
 

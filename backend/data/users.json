@@ -27,7 +27,7 @@
     "username": "Aarón",
     "password": "Fariña",
     "email": "apesqueira@email.com",
-    "isLogged": false,
+    "isLogged": true,
     "apellidos": "Pesqueira",
     "telefono": "600000003",
     "pais": "España",

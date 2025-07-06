@@ -26,6 +26,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         // --- INICIO: Inicializar login tras cargar header ---
         if (typeof initializeLogin === "function") initializeLogin();
+        // Disparar evento personalizado para que otros scripts puedan engancharse (como el ojito)
+        document.dispatchEvent(new Event("headerLoaded"));
         // --- FIN ---
       });
   }
