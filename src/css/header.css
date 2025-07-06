@@ -2,6 +2,7 @@
 /* =========================
    Header y navegación principal
 ========================= */
+
 .header {
   background-image: url("../assets/images/imagen1.png");
   background-size: cover;
@@ -19,6 +20,7 @@
   height: 100%;
   background-color: rgba(44, 41, 41, 0.5);
 }
+
 .header-container,
 .header-container-guitar {
   position: relative;
@@ -194,7 +196,7 @@
   }
   .logo-section {
     grid-column: 2 / 3; /* El logo va en la columna central */
-    justify-self: center; /* Centrar el logo horizontalmente */
+    justify-self: start; /* Centrar el logo al lado de la hambuerguesa */
     padding: 0;
   }
   .logo-section img {

@@ -24,96 +24,105 @@
   <body>
     <div id="header-placeholder"></div>
     <div id="sidebar-placeholder"></div>
-    <main>
-      <div class="texto-central-servicios">
-        <h2 class="about-title">Nuestros Servicios</h2>
-        <p class="about-description">
-          <span class="about-store-name">RiffZone Music Store</span> Disfruta de
-          un servicio de atención cercano, rápido y profesional. Ya sea que
-          necesites asesoramiento, reparación o mantenimiento, nuestro equipo
-          está listo para ayudarte. Porque en Music Store, tu música empieza con
-          nosotros... y seguimos contigo en cada paso.
-        </p>
+     <main>
+  <section class="texto-central-servicios" aria-labelledby="titulo-servicios">
+  <h2 class="about-title" id="titulo-servicios">Nuestros Servicios</h2>
+  <p class="about-description">
+        <span class="about-store-name">RiffZone Music Store</span> Disfruta de
+        un servicio de atención cercano, rápido y profesional. Ya sea que
+        necesites asesoramiento, reparación o mantenimiento, nuestro equipo
+        está listo para ayudarte. Porque en Music Store, tu música empieza con
+        nosotros... y seguimos contigo en cada paso.
+      </p>
+</section>
+
+    <section class="section-servicios" aria-labelledby="titulo-servicios">
+      <div class="container-servicios">
+<h4 id="beneficios-titulo">¿ Por qué comprar en RiffZone Music Store ?</h4>
+        <!-- Servicio 1 -->
+        <div class="servicio">
+          <button
+            class="servicio-desplegable"
+            aria-expanded="false"
+            aria-controls="servicio1-body"
+          >
+            <i class="bi bi-person-lines-fill me-2" aria-hidden="true"></i>
+            <span>Atención Personalizada</span>
+            <i class="bi bi-chevron-down icono-rotar" aria-hidden="true" ></i>
+          </button>
+          <div class="servicio-body" id="servicio1-body" style="display: none" >
+            Ofrecemos un trato cercano, profesional y personalizado para resolver cualquier consulta antes, durante y después de tu compra.
+          </div>
+        </div>
+
+        <!-- Servicio 2 -->
+        <div class="servicio">
+          <button
+            class="servicio-desplegable"
+            aria-expanded="false"
+            aria-controls="servicio2-body"
+          >
+            <i class="bi bi-chat-dots-fill me-2" aria-hidden="true"></i>
+            <span>Servicio Técnico</span>
+            <i class="bi bi-chevron-down icono-rotar" aria-hidden="true" ></i>
+          </button>
+          <div class="servicio-body" id="servicio2-body" style="display: none">
+            Nuestro equipo especializado realiza diagnósticos y reparaciones con precisión y rapidez, asegurando el correcto funcionamiento de tus instrumentos.
+          </div>
+        </div>
+
+        <!-- Servicio 3 -->
+        <div class="servicio">
+          <button
+            class="servicio-desplegable"
+            aria-expanded="false"
+            aria-controls="servicio3-body"
+          >
+            <i class="bi bi-tools me-2" aria-hidden="true"></i>
+            <span>Reparación de Instrumentos</span>
+            <i class="bi bi-chevron-down icono-rotar" aria-hidden="true"></i>
+          </button>
+          <div class="servicio-body" id="servicio3-body" style="display: none" >
+            Realizamos ajustes, mantenimiento y reparaciones completas para mantener tu instrumento en perfecto estado.
+          </div>
+        </div>
+
+        <!-- Servicio 4 -->
+        <div class="servicio">
+          <button
+            class="servicio-desplegable"
+            aria-expanded="false"
+            aria-controls="servicio4-body"
+          >
+            <i class="bi bi-music-note-list me-2" aria-hidden="true"></i>
+            <span>Asesoramiento Musical</span>
+            <i class="bi bi-chevron-down icono-rotar" aria-hidden="true"></i>
+          </button>
+          <div class="servicio-body" id="servicio4-body" style="display: none" >
+            Te ayudamos a elegir el instrumento, equipo o accesorio que mejor se adapta a tu nivel, estilo y necesidades musicales.
+          </div>
+        </div>
+
+        <!-- Servicio 5 -->
+        <div class="servicio">
+          <button
+            class="servicio-desplegable"
+            aria-expanded="false"
+            aria-controls="servicio5-body"
+          >
+            <i class="bi bi-file-earmark-font me-2" aria-hidden="true"></i>
+            <span>Garantías</span>
+            <i class="bi bi-chevron-down icono-rotar" aria-hidden="true"></i>
+          </button>
+          <div class="servicio-body" id="servicio5-body" style="display: none" >
+            Todos nuestros productos y servicios cuentan con garantía. Respondemos con seriedad y compromiso ante cualquier incidencia.
+          </div>
+        </div>
+
       </div>
-      <section class="section-servicios">
-        <div class="logo-servicios">
-          <img
-            src="../assets/images/logo RiffZone.png"
-            alt="Logo de RiffZone Music Store"
-          />
-        </div>
-        <div class="container mt-5">
-          <!-- Servicio 1 -->
-          <div class="servicio">
-            <div class="servicio-desplegable">
-              <span
-                ><i class="bi bi-person-lines-fill me-2"></i> Atención
-                Personalizada</span
-              >
-              <i class="bi bi-chevron-down icono-rotar"></i>
-            </div>
-            <div class="servicio-body">
-              Ofrecemos un trato cercano, profesional y personalizado para
-              resolver cualquier consulta antes, durante y después de tu compra.
-            </div>
-          </div>
-
-          <!-- Servicio 2 -->
-          <div class="servicio">
-            <div class="servicio-desplegable">
-              <span><i class="bi bi-chat-dots-fill"></i> Servicio Técnico</span>
-              <i class="bi bi-chevron-down icono-rotar"></i>
-            </div>
-            <div class="servicio-body">
-              Nuestro equipo especializado realiza diagnósticos y reparaciones
-              con precisión y rapidez, asegurando el correcto funcionamiento de
-              tus instrumentos.
-            </div>
-          </div>
-          <!-- Servicio 3 -->
-
-          <div class="servicio">
-            <div class="servicio-desplegable">
-              <span
-                ><i class="bi bi-tools me-2"></i> Reparacion de
-                Instrumentos</span
-              >
-              <i class="bi bi-chevron-down icono-rotar"></i>
-            </div>
-            <div class="servicio-body">
-              Realizamos ajustes, mantenimiento y reparaciones completas para
-              mantener tu instrumento en perfecto estado.
-            </div>
-          </div>
-
-          <!-- Servicio 4 -->
-          <div class="servicio">
-            <div class="servicio-desplegable">
-              <span
-                ><i class="bi bi-music-note-list me-2"></i> Asesoramiento
-                Musical</span
-              >
-              <i class="bi bi-chevron-down icono-rotar"></i>
-            </div>
-            <div class="servicio-body">
-              Te ayudamos a elegir el instrumento, equipo o accesorio que mejor
-              se adapta a tu nivel, estilo y necesidades musicales.
-            </div>
-          </div>
-          <!-- Servicio 5 -->
-          <div class="servicio">
-            <div class="servicio-desplegable">
-              <span><i class="bi bi-file-earmark-font"></i> Garantías</span>
-              <i class="bi bi-chevron-down icono-rotar"></i>
-            </div>
-            <div class="servicio-body">
-              Todos nuestros productos y servicios cuentan con garantía.
-              Respondemos con seriedad y compromiso ante cualquier incidencia.
-            </div>
-          </div>
-        </div>
-      </section>
+    </section>
     </main>
+
     <!-- Pre-footer -->
     <section class="pre-footer" aria-label="Información de contacto">
       <div class="pre-footer-container">
@@ -317,25 +326,14 @@
     </div>
 
     <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/auth.js"></script>
-    <!-- <script src="../js/app.js"></script> -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="../js/contact.js"></script>
     <script src="../js/cart.js"></script>
     <script src="../js/login.js"></script>
     <script src="../js/service.js"></script>
     <script src="../js/loadComponents.js"></script>
-    <script>
-      $(document).ready(function () {
-        $(".servicio-desplegable").click(function () {
-          const body = $(this).next(".servicio-body");
-          const icon = $(this).find(".icono-rotar");
-
-          body.slideToggle(300);
-          icon.toggleClass("girado");
-        });
-      });
-    </script>
+    <script src="../js/servicios.js"></script>
   </body>
 </html>
