@@ -23,6 +23,8 @@
       class="offcanvas offcanvas-start"
       tabindex="-1"
       id="offcanvasServicios"
+      role="dialog"
+      aria-modal="true"
       aria-labelledby="menuLateralLabel"
     >
       <div class="offcanvas-header">
@@ -31,33 +33,35 @@
           type="button"
           class="btn-close"
           data-bs-dismiss="offcanvas"
-          aria-label="Cerrar"
+          aria-label="Cerrar menú lateral"
         ></button>
       </div>
       <div class="offcanvas-body">
+        <nav aria-label="Menú de servicios">
         <ul class="list-unstyled menu-lateral">
           <li>
             <a href="../pages/contact.html"
-              ><i class="bi bi-envelope"></i>Contacto</a
+              ><i class="bi bi-envelope" aria-hidden="true"></i>Contacto</a
             >
           </li>
           <li>
-            <a href="#"><i class="bi bi-newspaper"></i>Newsletter</a>
+            <a href="#"><i class="bi bi-newspaper" aria-hidden="true"></i>Newsletter</a>
           </li>
           <li>
-            <a href="#"><i class="bi bi-play-circle"></i>Media</a>
+            <a href="#"><i class="bi bi-play-circle" aria-hidden="true"></i>Media</a>
           </li>
           <li>
             <a href="#"
-              ><i class="bi bi-question-circle"></i>Preguntas Frecuentes</a
+              ><i class="bi bi-question-circle" aria-hidden="true"></i>Preguntas Frecuentes</a
             >
           </li>
         </ul>
+        </nav>
         <!-- pre-Footer barra-->
       <div class="pre-footer-barra" aria-label="Redes sociales">
         <h3>Síguenos</h3>
         <nav aria-label="Redes sociales">
-          <ul class="social-links">
+          <ul class="social-links-barra">
             <li>
               <a
                 href="https://www.facebook.com/profile.php?id=61577710023966&locale=es_ES"
@@ -116,10 +120,6 @@
         aria-label="Pie de página principal del sitio"
       >
         <div class="footer-contenedor-barra">
-          <!--nombre -->
-          <div class="footer-barra-logo" aria-label=" nombre del sitio">
-            <span>RiffZone Music Store</span>
-          </div>
           <!-- Texto de derechos -->
           <div class="footer-derechos-barra">
             <small
@@ -145,3 +145,10 @@
     <script src="../js/loadComponents.js"></script>
   </body>
 </html>
+
+
+
+
+
+
+

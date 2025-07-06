@@ -377,7 +377,7 @@ body {
 .pre-footer {
   background-color: black;
   padding: 2rem 1rem;
-  font-family: "Oswald", sans-serif;
+  font-family: 'Oswald', sans-serif;
 }
 .pre-footer-container {
   display: flex;
@@ -413,7 +413,7 @@ body {
   list-style: none;
   margin: 0;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap:wrap ;
 }
 .payment-methods li a img,
 .social-links li a img {
@@ -456,29 +456,58 @@ body {
   transform: scale(1.1);
 }
 @media (max-width: 768px) {
-  .pre-footer-container {
+   .pre-footer-container {
     flex-direction: column;
     align-items: center;
     text-align: center;
     gap: 1.5rem;
   }
+
   .pre-footer-column1,
   .pre-footer-column2,
   .pre-footer-column3 {
     max-width: 100%;
     flex: 1 1 100%;
     background-color: #000;
-  }
-  .payment-methods,
-  .social-links {
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
-  .pre-footer-column2 ul {
-    padding-left: 0;
-    list-style-position: inside;
+  .payment-methods,
+  .social-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 0;
+    margin: 0 auto;
+  }
+
+  .payment-methods a,
+  .social-links li {
+    display: inline-block;
+  }
+
+  .pre-footer-column2 ul,
+  .social-links {
+    list-style: none;
+    padding: 0;
+  }
+
+  .pre-footer-column2 li,
+  .pre-footer-column3 li {
+    text-align: center;
+  }
+
+  .pre-footer-column1 h3,
+  .pre-footer-column2 h3,
+  .pre-footer-column3 h3 {
+    text-align: center;
   }
 }
+
 
 /* Footer principal */
 .footer-principal {
@@ -508,16 +537,16 @@ body {
   height: 40px;
 }
 .footer-logo span {
-  font-weight: 700; /* Usamos 700 para negrita */
+  font-weight: 700; 
   font-size: 1.25rem;
-  color: #e89229; /* Color corporativo */
+  color: #e89229; 
 }
 
 .store-name {
   font-family: "Oswald", sans-serif;
   font-weight: 700;
   font-size: 1.25rem;
-  color: #e89229 !important; /* Color corporativo */
+  color: #e89229 !important;
 }
 
 .footer-derechos small {
