@@ -356,11 +356,10 @@ body {
   cursor: pointer;
   transition: background 0.3s, transform 0.2s;
   outline: none;
-  display: inline-block;
 }
 .testimonial-dot.active,
 .testimonial-dot:focus {
-  background: #007bff;
+  background: #e89229;
   transform: scale(1.2);
 }
 
@@ -377,7 +376,7 @@ body {
 .pre-footer {
   background-color: black;
   padding: 2rem 1rem;
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
 }
 .pre-footer-container {
   display: flex;
@@ -413,7 +412,7 @@ body {
   list-style: none;
   margin: 0;
   align-items: center;
-  flex-wrap:wrap ;
+  flex-wrap: wrap;
 }
 .payment-methods li a img,
 .social-links li a img {
@@ -456,7 +455,7 @@ body {
   transform: scale(1.1);
 }
 @media (max-width: 768px) {
-   .pre-footer-container {
+  .pre-footer-container {
     flex-direction: column;
     align-items: center;
     text-align: center;
@@ -508,7 +507,6 @@ body {
   }
 }
 
-
 /* Footer principal */
 .footer-principal {
   background-color: #222;
@@ -537,9 +535,9 @@ body {
   height: 40px;
 }
 .footer-logo span {
-  font-weight: 700; 
+  font-weight: 700;
   font-size: 1.25rem;
-  color: #e89229; 
+  color: #e89229;
 }
 
 .store-name {
@@ -1297,4 +1295,50 @@ h3 {
 .team-card-info-panel h5,
 .team-more-info h5 {
   font-weight: 700 !important;
+}
+
+/* Color corporativo RiffZone */
+.corporate-orange {
+  color: #e89229 !important;
+}
+.bg-corporate-orange {
+  background-color: #e89229 !important;
+  color: #fff !important;
+  border-color: #e89229 !important;
+}
+.btn-corporate-orange {
+  background-color: #e89229 !important;
+  color: #fff !important;
+  border: none !important;
+  font-weight: 600;
+  transition: background 0.2s, color 0.2s;
+}
+.btn-corporate-orange:hover,
+.btn-corporate-orange:focus {
+  background-color: #d6831a !important;
+  color: #fff !important;
+}
+
+.btn-outline-corporate-orange {
+  background: transparent !important;
+  color: #e89229 !important;
+  border: 2px solid #e89229 !important;
+  font-weight: 600;
+  transition: background 0.2s, color 0.2s;
+}
+.btn-outline-corporate-orange:hover,
+.btn-outline-corporate-orange:focus {
+  background: #e89229 !important;
+  color: #fff !important;
+  border-color: #e89229 !important;
+}
+
+.corporate-success {
+  background-color: #fff5e6 !important; /* Naranja muy suave */
+  color: #c25a00 !important; /* Naranja corporativo más oscuro */
+  border: 1.5px solid #ffd6a8 !important;
+  font-family: "Oswald", sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(194, 90, 0, 0.07);
 }
