@@ -1,4 +1,3 @@
-
 function initializeLogin() {
   const loginForm = document.getElementById("loginForm");
   const emailInput = document.getElementById("loginEmail");
@@ -52,15 +51,28 @@ function initializeLogin() {
               localStorage.removeItem("carrito");
             }
 
-            // Mostrar alert de login exitoso
-            alert("Login exitoso. Redirigiendo...");
+            // Mostrar mensaje de login exitoso en el formulario del modal
+            const loginForm = document.getElementById("loginForm");
+            if (loginForm) {
+              let msg = document.getElementById("login-success-msg");
+              if (!msg) {
+                msg = document.createElement("div");
+                msg.id = "login-success-msg";
+                msg.className = "alert alert-success mt-2";
+                msg.setAttribute("role", "alert");
+                loginForm.prepend(msg);
+              }
+              msg.textContent = "¡Login exitoso! Redirigiendo...";
+            }
             // Redirección inteligente: si estamos en carrito, recarga carrito; si no, recarga la página actual
             const currentPath = window.location.pathname;
-            if (currentPath.includes("carrito.html")) {
-              window.location.reload();
-            } else {
-              window.location.href = window.location.href;
-            }
+            setTimeout(() => {
+              if (currentPath.includes("carrito.html")) {
+                window.location.reload();
+              } else {
+                window.location.href = window.location.href;
+              }
+            }, 1200);
           } else {
             alert(data.error || "Usuario o contraseña incorrectos.");
           }

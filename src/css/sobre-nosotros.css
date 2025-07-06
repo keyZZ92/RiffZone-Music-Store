@@ -67,6 +67,24 @@
   margin-bottom: 2.5rem !important;
 }
 
+/* Anular negrita y forzar peso normal en todos los <p> y descendientes de la info adicional de empleados (solución definitiva, sin duplicados) */
+.team-card-info-panel p,
+.team-card-info-panel p *,
+.team-card-info-panel .text-gray-700,
+.team-card-info-panel .text-gray-700 *,
+.team-card_info-panel .card-text,
+.team-card-info-panel .card-text *,
+.team-more-info p,
+.team-more-info p *,
+.team-more-info .text-gray-700,
+.team-more-info .text-gray-700 *,
+.team-more-info .card-text,
+.team-more-info .card-text * {
+  font-weight: 400 !important;
+  font-family: "Oswald", sans-serif !important;
+  color: #333 !important;
+}
+
 @media (max-width: 768px) {
   #map {
     width: calc(100% - 2rem);

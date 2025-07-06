@@ -11,6 +11,7 @@ html,
 body {
   margin: 0;
   padding: 0;
+  font-family: "Oswald", sans-serif; /* Fuente global */
   box-sizing: border-box;
   background-color: #e4ecf4 !important;
   overflow-x: hidden;
@@ -111,7 +112,7 @@ body {
 .guitar-filter,
 .secondary-nav {
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
   flex-wrap: wrap;
   justify-content: center;
   margin: 2rem auto;
@@ -137,27 +138,32 @@ body {
 .secondary-nav li a {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  color: #000;
-  font-weight: 600;
+  gap: 0.6rem;
+  color: #212529;
   text-decoration: none;
-  transition: color 0.3s ease;
-  white-space: nowrap;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s, color 0.3s;
+  font-size: 1rem;
+  font-family: "Oswald", sans-serif;
 }
 .secondary-nav li a:hover,
 .secondary-nav li a:focus {
-  color: #007bff;
+  background-color: #e89229 !important;
+  color: #fff !important;
   outline: none;
 }
 .secondary-nav img {
-  filter: grayscale(0%) brightness(0) saturate(100%) invert(32%) sepia(99%)
-    saturate(749%) hue-rotate(181deg) brightness(97%) contrast(101%);
+  filter: invert(60%) sepia(98%) saturate(897%) hue-rotate(359deg)
+    brightness(94%) contrast(91%); /* Filtro para color naranja */
   transition: filter 0.3s, transform 0.3s;
+  width: 24px; /* Ajuste para igualar tamaño con iconos de fuente */
+  height: 24px; /* Ajuste para igualar tamaño con iconos de fuente */
 }
 .secondary-nav li a:hover img,
 .secondary-nav li a:focus img {
-  filter: none;
-  transform: scale(1.2);
+  filter: invert(1);
+  transform: scale(1.1);
 }
 
 /* =========================
@@ -201,7 +207,7 @@ body {
   width: 50px;
   height: 50px;
   border: none;
-  background-color: #007bff;
+  background-color: #e89229;
   color: white;
   display: flex;
   align-items: center;
@@ -238,7 +244,7 @@ body {
     width: 40px !important;
     height: 40px !important;
     font-size: 1.2rem !important;
-    box-shadow: 0 0 4px rgba(0,0,0,0.15);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
   }
 }
 
@@ -371,7 +377,7 @@ body {
 .pre-footer {
   background-color: black;
   padding: 2rem 1rem;
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
 }
 .pre-footer-container {
   display: flex;
@@ -407,7 +413,7 @@ body {
   list-style: none;
   margin: 0;
   align-items: center;
-  flex-wrap:wrap ;
+  flex-wrap: wrap;
 }
 .payment-methods li a img,
 .social-links li a img {
@@ -460,10 +466,10 @@ body {
   .pre-footer-column2,
   .pre-footer-column3 {
     max-width: 100%;
-   flex: 1 1 100%;
-   background-color: #000;
+    flex: 1 1 100%;
+    background-color: #000;
   }
-    .payment-methods,
+  .payment-methods,
   .social-links {
     justify-content: center;
   }
@@ -479,7 +485,7 @@ body {
   background-color: #222;
   color: #fff;
   padding: 1.2rem 0;
-  font-family: Arial, sans-serif;
+  font-family: "Oswald", sans-serif;
 }
 .footer-contenedor {
   max-width: 75rem;
@@ -502,9 +508,18 @@ body {
   height: 40px;
 }
 .footer-logo span {
-  font-weight: bold;
-  font-size: 1rem;
+  font-weight: 700; /* Usamos 700 para negrita */
+  font-size: 1.25rem;
+  color: #e89229; /* Color corporativo */
 }
+
+.store-name {
+  font-family: "Oswald", sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #e89229 !important; /* Color corporativo */
+}
+
 .footer-derechos small {
   font-size: 0.9rem;
   color: #ffffff;
@@ -651,7 +666,7 @@ main,
 #drum-products .card:hover,
 #keyboard-products .card:hover,
 #catalog-products .card:hover {
-  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
 }
 
 /* =========================
@@ -1052,7 +1067,7 @@ main,
   border: 1px solid #ddd;
   padding: 1rem;
   border-radius: 0.5rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   min-width: 320px;
   display: flex;
   flex-wrap: wrap;
@@ -1076,7 +1091,7 @@ main,
   border: 1px solid #ddd;
   padding: 1rem;
   border-radius: 0.5rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   min-width: 320px;
   display: flex;
   flex-wrap: wrap;
@@ -1108,7 +1123,6 @@ main,
   min-width: 160px;
 }
 
-
 /* --- AJUSTES PARA CARRITO --- */
 #cart-items {
   display: flex;
@@ -1131,7 +1145,7 @@ main,
   margin-right: auto !important;
   background: #fff;
   border-radius: 14px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   padding: 1.2rem 1.2rem 1.2rem 1.2rem;
   gap: 1.2rem;
 }
@@ -1182,7 +1196,7 @@ main,
     width: 40px !important;
     height: 40px !important;
     font-size: 1.2rem !important;
-    box-shadow: 0 0 4px rgba(0,0,0,0.15);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
   }
   .user-actions {
     gap: 0.7rem !important;
@@ -1209,4 +1223,49 @@ main,
   .cart-link {
     margin-right: 0.3rem !important;
   }
+}
+
+.main-title,
+#products-title {
+  color: #000 !important;
+  text-shadow: none !important;
+  font-family: "Oswald", sans-serif !important;
+}
+
+/* =========================
+   Títulos principales y de secciones (color corporativo y sin sombra)
+========================= */
+.main-title,
+#products-title,
+.testimonials-carousel h2,
+.registro-titulo,
+.pre-footer h3,
+.team-name,
+.carrito-title,
+h1.section-title,
+h2.section-title,
+h3.section-title,
+h1,
+h2,
+h3 {
+  text-shadow: none !important;
+  font-family: "Oswald", sans-serif !important;
+}
+
+/* Solución definitiva: anular negrita heredada SOLO en los paneles de info de equipo, incluso si viene de .guitar-card p o .card-text */
+.team-card-info-panel p,
+.team-card-info-panel .card-text,
+.team-card-info-panel .text-gray-700,
+.team-more-info p,
+.team-more-info .card-text,
+.team-more-info .text-gray-700 {
+  font-weight: 400 !important;
+}
+
+/* Mantener el nombre en negrita */
+.team-card-info-panel .team-name,
+.team-more-info .team-name,
+.team-card-info-panel h5,
+.team-more-info h5 {
+  font-weight: 700 !important;
 }

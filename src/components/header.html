@@ -18,20 +18,12 @@
       <span class="bar"></span>
     </button>
     <div class="logo-section" aria-label="Logo de RiffZone Music Store">
-      <a
-        href="/pages/index.html"
-        style="
-          display: flex;
-          align-items: center;
-          gap: 0.2rem;
-          text-decoration: none;
-        "
-      >
+      <a href="/pages/index.html" class="logo-link">
         <img
           src="../assets/images/logo RiffZone.png"
           alt="Logo de RiffZone Music Store"
         />
-        <h1>RiffZone Music Store</h1>
+        <h1 class="store-name">RiffZone Music Store</h1>
       </a>
     </div>
     <!-- barra de navegación principal (escritorio) -->
@@ -42,7 +34,10 @@
     >
       <ul class="nav-list" role="menubar">
         <li role="none">
-          <a href="../pages/servicios.html" role="menuitem" aria-label="Servicio"
+          <a
+            href="../pages/servicios.html"
+            role="menuitem"
+            aria-label="Servicio"
             ><i class="bi bi-tools"></i> Servicio</a
           >
         </li>
@@ -62,15 +57,14 @@
       </ul>
     </nav>
     <!-- icono carrito y login/usuario -->
-    <div class="user-actions">
-      <a href="/pages/carrito.html" aria-label="Carrito" class="cart-link">
-        <i class="bi bi-cart">
-          <span
-            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
-            id="cart-count"
-            >0</span
-          >
-        </i>
+    <div class="user-actions nav-list">
+      <a
+        href="/pages/carrito.html"
+        aria-label="Carrito de compras"
+        class="cart-link nav-link"
+      >
+        <i class="bi bi-cart-plus"></i>
+        <span class="cart-counter" id="cart-count">0</span>
       </a>
       <span id="userWelcome" class="greeting" style="display: none"
         >Hola, <span id="userName"></span
@@ -98,7 +92,9 @@
   <nav class="mobile-nav" id="mobileNav" aria-label="Menú móvil de navegación">
     <ul>
       <li>
-        <a href="../pages/servicios.html"><i class="bi bi-tools"></i> Servicio</a>
+        <a href="../pages/servicios.html"
+          ><i class="bi bi-tools"></i> Servicio</a
+        >
       </li>
       <li>
         <a href="../pages/contact.html"
