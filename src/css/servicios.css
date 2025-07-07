@@ -6,13 +6,26 @@ main {
   font-family: 'Oswald', sans-serif;
 }
 
+.servicio-contenedor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.texto-central-servicios,
+.section-servicios {
+  width: 100%;
+  max-width: 1000px;
+}
+
+
 
 /* Encabezado de sección */
 .texto-central-servicios {
   text-align: center;
   margin-bottom: 1.5rem;
   background-color: #fff;
-  padding: 3.5rem;
+  padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
@@ -52,9 +65,9 @@ font-weight: bold;
 
 /* Servicios desplegable */
 .section-servicios {
-  width: 55%;
+  width: 100%;
   background-color: #ffffff;
-  padding: 1.5rem;
+  padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
   margin: 0;
@@ -127,8 +140,9 @@ font-weight: bold;
 
 /* responsive de menos de 768px*/
 @media (max-width: 767px) {
+  .texto-central-servicios,
   .section-servicios {
-    width: 90%;
+    width: 50%;
     padding: 1rem;
   }
 
