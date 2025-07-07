@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap");
 /* Estructura principal */
 main {
   padding: 0.5rem;
@@ -9,20 +10,29 @@ main {
 /* Encabezado de sección */
 .texto-central-servicios {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
+  background-color: #fff;
+  padding: 3.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 .about-title {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color:  #e89229;
+  text-align: center;
+  font-size: 2rem;
+  font-family: "Oswald", sans-serif;
+  margin-bottom: 1.5rem;
+  color: #333;
 }
 
 .about-description {
-  font-size: 1.15rem;
   max-width: 700px;
   margin: 0 auto;
   line-height: 1.6;
+  font-family: "Oswald", sans-serif;
+  font-size: 1.2rem;
+  color: #333;
+  font-weight: 400;
 }
 
 .about-store-name {
@@ -30,11 +40,21 @@ main {
   color:  #e89229;
 }
 
+.texto-central-servicios h3{
+color: #e89229;
+font-weight: bold;
+ text-align: center;
+  font-size: 1.2rem;
+  font-family: "Oswald", sans-serif;
+  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
+}
+
 /* Servicios desplegable */
 .section-servicios {
-  width: 40%;
+  width: 55%;
   background-color: #ffffff;
-  padding: 2rem;
+  padding: 1.5rem;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
   margin: 0;
@@ -46,11 +66,12 @@ main {
   flex-direction: column;
   gap: 1rem;
 }
-.container-servicios h4 {
+.container-servicios h2 {
     font-size: 1.5rem;
   margin-bottom: 1rem;
-  color: #e89229;
+  color: #333;
   text-align: center;
+
 }
 
 .servicio {
@@ -74,12 +95,15 @@ main {
   color: #000000;
 }
 
-.servicio-desplegable span {
+.servicio-desplegable span{
   flex-grow: 1;
   margin-left: 0.5rem;
 }
 
 .servicio-desplegable span:hover {
+  color: #fff;
+}
+.servicio-desplegable i {
   color: #fff;
 }
 
