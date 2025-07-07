@@ -3,19 +3,62 @@
 /* =========================
    Estilos generales para la sección "Acerca de"
 ========================= */
-.about-section {
-  text-align: center;
+
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap");
+.sobre-nosotras-container{
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+.about-section,
+.team-section,
+.map-section {
+  width: 100%;
+  max-width: 1000px;
+}
+
+.about-section {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.about-title {
+  text-align: center;
+  font-size: 2rem;
+  font-family: "Oswald", sans-serif;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
 .about-description {
   max-width: 700px;
   margin: 0 auto;
+  line-height: 1.6;
+  font-family: "Oswald", sans-serif;
+  font-size: 1.2rem;
+  color: #333;
+  font-weight: 400;
 }
 
 .about-store-name {
   font-weight: bold;
   color: #e89229;
   font-size: 1.15em;
+}
+
+.about-section h3{
+color: #e89229;
+font-weight: bold;
+ text-align: center;
+  font-size: 1.2rem;
+  font-family: "Oswald", sans-serif;
+  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
 }
 
 .about-logo {
@@ -35,7 +78,38 @@
   text-align: center;
   font-size: 2rem;
   margin-bottom: 1.5rem;
+  color: #0e0e0e;
+  font-weight: 500;
+}
+
+.team-section {
+   margin-bottom: 1.5rem;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.card-body {
+  background-color: #fafafa;
+}
+
+
+.main-title {
+  font-family: "Oswald", sans-serif;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 2rem;
   color: #333;
+}
+
+.map-section {
+  margin-bottom: 1.5rem;
+  background-color:#ffffff;;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 #map {
@@ -53,7 +127,9 @@
   box-sizing: border-box;
   padding: 0 1rem;
 }
-
+.about-title {
+  color: #333;
+}
 .info-contacto {
   background: #f8f9fa;
   border-radius: 8px;
@@ -67,6 +143,14 @@
   margin-bottom: 2.5rem !important;
 }
 
+.col-md-5 a {
+color: #333;
+}
+.col-md-5 p {
+    border-left: 4px solid #e89229;
+  padding-left: 0.5rem;
+}
+
 @media (max-width: 768px) {
   #map {
     width: calc(100% - 2rem);
@@ -76,4 +160,11 @@
     margin-top: 2rem;
     padding: 1rem;
   }
+
+  .sobre-nosotras-container{
+   width: 80%;
+    padding: 1rem;
+}
+
+
 }
