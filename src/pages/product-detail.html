@@ -14,12 +14,15 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
     />
+    <!-- Bootstrap Icons -->
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
     />
     <link rel="stylesheet" href="../css/styles.css" />
     <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/product-detail.css" />
+    <link rel="stylesheet" href="../css/login.css" />
   </head>
   <body>
     <div id="header-placeholder"></div>
@@ -78,7 +81,8 @@
               />
             </a>
           </div>
-        </div>
+                </div>
+
         <!-- Columna 2: Ventajas -->
         <div
           class="pre-footer-column2"
@@ -94,6 +98,7 @@
             <li>Asesoramiento personalizado</li>
           </ul>
         </div>
+
         <!-- Columna 3: Redes sociales de contacto -->
         <div class="pre-footer-column3" aria-label="Redes sociales">
           <h3>Síguenos</h3>
@@ -164,55 +169,81 @@
       tabindex="-1"
       aria-labelledby="loginModalLabel"
       aria-modal="true"
+      role="dialog"
     >
-      <div class="modal-dialog">
+      <div class="modal-dialog" role="document">
         <div class="modal-content">
           <form id="loginForm" aria-label="Formulario de inicio de sesión">
             <div class="modal-header">
-              <h1 class="modal-title fs-5" id="loginModalLabel">
+              <img
+                src="../assets/images/logo RiffZone.png"
+                alt="Logo de RiffZone Music Store"
+              />
+              <h1 class="modal-title fs-5 mb-0" id="loginModalLabel">
                 Iniciar Sesión
               </h1>
               <button
                 type="button"
                 class="btn-close"
                 data-bs-dismiss="modal"
-                aria-label="Cerrar"
+                aria-label="Cerrar ventana de inicio de sesión"
               ></button>
             </div>
+
             <div class="modal-body">
               <div class="mb-3">
-                <label for="loginEmail" class="form-label">Email</label>
+                <label for="email" class="form-label">Email</label>
                 <input
                   type="email"
                   class="form-control"
-                  id="loginEmail"
+                  id="email"
+                  aria-required="true"
+                  aria-label="Correo electrónico"
                   required
                 />
               </div>
               <div class="mb-3">
-                <label for="loginPassword" class="form-label">Contraseña</label>
+                <label for="inputPassword" class="form-label">Contraseña</label>
                 <input
                   type="password"
                   class="form-control"
-                  id="loginPassword"
+                  id="inputPassword"
+                  aria-required="true"
+                  aria-label="Contraseña"
                   required
                 />
               </div>
             </div>
+
             <div class="modal-footer">
-              <button type="submit" class="btn btn-secondary">Entrar</button>
-              <button
-                type="button"
-                class="btn btn-primary"
-                aria-label="Ir a crear nueva cuenta"
-              >
-                Crear Usuario
-              </button>
+              <div class="footer-row-1">
+                <button
+                  type="submit"
+                  class="btn btn-secondary"
+                  aria-label="Entrar"
+                >
+                  Entrar
+                </button>
+              </div>
+              <div class="footer-row-2">
+                <p role="note" aria-live="polite">
+                  ¿Todavía no tienes cuenta?
+                </p>
+                <button
+                  type="button"
+                  class="btn btn-link"
+                  aria-label="Ir a crear nueva cuenta"
+                  onclick="window.location.href='register.html'"
+                >
+                  Crear Usuario
+                </button>
+              </div>
             </div>
           </form>
         </div>
       </div>
     </div>
+
     <footer class="footer-principal">
       <div class="footer-contenedor">
         <div class="footer-logo">
