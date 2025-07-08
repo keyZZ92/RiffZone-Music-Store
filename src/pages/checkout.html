@@ -13,7 +13,7 @@
   </head>
   <body>
     <div id="header-placeholder"></div>
-    <main class="container checkout-container flex-row" role="main" aria-label="Checkout de compra" style="display:flex;flex-direction:row;gap:2rem;align-items:flex-start;">
+    <main class="container checkout-container flex-row" role="main" aria-label="Formulario de pago" style="display:flex;flex-direction:row;gap:2rem;align-items:flex-start;">
       <!-- Formulario de pago -->
       <form class="checkout-form needs-validation order-1" id="checkoutForm" novalidate autocomplete="on" aria-label="Formulario de pago" style="flex:1 1 350px;max-width:480px;min-width:320px;">
         <h2 class="mb-4" style="color:#e89229;font-family:'Oswald',sans-serif;">Datos de envío y pago</h2>
@@ -66,13 +66,17 @@
           <button type="button" class="checkout-cancel" id="cancelCheckout" aria-label="Cancelar pago">Cancelar</button>
           <button type="submit" class="checkout-confirm" aria-label="Confirmar y pagar">Confirmar y pagar</button>
         </div>
+        <h2 class="main-title carrito-title checkout-total text-end m-0 mt-3">
+          <span id="checkoutTotal">0.00 €</span>
+        </h2>
       </form>
+
       <!-- Resumen de productos -->
       <aside class="checkout-summary order-2" aria-label="Resumen de productos en el carrito" style="flex:1 1 350px;max-width:480px;min-width:320px;">
         <h2 class="mb-4" style="color:#e89229;font-family:'Oswald',sans-serif;">Resumen de tu compra</h2>
         <div id="checkoutProducts"></div>
-        <div class="checkout-total" id="checkoutTotal"></div>
       </aside>
+
       <div class="confirmation-message"
      id="confirmationMessage"
      role="status"

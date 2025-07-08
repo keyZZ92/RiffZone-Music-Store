@@ -54,7 +54,10 @@ document.addEventListener("DOMContentLoaded", function () {
       `;
       productsContainer.appendChild(row);
     });
-    totalContainer.textContent = `Total: ${total.toLocaleString('es-ES', {style:'currency', currency:'EUR'})}`;
+    const totalElement = document.getElementById('checkoutTotal');
+    if (totalElement) {
+      totalElement.textContent = `Total: ${total.toFixed(2)} €`; // Símbolo de euro separado por un espacio
+    }
   }
 
   // Eliminar producto
