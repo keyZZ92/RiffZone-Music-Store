@@ -990,7 +990,8 @@ main,
 .registro-box input:focus,
 .registro-box select:focus,
 .registro-box textarea:focus {
-  border-color: #007bff;
+  border-color: #e89229 !important;
+  box-shadow: 0 0 0 3px rgba(232, 146, 41, 0.18) !important;
   outline: none;
 }
 .registro-btn {
@@ -1047,6 +1048,30 @@ main,
   background: #e89229 !important;
   color: #fff !important;
   border-color: #e89229 !important;
+}
+/* === Ajuste de color corporativo en el botón de registro === */
+.registro-btn,
+.registro-box button,
+.registro-box input[type="submit"],
+button[type="submit"].registro-btn,
+button[type="submit"].btn-primary {
+  background-color: #e89229 !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 0.5rem;
+  font-family: "Oswald", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+.registro-btn:hover,
+.registro-box button:hover,
+.registro-box input[type="submit"]:hover,
+button[type="submit"].registro-btn:hover,
+button[type="submit"].btn-primary:hover {
+  background-color: #d97d19 !important;
+  color: #fff !important;
 }
 @media (max-width: 600px) {
   .registro-box {
