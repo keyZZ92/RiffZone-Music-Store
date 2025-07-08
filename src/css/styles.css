@@ -887,8 +887,7 @@ main,
   padding: 2rem 0;
 }
 .registro-contenedor {
-  width: 100%;
-  max-width: 600px;
+  width: 60%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -901,7 +900,6 @@ main,
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   padding: 2.5rem 2rem 2rem 2rem;
   width: 100%;
-  max-width: 540px;
   font-family: "Oswald", sans-serif;
 }
 .registro-titulo {
@@ -933,12 +931,32 @@ main,
   background: #f8fafc;
   transition: border-color 0.2s;
 }
-.registro-box input:focus,
-.registro-box select:focus,
-.registro-box textarea:focus {
-  border-color: #e89229 !important;
-  box-shadow: 0 0 0 3px rgba(232, 146, 41, 0.18) !important;
-  outline: none;
+/* Ajuste para que los checkbox no hereden el estilo de los inputs normales */
+.registro-box input[type="checkbox"] {
+  width: 1.1em;
+  height: 1.1em;
+  padding: 0;
+  margin-right: 0.5em;
+  accent-color: #e89229;
+  border-radius: 0.25em;
+  border: 1.5px solid #e89229;
+  background: #fff;
+  box-shadow: none;
+  vertical-align: middle;
+  transition: box-shadow 0.2s, border-color 0.2s, background 0.2s;
+}
+.registro-box input[type="checkbox"]:checked {
+  background: #e89229;
+  border-color: #e89229;
+  box-shadow: 0 0 0 2px #ffd6a8;
+}
+.registro-box input[type="checkbox"]:focus {
+  outline: 2px solid #e89229;
+  outline-offset: 2px;
+}
+.registro-box input[type="checkbox"]:hover {
+  box-shadow: 0 0 0 2px #ffd6a8;
+  border-color: #d97d19;
 }
 .registro-btn {
   background-color: #007bff;
@@ -1212,7 +1230,7 @@ h3 {
 /* Solución definitiva: anular negrita heredada SOLO en los paneles de info de equipo, incluso si viene de .guitar-card p o .card-text */
 .team-card-info-panel p,
 .team-card-info-panel .card-text,
-.team-card-info-panel .text-gray-700,
+.team-card_info-panel .text-gray-700,
 .team-more-info p,
 .team-more-info .card-text,
 .team-more-info .text-gray-700 {
