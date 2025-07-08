@@ -1,0 +1,175 @@
+/* Forzar todos los precios individuales en naranja, incluso si son .text-primary, .text-info, .text-blue, etc. */
+.checkout-product-price,
+.checkout-container .product-price,
+.checkout-container .text-primary,
+.checkout-container .text-info,
+.checkout-container .text-blue,
+.checkout-container td.price,
+.checkout-container .precio,
+.checkout-container [class*="price"],
+.checkout-container [class*="precio"] {
+  color: #e89229 !important;
+  font-weight: bold !important;
+}
+/* Precios individuales en naranja corporativo */
+.checkout-product-price,
+.checkout-container .product-price {
+  color: #e89229 !important;
+  font-weight: bold;
+}
+
+/* Forzar el título y cantidad del total en negro en checkout */
+.checkout-total-label,
+.checkout-total-amount,
+.checkout-total,
+.checkout-summary-total,
+.checkout-container .total-label,
+.checkout-container .total-amount {
+  color: #111 !important;
+}
+
+/* Centrado horizontal del contenedor principal en pantallas grandes */
+.checkout-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  justify-content: center;
+}
+
+@media (min-width: 1400px) {
+  .checkout-container {
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+  }
+}
+
+/* Estilos exclusivos para checkout.html */
+
+.checkout-product-img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: #f8f9fa;
+  margin-right: 1rem;
+}
+.checkout-product-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 1px solid #e9ecef;
+  padding: 1rem 0;
+}
+.checkout-product-info {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.remove-product-btn {
+  background: none;
+  border: none;
+  color: #e89229;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.remove-product-btn:hover {
+  color: #c76a00;
+}
+.checkout-total {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #e89229;
+  margin-top: 1.5rem;
+  text-align: right;
+}
+.checkout-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.checkout-confirm {
+  background: #e89229;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.7rem 2rem;
+  font-size: 1.1rem;
+  font-family: 'Oswald', sans-serif;
+  transition: background 0.2s;
+}
+.checkout-confirm:hover {
+  background: #c76a00;
+}
+.checkout-cancel {
+  border-radius: 6px;
+  padding: 0.7rem 2rem;
+  font-size: 1.1rem;
+  font-family: 'Oswald', sans-serif;
+  transition: background 0.2s, color 0.2s;
+}
+.checkout-cancel:hover {
+  background: #e89229;
+  color: #fff;
+}
+.confirmation-message {
+  display: none;
+  min-height: 300px;
+  text-align: center;
+  color: #28a745;
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.10);
+  padding: 2.5rem 2rem;
+  margin: 2rem auto;
+  animation: fadeIn 0.7s;
+}
+.checkout-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.checkout-form {
+  flex: 1 1 350px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  padding: 2rem 1.5rem;
+  min-width: 320px;
+  max-width: 480px;
+  animation: fadeInLeft 0.7s;
+}
+.checkout-summary {
+  flex: 1 1 350px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  padding: 2rem 1.5rem;
+  min-width: 320px;
+  max-width: 480px;
+  animation: fadeInRight 0.7s;
+}
+@media (max-width: 900px) {
+  .checkout-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
+}

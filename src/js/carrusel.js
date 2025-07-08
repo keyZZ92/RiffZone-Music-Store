@@ -1,8 +1,8 @@
 // Carrusel de productos
       document.addEventListener("DOMContentLoaded", function () {
         const items = document.querySelectorAll(".product-item");
-        const prevBtn = document.querySelector(".carousel-control.prev");
-        const nextBtn = document.querySelector(".carousel-control.next");
+        // Eliminar flechas, usar dots como en testimonios
+        const dotsContainer = document.getElementById("main-carousel-dots");
         let current = 0;
         let productInterval;
 
@@ -22,21 +22,46 @@
           showItem(current);
         }
 
-        prevBtn.addEventListener("click", () => {
-          prevProduct();
-          resetProductInterval();
-        });
 
-        nextBtn.addEventListener("click", () => {
-          nextProduct();
-          resetProductInterval();
-        });
+        // Crear dots dinámicamente igual que en testimonios
+        if (dotsContainer) {
+          dotsContainer.innerHTML = "";
+          items.forEach((_, i) => {
+            const dot = document.createElement("button");
+            dot.className = "testimonial-dot" + (i === 0 ? " active" : "");
+            dot.type = "button";
+            dot.setAttribute("aria-label", `Ver imagen ${i + 1}`);
+            dot.addEventListener("click", () => {
+              showItem(i);
+              current = i;
+              resetProductInterval();
+              dot.blur();
+            });
+            dotsContainer.appendChild(dot);
+          });
+        }
+        const dots = dotsContainer ? dotsContainer.querySelectorAll(".testimonial-dot") : [];
+
+        // Actualizar dots al cambiar de imagen
+        function updateDots(index) {
+          if (!dots) return;
+          dots.forEach((d, i) => d.classList.toggle("active", i === index));
+        }
+
+        // Modificar showItem para actualizar dots
+        const originalShowItem = showItem;
+        showItem = function(index) {
+          originalShowItem(index);
+          updateDots(index);
+        };
 
         function resetProductInterval() {
           clearInterval(productInterval);
           productInterval = setInterval(nextProduct, 4000); // 4 segundos
         }
 
+        // Inicializar primer item y dots
+        showItem(current);
         productInterval = setInterval(nextProduct, 4000); // 4 segundos
       });
 

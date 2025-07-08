@@ -181,6 +181,34 @@ body {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
 }
 
+/* Dots del carrusel de productos (igual que testimonios) */
+/* Dots del carrusel de productos (igual que testimonios, espaciado visible) */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.7rem;
+  margin-top: -2.2rem;
+  margin-bottom: 2.5rem;
+  z-index: 3;
+  position: relative;
+}
+.testimonial-dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #ccc;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  outline: none;
+  margin: 0;
+}
+.testimonial-dot.active,
+.testimonial-dot:focus {
+  background: #e89229;
+  transform: scale(1.2);
+}
+
 .product-item {
   display: none;
   width: 100%;
@@ -1179,7 +1207,7 @@ main,
 }
 #cart-items .card {
   display: flex;
-  align-items: flex-start;
+  align-items: normal;
   max-width: 480px;
   width: 100%;
   margin-bottom: 1.5rem;
@@ -1219,7 +1247,7 @@ main,
     min-height: 140px;
     max-width: 98vw;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: normal;
     padding: 1rem;
   }
 }

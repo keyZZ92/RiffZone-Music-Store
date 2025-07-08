@@ -15,12 +15,13 @@ function carritoInit() {
         const btnPagar = document.getElementById('btn-pagar');
         if (btnPagar) {
           btnPagar.addEventListener('click', function () {
-            // Usar window.requireLogin y window.alert para asegurar contexto correcto
+            // Usar window.requireLogin para asegurar contexto correcto
             if (typeof window.requireLogin === 'function') {
               if (window.requireLogin()) {
-                window.alert('¡Gracias por tu compra! (Simulación de pago)');
-                // Aquí puedes añadir la lógica real de pago o redirección
+                window.location.href = 'checkout.html';
               }
+            } else {
+              window.location.href = 'checkout.html';
             }
           });
         }
