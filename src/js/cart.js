@@ -57,40 +57,37 @@ function mostrarProductosCarrito() {
     totalGeneral += total;
 
     const productoHTML = `
-    <div class="card mb-3 w-100" style="max-width:100vw;">
-      <div class="row g-0 align-items-center flex-nowrap checkout-product-row">
-        <div class="col-auto d-flex flex-row align-items-center justify-content-center" style="min-width: 0;">
+      <div class="checkout-product-row">
+        <div class="checkout-product-img-block">
           <img src="${
             producto.image
               ? producto.image
               : "../assets/images/iconos/iconBateria.png"
-          }"
-            class="img-fluid rounded-start me-2 checkout-product-img"
-            alt="${producto.nombre}"
-            onerror="this.src='../assets/images/iconos/iconBateria.png'">
-          <div class="d-flex flex-column gap-2 ms-1">
-            <button class="checkout-confirm btn-sm" title="Aumentar cantidad" aria-label="Aumentar cantidad" onclick="aumentarCantidad(${index})">
-              <i class="bi bi-arrow-up"></i>
-            </button>
-            <button class="checkout-cancel btn-sm" title="Restar cantidad" aria-label="Restar cantidad" onclick="eliminarProducto(${index})">
-              <i class="bi bi-arrow-down"></i>
-            </button>
-          </div>
+          }" class="checkout-product-img" alt="${producto.nombre}" onerror="this.src='../assets/images/iconos/iconBateria.png'">
         </div>
-        <div class="col ps-3">
-          <div class="card-body d-flex flex-column align-items-center justify-content-center h-100 p-3 checkout-product-info w-100">
-            <div class="d-flex flex-row align-items-center justify-content-center w-100 mb-2" style="gap:1.2rem;">
-              <span class="card-title" style="font-size:2rem; font-weight:700;">${producto.nombre}</span>
-              <span class="card-text checkout-product-price" style="font-size:2rem; font-weight:700; color:#e89229;">$${producto.precio}</span>
+        <div class="checkout-product-info-col">
+          <div class="checkout-product-info-left">
+            <div class="checkout-product-title">${producto.nombre}</div>
+            <div class="checkout-product-precio">${producto.precio.toLocaleString('es-ES', {style:'currency', currency:'EUR'})}</div>
+          </div>
+          <div class="checkout-product-info-right">
+            <div class="checkout-product-controls">
+              <button class="btn-restar-producto btn-cart-action" aria-label="Eliminar uno" title="Eliminar uno" onclick="eliminarProducto(${index})">
+                <span>Eliminar</span>
+                <i class="bi bi-dash"></i>
+              </button>
+              <div class="checkout-product-cantidad cart-cantidad">
+                <span class="cart-cantidad-num">${producto.cantidad}</span>
+              </div>
+              <button class="btn-sumar-producto btn-cart-action" aria-label="Añadir uno" title="Añadir uno" onclick="aumentarCantidad(${index})">
+                <span>Añadir</span>
+                <i class="bi bi-plus"></i>
+              </button>
             </div>
-            <div class="d-flex flex-row align-items-center justify-content-center w-100 mb-2" style="gap:1.2rem;">
-              <span class="card-text" style="color: #888; font-size:1.3rem; font-weight:600;">Cantidad: ${producto.cantidad}</span>
-            </div>
-            <span class="card-text text-center w-100" style="color: #111; font-size:2.2rem; font-weight:800;">Total: $${total}</span>
+            <div class="checkout-product-total">Total: ${(producto.precio * producto.cantidad).toLocaleString('es-ES', {style:'currency', currency:'EUR'})}</div>
           </div>
         </div>
       </div>
-    </div>
     `;
     contenedor.innerHTML += productoHTML;
   });
@@ -136,6 +133,60 @@ function eliminarProducto(index) {
   mostrarProductosCarrito();
 }
 
+
+function renderizarProductosCarrito() {
+  const carritoContainer = document.getElementById('cart-items');
+  if (!carritoContainer) return;
+
+  const carrito = obtenerCarrito();
+  if (carrito.length === 0) {
+    carritoContainer.innerHTML = '<p>Tu carrito está vacío.</p>';
+    actualizarTotal();
+    return;
+  }
+
+  let html = '';
+  carrito.forEach((producto, index) => {
+    const subtotal = (producto.precio * producto.cantidad).toFixed(2);
+    html += `
+      <div class="cart-product-row">
+        <img src="${producto.image}" class="cart-product-img cart-product-img-large" alt="${producto.nombre}" />
+        <div class="cart-product-info">
+          <h3 class="cart-product-title">${producto.nombre}</h3>
+          <p class="cart-product-price">€${producto.precio}</p>
+          <div class="cart-product-controls">
+            <button class="btn-restar-producto btn-cart-action" onclick="disminuirCantidad(${index})" aria-label="Eliminar uno">
+              <span class="btn-text">Eliminar</span>
+              <span class="btn-symbol">-</span>
+            </button>
+            <span class="cart-cantidad">${producto.cantidad}</span>
+            <button class="btn-sumar-producto btn-cart-action" onclick="aumentarCantidad(${index})" aria-label="Añadir uno">
+              <span class="btn-text">Añadir</span>
+              <span class="btn-symbol">+</span>
+            </button>
+          </div>
+          <p class="cart-product-total">Total: €${subtotal}</p>
+        </div>
+      </div>
+    `;
+  });
+
+  carritoContainer.innerHTML = html;
+  actualizarTotal();
+}
+
+function actualizarTotal() {
+  const carrito = obtenerCarrito();
+  let total = 0;
+  carrito.forEach(producto => {
+    total += producto.precio * producto.cantidad;
+  });
+  
+  const totalElement = document.getElementById('total-price');
+  if (totalElement) {
+    totalElement.textContent = total.toFixed(2);
+  }
+}
 
 // Añadir producto al carrito (accesible globalmente)
 function agregarAlCarrito(producto) {
