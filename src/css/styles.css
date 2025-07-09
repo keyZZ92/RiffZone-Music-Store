@@ -16,169 +16,68 @@ body {
   background-color: #e4ecf4 !important;
   overflow-x: hidden;
 }
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
 
-/* =========================
-   Diseño cards de guitarra
-========================= */
 /*boton de volver */
 .volver-button {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  background: transparent;
-  color: #222;
-  border: 2px solid #222;
-  padding: 0.4rem 1rem;
-  border-radius: 0.25rem;
+ background-color: #e89229;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
   font-family: "Oswald", sans-serif;
-  font-size: 0.95rem;
-  font-weight: bold;
-  transition: background 0.3s, color 0.3s;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
   margin-right: 50rem;
   margin-top: 2rem;
 }
 .volver-button:hover {
-  background-color: #222;
-  color: white;
+ background-color: #d97d19;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
-
-.guitar-card,
-.card {
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  overflow: hidden;
-  background-color: #fff;
-  transition: transform 0.3s, box-shadow 0.3s;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-}
-.guitar-card:hover,
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-.guitar-card img,
-.card-img-top {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-bottom: 1px solid #eee;
-}
-.guitar-card-body,
-.card-body {
-  padding: 1rem;
-}
-.guitar-card h5,
-.card-title {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-  color: #222;
-}
-.guitar-card p,
-.card-text {
-  font-size: 0.9rem;
-  color: #666;
-  margin-bottom: 1rem;
-}
-.price-regular,
-.text-decoration-line-through {
-  color: #999;
-  text-decoration: line-through;
-  margin-right: 0.5rem;
-}
-.price-offer,
-.fw-bold.text-danger {
-  color: #e53935;
-  font-weight: bold;
-  font-size: 1.1rem;
-}
-.guitar-card .btn-add,
-.btn-primary {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-.guitar-card .btn-add:hover,
-.btn-primary:hover {
-  background-color: #0056b3;
-}
-
 /* =========================
-   Filtros de categorías
+  titulos
 ========================= */
-.guitar-filter,
-.secondary-nav {
-  display: flex;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 2rem auto;
-  list-style: none;
-  padding: 0;
-  width: 100%;
-  max-width: 90vw;
+.title-page {
+  text-align: center;
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  margin-top: 2rem;
+ 
 }
-.guitar-filter button {
-  background: #f8f9fa;
-  border: 1px solid #ccc;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 600;
-}
-.guitar-filter button:hover,
-.guitar-filter button:focus {
-  background-color: #007bff;
-  color: white;
-  outline: none;
-}
-.secondary-nav li a {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  color: #212529;
-  text-decoration: none;
-  padding: 0.5rem 0.75rem;
-  border-radius: 0.5rem;
-  transition: background-color 0.3s, color 0.3s;
-  font-size: 1rem;
+
+.title-page h2{
+ text-align: center;
+  font-size: 2.5rem;
   font-family: "Oswald", sans-serif;
-}
-.secondary-nav li a:hover,
-.secondary-nav li a:focus {
-  background-color: #e89229 !important;
-  color: #fff !important;
-  outline: none;
-}
-.secondary-nav img {
-  filter: invert(60%) sepia(98%) saturate(897%) hue-rotate(359deg)
-    brightness(94%) contrast(91%); /* Filtro para color naranja */
-  transition: filter 0.3s, transform 0.3s;
-  width: 24px; /* Ajuste para igualar tamaño con iconos de fuente */
-  height: 24px; /* Ajuste para igualar tamaño con iconos de fuente */
-}
-.secondary-nav li a:hover img,
-.secondary-nav li a:focus img {
-  filter: invert(1);
-  transform: scale(1.1);
+  margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #333;
 }
 
 /* =========================
    Carrusel de productos
 ========================= */
+
 .carousel {
   position: relative;
-  width: 100%;
+  width:80%;
   max-width: 700px;
   min-width: 300px;
   min-height: 350px;
-  margin: 0 auto 3rem auto;
   overflow: visible;
   border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  margin-top: 2rem;
 }
 
 /* Dots del carrusel de productos (igual que testimonios) */
@@ -192,33 +91,7 @@ body {
   z-index: 3;
   position: relative;
 }
-.testimonial-dot {
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background: #ccc;
-  border: none;
-  cursor: pointer;
-  transition: background 0.3s, transform 0.2s;
-  outline: none;
-  margin: 0;
-}
-.testimonial-dot.active,
-.testimonial-dot:focus {
-  background: #e89229;
-  transform: scale(1.2);
-}
 
-.product-item {
-  display: none;
-  width: 100%;
-  height: 350px;
-  object-fit: cover;
-}
-
-.product-item.active {
-  display: block;
-}
 
 .carousel img {
   width: 100%;
@@ -227,77 +100,34 @@ body {
   border-radius: 10px;
 }
 
-.carousel-control {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
-  width: 50px;
-  height: 50px;
-  border: none;
-  background-color: #e89229;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  font-size: 1.5rem;
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.carousel-control:hover,
-.carousel-control:focus {
-  background-color: #000;
-  color: #fff;
-  transform: translateY(-50%) scale(1.1);
-  outline: none;
-}
-
-.carousel-control.prev {
-  left: -60px;
-}
-.carousel-control.next {
-  right: -60px;
-}
-
-@media (max-width: 576px) {
-  .carousel-control.prev {
-    left: 5px !important;
-  }
-  .carousel-control.next {
-    right: 5px !important;
-  }
-  .carousel-control {
-    width: 40px !important;
-    height: 40px !important;
-    font-size: 1.2rem !important;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
-  }
-}
-
 /* =========================
    Testimonios (carrusel de opiniones)
 ========================= */
 .testimonials-carousel {
-  margin-bottom: 3rem;
+  background-color: white;
+    text-align: center;
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  margin-top: 2rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
-  max-width: 90vw;
-  width: 700px;
+  max-width: 700px;
+  min-width: 300px;
+  width: 80%;
 }
 .testimonials-carousel h2 {
-  margin: 2rem auto;
-  font-weight: 800;
-  font-size: clamp(2rem, 4vw, 3rem);
-  text-align: center;
-  max-width: 90vw;
+   text-align: center;
+  font-size: 2.5rem;
   font-family: "Oswald", sans-serif;
-  color: #111;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #333;
 }
 .testimonials-carousel-inner {
   position: relative;
@@ -375,6 +205,7 @@ body {
   z-index: 3;
   position: relative;
 }
+
 .testimonial-dot {
   width: 15px;
   height: 15px;
@@ -384,6 +215,7 @@ body {
   cursor: pointer;
   transition: background 0.3s, transform 0.2s;
   outline: none;
+  margin: 0;
 }
 .testimonial-dot.active,
 .testimonial-dot:focus {
@@ -391,8 +223,9 @@ body {
   transform: scale(1.2);
 }
 
+
 /* =========================
-   Pre-footer y footer
+   Pre-footer
 ========================= */
 .fondo-header {
   background-image: url("../assets/images/imagen1.png");
@@ -482,6 +315,7 @@ body {
 .social-links li a:hover img {
   transform: scale(1.1);
 }
+
 @media (max-width: 768px) {
   .pre-footer-container {
     flex-direction: column;
@@ -535,7 +369,9 @@ body {
   }
 }
 
-/* Footer principal */
+/* =========================
+   footer
+========================= */
 .footer-principal {
   background-color: #222;
   color: #fff;
@@ -593,24 +429,11 @@ body {
    Responsive: pantallas pequeñas
 ========================= */
 @media (max-width: 768px) {
-  .main-nav ul {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-  .secondary-nav {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+
   .carousel {
     width: 90vw;
   }
-  .carousel-control.prev {
-    left: -59px;
-  }
-  .carousel-control.next {
-    right: -59px;
-  }
+
   .testimonials-carousel-inner {
     max-width: 100%;
     min-width: 0;
@@ -620,56 +443,160 @@ body {
     width: 90vw;
     max-width: 450px;
   }
-  .testimonial-control.prev {
-    left: 5px;
-    top: 50%;
-  }
-  .testimonial-control.next {
-    right: 5px;
-    top: 50%;
-  }
+
 }
 
-/* =========================
-   Centrando títulos y contenedores
-========================= */
-#products-title,
-.testimonials-carousel h2 {
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*cosas q no se de donde son todavia */
+
+
+.product-item {
+  display: none;
   width: 100%;
+  height: 350px;
+  object-fit: cover;
+}
+
+.product-item.active {
   display: block;
 }
 
-main,
-.testimonials-carousel {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-}
 
-.main-title {
-  margin: 2rem auto;
-  font-weight: 800;
-  font-size: clamp(2rem, 4vw, 3rem);
-  text-align: center;
-  max-width: 90vw;
-  font-family: "Oswald", sans-serif;
-  color: #111;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  letter-spacing: 1px;
-}
 
 .carrito-title {
   text-align: left !important;
   margin-left: 0 !important;
 }
 
-#products-title {
-  margin-top: 3.5rem;
+
+
+/* =========================
+   Diseño cards de guitarra
+========================= */
+
+.guitar-card,
+.card {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #fff;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
+.guitar-card:hover,
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.guitar-card img,
+.card-img-top {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-bottom: 1px solid #eee;
+}
+.guitar-card-body,
+.card-body {
+  padding: 1rem;
+}
+.guitar-card h5,
+.card-title {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+.guitar-card p,
+.card-text {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+.price-regular,
+.text-decoration-line-through {
+  color: #999;
+  text-decoration: line-through;
+  margin-right: 0.5rem;
+}
+.price-offer,
+.fw-bold.text-danger {
+  color: #e53935;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+.guitar-card .btn-add,
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.guitar-card .btn-add:hover,
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*---------------------------------------CARRITO----------------------------------------*/
+
 
 /* Quitar efectos de hover en las cards del carrito */
 #cart-items .card,
@@ -1200,18 +1127,12 @@ button[type="submit"].btn-primary:hover {
   }
 }
 
-.main-title,
-#products-title {
-  color: #000 !important;
-  text-shadow: none !important;
-  font-family: "Oswald", sans-serif !important;
-}
+
 
 /* =========================
    Títulos principales y de secciones (color corporativo y sin sombra)
 ========================= */
 .main-title,
-#products-title,
 .testimonials-carousel h2,
 .registro-titulo,
 .pre-footer h3,
@@ -1223,7 +1144,6 @@ h3.section-title,
 h1,
 h2,
 h3 {
-  text-shadow: none !important;
   font-family: "Oswald", sans-serif !important;
 }
 
