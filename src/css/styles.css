@@ -49,6 +49,12 @@ main {
 .title-page {
   text-align: center;
   margin-top: 2rem;
+  margin-bottom: 2rem;
+  background-color: white;
+  width: 80%;
+  padding: 2rem;
+    border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .title-page h2{
@@ -65,9 +71,8 @@ main {
 
 .carousel {
   position: relative;
-  width:80%;
+  width:100%;
   max-width: 700px;
-  min-width: 300px;
   min-height: 350px;
   overflow: visible;
   border-radius: 10px;
@@ -125,6 +130,11 @@ main {
    Testimonios (carrusel de opiniones)
 ========================= */
 .testimonials-carousel {
+  width: 80%;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
   text-align: center;
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -133,8 +143,6 @@ main {
   align-items: center;
   position: relative;
   max-width: 700px;
-  min-width: 300px;
-  width: 80%;
 }
 .testimonials-carousel h2 {
   text-align: center;
@@ -481,79 +489,7 @@ main {
 
 
 
-
-
-/*---------------------------------------CARRITO----------------------------------------*/
-
-
-/* Efecto zoom en la imagen de producto en todas las páginas de catálogo y en el buscador */
-
-#catalog-products .card-img-top {
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  object-fit: cover;
-  width: 100%;
-  height: 220px;
-  display: block;
-  border-radius: 0;
-}
-
-
-#catalog-products .card:hover .card-img-top {
-  transform: scale(1.12);
-  z-index: 1;
-}
-
-
-#catalog-products .card {
-  overflow: hidden;
-  transition: box-shadow 0.2s;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-}
-
-
-#catalog-products .card:hover {
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
-}
-
-
-
-
-/* Color corporativo RiffZone */
-.corporate-orange {
-  color: #e89229 !important;
-}
-.bg-corporate-orange {
-  background-color: #e89229 !important;
-  color: #fff !important;
-  border-color: #e89229 !important;
-}
-.btn-corporate-orange {
-  background-color: #e89229 !important;
-  color: #fff !important;
-  border: none !important;
-  font-weight: 600;
-  transition: background 0.2s, color 0.2s;
-}
-.btn-corporate-orange:hover,
-.btn-corporate-orange:focus {
-  background-color: #d6831a !important;
-  color: #fff !important;
-}
-
-.btn-outline-corporate-orange {
-  background: transparent !important;
-  color: #e89229 !important;
-  border: 2px solid #e89229 !important;
-  font-weight: 600;
-  transition: background 0.2s, color 0.2s;
-}
-.btn-outline-corporate-orange:hover,
-.btn-outline-corporate-orange:focus {
-  background: #e89229 !important;
-  color: #fff !important;
-  border-color: #e89229 !important;
-}
-
+/* Color corporativo RiffZone para cookies*/
 .corporate-success {
   background-color: #fff5e6 !important; /* Naranja muy suave */
   color: #c25a00 !important; /* Naranja corporativo más oscuro */
@@ -563,3 +499,15 @@ main {
   letter-spacing: 0.5px;
   box-shadow: 0 2px 8px rgba(194, 90, 0, 0.07);
 }
+
+
+
+
+
+
+
+
+
+
+
+
