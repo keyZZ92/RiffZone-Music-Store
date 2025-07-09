@@ -92,9 +92,11 @@ fetch("../assets/data/products.json")
           actualizarContadorCarrito();
         }
         // Feedback visual
-        this.textContent = "¡Añadido!";
+        this.innerHTML = "¡Añadido!";
+        this.disabled = true;
         setTimeout(() => {
-          this.textContent = "Añadir al carrito";
+          this.innerHTML = '<i class="bi bi-cart-plus me-2"></i>Añadir al carrito';
+          this.disabled = false;
         }, 1000);
       });
     });

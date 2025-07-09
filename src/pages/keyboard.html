@@ -19,13 +19,18 @@
     <link rel="stylesheet" href="../css/styles.css" />
     <link rel="stylesheet" href="../css/header.css" />
     <link rel="stylesheet" href="../css/checkout.css" />
+    <link rel="stylesheet" href="../css/cookies-banner.css" />
+    <link rel="stylesheet" href="../css/barra-secundaria.css" />
   </head>
   <body>
     <div id="header-placeholder"></div>
 
     <!-- Contenido principal -->
     <main role="main" aria-label="Catálogo de teclados" class="container pb-5">
-      <!-- botón de volver-->
+     
+      <!-- Título principal -->
+      <div class="title-page">
+         <!-- botón de volver-->
       <button
         class="volver-button"
         id="btnvolver"
@@ -35,10 +40,10 @@
         <i class="bi bi-arrow-left"></i>
         Volver
       </button>
-      <!-- Título principal -->
       <h2 id="products-title" class="main-title">Catálogo de Teclados</h2>
       <!-- Filtro por categoría -->
       <div id="products-nav-placeholder"></div>
+
       <!-- Contenedor para los productos -->
       <div class="row row-cols-1 row-cols-md-3 g-4" id="keyboard-products"></div>
     </main>
@@ -171,5 +176,6 @@
     <script src="../js/cart.js"></script>
     <script src="../js/login.js"></script>
     <script src="../js/loadComponents.js"></script>
+    <script src="../js/cookies-banner.js"></script>
   </body>
 </html>
