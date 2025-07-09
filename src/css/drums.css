@@ -57,7 +57,7 @@
   background-color: #0056b3;
 }
 
-#guitar-products .card-img-top {
+#drums-products .card-img-top {
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   object-fit: cover;
   width: 100%;
@@ -66,17 +66,17 @@
   border-radius: 0;
 }
 
-#guitar-products .card:hover .card-img-top {
+#drums-products .card:hover .card-img-top {
   transform: scale(1.12);
   z-index: 1;
 }
 
-#guitar-products .card {
+#drums-products .card {
   overflow: hidden;
   transition: box-shadow 0.2s;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-#guitar-products .card:hover {
+#drums-products .card:hover {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
 }

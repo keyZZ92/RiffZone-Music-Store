@@ -1,8 +1,3 @@
-/* =========================
-   Diseño cards de guitarra
-========================= */
-
-
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap");
 
 .guitar-card,
@@ -38,7 +33,7 @@
 }
 .price-offer,
 .fw-bold.text-danger {
-  color: #e53935;
+  color: #750f0d;
   font-weight: bold;
   font-size: 1.1rem;
 }
@@ -56,8 +51,7 @@
 .btn-primary:hover {
   background-color: #0056b3;
 }
-
-#guitar-products .card-img-top {
+#keyboard-products .card-img-top {
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   object-fit: cover;
   width: 100%;
@@ -65,18 +59,15 @@
   display: block;
   border-radius: 0;
 }
-
-#guitar-products .card:hover .card-img-top {
+#keyboard-products .card:hover .card-img-top {
   transform: scale(1.12);
   z-index: 1;
 }
-
-#guitar-products .card {
+#keyboard-products .card {
   overflow: hidden;
   transition: box-shadow 0.2s;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
-
-#guitar-products .card:hover {
+#keyboard-products .card:hover {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
 }
