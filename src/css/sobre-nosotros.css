@@ -153,6 +153,29 @@ color: #333;
   padding-left: 0.5rem;
 }
 
+
+.corporate-orange {
+  color: #e89229 !important;
+}
+
+
+.btn-outline-corporate-orange {
+  background: transparent !important;
+  color: #e89229 !important;
+  border: 2px solid #e89229 !important;
+  font-weight: 600;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn-outline-corporate-orange:hover,
+.btn-outline-corporate-orange:focus {
+  background: #e89229 !important;
+  color: #fff !important;
+  border-color: #e89229
+}
+
+
+
 @media (max-width: 768px) {
   #map {
     width: calc(100% - 2rem);

@@ -41,6 +41,15 @@
 .accept-cookies-btn:hover {
   background: #c76d13;
 }
+
+.bg-corporate-orange {
+  background-color: #e89229 !important;
+  color: #fff !important;
+  border-color: #e89229 !important;
+}
+.corporate-orange {
+  color: #e89229 !important;
+}
 @media (max-width: 600px) {
   #cookies-banner {
     padding: 0.7rem 0.3rem;
