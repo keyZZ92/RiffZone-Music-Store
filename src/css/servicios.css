@@ -15,7 +15,6 @@ main {
 .texto-central-servicios,
 .section-servicios {
   width: 100%;
-  max-width: 1000px;
 }
 
 
@@ -28,6 +27,7 @@ main {
   padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  margin-top: 2rem;
 }
 
 .about-title {
@@ -39,7 +39,7 @@ main {
 }
 
 .about-description {
-  max-width: 700px;
+  max-width: 1000px;
   margin: 0 auto;
   line-height: 1.6;
   font-family: "Oswald", sans-serif;
@@ -126,7 +126,7 @@ font-weight: bold;
   font-weight:lighter ;
   background-color: #f9f9f9;
   color: #333 ;
-  transition: none;
+  overflow-x: hidden;
 }
 
 .icono-rotar {
