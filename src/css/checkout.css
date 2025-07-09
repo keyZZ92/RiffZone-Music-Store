@@ -95,6 +95,15 @@
     gap: 0.5rem !important;
   }
   
+  /* Precio individual centrado debajo del nombre en móviles */
+  .cart-product-price {
+    text-align: center !important;
+    display: block !important;
+    width: 100% !important;
+    margin: 0.5rem auto !important;
+    order: 2 !important;
+  }
+  
   /* Información derecha (controles) con espacio suficiente */
   .checkout-product-info-right {
     min-width: 280px !important; /* Espacio suficiente para los botones */
@@ -653,11 +662,11 @@
   .checkout-container .text-primary,
   .checkout-container .text-info,
   .checkout-container .text-blue {
-    order: 2 !important;
+    order: 4 !important; /* Cambio a order 4 para asegurar que aparezca después */
     text-align: center !important;
     display: block !important;
     width: 100% !important;
-    margin: 0.3rem 0 !important;
+    margin: 0.5rem 0 !important;
     font-size: 1rem !important;
     font-weight: bold !important;
     color: #e89229 !important;
@@ -1268,10 +1277,6 @@ button.btn-cart-action:hover,
 }
 
 /* =========================
-   FIN DE REGLAS SUPER ESPECÍFICAS
-========================= */
-
-/* =========================
    MEDIA QUERIES CON TAMAÑO FIJO DE BOTONES GARANTIZADO
 ========================= */
 
@@ -1296,6 +1301,9 @@ button.btn-cart-action:hover,
     max-width: 100px !important;
     min-height: 50px !important;
     max-height: 50px !important;
+  }
+  .checkout-product-precio{
+    text-align: center;
   }
 }
 
@@ -1334,10 +1342,6 @@ button.btn-cart-action:hover,
     max-height: 50px !important;
   }
 }
-
-/* =========================
-   FIN DE MEDIA QUERIES CON TAMAÑO FIJO
-========================= */
 
 /* =========================
    REGLAS PARA EVITAR QUE LOS BOTONES SE SALGAN DEL CONTENEDOR
@@ -1398,10 +1402,6 @@ button.btn-cart-action:hover,
   min-width: 60px !important;
   max-width: 80px !important;
 }
-
-/* =========================
-   FIN DE REGLAS ANTI-DESBORDAMIENTO
-========================= */
 
 /* =========================
    REGLA FINAL PARA EVITAR DESCUADRE EN CUALQUIER RESOLUCIÓN
@@ -1488,10 +1488,6 @@ button.btn-cart-action:hover,
 }
 
 /* =========================
-   FIN DE REGLA ANTI-DESCUADRE
-========================= */
-
-/* =========================
    REGLAS ESPECÍFICAS PARA CORREGIR PROBLEMAS EN MÓVIL
 ========================= */
 
@@ -1557,10 +1553,3 @@ button.btn-cart-action:hover,
     order: 3 !important; /* AÑADIR siempre último */
   }
 }
-
-/* =========================
-   FIN DE REGLAS ESPECÍFICAS PARA MÓVIL
-========================= */
-
-
-
