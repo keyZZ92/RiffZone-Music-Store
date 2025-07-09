@@ -39,7 +39,7 @@
     "username": "Keyliany",
     "password": "Oliver",
     "email": "koliver@email.com",
-    "isLogged": false,
+    "isLogged": true,
     "apellidos": "Oliver",
     "telefono": "600000004",
     "pais": "España",

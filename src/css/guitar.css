@@ -5,14 +5,18 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap");
 
-.guitar-card,
-.card {
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  overflow: hidden;
-  background-color: #fff;
-  transition: transform 0.3s, box-shadow 0.3s;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+.guitar-card:hover,
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.guitar-card img,
+.card-img-top {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-bottom: 1px solid #eee;
 }
 .guitar-card-body,
 .card-body {
@@ -22,7 +26,7 @@
 .card-title {
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
-  color: #333;
+  color: #222;
 }
 .guitar-card p,
 .card-text {
@@ -79,4 +83,43 @@
 
 #guitar-products .card:hover {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+
+
+
+/* Unifica el alto de los botones de las cards de producto y ajusta el tamaño del icono del carrito */
+.btn-add-cart {
+  min-height: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+}
+.btn-add-cart i {
+  font-size: 1.1em;
+  margin-right: 0.5em;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Asegura que el botón de ver detalle tenga el mismo alto */
+.btn-detail {
+  min-height: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+}
+.btn-detail i {
+  font-size: 1.1em;
+  margin-right: 0.5em;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
 }
