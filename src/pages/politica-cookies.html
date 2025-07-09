@@ -19,152 +19,95 @@
     <link rel="stylesheet" href="../css/contact.css" />
     <link rel="stylesheet" href="../css/styles.css" />
     <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/cookies.css" />
     <link rel="stylesheet" href="../css/cookies-banner.css" />
   </head>
   <body>
     <div id="header-placeholder"></div>
-    <main class="zona-contacto">
-      <div class="contacto-contenedor">
-        <!-- FORMULARIO -->
-        <form
-          id="formContacto"
-          class="formulario-box"
-          novalidate
-          role="form"
-          aria-labelledby="Contacto"
+    <main id="main-cookies" role="main">
+      <div class="cookies-container">
+        <section
+          class="cookies-section container py-4 text-center"
+          role="region"
+          aria-label="Política de Cookies"
         >
-          <h2 id="tituloContacto" class="mb-4">Formulario de contacto</h2>
-          <!-- Nombre -->
-          <div class="mb-3">
-            <label for="nombre" class="form-label"
-              >Nombre<span aria-hidden="true">*</span></label
+          <h2 class="cookies-title">Política de Cookies</h2>
+          <p class="cookies-description">
+            <span class="cookies-store-name">RiffZone Music Store</span>
+            es una tienda comprometida con la transparencia y la confianza. Por
+            eso, queremos explicarte de forma clara qué son las cookies, por qué
+            las utilizamos y cómo puedes gestionarlas según tus preferencias.
+            Las cookies nos ayudan a recordar tus elecciones, personalizar el
+            contenido y mejorar continuamente nuestros servicios, siempre
+            respetando tu privacidad. Si tienes dudas, aquí encontrarás toda la
+            información necesaria para navegar con confianza.
+          </p>
+          <h3>
+            Tu música, tu tienda, tu ritmo
+            <i class="bi bi-music-note-beamed"></i>
+          </h3>
+        </section>
+        <section
+          class="team-section py-4 text-center"
+          role="region"
+          aria-label="Información sobre cookies"
+        >
+          <h3 class="cookies-subtitle mb-3">¿Qué son las cookies?</h3>
+          <p class="cookies-description mb-3">
+            Las <span class="corporate-orange">cookies</span> son pequeños
+            archivos de texto que se almacenan en tu dispositivo cuando visitas
+            una web. Permiten recordar tus preferencias, facilitar la navegación
+            y obtener estadísticas anónimas.
+          </p>
+          <h3 class="cookies-subtitle mb-3">¿Cómo usamos las cookies?</h3>
+          <p class="cookies-description mb-3">
+            Utilizamos
+            <span class="corporate-orange">cookies propias y de terceros</span>
+            para analizar el tráfico, personalizar la experiencia y facilitar el
+            proceso de compra. Puedes aceptar o rechazar las cookies no
+            esenciales desde el banner de aviso.
+          </p>
+          <h3 class="cookies-subtitle mb-3">¿Cómo puedes gestionarlas?</h3>
+          <p class="cookies-description mb-3">
+            Puedes configurar tu navegador para aceptar, rechazar o eliminar
+            <span class="corporate-orange">cookies</span> en cualquier momento.
+            Ten en cuenta que desactivar algunas puede afectar al funcionamiento
+            de la web.
+          </p>
+          <h3 class="cookies-subtitle mb-3">Política de Privacidad</h3>
+          <p class="cookies-description mb-3">
+            Consulta nuestra
+            <a href="./politica-privacidad.html" class="corporate-orange"
+              >Política de Privacidad</a
             >
-            <input
-              type="text"
-              class="form-control"
-              id="nombre"
-              name="nombre"
-              required
-              aria-required="true"
-              aria-label="Nombre completo"
-              aria-describedby="errorNombre"
-            />
-            <div id="errorNombre" class="invalid-feedback" role="alert">
-              El nombre es obligatorio (mínimo 2 caracteres).
-            </div>
-          </div>
-          <!-- Email -->
-          <div class="mb-3">
-            <label for="email" class="form-label"
-              >Correo electrónico <span aria-hidden="true">*</span></label
+            para más información sobre el tratamiento de tus datos personales.
+          </p>
+          <h3 class="cookies-subtitle mb-3">Contacto</h3>
+          <p class="cookies-description mb-3">
+            Si tienes dudas sobre nuestra política de cookies, escríbenos a
+            <a href="mailto:info@riffzone.com" class="corporate-orange"
+              >info@riffzone.com</a
+            >.
+          </p>
+          <div class="mt-auto pt-2">
+            <a
+              href="index.html"
+              class="volver-button bg-corporate-orange mx-auto d-block"
+              style="
+                width: 80%;
+                min-width: 220px;
+                max-width: 350px;
+                text-decoration: none;
+                font-size: 1.08rem;
+                font-weight: 600;
+                letter-spacing: 0.5px;
+                text-align: center;
+              "
             >
-            <input
-              type="email"
-              class="form-control"
-              id="email"
-              name="email"
-              required
-              aria-required="true"
-              aria-label="Correo electrónico"
-              aria-describedby="errorEmail"
-            />
-            <div id="errorEmail" class="invalid-feedback" role="alert">
-              Introduce un correo válido.
-            </div>
-          </div>
-          <!-- Asunto -->
-          <div class="mb-3">
-            <label for="asunto" class="form-label">Asunto</label>
-            <select
-              class="form-select"
-              id="asunto"
-              name="asunto"
-              aria-label="Selecciona un asunto para enviar el mensaje"
-            >
-              <option value="">Selecciona una opción</option>
-              <option value="consulta">Consulta</option>
-              <option value="sugerencia">Sugerencia</option>
-              <option value="soporte">Soporte</option>
-              <option value="otro">Otro</option>
-            </select>
-          </div>
-          <!-- Mensaje -->
-          <div class="mb-3">
-            <label for="mensaje" class="form-label"
-              >Mensaje <span aria-hidden="true">*</span></label
-            >
-            <textarea
-              class="form-control"
-              id="mensaje"
-              name="mensaje"
-              rows="4"
-              required
-              aria-required="true"
-              aria-label="Mensaje"
-              aria-describedby="errorMensaje"
-            ></textarea>
-            <div
-              id="contadorMensaje"
-              class="form-text text-end"
-              aria-live="polite"
-            >
-              0 / 100 caracteres
-            </div>
-            <div id="errorMensaje" class="invalid-feedback" role="alert">
-              El mensaje es obligatorio (mínimo 10 caracteres de longitud).
-            </div>
-          </div>
-          <!-- Teléfono -->
-          <div class="mb-3">
-            <label for="telefono" class="form-label">Teléfono</label>
-            <input
-              type="text"
-              class="form-control"
-              id="telefono"
-              name="telefono"
-              aria-label="Teléfono de contacto"
-              aria-describedby="errorTelefono"
-            />
-            <div id="errorTelefono" class="invalid-feedback" role="alert">
-              El teléfono debe tener al menos 7 dígitos válidos.
-            </div>
-          </div>
-          <!-- Botón -->
-          <button
-            type="submit"
-            class="btn btn-primary"
-            aria-label="Enviar formulario de contacto"
-          >
-            Enviar
-          </button>
-          <!-- Mensaje de éxito -->
-          <div
-            id="mensajeExito"
-            class="alert alert-success mt-3 d-none"
-            role="status"
-            aria-live="polite"
-          >
-            Mensaje enviado correctamente.
-          </div>
-        </form>
-
-        <!-- HORARIO -->
-        <aside class="horario-box" aria-labelledby="horaio">
-          <div class="logo-horario" aria-label="Logo de RiffZone Music Store">
-            <a href="/pages/index.html">
-              <img
-                src="../assets/images/logo RiffZone.png"
-                alt="Logo de RiffZone Music Store"
-              />
+              Volver a inicio
             </a>
           </div>
-          <h3 id="tituloHorario">Horario de atención</h3>
-          <p>
-            Lunes a Viernes: 9:30 - 18:30<br />
-            Sábados: 10:00 - 14:00<br />
-            Domingos: Cerrado
-          </p>
-        </aside>
+        </section>
       </div>
     </main>
     <!-- Pre-footer -->
