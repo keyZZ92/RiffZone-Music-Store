@@ -331,6 +331,13 @@ function renderProducts(products) {
       const prod = JSON.parse(btn.getAttribute("data-product"));
       if (typeof window.agregarAlCarrito === "function") {
         window.agregarAlCarrito(prod);
+        // Feedback visual igual que en productos.js
+        btn.innerHTML = "¡Añadido!";
+        btn.disabled = true;
+        setTimeout(() => {
+          btn.innerHTML = '<i class="bi bi-cart-plus me-2"></i>Añadir a la cesta';
+          btn.disabled = false;
+        }, 1000);
       }
     });
   });
