@@ -4,8 +4,7 @@
 const CATEGORY = window.PRODUCT_CATEGORY || "guitar";
 const CONTAINER_ID = window.PRODUCT_CONTAINER_ID || "guitar-products";
 
-// Guarda la URL actual como última página visitada
-localStorage.setItem("ultimaPagina", window.location.href);
+
 
 // Cargar productos dinámicamente según categoría
 fetch("../assets/data/products.json")

@@ -7,12 +7,27 @@ function formatCurrency(amount) {
         const btnSeguir = document.getElementById('seguir-comprando');
         if (btnSeguir) {
           btnSeguir.addEventListener('click', function () {
-            const ultima = localStorage.getItem('ultimaPagina') || 'index.html';
-            if (typeof window.navegarA === 'function') {
-              window.navegarA(ultima);
-            } else {
-              window.location.href = ultima;
+            // Obtener la última página de catálogo/productos visitada
+            const ultimaPaginaCatalogo = localStorage.getItem('ultimaPaginaCatalogo');
+            
+            // Páginas válidas para "seguir comprando" (solo catálogos y productos)
+            const paginasValidas = ['index.html', 'buscador.html', 'guitar.html', 'drums.html', 'keyboard.html', 'product-detail.html'];
+            
+            // Verificar si la última página es válida
+            let paginaDestino = 'buscador.html'; // Por defecto ir a buscador
+            
+            if (ultimaPaginaCatalogo) {
+              // Extraer solo el nombre del archivo de la URL completa
+              const nombrePagina = ultimaPaginaCatalogo.split('/').pop().split('?')[0];
+              
+              if (paginasValidas.includes(nombrePagina)) {
+                // Si es una página válida, usar solo el nombre del archivo
+                paginaDestino = nombrePagina;
+              }
             }
+            
+            console.log('Redirigiendo a:', paginaDestino);
+            window.location.href = paginaDestino;
           });
         }
         // Botón "Pagar"
@@ -39,7 +54,7 @@ function formatCurrency(amount) {
   const totalElement = document.getElementById('total-price');
   if (totalElement) {
     const total = actualizarTotal(); // Calcula el total del carrito
-    totalElement.textContent = `Total: ${total.toFixed(2)} €`; // Símbolo de euro separado por un espacio
+    totalElement.textContent = `Total: ${total.toFixed(2).replace('.', ',')} €`; // Símbolo de euro con coma decimal
   }
 }
       
@@ -60,7 +75,7 @@ function formatCurrency(amount) {
       const precioTotal = (producto.precioOferta || producto.precio || 0) * (producto.cantidad || 1);
       const precioTotalElement = productoElement.querySelector('.precio-total');
       if (precioTotalElement) {
-        precioTotalElement.textContent = `Total: ${precioTotal.toFixed(2)} €`;
+        precioTotalElement.textContent = `Total: ${precioTotal.toFixed(2).replace('.', ',')} €`;
       }
     }
   });

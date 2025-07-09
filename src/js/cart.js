@@ -68,7 +68,7 @@ function mostrarProductosCarrito() {
         <div class="checkout-product-info-col">
           <div class="checkout-product-info-left">
             <div class="checkout-product-title">${producto.nombre}</div>
-            <div class="checkout-product-precio">${producto.precio.toLocaleString('es-ES', {style:'currency', currency:'EUR'})}</div>
+            <div class="checkout-product-precio">${producto.precio.toFixed(2).replace('.', ',')} €</div>
           </div>
           <div class="checkout-product-info-right">
             <div class="checkout-product-controls">
@@ -84,7 +84,7 @@ function mostrarProductosCarrito() {
                 <i class="bi bi-plus"></i>
               </button>
             </div>
-            <div class="checkout-product-total">Total: ${(producto.precio * producto.cantidad).toLocaleString('es-ES', {style:'currency', currency:'EUR'})}</div>
+            <div class="checkout-product-total">Total: ${(producto.precio * producto.cantidad).toFixed(2).replace('.', ',')} €</div>
           </div>
         </div>
       </div>
@@ -92,7 +92,7 @@ function mostrarProductosCarrito() {
     contenedor.innerHTML += productoHTML;
   });
 
-  totalPrecioEl.textContent = totalGeneral.toFixed(2);
+  totalPrecioEl.textContent = `Total: ${totalGeneral.toFixed(2).replace('.', ',')} €`;
 }
 
 // Actualizar el contador
@@ -147,13 +147,13 @@ function renderizarProductosCarrito() {
 
   let html = '';
   carrito.forEach((producto, index) => {
-    const subtotal = (producto.precio * producto.cantidad).toFixed(2);
+    const subtotal = (producto.precio * producto.cantidad).toFixed(2).replace('.', ',');
     html += `
       <div class="cart-product-row">
         <img src="${producto.image}" class="cart-product-img cart-product-img-large" alt="${producto.nombre}" />
         <div class="cart-product-info">
           <h3 class="cart-product-title">${producto.nombre}</h3>
-          <p class="cart-product-price">€${producto.precio}</p>
+          <p class="cart-product-price">${producto.precio.toFixed(2).replace('.', ',')} €</p>
           <div class="cart-product-controls">
             <button class="btn-restar-producto btn-cart-action" onclick="disminuirCantidad(${index})" aria-label="Eliminar uno">
               <span class="btn-text">Eliminar</span>
@@ -165,7 +165,7 @@ function renderizarProductosCarrito() {
               <span class="btn-symbol">+</span>
             </button>
           </div>
-          <p class="cart-product-total">Total: €${subtotal}</p>
+          <p class="cart-product-total">Total: ${subtotal} €</p>
         </div>
       </div>
     `;
@@ -184,8 +184,9 @@ function actualizarTotal() {
   
   const totalElement = document.getElementById('total-price');
   if (totalElement) {
-    totalElement.textContent = total.toFixed(2);
+    totalElement.textContent = `Total: ${total.toFixed(2).replace('.', ',')} €`;
   }
+  return total;
 }
 
 // Añadir producto al carrito (accesible globalmente)

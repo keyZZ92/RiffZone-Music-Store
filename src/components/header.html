@@ -60,6 +60,7 @@
         </li>
       </ul>
     </nav>
+    
     <!-- icono carrito y login/usuario -->
     <div class="user-actions nav-list">
       <a
@@ -92,6 +93,92 @@
       </button>
     </div>
   </div>
+  <!-- Buscador global dentro del header -->
+  <br>
+  <form id="catalog-search-form" class="catalog-search-form catalog-search-bar-global buscador-header-rediseñado" role="search" aria-label="Buscar productos">
+    <div class="buscador-row buscador-row-modern buscador-glass">
+      <input
+        type="search"
+        id="search-input"
+        class="form-control buscador-input buscador-input-modern"
+        placeholder="Buscar productos..."
+        aria-label="Buscar productos"
+        autocomplete="off"
+      />
+      <button type="submit" id="search-button" class="buscador-boton-modern buscador-boton-glass" aria-label="Buscar">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+    <br>
+    <button class="checkout-cancel buscador-filtros-btn mt-2" type="button"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#filtersOffcanvas"
+      aria-controls="filtersOffcanvas"
+      aria-label="Mostrar filtros avanzados">
+      <i class="bi bi-sliders"></i>
+      <span class="d-none d-md-inline ms-1">Filtros</span>
+    </button>
+  </form>
+
+
+<!-- Offcanvas de filtros avanzados (ahora a la izquierda) -->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="filtersOffcanvas" aria-labelledby="filtersOffcanvasLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="filtersOffcanvasLabel">Filtros avanzados</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div id="advanced-filters" class="advanced-filters" tabindex="-1">
+      <select id="category-filter" class="form-select mb-2" aria-label="Filtrar por categoría">
+        <option value="">Todas las categorías</option>
+        <option value="acoustic-guitars">Guitarras acústicas</option>
+        <option value="electric-guitars">Guitarras eléctricas</option>
+        <option value="basses">Bajos</option>
+        <option value="drums">Baterías</option>
+        <option value="keyboard">Teclados</option>
+        <option value="amplifiers">Amplificadores</option>
+        <option value="effect-pedals">Pedales</option>
+        <option value="classical-guitars">Guitarras clásicas</option>
+      </select>
+      <input type="number" id="min-price" class="form-control mb-2" placeholder="Precio mínimo" aria-label="Precio mínimo" min="0" />
+      <input type="number" id="max-price" class="form-control mb-2" placeholder="Precio máximo" aria-label="Precio máximo" min="0" />
+      <select id="brand-filter" class="form-select mb-2" aria-label="Filtrar por marca">
+        <option value="">Todas las marcas</option>
+        <option value="Yamaha">Yamaha</option>
+        <option value="Fender">Fender</option>
+        <option value="Ibanez">Ibanez</option>
+        <option value="Alhambra">Alhambra</option>
+        <option value="Martin">Martin</option>
+        <option value="Gibson">Gibson</option>
+        <option value="Cordoba">Cordoba</option>
+        <option value="Jackson">Jackson</option>
+        <option value="Marshall">Marshall</option>
+        <option value="Boss">Boss</option>
+        <option value="Electro-Harmonix">Electro-Harmonix</option>
+        <option value="Pearl">Pearl</option>
+        <option value="Roland">Roland</option>
+        <option value="Zildjian">Zildjian</option>
+        <option value="Mapex">Mapex</option>
+        <option value="DW">DW</option>
+        <option value="Tama">Tama</option>
+        <option value="Casio">Casio</option>
+        <option value="Korg">Korg</option>
+        <option value="Hammond">Hammond</option>
+      </select>
+      <select id="offer-filter" class="form-select mb-2" aria-label="Filtrar por ofertas">
+        <option value="">Todas</option>
+        <option value="on-offer">Solo en oferta</option>
+      </select>
+      <select id="sort-filter" class="form-select mb-2" aria-label="Ordenar por">
+        <option value="relevance">Relevancia</option>
+        <option value="price-asc">Precio: menor a mayor</option>
+        <option value="price-desc">Precio: mayor a menor</option>
+        <option value="popularity">Popularidad</option>
+        <option value="newest">Novedades</option>
+      </select>
+    </div>
+  </div>
+</div>
   <!-- Menú móvil oculto por defecto -->
   <nav class="mobile-nav" id="mobileNav" aria-label="Menú móvil de navegación">
     <ul>

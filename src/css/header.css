@@ -178,8 +178,10 @@
 /* Responsive: header */
 @media (max-width: 900px) {
   .header {
-    background-image: none !important;
-    min-height: unset;
+    /* Mantener la imagen de fondo en móvil */
+    background-size: cover;
+    background-position: center;
+    min-height: 200px; /* Altura mínima para móvil */
     padding: 0.5rem 0 0.5rem 0;
   }
   .header-container {
@@ -442,3 +444,458 @@
   border-radius: 0.5rem;
   transition: background-color 0.3s, color 0.3s;
 }
+
+/* =========================
+   Barra de búsqueda global en catálogo
+========================= */
+.search-bar-header {
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  padding: 1rem 0;
+  display: flex;
+  justify-content: center;
+  z-index: 10;
+}
+.catalog-search-bar-global {
+  max-width: 900px;
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+.catalog-search-bar-global.buscador-header-rediseñado {
+  max-width: 500px;
+  margin: 0 auto 1.2rem auto;
+  padding: 0;
+  background: none;
+  box-shadow: none;
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.buscador-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;      /* Centra horizontalmente el contenido */
+  gap: 0.5rem;
+  padding: 0;                   /* Sin padding extra de Bootstrap */
+  margin: 0;                    /* Sin margen extra */
+  box-sizing: border-box;       /* Incluye el borde en el tamaño total */
+  min-height: 44px;             /* Altura mínima para alineación */
+}
+.buscador-input {
+  flex: 1 1 0;
+  min-width: 0;
+  height: 40px !important;
+  font-size: 1rem !important;
+  border-radius: 0.5rem !important;
+  border: 2px solid #e89229 !important;
+  padding: 0 1rem !important;
+  /* Elimina margen extra de Bootstrap input */
+  margin: 0 !important;
+  background: white !important;
+  color: #333 !important;
+}
+.buscador-boton {
+  height: 40px !important;
+  width: 40px !important;
+  min-width: 40px !important;
+  max-width: 40px !important;
+  padding: 0 !important;
+  border-radius: 0.5rem !important;
+  border: 2px solid #e89229 !important;
+  background: #fff !important;
+  color: #e89229 !important;
+  font-size: 1.2rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: background 0.2s, color 0.2s !important;
+  margin: 0 !important;
+  cursor: pointer !important;
+}
+.buscador-boton:hover, .buscador-boton:focus {
+  background: #e89229 !important;
+  color: #fff !important;
+  transform: scale(1.05) !important;
+}
+.buscador-boton i {
+  font-size: 1.2rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.buscador-filtros-btn {
+  width: auto !important;
+  min-width: 120px !important;
+  font-size: 1rem !important;
+  background: #fff !important;
+  border: 2px solid #e89229 !important;
+  color: #111 !important;
+  border-radius: 8px !important;
+  transition: background 0.2s, color 0.2s, border 0.2s !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 12px 20px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  text-align: center !important;
+}
+/* Color naranja para el icono del botón de filtro */
+.buscador-filtros-btn i {
+  color: #e89229 !important;
+  font-size: 1.1rem;
+  transition: color 0.2s;
+}
+.buscador-filtros-btn:hover, .buscador-filtros-btn:focus {
+  background: #e89229 !important;
+  color: #fff !important;
+  border-color: #e89229 !important;
+}
+.buscador-filtros-btn:hover i, 
+.buscador-filtros-btn:focus i {
+  color: #fff !important;
+  opacity: 1;
+}
+
+/* Moderniza la barra de búsqueda */
+/* Nuevo diseño "glass" para la barra de búsqueda */
+/* Contenedor del buscador sin opacidad ni blur */
+.catalog-search-form .buscador-row-modern.buscador-glass {
+  background: #ffffff !important;
+  border-radius: 2rem !important;
+  box-shadow: 0 4px 24px rgba(232,146,41,0.13), 0 1.5px 8px rgba(44,41,41,0.07) !important;
+  padding: 0.3rem 0.3rem 0.3rem 1rem !important;
+  width: 100% !important;
+  max-width: 440px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.3rem !important;
+  border: 1.5px solid rgba(232,146,41,0.3) !important;
+  transition: box-shadow 0.2s, background 0.2s !important;
+  flex-wrap: nowrap !important;
+  min-height: 48px !important;
+  margin: 0 auto !important;
+}
+
+/* Input moderno, sin borde, con placeholder más visible */
+.buscador-input-modern {
+  border: none !important;
+  outline: none !important;
+  background: transparent !important;
+  font-size: 1.08rem !important;
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  width: 100% !important;
+  height: 42px !important;
+  box-shadow: none !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  color: #222 !important;
+  margin: 0 !important;
+  line-height: 42px !important;
+}
+.buscador-input-modern::placeholder {
+  color: #e89229 !important;
+  opacity: 0.8 !important;
+  font-weight: 500 !important;
+}
+
+.buscador-input-modern:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Botón buscar moderno, glass, con sombra y animación */
+.buscador-boton-modern.buscador-boton-glass {
+  background: rgba(232,146,41,0.95) !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 50% !important;
+  width: 42px !important;
+  height: 42px !important;
+  min-width: 42px !important;
+  max-width: 42px !important;
+  min-height: 42px !important;
+  max-height: 42px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: 1.2rem !important;
+  box-shadow: 0 2px 8px rgba(232,146,41,0.18), 0 1.5px 8px rgba(44,41,41,0.07) !important;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.15s !important;
+  outline: none !important;
+  cursor: pointer !important;
+  flex-shrink: 0 !important;
+}
+.buscador-boton-modern.buscador-boton-glass:hover,
+.buscador-boton-modern.buscador-boton-glass:focus {
+  background: #c57615 !important;
+  color: #fff !important;
+  box-shadow: 0 4px 16px rgba(232,146,41,0.22) !important;
+  transform: scale(1.08) !important;
+}
+
+.buscador-boton-modern.buscador-boton-glass i {
+  font-size: 1.2rem !important;
+  line-height: 1 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+@media (max-width: 600px) {
+  .catalog-search-bar-global {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: stretch;
+  }
+  .search-bar-header {
+    padding: 0.5rem 0;
+  }
+  .catalog-search-bar-global.buscador-header-rediseñado {
+    max-width: 98vw;
+    padding: 0 0.5rem;
+  }
+  /* Alinea input y botón buscar en horizontal, y el botón de filtros debajo */
+  .buscador-row {
+    flex-direction: row;
+    gap: 0.5rem;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  .buscador-filtros-btn {
+    font-size: 1rem !important;
+    min-width: 0;
+    padding: 10px 15px !important;
+  }
+}
+
+/* =========================
+   Estilos para Offcanvas de Filtros y Buscador
+========================= */
+
+/* Estilos para el offcanvas de filtros */
+.offcanvas {
+  --bs-offcanvas-width: 350px;
+  --bs-offcanvas-bg: #fff;
+  --bs-offcanvas-border-color: rgba(232, 146, 41, 0.2);
+}
+
+.offcanvas-header {
+  background: linear-gradient(135deg, #e89229 0%, #d4841f 100%);
+  color: white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1rem 1.5rem;
+}
+
+.offcanvas-title {
+  font-family: "Oswald", sans-serif;
+  font-weight: 600;
+  font-size: 1.3rem;
+  margin: 0;
+  color: white;
+}
+
+.offcanvas-body {
+  padding: 1.5rem;
+  background: #fafafa;
+}
+
+/* Estilos para los filtros avanzados */
+.advanced-filters {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.advanced-filters .form-select,
+.advanced-filters .form-control {
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  background: white;
+}
+
+.advanced-filters .form-select:focus,
+.advanced-filters .form-control:focus {
+  border-color: #e89229;
+  box-shadow: 0 0 0 0.2rem rgba(232, 146, 41, 0.25);
+  outline: none;
+}
+
+.advanced-filters .form-select:hover,
+.advanced-filters .form-control:hover {
+  border-color: #e89229;
+}
+
+/* Estilos para el formulario de búsqueda del catálogo */
+.catalog-search-form {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.catalog-search-form .buscador-filtros-btn {
+  background: #fff !important;
+  border: 2px solid #e89229 !important;
+  color: #111 !important;
+  border-radius: 8px !important;
+  padding: 12px 20px !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  transition: background 0.2s, color 0.2s, border 0.2s !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.5rem !important;
+  cursor: pointer !important;
+  margin: 0 auto !important;
+  min-width: 120px !important;
+  width: auto !important;
+  text-align: center !important;
+}
+
+.catalog-search-form .buscador-filtros-btn:hover,
+.catalog-search-form .buscador-filtros-btn:focus {
+  background: #e89229 !important;
+  color: #fff !important;
+  border-color: #e89229 !important;
+}
+
+.catalog-search-form .buscador-filtros-btn i {
+  color: #e89229 !important;
+  font-size: 1.1rem;
+  transition: color 0.2s;
+}
+.catalog-search-form .buscador-filtros-btn:hover i,
+.catalog-search-form .buscador-filtros-btn:focus i {
+  color: #fff !important;
+}
+
+/* Mejoras para el btn-close del offcanvas */
+.offcanvas-header .btn-close {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+
+.offcanvas-header .btn-close:hover,
+.offcanvas-header .btn-close:focus {
+  opacity: 1;
+  color: white;
+}
+
+/* Responsive para offcanvas */
+@media (max-width: 768px) {
+  .offcanvas {
+    --bs-offcanvas-width: 280px;
+  }
+  
+  .offcanvas-body {
+    padding: 1rem;
+  }
+  
+  .catalog-search-form .buscador-filtros-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Estilos adicionales para mejorar la experiencia del usuario */
+.catalog-search-form .buscador-row-modern.buscador-glass:focus-within {
+  box-shadow: 0 6px 32px rgba(232,146,41,0.18), 0 2px 12px rgba(44,41,41,0.1);
+  border-color: rgba(232,146,41,0.3);
+}
+
+.catalog-search-form .buscador-input-modern:focus {
+  color: #333;
+}
+
+.catalog-search-form .buscador-input-modern:focus::placeholder {
+  opacity: 0.6;
+}
+
+/* Forzar visibilidad del buscador */
+.catalog-search-form {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  position: relative !important;
+  z-index: 10 !important;
+}
+
+.catalog-search-form .buscador-row-modern {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.catalog-search-form #search-input {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+.catalog-search-form #search-button {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+.catalog-search-form .buscador-filtros-btn {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+/* Media queries adicionales para tablets y móviles */
+@media (max-width: 992px) {
+  .user-actions {
+    gap: 0.7rem !important;
+  }
+  .user-actions .login-button {
+    font-size: 0.95rem !important;
+    padding: 0.35rem 0.8rem !important;
+    min-width: 90px;
+    margin-left: 0.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .user-actions {
+    gap: 0.5rem !important;
+  }
+  .user-actions .login-button {
+    font-size: 0.95rem !important;
+    padding: 0.28rem 1rem !important;
+    min-width: 90px !important;
+    height: 2.5rem !important;
+  }
+}
+
+/* Fin del archivo header.css */
