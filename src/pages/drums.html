@@ -18,6 +18,7 @@
     />
     <link rel="stylesheet" href="../css/styles.css" />
     <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/cookies-banner.css" />
   </head>
   <body>
     <div id="header-placeholder"></div>
@@ -150,7 +151,10 @@
       <!-- Contenedor para los productos -->
       <div class="row row-cols-1 row-cols-md-3 g-4" id="drum-products"></div>
       <!-- Contenedor para los productos filtrados -->
-      <div id="catalog-products" class="row row-cols-1 row-cols-md-3 g-4 mt-4"></div>
+      <div
+        id="catalog-products"
+        class="row row-cols-1 row-cols-md-3 g-4 mt-4"
+      ></div>
     </main>
 
     <!-- Pre-footer estático -->
@@ -227,7 +231,7 @@
                 <a
                   href="https://www.facebook.com/profile.php?id=61577710023966&locale=es_ES"
                   target="_blank"
-              rel="noopener"
+                  rel="noopener"
                   aria-label="Facebook"
                 >
                   <img
@@ -236,9 +240,12 @@
                 /></a>
               </li>
               <li>
-                <a href="https://x.com/RiffzoneMStore" aria-label="Twitter"
-                target="_blank"
-              rel="noopener">
+                <a
+                  href="https://x.com/RiffzoneMStore"
+                  aria-label="Twitter"
+                  target="_blank"
+                  rel="noopener"
+                >
                   <img
                     src="../assets/images/RedesSocialesIcons/logotwitter.png"
                     alt="Twitter"
@@ -248,7 +255,7 @@
                 <a
                   href="https://www.instagram.com/riffzone_music_store/"
                   target="_blank"
-              rel="noopener"
+                  rel="noopener"
                   aria-label="Instagram"
                 >
                   <img
@@ -260,7 +267,7 @@
                 <a
                   href="https://www.youtube.com/@RiffZoneMusicStore"
                   target="_blank"
-              rel="noopener"
+                  rel="noopener"
                   aria-label="YouTube"
                 >
                   <img
@@ -291,6 +298,7 @@
     <script src="../js/login.js"></script>
     <script src="../js/loadComponents.js"></script>
     <script src="../js/catalog.js"></script>
+    <script src="../js/cookies-banner.js"></script>
     <script>
       // Inicializar el buscador y filtros tras cargar el header
       document.addEventListener("DOMContentLoaded", function () {
