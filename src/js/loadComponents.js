@@ -30,25 +30,25 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         // Disparar evento personalizado para que otros scripts puedan engancharse tras cargar header
-        document.dispatchEvent(new Event("headerLoaded"));
-<<<<<<< HEAD
-=======
-        
-        // --- INICIO: Cargar e inicializar header-search.js ---
-        if (typeof initCatalogSearch === "function") {
-          initCatalogSearch();
-        } else {
-          // Si aún no está cargado, carga el script y luego inicializa
-          var searchScript = document.createElement("script");
-          searchScript.src = "../js/header-search.js";
-          searchScript.onload = function () {
-            console.log("header-search.js loaded");
-            if (typeof initCatalogSearch === "function") initCatalogSearch();
-          };
-          document.body.appendChild(searchScript);
-        }
-        // --- FIN ---
->>>>>>> 0640a2d31bf19b4bc0e82678b921ab73adf5e6ee
+      // Disparar evento personalizado para que otros scripts puedan engancharse tras cargar header
+document.dispatchEvent(new Event("headerLoaded"));
+
+// --- INICIO: Cargar e inicializar header-search.js ---
+if (typeof initCatalogSearch === "function") {
+  initCatalogSearch();
+} else {
+  // Si aún no está cargado, carga el script y luego inicializa
+  var searchScript = document.createElement("script");
+  searchScript.src = "../js/header-search.js";
+  searchScript.onload = function () {
+    console.log("header-search.js loaded");
+    if (typeof initCatalogSearch === "function") initCatalogSearch();
+  };
+  document.body.appendChild(searchScript);
+}
+// --- FIN ---
+
+      
       });
   }
 
