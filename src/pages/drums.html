@@ -42,11 +42,11 @@
         onclick="location.href='../pages/index.html';"
         aria-label="Volver a la tienda RiffZone Music Store"
       >
-        <i class="bi bi-arrow-left"></i>
+        <i class="bi bi-arrow-left" aria-hidden="true" title="Volver atrás"></i>
         Volver
       </button>
       <!-- Título principal -->
-      <h2 id="products-title" class="main-title">Catálogo de Baterías</h2>
+      <h1 id="products-title" class="main-title">Catálogo de Baterías</h1>
       <!-- Filtro por categoría -->
       <div id="products-nav-placeholder"></div>
       <!-- Contenedor para los productos -->
@@ -55,14 +55,11 @@
     </main>
 
     <!-- Pre-footer estático -->
-    <section
-      class="pre-footer"
-      aria-label="Información adicional y redes sociales"
-    >
+       <section class="pre-footer" aria-label="Información de contacto">
       <div class="pre-footer-container">
         <!-- Columna 1: Métodos de pago -->
-        <div class="pre-footer-column1" aria-label="Métodos de pago aceptados">
-          <h3>Métodos de pago</h3>
+        <div class="pre-footer-column1" aria-labelledby="metodos-pagos">
+          <h3 id="metodos-pagos">Métodos de pago</h3>
           <div class="payment-methods">
             <a
               href="https://www.paypal.com"
@@ -70,7 +67,7 @@
               rel="noopener"
               aria-label="PayPal"
             >
-              <img src="../assets/images/icons8-paypal-48.png" alt="PayPal" />
+              <img src="../assets/images/icons8-paypal-48.png" alt="PayPal" width="48" height="48"/>
             </a>
             <a
               href="https://www.visa.com"
@@ -78,7 +75,7 @@
               rel="noopener"
               aria-label="Visa"
             >
-              <img src="../assets/images/icons8-visa-48 (1).png" alt="Visa" />
+              <img src="../assets/images/icons8-visa-48 (1).png" alt="Visa"  width="48" height="48"/>
             </a>
             <a
               href="https://www.mastercard.es"
@@ -87,7 +84,7 @@
               aria-label="MasterCard"
             >
               <img
-                src="../assets/images/icons8-mastercard-48.png"
+                src="../assets/images/icons8-mastercard-48.png" width="48" height="48"
                 alt="MasterCard"
               />
             </a>
@@ -99,7 +96,7 @@
             >
               <img
                 src="../assets/images/icons8-american-express-al-cuadrado-48.png"
-                alt="American Express"
+                alt="American Express" width="48" height="48"
               />
             </a>
           </div>
@@ -133,7 +130,7 @@
                 >
                   <img
                     src="../assets/images/RedesSocialesIcons/logofacebook.png"
-                    alt="Facebook"
+                    alt="Facebook" width="48" height="48"
                 /></a>
               </li>
               <li>
@@ -145,7 +142,7 @@
                 >
                   <img
                     src="../assets/images/RedesSocialesIcons/logotwitter.png"
-                    alt="Twitter"
+                    alt="Twitter" width="48" height="48"
                 /></a>
               </li>
               <li>
@@ -157,7 +154,7 @@
                 >
                   <img
                     src="../assets/images/RedesSocialesIcons/logoinstagram.png"
-                    alt="Instagram"
+                    alt="Instagram" width="48" height="48"
                 /></a>
               </li>
               <li>
@@ -169,7 +166,7 @@
                 >
                   <img
                     src="../assets/images/RedesSocialesIcons/logoyoutube.png"
-                    alt="YouTube"
+                    alt="YouTube" width="48" height="48"
                 /></a>
               </li>
             </ul>
