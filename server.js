@@ -3,12 +3,12 @@ const path = require("path");
 const fs = require("fs");
 const bodyParser = require("body-parser");
 const nodemailer = require("nodemailer");
+const bcrypt = require("bcryptjs");  // <--- Añadido bcryptjs
 
 const app = express();
 app.use(bodyParser.json());
 
 // Servir archivos estáticos
-
 app.use(express.static(path.join(__dirname, "src")));
 
 // API para productos
@@ -80,7 +80,7 @@ app.get("/index.html", (req, res) => {
 });
 
 // POST /api/register: registrar un nuevo usuario
-app.post("/api/register", (req, res) => {
+app.post("/api/register", async (req, res) => {
   // Extraer los datos del body de la petición
   const { username, password, email } = req.body;
 
@@ -100,10 +100,11 @@ app.post("/api/register", (req, res) => {
   }
 
   // Ruta al archivo donde se almacenan los usuarios
-  const usersPath = path.join(__dirname, "backend/data/users.json");
-
+  const usersPath = path.join(__dirname, "backend", "data", "users.json");
   // Leer el archivo de usuarios
-  fs.readFile(usersPath, "utf8", (err, data) => {
+  console.log("Ruta de users.json:", usersPath);
+
+  fs.readFile(usersPath, "utf8", async (err, data) => {
     if (err && err.code !== "ENOENT") {
       console.error("Error al leer el archivo de usuarios:", err);
       return res.status(500).json({ error: "Error interno del servidor" });
@@ -113,11 +114,15 @@ app.post("/api/register", (req, res) => {
     if (data) {
       try {
         users = JSON.parse(data);
+        console.log("Usuarios leídos:", users);
       } catch (parseError) {
+        console.error("Error al parsear los datos de usuarios:", parseError);
         return res
           .status(500)
           .json({ error: "Error al procesar los datos de usuarios" });
       }
+    } else {
+      console.log("Archivo users.json vacío o no encontrado, se crea nuevo array de usuarios");
     }
 
     // Comprobar si el username o email ya existen
@@ -125,15 +130,23 @@ app.post("/api/register", (req, res) => {
       (u) => u.username === username || u.email === email
     );
     if (exists) {
+      console.log("Usuario o email ya existen");
       return res.status(409).json({ error: "El usuario o email ya existen." });
     }
 
-    // Añadir el nuevo usuario con todos los campos recibidos y isLogged: false
+    // Hashear la contraseña antes de guardar
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    // Añadir el nuevo usuario con el password hasheado y isLogged: false
     const nuevoUsuario = {
       ...req.body,
+      password: hashedPassword,
       isLogged: false,
     };
     users.push(nuevoUsuario);
+
+    // Log para verificar usuarios antes de guardar
+    console.log("Usuarios a guardar:", users);
 
     // Guardar el array actualizado en el archivo JSON
     fs.writeFile(usersPath, JSON.stringify(users, null, 2), (err) => {
@@ -143,6 +156,7 @@ app.post("/api/register", (req, res) => {
           .status(500)
           .json({ error: "No se pudo guardar el usuario." });
       }
+      console.log("Usuario guardado correctamente en users.json");
       // Responder con éxito
       res.status(201).json({ message: "Usuario registrado correctamente." });
     });
@@ -170,10 +184,11 @@ app.post("/api/login", (req, res) => {
   }
 
   // Ruta al archivo donde se almacenan los usuarios
-  const usersPath = path.join(__dirname, "backend/data/users.json");
+  const usersPath = path.join(__dirname, "backend", "data", "users.json");
+  console.log("Leyendo archivo desde:", usersPath);
 
   // Leer el archivo de usuarios
-  fs.readFile(usersPath, "utf8", (err, data) => {
+  fs.readFile(usersPath, "utf8", async (err, data) => {
     // Si ocurre un error distinto a que el archivo no exista, devolver error
     if (err && err.code !== "ENOENT") {
       console.error("Error al leer el archivo de usuarios:", err);
@@ -195,11 +210,15 @@ app.post("/api/login", (req, res) => {
         .json({ error: "Error al procesar los datos de usuarios" });
     }
 
-    // Buscar el usuario por email y contraseña
-    const user = users.find(
-      (u) => u.email === email && u.password === password
-    );
+    // Buscar el usuario por email
+    const user = users.find((u) => u.email === email);
     if (!user) {
+      return res.status(401).json({ error: "Credenciales inválidas." });
+    }
+
+    // Comparar la contraseña ingresada con el hash almacenado
+    const validPassword = await bcrypt.compare(password, user.password);
+    if (!validPassword) {
       return res.status(401).json({ error: "Credenciales inválidas." });
     }
 
@@ -233,7 +252,6 @@ app.post("/api/login", (req, res) => {
     );
   });
 });
-
 // --- ENDPOINTS PARA EL CARRITO ---
 
 // Obtener carrito del usuario
@@ -408,20 +426,9 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "src/pages/index.html"));
 });
 
-module.exports = app; // Exportar la app para pruebas
-// Esto permite que se pueda importar en tests u otros módulos si es necesario
-
-// Para ejecutar el servidor directamente desde este archivo
-if (require.main === module) {
-  const PORT = process.env.PORT || 3000;
-  app.listen(PORT, () => {
-    console.log(`Servidor corriendo en http://localhost:${PORT}`);
-  });
-}
-
 // --- LOGOUT: poner todos los usuarios a isLogged: false ---
 app.post("/api/logout", (req, res) => {
-  const usersPath = path.join(__dirname, "backend/data/users.json");
+  const usersPath = path.join(__dirname, "backend", "data", "users.json");
   fs.readFile(usersPath, "utf8", (err, data) => {
     if (err) {
       console.error("Error al leer el archivo de usuarios:", err);
@@ -454,3 +461,13 @@ app.post("/api/logout", (req, res) => {
     );
   });
 });
+module.exports = app; // Exportar la app para pruebas
+// Esto permite que se pueda importar en tests u otros módulos si es necesario
+
+// Para ejecutar el servidor directamente desde este archivo
+if (require.main === module) {
+  const PORT = process.env.PORT || 3000;
+  app.listen(PORT, () => {
+    console.log(`Servidor corriendo en http://localhost:${PORT}`);
+  });
+}

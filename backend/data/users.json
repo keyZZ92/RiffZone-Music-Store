@@ -1,7 +1,7 @@
 [
   {
     "username": "testuser",
-    "password": "testpassword",
+    "password": "$2b$10$QJa1Uh5Jhu.L37QupSeJz.pZC0Tupc03./cCoNSa0xzfPDVBXBzgC",
     "email": "testuser@email.com",
     "isLogged": false,
     "apellidos": "Prueba",
@@ -13,7 +13,7 @@
   },
   {
     "username": "José Manuel",
-    "password": "Martos",
+    "password": "$2b$10$qTSWB6vbkIPmK79BWRTeiujJ5.ByP47QdlgGAnF3HVndjUt1OiNzm",
     "email": "jmmartos@email.com",
     "isLogged": true,
     "apellidos": "Martínez",
@@ -25,7 +25,7 @@
   },
   {
     "username": "Aarón",
-    "password": "Fariña",
+    "password": "$2b$10$LQlkZnjt7X1Q/R.tG1SyxeyTUafY0ojKu9xNWIV.ysjzYh0TIpuFm",
     "email": "apesqueira@email.com",
     "isLogged": false,
     "apellidos": "Pesqueira",
@@ -37,7 +37,7 @@
   },
   {
     "username": "Keyliany",
-    "password": "Oliver",
+    "password": "$2b$10$vUZ4wJcF.VkJisJLaSqKDOk/Cj7xqK0a1wjwCJgBRiNu3iU5B2jfO",
     "email": "koliver@email.com",
     "isLogged": false,
     "apellidos": "Oliver",
@@ -49,7 +49,7 @@
   },
   {
     "username": "Andrea",
-    "password": "Arnedo",
+    "password": "$2b$10$o.GYZIAlXxx4otaQxZ5/r.u5./wKDkySR1gsLSY4tMzgzOIxG2Do2",
     "email": "abarnedo@email.com",
     "isLogged": false,
     "apellidos": "Boedo",
@@ -61,7 +61,7 @@
   },
   {
     "username": "Ramon",
-    "password": "contratarnosporfa",
+    "password": "$2b$10$JPsb/9AyUhsd0otyaOx.BuxY9/OKUnnu7CmND775MGiLYXqUgwFsu",
     "email": "rramos@email.com",
     "isLogged": false,
     "apellidos": "Ramos",
@@ -73,7 +73,7 @@
   },
   {
     "username": "Iván",
-    "password": "equipocontratado",
+    "password": "$2b$10$yiBCN6m/hFIO6P2kz7x3quwwEZV3LWXUOZhoJjf7X4727RIhjvMRK",
     "email": "igarcia@email.com",
     "isLogged": false,
     "apellidos": "García",
@@ -85,7 +85,7 @@
   },
   {
     "username": "Ivonne",
-    "password": "yoosapoyoequipo",
+    "password": "$2b$10$FUHLZpTmUtpoa6eVoXBA..SjMSDuj3evJk3fmEN.2K4bylj0hCIoW",
     "email": "imorgan@email.com",
     "isLogged": false,
     "apellidos": "Morgan",
@@ -94,5 +94,18 @@
     "region": "Madrid",
     "fechaNacimiento": "1996-12-05",
     "direccion": "Cra 7 #10-20"
+  },
+  {
+    "username": "Nala",
+    "password": "$2b$10$Dg8ySX/f4XBU/IAOM/cVk.VcWOAjASxpjY5I4U4VEYQWtpNntNIbC",
+    "email": "nala@email.com",
+    "nombre": "Nala",
+    "apellidos": "Boedo",
+    "telefono": "612345678",
+    "pais": "España",
+    "region": "Galicia",
+    "fechaNacimiento": "2013-09-07",
+    "direccion": "Montecito",
+    "isLogged": false
   }
 ]
