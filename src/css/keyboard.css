@@ -81,8 +81,6 @@
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
 }
 
-
-
 /* Unifica el alto de los botones de las cards de producto y ajusta el tamaño del icono del carrito */
 .btn-add-cart {
   min-height: 40px;
@@ -117,4 +115,79 @@
   line-height: 1;
   display: inline-flex;
   align-items: center;
+}
+
+  /* ============================
+Media queries
+============================= */
+/* moviles: hasta 576px */
+@media (max-width: 576px) {
+  .title-page-keyboard {
+    padding: 1rem;
+    font-size: 1.2rem;
+  }
+
+  #keyboard-products .card-img-top {
+    height: 160px;
+  }
+
+  .guitar-card h5,
+  .card-title {
+    font-size: 1rem;
+  }
+
+  .guitar-card p,
+  .card-text {
+    font-size: 0.85rem;
+  }
+
+  .btn-add-cart,
+  .btn-detail {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.75rem;
+  }
+}
+
+/* tablets: de 577px a 992px */
+@media (min-width: 577px) and (max-width: 992px) {
+  .title-page-keyboard {
+    padding: 1.5rem;
+    font-size: 1.5rem;
+  }
+
+  #keyboard-products .card-img-top {
+    height: 180px;
+  }
+
+  .guitar-card h5,
+  .card-title {
+    font-size: 1.1rem;
+  }
+
+  .guitar-card p,
+  .card-text {
+    font-size: 0.9rem;
+  }
+
+  .btn-add-cart,
+  .btn-detail {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* escritorio: desde 993px  */
+@media (min-width: 993px) {
+  .title-page-keyboard {
+    font-size: 1.8rem;
+  }
+
+  #keyboard-products .card-img-top {
+    height: 220px;
+  }
+
+  .btn-add-cart,
+  .btn-detail {
+    font-size: 1rem;
+  }
 }
