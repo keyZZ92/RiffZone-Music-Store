@@ -48,15 +48,27 @@
       <!-- Contenedor para los productos -->
       <div class="row row-cols-1 row-cols-md-3 g-4" id="keyboard-products"></div>
     </main>
-
-    <section
-      class="pre-footer"
-      aria-label="Información adicional y redes sociales"
-    >
+    <!-- Pre-footer -->
+    <section class="pre-footer" aria-label="Información de contacto">
       <div class="pre-footer-container">
-        <!-- Columna 1: Métodos de pago -->
-        <div class="pre-footer-column1" aria-label="Métodos de pago aceptados">
-          <h3>Métodos de pago</h3>
+        <!-- Columna 1: Ventajas -->
+        <div
+          class="pre-footer-column2"
+          aria-labelledby="ventajas de usar RiffZone Music Store"
+        >
+          <h3 id="ventajas-title">
+            Ventajas de comprar en RiffZone Music Store
+          </h3>
+          <ul>
+            <li>Garantía de calidad</li>
+            <li>Devolución fácil y rápida</li>
+            <li>Servicio técnico</li>
+            <li>Asesoramiento personalizado</li>
+          </ul>
+        </div>
+        <!-- Columna 2: Métodos de pago y redes sociales de contacto-->
+        <div class="pre-footer-column1" aria-label="Redes sociales">          
+          <h3 id="metodos-pagos">Métodos de pago</h3>
           <div class="payment-methods">
             <a
               href="https://www.paypal.com"
@@ -97,30 +109,15 @@
               />
             </a>
           </div>
-        </div>
-        <!-- Columna 2: Ventajas -->
-        <div
-          class="pre-footer-column2"
-          aria-labelledby="ventajas de usar RiffZone Music Store"
-        >
-          <h3 id="ventajas-title">
-            Ventajas de comprar en RiffZone Music Store
-          </h3>
-          <ul>
-            <li>Garantía de calidad</li>
-            <li>Devolución fácil y rápida</li>
-            <li>Servicio técnico</li>
-            <li>Asesoramiento personalizado</li>
-          </ul>
-        </div>
-        <!-- Columna 3: Redes sociales de contacto -->
-        <div class="pre-footer-column3" aria-label="Redes sociales">
+          <br>
           <h3>Síguenos</h3>
           <nav aria-label="Redes sociales">
             <ul class="social-links">
               <li>
                 <a
                   href="https://www.facebook.com/profile.php?id=61577710023966&locale=es_ES"
+                  target="_blank"
+                  rel="noopener"
                   aria-label="Facebook"
                 >
                   <img
@@ -129,7 +126,12 @@
                 /></a>
               </li>
               <li>
-                <a href="https://x.com/RiffzoneMStore" aria-label="Twitter">
+                <a
+                  href="https://x.com/RiffzoneMStore"
+                  aria-label="Twitter"
+                  target="_blank"
+                  rel="noopener"
+                >
                   <img
                     src="../assets/images/RedesSocialesIcons/logotwitter.png"
                     alt="Twitter"
@@ -138,6 +140,8 @@
               <li>
                 <a
                   href="https://www.instagram.com/riffzone_music_store/"
+                  target="_blank"
+                  rel="noopener"
                   aria-label="Instagram"
                 >
                   <img
@@ -148,6 +152,8 @@
               <li>
                 <a
                   href="https://www.youtube.com/@RiffZoneMusicStore"
+                  target="_blank"
+                  rel="noopener"
                   aria-label="YouTube"
                 >
                   <img
@@ -160,7 +166,6 @@
         </div>
       </div>
     </section>
-
     <!-- Footer dinámico -->
     <div id="footer-placeholder"></div>
 
