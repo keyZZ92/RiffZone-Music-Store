@@ -22,7 +22,6 @@
   background: #ffffff;
   padding: 2rem;
   border-radius: 0.5rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   min-width: 300px;
 }
 
@@ -90,12 +89,19 @@
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Focus para que coincida con hover */
+.formulario-box button:focus,
+.formulario-box input[type="submit"]:focus {
+  background-color: #d97d19;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+
 /*Horiario ccs*/
 .horario-box {
   flex: 0 0 150px;
   background: #fff;
   border-radius: 0.5rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   height: fit-content;
   padding: 1rem;
 }
