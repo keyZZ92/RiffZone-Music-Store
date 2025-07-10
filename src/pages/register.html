@@ -20,12 +20,12 @@
   <body>
     <!-- Cabecera de la página -->
     <div id="header-placeholder"></div>
-    <main class="zona-registro">
+    <main class="zona-registro" role="main">
       <div class="registro-contenedor">
         <div class="registro-box">
-          <h2 class="registro-titulo">
+          <h1 class="registro-titulo">
             <span>Crear cuenta</span>
-          </h2>
+          </h1>
           <form id="registroForm" novalidate>
             <!-- Nombre -->
             <div class="mb-3">
@@ -231,7 +231,7 @@
                     border-bottom-left-radius: 0;
                   "
                 >
-                  <i class="bi bi-eye" id="togglePasswordIcon1"></i>
+                  <i class="bi bi-eye" id="togglePasswordIcon1"  aria-hidden="true"></i>
                 </button>
               </div>
               <div id="passwordHelp" class="form-text">Mínimo 8 caracteres</div>
@@ -270,7 +270,7 @@
                     border-bottom-left-radius: 0;
                   "
                 >
-                  <i class="bi bi-eye" id="togglePasswordIcon2"></i>
+                  <i class="bi bi-eye" id="togglePasswordIcon2"aria-hidden="true"></i>
                 </button>
               </div>
               <div

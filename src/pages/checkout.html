@@ -43,12 +43,12 @@
         aria-label="Formulario de pago"
         style="flex: 1 1 350px; max-width: 480px; min-width: 320px"
       >
-        <h2
+        <h1
           class="mb-4"
           style="color: #e89229; font-family: 'Oswald', sans-serif"
         >
           Datos de envío y pago
-        </h2>
+        </h1>
         <div class="mb-3">
           <label for="checkoutName" class="form-label">Nombre completo</label>
           <input
@@ -59,6 +59,7 @@
             required
             aria-required="true"
             maxlength="60"
+            aria-describedby="nameError"
           />
           <div class="invalid-feedback">Introduce tu nombre completo.</div>
         </div>
@@ -74,6 +75,8 @@
             required
             aria-required="true"
             maxlength="60"
+            autocomplete="email"
+        aria-describedby="emailError"
           />
           <div class="invalid-feedback">Introduce un email válido.</div>
         </div>
@@ -89,8 +92,9 @@
             required
             aria-required="true"
             maxlength="120"
+            aria-describedby="addressError"
           />
-          <div class="invalid-feedback">Introduce tu dirección de envío.</div>
+          <div class="invalid-feedback" id="addressError" >Introduce tu dirección de envío.</div>
         </div>
         <div class="mb-3">
           <label for="checkoutCity" class="form-label">Ciudad</label>
@@ -102,8 +106,9 @@
             required
             aria-required="true"
             maxlength="40"
+              aria-describedby="cityError"
           />
-          <div class="invalid-feedback">Introduce tu ciudad.</div>
+          <div class="invalid-feedback" id="cityError">Introduce tu ciudad.</div>
         </div>
         <div class="mb-3">
           <label for="checkoutPostal" class="form-label">Código Postal</label>
@@ -116,8 +121,9 @@
             aria-required="true"
             maxlength="10"
             pattern="[0-9]{4,10}"
+            aria-describedby="postalError"
           />
-          <div class="invalid-feedback">Introduce un código postal válido.</div>
+          <div class="invalid-feedback" id="postalError">Introduce un código postal válido.</div>
         </div>
         <div class="mb-3">
           <label for="checkoutPayment" class="form-label">Método de pago</label>
@@ -127,6 +133,8 @@
             name="payment"
             required
             aria-required="true"
+            aria-label="Selecciona un método de pago"
+        aria-describedby="paymentError"
           >
             <option value="">Selecciona un método</option>
             <option value="visa">Visa</option>
@@ -134,7 +142,7 @@
             <option value="paypal">PayPal</option>
             <option value="amex">American Express</option>
           </select>
-          <div class="invalid-feedback">Selecciona un método de pago.</div>
+          <div class="invalid-feedback" id="paymentError">Selecciona un método de pago.</div>
         </div>
         <div class="mb-3">
           <label for="checkoutCard" class="form-label"
@@ -148,8 +156,9 @@
             maxlength="19"
             pattern="[0-9 ]{13,19}"
             autocomplete="cc-number"
+            aria-describedby="cardError"
           />
-          <div class="invalid-feedback">
+          <div class="invalid-feedback" id="cardError">
             Introduce un número de tarjeta válido.
           </div>
         </div>
@@ -219,7 +228,7 @@
           margin: 2rem auto;
         "
       >
-        <i class="bi bi-check-circle-fill" style="font-size: 2.5rem"></i>
+        <i class="bi bi-check-circle-fill" aria-hidden="true" style="font-size: 2.5rem"></i>
         <div class="mt-3 fw-bold" style="font-size: 1.3rem">
           ¡Pago realizado con éxito!<br />Gracias por tu compra en RiffZone
           Music Store<br />Esperamos verte de nuevo pronto.
@@ -254,7 +263,7 @@
               rel="noopener"
               aria-label="PayPal"
             >
-              <img src="../assets/images/icons8-paypal-48.png" alt="PayPal" />
+              <img src="../assets/images/icons8-paypal-48.png" alt="PayPal" width="48" height="48"/>
             </a>
             <a
               href="https://www.visa.com"
@@ -262,7 +271,7 @@
               rel="noopener"
               aria-label="Visa"
             >
-              <img src="../assets/images/icons8-visa-48 (1).png" alt="Visa" />
+              <img src="../assets/images/icons8-visa-48 (1).png" alt="Visa"  width="48" height="48"/>
             </a>
             <a
               href="https://www.mastercard.es"
@@ -271,7 +280,7 @@
               aria-label="MasterCard"
             >
               <img
-                src="../assets/images/icons8-mastercard-48.png"
+                src="../assets/images/icons8-mastercard-48.png" width="48" height="48"
                 alt="MasterCard"
               />
             </a>
@@ -283,7 +292,7 @@
             >
               <img
                 src="../assets/images/icons8-american-express-al-cuadrado-48.png"
-                alt="American Express"
+                alt="American Express" width="48" height="48"
               />
             </a>
           </div>
@@ -300,7 +309,7 @@
                 >
                   <img
                     src="../assets/images/RedesSocialesIcons/logofacebook.png"
-                    alt="Facebook"
+                    alt="Facebook" width="48" height="48"
                 /></a>
               </li>
               <li>
@@ -312,7 +321,7 @@
                 >
                   <img
                     src="../assets/images/RedesSocialesIcons/logotwitter.png"
-                    alt="Twitter"
+                    alt="Twitter" width="48" height="48"
                 /></a>
               </li>
               <li>
@@ -324,7 +333,7 @@
                 >
                   <img
                     src="../assets/images/RedesSocialesIcons/logoinstagram.png"
-                    alt="Instagram"
+                    alt="Instagram" width="48" height="48"
                 /></a>
               </li>
               <li>
@@ -336,7 +345,7 @@
                 >
                   <img
                     src="../assets/images/RedesSocialesIcons/logoyoutube.png"
-                    alt="YouTube"
+                    alt="YouTube" width="48" height="48"
                 /></a>
               </li>
             </ul>
