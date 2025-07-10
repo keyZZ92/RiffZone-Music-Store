@@ -215,6 +215,37 @@ function initCatalogSearch() {
       }
     });
   }
+
+  // Event listener para el botón "Aplicar filtros"
+  const applyFiltersBtn = document.getElementById("apply-filters-btn");
+  if (applyFiltersBtn) {
+    applyFiltersBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      
+      // Aplicar filtros
+      hasSearched = true;
+      applyFilters();
+      
+      // Cerrar el offcanvas de filtros después de aplicar
+      const filtersOffcanvas = document.getElementById("filtersOffcanvas");
+      if (filtersOffcanvas) {
+        const bsOffcanvas = bootstrap.Offcanvas.getInstance(filtersOffcanvas);
+        if (bsOffcanvas) {
+          bsOffcanvas.hide();
+        }
+      }
+      
+      // Feedback visual temporal
+      const originalText = applyFiltersBtn.innerHTML;
+      applyFiltersBtn.innerHTML = '<i class="bi bi-check-circle-fill me-2"></i>¡Filtros aplicados!';
+      applyFiltersBtn.disabled = true;
+      
+      setTimeout(() => {
+        applyFiltersBtn.innerHTML = originalText;
+        applyFiltersBtn.disabled = false;
+      }, 1500);
+    });
+  }
 }
 
 function applyFilters() {
