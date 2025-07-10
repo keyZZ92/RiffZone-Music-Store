@@ -4,8 +4,7 @@
 const CATEGORY = window.PRODUCT_CATEGORY || "guitar";
 const CONTAINER_ID = window.PRODUCT_CONTAINER_ID || "guitar-products";
 
-// Guarda la URL actual como última página visitada
-localStorage.setItem("ultimaPagina", window.location.href);
+
 
 // Cargar productos dinámicamente según categoría
 fetch("../assets/data/products.json")
@@ -93,9 +92,11 @@ fetch("../assets/data/products.json")
           actualizarContadorCarrito();
         }
         // Feedback visual
-        this.textContent = "¡Añadido!";
+        this.innerHTML = "¡Añadido!";
+        this.disabled = true;
         setTimeout(() => {
-          this.textContent = "Añadir al carrito";
+          this.innerHTML = '<i class="bi bi-cart-plus me-2"></i>Añadir al carrito';
+          this.disabled = false;
         }, 1000);
       });
     });

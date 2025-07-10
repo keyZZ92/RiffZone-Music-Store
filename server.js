@@ -39,6 +39,36 @@ app.get("/api/products", (req, res) => {
     }
   );
 });
+
+// Endpoint específico para productos con precio = 130
+app.get("/api/products/price130", (req, res) => {
+  fs.readFile(
+    path.join(__dirname, "src/assets/data/products.json"),
+    "utf8",
+    (err, data) => {
+      if (err) {
+        console.error("Error al leer el archivo de productos:", err);
+        return res.status(500).json({ error: "Error interno del servidor" });
+      }
+      try {
+        const products = JSON.parse(data);
+        // Filtrar productos con price=130 o offerPrice=130
+        const filtered = products.filter(
+          (p) => p.price === 130 || p.offerPrice === 130
+        );
+        console.log(
+          `Encontrados ${filtered.length} productos con precio 130:`,
+          filtered
+        );
+        res.json(filtered);
+      } catch (parseError) {
+        console.error("Error al parsear el JSON de productos:", parseError);
+        res.status(500).json({ error: "Error al procesar los datos de productos" });
+      }
+    }
+  );
+});
+
 // Servir el archivo register.html cuando se solicite la ruta /register.html
 app.get("/register.html", (req, res) => {
   res.sendFile(path.join(__dirname, "src/pages/register.html"));

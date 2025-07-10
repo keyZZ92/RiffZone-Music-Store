@@ -1,11 +1,5 @@
-/* =========================
-   Diseño cards de guitarra
-========================= */
-
-
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap");
-
-.title-page-guitar {
+.title-page-keyboard {
   text-align: center;
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -15,17 +9,14 @@
     border-radius: 0.5rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
-.guitar-card:hover,
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-.guitar-card img,
-.card-img-top {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-bottom: 1px solid #eee;
+.guitar-card,
+.card {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #fff;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 .guitar-card-body,
 .card-body {
@@ -35,7 +26,7 @@
 .card-title {
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
-  color: #222;
+  color: #333;
 }
 .guitar-card p,
 .card-text {
@@ -51,7 +42,7 @@
 }
 .price-offer,
 .fw-bold.text-danger {
-  color: #e53935;
+  color: #750f0d;
   font-weight: bold;
   font-size: 1.1rem;
 }
@@ -69,8 +60,7 @@
 .btn-primary:hover {
   background-color: #0056b3;
 }
-
-#guitar-products .card-img-top {
+#keyboard-products .card-img-top {
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   object-fit: cover;
   width: 100%;
@@ -78,24 +68,18 @@
   display: block;
   border-radius: 0;
 }
-
-#guitar-products .card:hover .card-img-top {
+#keyboard-products .card:hover .card-img-top {
   transform: scale(1.12);
   z-index: 1;
 }
-
-#guitar-products .card {
+#keyboard-products .card {
   overflow: hidden;
   transition: box-shadow 0.2s;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
-
-#guitar-products .card:hover {
+#keyboard-products .card:hover {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
 }
-
-
-
 
 /* Unifica el alto de los botones de las cards de producto y ajusta el tamaño del icono del carrito */
 .btn-add-cart {
@@ -131,4 +115,79 @@
   line-height: 1;
   display: inline-flex;
   align-items: center;
+}
+
+  /* ============================
+Media queries
+============================= */
+/* moviles: hasta 576px */
+@media (max-width: 576px) {
+  .title-page-keyboard {
+    padding: 1rem;
+    font-size: 1.2rem;
+  }
+
+  #keyboard-products .card-img-top {
+    height: 160px;
+  }
+
+  .guitar-card h5,
+  .card-title {
+    font-size: 1rem;
+  }
+
+  .guitar-card p,
+  .card-text {
+    font-size: 0.85rem;
+  }
+
+  .btn-add-cart,
+  .btn-detail {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.75rem;
+  }
+}
+
+/* tablets: de 577px a 992px */
+@media (min-width: 577px) and (max-width: 992px) {
+  .title-page-keyboard {
+    padding: 1.5rem;
+    font-size: 1.5rem;
+  }
+
+  #keyboard-products .card-img-top {
+    height: 180px;
+  }
+
+  .guitar-card h5,
+  .card-title {
+    font-size: 1.1rem;
+  }
+
+  .guitar-card p,
+  .card-text {
+    font-size: 0.9rem;
+  }
+
+  .btn-add-cart,
+  .btn-detail {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* escritorio: desde 993px  */
+@media (min-width: 993px) {
+  .title-page-keyboard {
+    font-size: 1.8rem;
+  }
+
+  #keyboard-products .card-img-top {
+    height: 220px;
+  }
+
+  .btn-add-cart,
+  .btn-detail {
+    font-size: 1rem;
+  }
 }

@@ -8,6 +8,8 @@
   const PRODUCT_CONTAINER_ID = '#product-detail';
   const DATA_URL = '../assets/data/products.json';
 
+
+
   if (typeof window.addToCart !== 'function') {
     window.addToCart = function addToCart(product, options = { showToast: true }) {
       if (typeof window.requireLogin === 'function' && !window.requireLogin()) return;
