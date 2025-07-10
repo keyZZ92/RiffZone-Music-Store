@@ -31,23 +31,24 @@
         onclick="location.href='../pages/index.html';"
         aria-label="Volver a la tienda RiffZone Music Store"
       >
-        <i class="bi bi-arrow-left"></i>
+        <i class="bi bi-arrow-left"  aria-hidden="true" title="Volver atrás"></i>
         Volver
       </button>
-      <h2 id="products-title" class="main-title">Buscador de Productos</h2>
+      <h1 id="products-title" class="main-title">Buscador de Productos</h1>
       <!-- Contenedor para los productos filtrados -->
       <div
         id="catalog-products"
         class="row row-cols-1 row-cols-md-3 g-4 mt-4"
+        role="region"
+    aria-live="polite"
+    aria-label="Resultados de productos"
       ></div>
     </main>
-    <section
-      class="pre-footer"
-      aria-label="Información adicional y redes sociales"
-    >
+        <section class="pre-footer" aria-label="Información de contacto">
       <div class="pre-footer-container">
-        <div class="pre-footer-column1" aria-label="Métodos de pago aceptados">
-          <h3>Métodos de pago</h3>
+        <!-- Columna 1: Métodos de pago -->
+        <div class="pre-footer-column1" aria-labelledby="metodos-pagos">
+          <h3 id="metodos-pagos">Métodos de pago</h3>
           <div class="payment-methods">
             <a
               href="https://www.paypal.com"
@@ -55,7 +56,7 @@
               rel="noopener"
               aria-label="PayPal"
             >
-              <img src="../assets/images/icons8-paypal-48.png" alt="PayPal" />
+              <img src="../assets/images/icons8-paypal-48.png" alt="PayPal" width="48" height="48"/>
             </a>
             <a
               href="https://www.visa.com"
@@ -63,7 +64,7 @@
               rel="noopener"
               aria-label="Visa"
             >
-              <img src="../assets/images/icons8-visa-48 (1).png" alt="Visa" />
+              <img src="../assets/images/icons8-visa-48 (1).png" alt="Visa"  width="48" height="48"/>
             </a>
             <a
               href="https://www.mastercard.es"
@@ -72,7 +73,7 @@
               aria-label="MasterCard"
             >
               <img
-                src="../assets/images/icons8-mastercard-48.png"
+                src="../assets/images/icons8-mastercard-48.png" width="48" height="48"
                 alt="MasterCard"
               />
             </a>
@@ -84,11 +85,12 @@
             >
               <img
                 src="../assets/images/icons8-american-express-al-cuadrado-48.png"
-                alt="American Express"
+                alt="American Express" width="48" height="48"
               />
             </a>
           </div>
         </div>
+        <!-- Columna 2: Ventajas -->
         <div
           class="pre-footer-column2"
           aria-labelledby="ventajas de usar RiffZone Music Store"
@@ -98,14 +100,65 @@
           </h3>
           <ul>
             <li>Garantía de calidad</li>
-            <li>Envío rápido y seguro</li>
-            <li>Atención personalizada</li>
+            <li>Devolución fácil y rápida</li>
+            <li>Servicio técnico</li>
+            <li>Asesoramiento personalizado</li>
           </ul>
         </div>
+        <!-- Columna 3: Redes sociales de contacto -->
         <div class="pre-footer-column3" aria-label="Redes sociales">
           <h3>Síguenos</h3>
           <nav aria-label="Redes sociales">
-            <!-- Aquí puedes agregar iconos de redes sociales -->
+            <ul class="social-links">
+              <li>
+                <a
+                  href="https://www.facebook.com/profile.php?id=61577710023966&locale=es_ES"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Facebook"
+                >
+                  <img
+                    src="../assets/images/RedesSocialesIcons/logofacebook.png"
+                    alt="Facebook" width="48" height="48"
+                /></a>
+              </li>
+              <li>
+                <a
+                  href="https://x.com/RiffzoneMStore"
+                  aria-label="Twitter"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <img
+                    src="../assets/images/RedesSocialesIcons/logotwitter.png"
+                    alt="Twitter" width="48" height="48"
+                /></a>
+              </li>
+              <li>
+                <a
+                  href="https://www.instagram.com/riffzone_music_store/"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Instagram"
+                >
+                  <img
+                    src="../assets/images/RedesSocialesIcons/logoinstagram.png"
+                    alt="Instagram" width="48" height="48"
+                /></a>
+              </li>
+              <li>
+                <a
+                  href="https://www.youtube.com/@RiffZoneMusicStore"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="YouTube"
+                >
+                  <img
+                    src="../assets/images/RedesSocialesIcons/logoyoutube.png"
+                    alt="YouTube" width="48" height="48"
+                /></a>
+              </li>
+            </ul>
           </nav>
         </div>
       </div>

@@ -28,7 +28,7 @@
           role="region"
           aria-label="Sobre RiffZone Music Store"
         >
-          <h2 class="about-title">Sobre Nosotros</h2>
+          <h1 class="about-title">Sobre Nosotros</h1>
           <p class="about-description">
             <span class="about-store-name">RiffZone Music Store</span> es una
             tienda especializada en instrumentos musicales y equipamiento
@@ -40,7 +40,7 @@
           </p>
 
           <h3>
-            Inspiración y Asesoramiento <i class="bi bi-music-note-beamed"></i>
+            Inspiración y Asesoramiento <i class="bi bi-music-note-beamed" aria-hidden="true"></i>
           </h3>
         </section>
         <!-- Cards de los miembros del equipo (se añadirán a continuación) -->
@@ -59,7 +59,7 @@
                   alt="Foto de Keyliany Olivier, Gerente"
                 />
                 <div class="card-body">
-                  <h5 class="card-title">Keyliany Olivier</h5>
+                  <h3 class="card-title">Keyliany Olivier</h3>
                   <p class="card-workstation corporate-orange fw-medium">
                     Gerente y fundadora
                   </p>
@@ -67,14 +67,18 @@
                     Apasionada de la música y la gestión, lidera RiffZone con
                     energía y visión.
                   </p>
-                  <button class="btn btn-outline-corporate-orange btn-ver-mas">
+                  <button class="btn btn-outline-corporate-orange btn-ver-mas" aria-expanded="false"
+                aria-controls="info-keyliany" >
                     Ver más
                   </button>
                 </div>
-                <div class="team-card-info-panel">
+                <div class="team-card-info-panel"
+                id="info-keyliany"
+              tabindex="-1"
+              aria-live="polite">
                   <button
                     class="btn btn-outline-secondary btn-cerrar-info"
-                    aria-label="Cerrar información"
+                    aria-label="Cerrar información" aria-expanded="true"
                   >
                     &times;
                   </button>
@@ -96,7 +100,7 @@
                   alt="Foto de José Manuel Martos, Técnico de sonido"
                 />
                 <div class="card-body">
-                  <h5 class="card-title">José Manuel Martos</h5>
+                  <h3 class="card-title">José Manuel Martos</h3>
                   <p class="card-workstation corporate-orange fw-medium">
                     Técnico de sonido
                   </p>
@@ -104,14 +108,20 @@
                     Especialista en audio y mantenimiento, siempre dispuesto a
                     ayudar.
                   </p>
-                  <button class="btn btn-outline-corporate-orange btn-ver-mas">
+                  <button class="btn btn-outline-corporate-orange btn-ver-mas"
+                  aria-expanded="false"
+                aria-controls="info-josé-manuel">
                     Ver más
                   </button>
                 </div>
-                <div class="team-card-info-panel">
+                <div class="team-card-info-panel"
+                   id="info-josé-manuel"
+              tabindex="-1"
+              aria-live="polite">
                   <button
                     class="btn btn-outline-secondary btn-cerrar-info"
                     aria-label="Cerrar información"
+                     aria-expanded="true"
                   >
                     &times;
                   </button>
@@ -133,7 +143,7 @@
                   alt="Foto de Andrea Boedo, Atención al cliente"
                 />
                 <div class="card-body">
-                  <h5 class="card-title">Andrea Boedo</h5>
+                  <h3 class="card-title">Andrea Boedo</h3>
                   <p class="card-workstation corporate-orange fw-medium">
                     Atención al cliente
                   </p>
@@ -141,14 +151,20 @@
                     Tu primera sonrisa en la tienda. Resolutiva, cercana y
                     simpática.
                   </p>
-                  <button class="btn btn-outline-corporate-orange btn-ver-mas">
+                  <button class="btn btn-outline-corporate-orange btn-ver-mas"
+                   aria-expanded="false"
+                aria-controls="info-andrea">
                     Ver más
                   </button>
                 </div>
-                <div class="team-card-info-panel">
+                <div class="team-card-info-panel"
+                 id="info-andrea"
+              tabindex="-1"
+              aria-live="polite">
                   <button
                     class="btn btn-outline-secondary btn-cerrar-info"
                     aria-label="Cerrar información"
+                    aria-expanded="true"
                   >
                     &times;
                   </button>
@@ -170,7 +186,7 @@
                   alt="Foto de Aarón Pesqueira, Especialista en instrumentos"
                 />
                 <div class="card-body">
-                  <h5 class="card-title">Aarón Pesqueira</h5>
+                  <h3 class="card-title">Aarón Pesqueira</h3>
                   <p class="card-workstation  fw-medium">
                     Especialista en instrumentos
                   </p>
@@ -178,14 +194,20 @@
                     Músico profesional, te asesora para elegir el instrumento
                     ideal para tus necesidades.
                   </p>
-                  <button class="btn btn-outline-corporate-orange btn-ver-mas">
+                  <button class="btn btn-outline-corporate-orange btn-ver-mas"
+               aria-expanded="false"
+                aria-controls="info-Aarón">
                     Ver más
                   </button>
                 </div>
-                <div class="team-card-info-panel">
+                <div class="team-card-info-panel"
+                  id="info-Aarón"
+              tabindex="-1"
+              aria-live="polite">
                   <button
                     class="btn btn-outline-secondary btn-cerrar-info"
                     aria-label="Cerrar información"
+                     aria-expanded="true"
                   >
                     &times;
                   </button>
@@ -213,6 +235,8 @@
             <div class="col-md-7 mb-3 mb-md-0">
               <div
                 id="map"
+                  role="presentation"
+            aria-hidden="true"
                 style="
                   width: 100%;
                   height: 300px;
@@ -253,7 +277,7 @@
     </main>
 
     <!-- Pre-footer -->
-    <section class="pre-footer" aria-label="Información de contacto">
+         <section class="pre-footer" aria-label="Información de contacto">
       <div class="pre-footer-container">
         <!-- Columna 1: Métodos de pago -->
         <div class="pre-footer-column1" aria-labelledby="metodos-pagos">
@@ -265,7 +289,7 @@
               rel="noopener"
               aria-label="PayPal"
             >
-              <img src="../assets/images/icons8-paypal-48.png" alt="PayPal" />
+              <img src="../assets/images/icons8-paypal-48.png" alt="PayPal" width="48" height="48"/>
             </a>
             <a
               href="https://www.visa.com"
@@ -273,7 +297,7 @@
               rel="noopener"
               aria-label="Visa"
             >
-              <img src="../assets/images/icons8-visa-48 (1).png" alt="Visa" />
+              <img src="../assets/images/icons8-visa-48 (1).png" alt="Visa"  width="48" height="48"/>
             </a>
             <a
               href="https://www.mastercard.es"
@@ -282,7 +306,7 @@
               aria-label="MasterCard"
             >
               <img
-                src="../assets/images/icons8-mastercard-48.png"
+                src="../assets/images/icons8-mastercard-48.png" width="48" height="48"
                 alt="MasterCard"
               />
             </a>
@@ -294,7 +318,7 @@
             >
               <img
                 src="../assets/images/icons8-american-express-al-cuadrado-48.png"
-                alt="American Express"
+                alt="American Express" width="48" height="48"
               />
             </a>
           </div>
@@ -328,7 +352,7 @@
                 >
                   <img
                     src="../assets/images/RedesSocialesIcons/logofacebook.png"
-                    alt="Facebook"
+                    alt="Facebook" width="48" height="48"
                 /></a>
               </li>
               <li>
@@ -340,7 +364,7 @@
                 >
                   <img
                     src="../assets/images/RedesSocialesIcons/logotwitter.png"
-                    alt="Twitter"
+                    alt="Twitter" width="48" height="48"
                 /></a>
               </li>
               <li>
@@ -352,7 +376,7 @@
                 >
                   <img
                     src="../assets/images/RedesSocialesIcons/logoinstagram.png"
-                    alt="Instagram"
+                    alt="Instagram" width="48" height="48"
                 /></a>
               </li>
               <li>
@@ -364,7 +388,7 @@
                 >
                   <img
                     src="../assets/images/RedesSocialesIcons/logoyoutube.png"
-                    alt="YouTube"
+                    alt="YouTube" width="48" height="48"
                 /></a>
               </li>
             </ul>
