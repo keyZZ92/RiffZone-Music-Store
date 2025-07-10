@@ -2,7 +2,7 @@
   "name": "musical-instrument-store",
   "version": "1.0.0",
   "description": "A web application for a musical instrument store with a shopping cart and user authentication.",
-  "main": "src/js/app.js",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "dev:server": "nodemon server.js",

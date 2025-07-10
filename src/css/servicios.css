@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap");
+
 /* Estructura principal */
 main {
   padding: 0.5rem;
@@ -18,60 +19,52 @@ main {
   max-width: 1000px;
 }
 
-
-
-/* Encabezado de sección */
+/* encabezado de sección */
 .texto-central-servicios {
   text-align: center;
-  margin-bottom: 1.5rem;
+  margin-top: 2rem;
   background-color: #fff;
   padding: 2rem;
   border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 .about-title {
-  text-align: center;
-  font-size: 2rem;
-  font-family: "Oswald", sans-serif;
+  font-size: 3rem;
   margin-bottom: 1.5rem;
   color: #333;
+  font-family: "Oswald", sans-serif;
 }
 
 .about-description {
-  max-width: 700px;
+  max-width: 1000px;
   margin: 0 auto;
   line-height: 1.6;
-  font-family: "Oswald", sans-serif;
   font-size: 1.2rem;
+  font-family: "Oswald", sans-serif;
   color: #333;
   font-weight: 400;
 }
 
 .about-store-name {
   font-weight: bold;
-  color:  #e89229;
+  color: #e89229;
 }
 
-.texto-central-servicios h3{
-color: #e89229;
-font-weight: bold;
- text-align: center;
+.texto-central-servicios h3 {
+  color: #e89229;
+  font-weight: bold;
+  text-align: center;
   font-size: 1.2rem;
   font-family: "Oswald", sans-serif;
-  margin-bottom: 1.5rem;
-  margin-top: 1.5rem;
+  margin-top: 2rem;
 }
 
 /* Servicios desplegable */
 .section-servicios {
-  width: 100%;
-  background-color: #ffffff;
+  background-color: #fff;
   padding: 2rem;
   border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  margin: 0;
-  margin-bottom: 2rem;
+  margin-top: 0.5rem  ;
 }
 
 .container-servicios {
@@ -79,12 +72,12 @@ font-weight: bold;
   flex-direction: column;
   gap: 1rem;
 }
+
 .container-servicios h2 {
-    font-size: 1.5rem;
+  font-size: 2.5rem;
   margin-bottom: 1rem;
   color: #333;
   text-align: center;
-
 }
 
 .servicio {
@@ -108,7 +101,7 @@ font-weight: bold;
   color: #000000;
 }
 
-.servicio-desplegable span{
+.servicio-desplegable span {
   flex-grow: 1;
   margin-left: 0.5rem;
 }
@@ -116,6 +109,7 @@ font-weight: bold;
 .servicio-desplegable span:hover {
   color: #fff;
 }
+
 .servicio-desplegable i {
   color: #fff;
 }
@@ -123,10 +117,10 @@ font-weight: bold;
 .servicio-body {
   padding: 1rem;
   font-size: 1rem;
-  font-weight:lighter ;
+  font-weight: lighter;
   background-color: #f9f9f9;
-  color: #333 ;
-  transition: none;
+  color: #333;
+  overflow-x: hidden;
 }
 
 .icono-rotar {
@@ -138,20 +132,28 @@ font-weight: bold;
 }
 
 
-/* responsive de menos de 768px*/
-@media (max-width: 767px) {
+/* ===========================
+   MEDIA QUERIES RESPONSIVE
+=========================== */
+
+/* MÓVIL - hasta 576px */
+@media (max-width: 576px) {
   .texto-central-servicios,
   .section-servicios {
-    width: 50%;
     padding: 1rem;
   }
 
   .about-title {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 
   .about-description {
     font-size: 1rem;
+  }
+
+  .texto-central-servicios h3,
+  .container-servicios h2 {
+    font-size: 1.1rem;
   }
 
   .servicio-desplegable {
@@ -162,5 +164,44 @@ font-weight: bold;
 
   .servicio-desplegable span {
     margin-left: 0;
+  }
+
+  .servicio-body {
+    font-size: 0.95rem;
+  }
+}
+
+/* TABLET - de 577px a 991px */
+@media (min-width: 577px) and (max-width: 991px) {
+  .about-title {
+    font-size: 1.8rem;
+  }
+
+  .about-description {
+    font-size: 1.05rem;
+  }
+
+  .texto-central-servicios h3,
+  .container-servicios h2 {
+    font-size: 1.2rem;
+  }
+
+  .servicio-body {
+    font-size: 1rem;
+  }
+}
+
+/* ESCRITORIO - desde 992px */
+@media (min-width: 992px) {
+  .about-title {
+    font-size: 2rem;
+  }
+
+  .about-description {
+    font-size: 1.2rem;
+  }
+
+  .container-servicios h2 {
+    font-size: 1.5rem;
   }
 }
