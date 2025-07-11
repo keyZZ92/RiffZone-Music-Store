@@ -91,33 +91,34 @@
         Cerrar sesión
       </button>
     </div>
+    
+    <!-- Buscador global dentro del header container -->
+    <form id="catalog-search-form" class="catalog-search-form catalog-search-bar-global buscador-header-rediseñado" role="search" aria-label="Buscar productos" style="text-align: center;">
+      <div class="search-container-flex" style="display: inline-flex;">
+        <div class="buscador-row buscador-row-modern buscador-glass">
+          <input
+            type="search"
+            id="search-input"
+            class="form-control buscador-input buscador-input-modern"
+            placeholder="Buscar productos..."
+            aria-label="Buscar productos"
+            autocomplete="off"
+          />
+          <button type="submit" id="search-button" class="buscador-boton-modern buscador-boton-glass" aria-label="Buscar">
+            <i class="bi bi-search" aria-hidden="true" title="Buscar"></i>
+          </button>
+        </div>
+        <button class="buscador-filtros-btn" type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#filtersOffcanvas"
+          aria-controls="filtersOffcanvas"
+          aria-label="Mostrar filtros avanzados">
+          <i class="bi bi-sliders" aria-hidden="true" title="Filtros avanzados"></i>
+          <span class="d-none d-md-inline ms-1">Filtros</span>
+        </button>
+      </div>
+    </form>
   </div>
-  <!-- Buscador global dentro del header -->
-  <br>
-  <form id="catalog-search-form" class="catalog-search-form catalog-search-bar-global buscador-header-rediseñado" role="search" aria-label="Buscar productos">
-    <div class="buscador-row buscador-row-modern buscador-glass">
-      <input
-        type="search"
-        id="search-input"
-        class="form-control buscador-input buscador-input-modern"
-        placeholder="Buscar productos..."
-        aria-label="Buscar productos"
-        autocomplete="off"
-      />
-      <button type="submit" id="search-button" class="buscador-boton-modern buscador-boton-glass" aria-label="Buscar">
-        <i class="bi bi-search" aria-hidden="true" title="Buscar"></i>
-      </button>
-    </div>
-    <br>
-    <button class="checkout-cancel buscador-filtros-btn mt-2" type="button"
-      data-bs-toggle="offcanvas"
-      data-bs-target="#filtersOffcanvas"
-      aria-controls="filtersOffcanvas"
-      aria-label="Mostrar filtros avanzados">
-      <i class="bi bi-sliders" aria-hidden="true" title="Filtros avanzados"></i>
-      <span class="d-none d-md-inline ms-1">Filtros</span>
-    </button>
-  </form>
 
 
 <!-- Offcanvas de filtros avanzados (ahora a la izquierda) -->
