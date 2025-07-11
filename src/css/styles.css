@@ -1,12 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap");
+
 /* =========================
    Reset y configuración base
 ========================= */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 html,
 body {
   margin: 0;
@@ -16,6 +19,7 @@ body {
   background-color: #ffffff !important;
   overflow-x: hidden;
 }
+
 main {
   display: flex;
   flex-direction: column;
@@ -24,6 +28,7 @@ main {
 }
 
 /*boton de volver */
+
 .volver-button {
   background-color: #fff;
   color: #000;
@@ -38,11 +43,13 @@ main {
   margin-right: 50rem;
   margin-top: 2rem;
 }
+
 .volver-button:hover {
   background-color: #d6831a;
   color: #fff;
   box-shadow: 0 2px 8px rgba(232, 146, 41, 0.3);
 }
+
 /* =========================
   titulos
 ========================= */
@@ -107,6 +114,7 @@ main {
 }
 
 /* Dots del carrusel de productos - posicionados debajo de las imágenes */
+
 .carousel-dots {
   display: flex;
   justify-content: center;
@@ -116,7 +124,6 @@ main {
   z-index: 3;
   position: relative;
 }
-
 
 .carousel img {
   width: 100%;
@@ -129,6 +136,7 @@ main {
 /* =========================
    Testimonios (carrusel de opiniones)
 ========================= */
+
 .testimonials-carousel {
   width: 80%;
   background-color: white;
@@ -144,6 +152,7 @@ main {
   position: relative;
   max-width: 700px;
 }
+
 .testimonials-carousel h2 {
   text-align: center;
   font-size: 2.5rem;
@@ -151,6 +160,7 @@ main {
   margin-bottom: 1.5rem;
   color: #333;
 }
+
 .testimonials-carousel-inner {
   position: relative;
   width: 100%;
@@ -161,6 +171,7 @@ main {
   justify-content: center;
   margin-bottom: 1.5rem;
 }
+
 .testimonial-card {
   width: 100%;
   max-width: 450px;
@@ -185,39 +196,46 @@ main {
   pointer-events: none;
   box-sizing: border-box;
 }
+
 .testimonial-card.testimonial-active {
   opacity: 1;
   position: relative;
   z-index: 2;
   pointer-events: auto;
 }
+
 .testimonial-card img {
   border-radius: 50%;
   margin-bottom: 1rem;
   border: 3px solid #007bff22;
 }
+
 .testimonial-card h3 {
   font-size: 1.2rem;
   font-weight: 700;
   margin-bottom: 0.25rem;
 }
+
 .testimonial-card .profession {
   color: #666;
   font-size: 0.95rem;
   margin-bottom: 0.5rem;
 }
+
 .testimonial-card .stars {
   color: #ffc107;
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
   letter-spacing: 2px;
 }
+
 .testimonial-card blockquote {
   font-size: 1rem;
   color: #333;
   margin: 0;
   font-style: italic;
 }
+
 .testimonial-dots {
   display: flex;
   justify-content: center;
@@ -239,6 +257,7 @@ main {
   outline: none;
   margin: 0;
 }
+
 .testimonial-dot.active,
 .testimonial-dot:focus {
   background: #e89229;
@@ -246,6 +265,7 @@ main {
 }
 
 /* Dots específicos para el carrusel de productos */
+
 .carousel-dots .testimonial-dot {
   width: 12px;
   height: 12px;
@@ -267,6 +287,7 @@ main {
 /* =========================
    Pre-footer
 ========================= */
+
 .fondo-header {
   background-image: url("../assets/images/imagen1.png");
   background-size: cover;
@@ -274,11 +295,13 @@ main {
   background-repeat: no-repeat;
   background-blend-mode: overlay;
 }
+
 .pre-footer {
   background-color: black;
   padding: 2rem 1rem;
   font-family: "Oswald", sans-serif;
 }
+
 .pre-footer-container {
   display: flex;
   flex-wrap: wrap;
@@ -289,12 +312,14 @@ main {
   padding-left: 1rem;
   padding-right: 1rem;
 }
+
 .pre-footer-column1 {
   min-width: 260px;
   border-radius: 10px;
   box-sizing: border-box;
   align-items: flex-start;
 }
+
 .pre-footer-column2,
 .pre-footer-column3 {
   flex: 1 1 320px;
@@ -304,12 +329,14 @@ main {
   box-sizing: border-box;
   align-items: flex-start;
 }
+
 .pre-footer h3 {
   font-size: 1.25rem;
   margin-bottom: 1.1rem;
   color: #e89229;
   text-align: left;
 }
+
 .payment-methods {
   display: flex;
   gap: 1rem;
@@ -319,29 +346,35 @@ main {
   align-items: center;
   flex-wrap: wrap;
 }
+
 .payment-methods li a img,
 .social-links li a img {
   width: 40px;
   height: 40px;
   transition: transform 0.2s ease;
 }
+
 .payment-methods li a:hover img {
   transform: scale(1.1);
 }
+
 .pre-footer-column2 ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
+
 .pre-footer-column2 li {
   margin-bottom: 0.5rem;
   font-size: 1rem;
   color: #ffffff;
   cursor: pointer;
 }
+
 .pre-footer-column2 li:hover {
   color: #e89229;
 }
+
 .social-links {
   display: flex;
   gap: 1rem;
@@ -350,12 +383,14 @@ main {
   margin: 0;
   flex-wrap: wrap;
 }
+
 .social-links li a img {
   width: 30px;
   height: auto;
   object-fit: contain;
   transition: transform 0.2s ease;
 }
+
 .social-links li a:hover img {
   transform: scale(1.1);
 }
@@ -416,12 +451,14 @@ main {
 /* =========================
    footer
 ========================= */
+
 .footer-principal {
   background-color: #222;
   color: #fff;
   padding: 1.2rem 0;
   font-family: "Oswald", sans-serif;
 }
+
 .footer-contenedor {
   max-width: 70rem;
   margin: 0 auto;
@@ -432,16 +469,19 @@ main {
   justify-content: space-between;
   gap: 1rem;
 }
+
 .footer-logo {
   display: flex;
   align-items: center;
   gap: 1rem;
   margin-bottom: 0.5rem;
 }
+
 .footer-logo img {
   width: 40px;
   height: 40px;
 }
+
 .footer-logo span {
   font-weight: 700;
   font-size: 1.25rem;
@@ -460,6 +500,7 @@ main {
   color: #ffffff;
   text-align: center;
 }
+
 @media (min-width: 768px) {
   .footer-contenedor {
     flex-direction: row;
@@ -472,6 +513,7 @@ main {
 /* =========================
    Responsive: pantallas pequeñas
 ========================= */
+
 @media (max-width: 768px) {
 
   .carousel {
@@ -490,10 +532,8 @@ main {
 
 }
 
-
-
-
 /* Color corporativo RiffZone para cookies*/
+
 .corporate-success {
   background-color: #fff5e6 !important; /* Naranja muy suave */
   color: #c25a00 !important; /* Naranja corporativo más oscuro */
