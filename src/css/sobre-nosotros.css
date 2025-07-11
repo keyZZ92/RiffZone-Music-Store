@@ -43,12 +43,12 @@
 
 .about-store-name {
   font-weight: bold;
-  color: #e89229;
+  color: #c77619;
   font-size: 1.15em;
 }
 
 .about-section h3 {
-  color: #e89229;
+  color: #c77619;
   font-size: 1.2rem;
   font-weight: bold;
   margin: 1.5rem 0;
@@ -180,7 +180,7 @@ MAPA Y CONTACTO
   background: #fff;
   border-radius: 8px;
   padding: 1.5rem;
-  border-left: 4px solid #e89229;
+  border-left: 4px solid #c77619;
   color: #333;
 }
 
@@ -195,7 +195,7 @@ font-family: "Oswald", sans-serif;
   color: #333;
 }
 .col-md-5 strong {
-  color: #e89229;
+  color: #c77619;
 }
 
 /* ========================================
@@ -203,15 +203,15 @@ font-family: "Oswald", sans-serif;
 ======================================== */
 .btn-outline-corporate-orange {
   background: transparent !important;
-  color: #e89229 !important;
-  border: 2px solid #e89229 !important;
+  color: #c77619 !important;
+  border: 2px solid #c77619!important;
   font-weight: 600;
   transition: background 0.2s, color 0.2s;
 }
 
 .btn-outline-corporate-orange:hover,
 .btn-outline-corporate-orange:focus {
-  background: #e89229 !important;
+  background:#c77619 !important;
   color: #fff !important;
 }
 

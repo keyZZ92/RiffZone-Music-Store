@@ -32,7 +32,7 @@
   #product-detail p.text-muted {
     text-transform: capitalize;
     font-style: "Oswald", sans-serif;
-    color: #666;
+    color: #333;
     letter-spacing: 0.5px;
   }
   
@@ -89,7 +89,7 @@
     border-radius: 12px;
     padding: 0.35rem 0.9rem;
     font-size: 0.9rem;
-    background-color: #e89229;
+    background-color: #c77619;
     color: #fff;
     box-shadow: 0 3px 6px rgba(232, 146, 41, 0.25);
     cursor: pointer;
@@ -103,8 +103,8 @@
   #back-btn:focus {
     box-shadow: 0 6px 12px rgba(232, 146, 41, 0.8);
     outline: none;
-    border: 2px solid #e89229;
-    color: #e89229;
+    border: 2px solid #c77619;
+    color:#c77619;
     background-color: transparent;
   }
   

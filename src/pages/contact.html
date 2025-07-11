@@ -19,21 +19,25 @@
     <link rel="stylesheet" href="../css/contact.css" />
     <link rel="stylesheet" href="../css/styles.css" />
     <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/login.css">
     <link rel="stylesheet" href="../css/cookies-banner.css" />
   </head>
   <body>
     <div id="header-placeholder"></div>
-    <main class="zona-contacto" role="main" aria-label="Formulario de contacto">
+    <div id="login-modal-placeholder"></div>
+    <main class="zona-contacto">
       <div class="contacto-contenedor">
         <!-- FORMULARIO -->
         <form
-          id="formContacto"
-          class="formulario-box"
-          novalidate
-          role="form"
+        id="formContacto"
+        class="formulario-box"
+        novalidate role="form"
           aria-labelledby="tituloContacto"
         >
-          <h1 id="tituloContacto" class="mb-4">Formulario de contacto</h1>
+  <h2 id="tituloContacto" class="mb-4">Formulario de contacto</h2>
+
+
+  
           <!-- Nombre -->
           <div class="mb-3">
             <label for="nombre" class="form-label"
@@ -132,12 +136,14 @@
           </div>
           <!-- Botón -->
           <button
-            type="submit"
-            class="btn btn-primary"
-            aria-label="Enviar formulario de contacto"
-          >
-            Enviar
-          </button>
+             type="submit"
+              class="btn btn-primary"
+              aria-label="Enviar formulario de contacto"
+              aria-describedby="mensajeExito"
+                  >
+               Enviar
+              </button>
+
           <!-- Mensaje de éxito -->
           <div
             id="mensajeExito"
@@ -289,79 +295,6 @@
     </section>
     <!-- Footer dinámico -->
     <div id="footer-placeholder"></div>
-
-    <!-- Modal de inicio de sesión -->
-    <div
-      class="modal fade"
-      id="loginModal"
-      tabindex="-1"
-      aria-labelledby="loginModalLabel"
-      aria-hidden="true"
-      aria-modal="true"
-    >
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <form aria-label="Formulario de inicio de sesión">
-            <!-- Cabecera del modal: título y botón de cerrar -->
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="loginModalLabel">
-                Iniciar Sesión
-              </h1>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Cerrar ventana de inicio de sesión"
-              ></button>
-            </div>
-            <!-- Cuerpo del modal: formulario de usuario y contraseña -->
-            <div class="modal-body">
-              <div class="mb-3">
-                <label for="user" class="form-label">Usuario</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="user"
-                  aria-required="true"
-                  aria-label="Usuario"
-                  required
-                />
-              </div>
-              <div class="mb-3">
-                <label for="inputPassword" class="form-label">Contraseña</label>
-                <input
-                  type="password"
-                  class="form-control"
-                  id="inputPassword"
-                  aria-required="true"
-                  aria-label="contraseña"
-                  required
-                />
-              </div>
-              <!-- Footer del modal: botón de entrar y crear usuario -->
-              <div class="modal-footer">
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  data-bs-dismiss="modal"
-                  aria-label="Entrar"
-                >
-                  Entrar
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-primary"
-                  aria-label="Ir a crear nueva cuenta"
-                  onclick="window.location.href='register.html'"
-                >
-                  Crear Usuario
-                </button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
