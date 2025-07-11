@@ -8,7 +8,7 @@
     <div class="cookies-banner-content">
       <span>
         Utilizamos cookies para mejorar tu experiencia. Más información en nuestra
-        <a href="politica-cookies.html" class="cookies-link">Política de Cookies</a>.
+        <a href="../pages/politica-cookies.html" class="cookies-link">Política de Cookies</a>.
       </span>
       <button id="accept-cookies-btn" class="accept-cookies-btn">Aceptar</button>
     </div>
