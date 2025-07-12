@@ -29,137 +29,22 @@
   margin: 0 auto;
   padding: 0.625rem 2.5rem;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 10px;
   box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.1);
   font-family: "Oswald", sans-serif;
-  gap: 1rem;
 }
-
-/* Estilos para el buscador en el header container */
-.header-container .catalog-search-form {
-  order: 3;
-  flex: 1 1 100%;
-  margin: 0 auto;
-  max-width: 600px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-/* Mejoras de centrado para el buscador */
-.header-container {
-  justify-content: center;
-}
-
-/* Asegurar que el formulario ocupe todo el espacio disponible para centrarlo */
-.header-container .catalog-search-form {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-/* Ajustar el contenedor interno para centrarlo también */
-.header-container .search-container-flex {
-  display: inline-flex;
-  justify-content: center;
-  max-width: 600px;
-  width: auto;
-}
-
-.header-container .catalog-search-form .buscador-row {
-  flex: 1;
-  max-width: 500px;
-  margin: 0 auto;
-}
-
-/* Contenedor para el buscador y botón de filtros en la misma línea */
-.search-container-flex {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  gap: 0.5rem;
-  margin: 0 auto;
-}
-
-/* Ajustes para el buscador */
-.search-container-flex .buscador-row {
-  flex: 1;
-  min-width: 0; /* Permite que el input se encoja si es necesario */
-}
-
-/* Ajustes para el botón de filtros */
-.search-container-flex .buscador-filtros-btn {
-  flex: 0 0 auto; /* No permite que el botón se encoja */
-}
-
-/* Ajustes responsive */
-@media (max-width: 576px) {
-  .search-container-flex {
-    gap: 0.25rem;
-  }
-  
-  .search-container-flex .buscador-filtros-btn {
-    padding: 0.4rem 0.6rem;
-  }
-}
-
-/* Ajustes responsive */
-@media (min-width: 992px) {
-  .header-container .catalog-search-form {
-    order: 3;
-    flex: 0 0 auto;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-}
-
-@media (max-width: 991px) {
-  .header-container {
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  
-  .logo-section {
-    flex: 0 0 auto;
-    order: 1;
-  }
-  
-  .desktop-nav {
-    flex: 1 1 auto;
-    order: 2;
-    justify-content: center;
-  }
-  
-  .user-actions {
-    flex: 0 0 auto;
-    order: 3;
-  }
-  
-  .header-container .catalog-search-form {
-    flex: 1 1 100%;
-    order: 4;
-    margin: 1rem auto 0;
-    text-align: center;
-  }
-}
-
 .logo-section {
   display: flex;
   align-items: center;
   gap: 0.2rem;
 }
 .logo-section img {
-  width: 100px;
+  width: 70px;
   height: auto;
+  margin-right: 10px;
 }
 .logo-section h1 {
   font-size: 1.25rem; /* antes 1.6rem */
@@ -194,7 +79,7 @@
 .nav-list {
   list-style: none;
   display: flex;
-  gap: 1.875rem;
+  gap: 1rem;
   margin: 0;
   padding: 0;
 }
@@ -567,7 +452,7 @@
 .search-bar-header {
   width: 100%;
   background: #fff;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
   padding: 1rem 0;
   display: flex;
   justify-content: center;
@@ -582,30 +467,32 @@
   justify-content: center;
 }
 .catalog-search-bar-global.buscador-header-rediseñado {
-  max-width: 500px;
+  max-width: 150px;
+  margin: 0 auto 0 auto;
   padding: 0;
   background: none;
   box-shadow: none;
   border-radius: 0;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1rem;
 }
 .buscador-row {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;      /* Centra horizontalmente el contenido */
+  justify-content: center; /* Centra horizontalmente el contenido */
   gap: 0.5rem;
-  padding: 0;                   /* Sin padding extra de Bootstrap */
-  margin: 0;                    /* Sin margen extra */
-  box-sizing: border-box;       /* Incluye el borde en el tamaño total */
-  min-height: 44px;             /* Altura mínima para alineación */
+  padding: 0; /* Sin padding extra de Bootstrap */
+  margin: 0; /* Sin margen extra */
+  box-sizing: border-box; /* Incluye el borde en el tamaño total */
+  min-height: 44px; /* Altura mínima para alineación */
 }
 .buscador-input {
   flex: 1 1 0;
   min-width: 0;
-  height: 40px !important;
+  height: 20px !important;
   font-size: 1rem !important;
   border-radius: 0.5rem !important;
   border: 2px solid #e89229 !important;
@@ -616,16 +503,16 @@
   color: #333 !important;
 }
 .buscador-boton {
-  height: 40px !important;
-  width: 40px !important;
-  min-width: 40px !important;
-  max-width: 40px !important;
+  height: 20px !important;
+  width: 20px !important;
+  min-width: 20px !important;
+  max-width: 20px !important;
   padding: 0 !important;
   border-radius: 0.5rem !important;
   border: 2px solid #e89229 !important;
   background: #fff !important;
   color: #e89229 !important;
-  font-size: 1.2rem !important;
+  font-size: 1rem !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -633,13 +520,14 @@
   margin: 0 !important;
   cursor: pointer !important;
 }
-.buscador-boton:hover, .buscador-boton:focus {
+.buscador-boton:hover,
+.buscador-boton:focus {
   background: #e89229 !important;
   color: #fff !important;
   transform: scale(1.05) !important;
 }
 .buscador-boton i {
-  font-size: 1.2rem !important;
+  font-size: 1rem !important;
   margin: 0 !important;
   padding: 0 !important;
 }
@@ -659,44 +547,24 @@
   font-weight: 400 !important;
   cursor: pointer !important;
   text-align: center !important;
-   font-family: "Oswald", sans-serif;
-}
-
-/* Ajustes para el botón de filtros en el header container */
-.header-container .buscador-filtros-btn {
-  margin: 0;
-  padding: 0.5rem 1rem;
-  height: auto;
-  background-color: #e89229; /* Naranja corporativo, igual que el botón de cerrar sesión */
-  border: none;
-  border-radius: 0.375rem;
-  color: #fff;
   font-family: "Oswald", sans-serif;
-  font-size: 1rem;
-  font-weight: 600;
-  transition: all 0.3s;
-  white-space: nowrap;
 }
-
-.header-container .buscador-filtros-btn:hover,
-.header-container .buscador-filtros-btn:focus {
-  background-color: #d6831a; /* Naranja más oscuro como el logoutBtn */
-  color: #fff;
-  border-color: #c57615;
-  box-shadow: none;
-  outline: none;
-}
-
-.header-container .buscador-filtros-btn i {
-  color: #fff; /* Icono blanco para que se vea mejor sobre fondo naranja */
+/* Color naranja para el icono del botón de filtro */
+.buscador-filtros-btn i {
+  color: #e89229 !important;
   font-size: 1.1rem;
-  transition: color 0.3s;
-  margin-right: 0.25rem;
+  transition: color 0.2s;
 }
-
-.header-container .buscador-filtros-btn:hover i,
-.header-container .buscador-filtros-btn:focus i {
-  color: #fff;
+.buscador-filtros-btn:hover,
+.buscador-filtros-btn:focus {
+  background: #e89229 !important;
+  color: #fff !important;
+  border-color: #e89229 !important;
+}
+.buscador-filtros-btn:hover i,
+.buscador-filtros-btn:focus i {
+  color: #fff !important;
+  opacity: 1;
 }
 
 /* Moderniza la barra de búsqueda */
@@ -705,18 +573,17 @@
 .catalog-search-form .buscador-row-modern.buscador-glass {
   background: #ffffff !important;
   border-radius: 2rem !important;
-  box-shadow: 0 4px 24px rgba(232,146,41,0.13), 0 1.5px 8px rgba(44,41,41,0.07) !important;
   padding: 0.3rem 0.3rem 0.3rem 1rem !important;
   width: 100% !important;
-  max-width: 440px !important;
+  max-width: 250px !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   gap: 0.3rem !important;
-  border: 1.5px solid rgba(232,146,41,0.3) !important;
+  border: 1.5px solid rgba(232, 146, 41, 0.3) !important;
   transition: box-shadow 0.2s, background 0.2s !important;
   flex-wrap: nowrap !important;
-  min-height: 48px !important;
+  min-height: 20px !important;
   margin: 0 auto !important;
 }
 
@@ -729,19 +596,19 @@
   flex: 1 1 auto !important;
   min-width: 0 !important;
   width: 100% !important;
-  height: 42px !important;
+  height: 20px !important;
   box-shadow: none !important;
   padding-left: 0 !important;
   padding-right: 0 !important;
   color: #222 !important;
   margin: 0 !important;
-  line-height: 42px !important;
+  line-height: 20px !important;
 }
 .buscador-input-modern::placeholder {
   color: #e89229 !important;
   opacity: 0.8 !important;
   font-weight: 500 !important;
-   font-family: "Oswald", sans-serif;
+  font-family: "Oswald", sans-serif;
 }
 
 .buscador-input-modern:focus {
@@ -751,23 +618,22 @@
 
 /* Botón buscar moderno, glass, con sombra y animación */
 .buscador-boton-modern.buscador-boton-glass {
-  background: rgba(232,146,41,0.95) !important;
+  background: rgba(232, 146, 41, 0.95) !important;
   color: #fff !important;
   border: none !important;
   border-radius: 50% !important;
-  width: 42px !important;
-  height: 42px !important;
-  min-width: 42px !important;
-  max-width: 42px !important;
-  min-height: 42px !important;
-  max-height: 42px !important;
+  width: 20px !important;
+  height: 20px !important;
+  min-width: 20px !important;
+  max-width: 20px !important;
+  min-height: 20px !important;
+  max-height: 20px !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   margin: 0 !important;
   padding: 0 !important;
-  font-size: 1.2rem !important;
-  box-shadow: 0 2px 8px rgba(232,146,41,0.18), 0 1.5px 8px rgba(44,41,41,0.07) !important;
+  font-size: 0.8rem !important;
   transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.15s !important;
   outline: none !important;
   cursor: pointer !important;
@@ -777,12 +643,11 @@
 .buscador-boton-modern.buscador-boton-glass:focus {
   background: #c57615 !important;
   color: #fff !important;
-  box-shadow: 0 4px 16px rgba(232,146,41,0.22) !important;
   transform: scale(1.08) !important;
 }
 
 .buscador-boton-modern.buscador-boton-glass i {
-  font-size: 1.2rem !important;
+  font-size: 0.8rem !important;
   line-height: 1 !important;
   margin: 0 !important;
   padding: 0 !important;
@@ -839,7 +704,7 @@
   font-weight: 600;
   font-size: 1.3rem;
   margin: 0;
-  color: #333
+  color: #333;
 }
 
 .offcanvas-body {
@@ -849,8 +714,8 @@
 
 .offcanvas-body option {
   color: #333;
-   font-family: "Oswald", sans-serif;
-   font-size: 1rem;
+  font-family: "Oswald", sans-serif;
+  font-size: 1rem;
 }
 
 /* Estilos para los filtros avanzados */
@@ -988,11 +853,11 @@
   .offcanvas {
     --bs-offcanvas-width: 280px;
   }
-  
+
   .offcanvas-body {
     padding: 1rem;
   }
-  
+
   .catalog-search-form .buscador-filtros-btn {
     width: 100%;
     justify-content: center;
@@ -1001,8 +866,9 @@
 
 /* Estilos adicionales para mejorar la experiencia del usuario */
 .catalog-search-form .buscador-row-modern.buscador-glass:focus-within {
-  box-shadow: 0 6px 32px rgba(232,146,41,0.18), 0 2px 12px rgba(44,41,41,0.1);
-  border-color: rgba(232,146,41,0.3);
+  box-shadow: 0 6px 32px rgba(232, 146, 41, 0.18),
+    0 2px 12px rgba(44, 41, 41, 0.1);
+  border-color: rgba(232, 146, 41, 0.3);
 }
 
 .catalog-search-form .buscador-input-modern:focus {
@@ -1071,31 +937,6 @@
     padding: 0.28rem 1rem !important;
     min-width: 90px !important;
     height: 2.5rem !important;
-  }
-}
-
-/* Ajustes responsive para móviles */
-@media (max-width: 767px) {
-  .search-container-flex {
-    flex-wrap: nowrap;
-    width: 100%;
-  }
-  
-  .search-container-flex .buscador-row {
-    flex: 1;
-    min-width: 0;
-  }
-  
-  .search-container-flex .buscador-filtros-btn {
-    padding: 0.5rem;
-    font-size: 0.9rem;
-  }
-  
-  /* Ocultar el texto "Filtros" en pantallas muy pequeñas */
-  @media (max-width: 480px) {
-    .search-container-flex .buscador-filtros-btn span {
-      display: none !important;
-    }
   }
 }
 
