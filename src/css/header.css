@@ -8,7 +8,7 @@
   background-size: cover;
   background-position: center;
   position: relative;
-  min-height: 260px;
+  min-height: 220px;
   padding: 3.5rem 0;
 }
 .header::before {
@@ -44,7 +44,7 @@
 .logo-section img {
   width: 70px;
   height: auto;
-  margin-right: 10px;
+  margin-right: 30px;
 }
 .logo-section h1 {
   font-size: 1.25rem; /* antes 1.6rem */
@@ -796,23 +796,7 @@
 }
 
 .catalog-search-form .buscador-filtros-btn {
-  background: #fff !important;
-  border: 2px solid #e89229 !important;
-  color: #111 !important;
-  border-radius: 8px !important;
-  padding: 12px 20px !important;
-  font-size: 1rem !important;
-  font-weight: 600 !important;
-  transition: background 0.2s, color 0.2s, border 0.2s !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 0.5rem !important;
-  cursor: pointer !important;
-  margin: 0 auto !important;
-  min-width: 120px !important;
-  width: auto !important;
-  text-align: center !important;
+  display: none !important;
 }
 
 .catalog-search-form .buscador-filtros-btn:hover,
