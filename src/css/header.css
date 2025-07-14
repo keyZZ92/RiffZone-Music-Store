@@ -382,13 +382,15 @@
   border-radius: 8px;
   padding: 0.5rem 1rem;
   font-family: "Oswald", sans-serif;
-  font-size: 0.90rem;
-  font-weight: 500;
+  font-size: 0.80rem !important;
+  font-weight: 400;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
   display: flex;
   align-items: center;
   gap: 0.5rem;
+   width: 100px;
+  height: 50px;
 }
 
 .login-button:hover {
@@ -416,12 +418,12 @@
   background-color: #e89229; /* Naranja corporativo */
   color: #fff;
   border-color: transparent;
+  font-size: 0.80rem !important;
+  font-weight: 400;
+   width: 100px;
+  height: 50px;
 }
 
-logoutBtn:hover {
-  background-color: #d6831a; /* Naranja más oscuro */
-  border-color: #c57615;
-}
 
 #logoutBtn:focus {
   outline: none;
@@ -964,3 +966,10 @@ logoutBtn:hover {
 
 }
 
+@media (max-width: 900px) {
+  .header {
+   min-height: 5rem;
+    background-size: cover;
+    background-position: center top;
+  }
+}
