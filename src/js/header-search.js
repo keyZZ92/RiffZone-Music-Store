@@ -309,9 +309,7 @@ function applyFilters() {
   const sort = document.getElementById("sort-filter")?.value || "";
 
   filteredProducts = products.filter((p) => {
-    const matchesSearch =
-      p.name.toLowerCase().includes(search) ||
-      (p.category && p.category.toLowerCase().includes(search));
+    const matchesSearch = p.name && p.name.toLowerCase().includes(search);
     const matchesCategory =
       !category || (p.category && p.category === category);
     const matchesBrand = !brand || (p.brand && p.brand === brand);
