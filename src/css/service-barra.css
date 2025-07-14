@@ -139,7 +139,7 @@
 /* Móvil (≤576px) */
 @media (max-width: 576px) {
   .offcanvas.offcanvas-start {
-    width: 50%;
+    width: 100%;
     padding: 1rem;
     box-shadow: none;
   }
