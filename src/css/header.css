@@ -954,8 +954,7 @@
 
   .search-toggle:hover,
   .search-toggle:focus {
-    background: #e89229;
-    color: #fff;
+    color: #333;
     outline: none;
   }
 
