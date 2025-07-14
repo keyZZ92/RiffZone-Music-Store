@@ -1,5 +1,85 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const API_BASE_URL = "http://localhost:3000";
+  // Validación en tiempo real para teléfono
+  const telefonoInput = document.getElementById("telefono");
+  if (telefonoInput) {
+    telefonoInput.addEventListener("input", function (e) {
+      let value = telefonoInput.value.replace(/\D/g, "");
+      if (value.length > 9) value = value.slice(0, 9);
+      telefonoInput.value = value;
+    });
+    telefonoInput.addEventListener("blur", function () {
+      // Validación profesional al perder foco
+      if (
+        telefonoInput.value.length === 9 &&
+        telefonoInput.value[0] !== "0" &&
+        /^\d{9}$/.test(telefonoInput.value)
+      ) {
+        telefonoInput.classList.remove("is-invalid");
+        telefonoInput.removeAttribute("aria-invalid");
+        document.getElementById("telefonoError").textContent = "";
+      }
+    });
+  }
+
+  // Validación en tiempo real para fecha de nacimiento
+  const fechaInput = document.getElementById("fechaNacimiento");
+  if (fechaInput) {
+    fechaInput.addEventListener("input", function (e) {
+      // Solo permite números y /
+      fechaInput.value = fechaInput.value.replace(/[^0-9\/]/g, "");
+      // Opcional: autoinserta las barras
+      let v = fechaInput.value.replace(/\//g, "");
+      if (v.length > 2) v = v.slice(0, 2) + "/" + v.slice(2);
+      if (v.length > 5) v = v.slice(0, 5) + "/" + v.slice(5, 9);
+      fechaInput.value = v;
+    });
+    fechaInput.addEventListener("blur", function () {
+      // Validación profesional al perder foco
+      const dateParts = fechaInput.value.split("/");
+      if (dateParts.length === 3) {
+        const [day, month, year] = dateParts;
+        const yearNum = parseInt(year, 10);
+        const monthNum = parseInt(month, 10);
+        const dayNum = parseInt(day, 10);
+        const currentYear = new Date().getFullYear();
+        let errorMsg = "";
+        if (
+          isNaN(yearNum) ||
+          year.length !== 4 ||
+          yearNum < 1900 ||
+          yearNum > currentYear
+        ) {
+          errorMsg = `El año debe tener 4 dígitos y estar entre 1900 y ${currentYear}.`;
+        } else if (isNaN(monthNum) || monthNum < 1 || monthNum > 12) {
+          errorMsg = "El mes debe estar entre 01 y 12.";
+        } else if (isNaN(dayNum) || dayNum < 1 || dayNum > 31) {
+          errorMsg = "El día debe estar entre 01 y 31.";
+        } else {
+          // Validar fecha real
+          const dateObj = new Date(`${year}-${month}-${day}`);
+          if (
+            isNaN(dateObj.getTime()) ||
+            dateObj.getFullYear() !== yearNum ||
+            dateObj.getMonth() + 1 !== monthNum ||
+            dateObj.getDate() !== dayNum
+          ) {
+            errorMsg = "La fecha de nacimiento no es válida.";
+          }
+        }
+        if (errorMsg) {
+          fechaInput.classList.add("is-invalid");
+          fechaInput.setAttribute("aria-invalid", "true");
+          document.getElementById("fechaNacimientoError").textContent =
+            errorMsg;
+        } else {
+          fechaInput.classList.remove("is-invalid");
+          fechaInput.removeAttribute("aria-invalid");
+          document.getElementById("fechaNacimientoError").textContent = "";
+        }
+      }
+    });
+  }
+  // Usar API_BASE_URL global definida en auth.js
   const form = document.getElementById("registroForm");
   if (!form) {
     return;
@@ -25,6 +105,69 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function validarCampo(input) {
     clearError(input);
+
+    // Validación profesional para teléfono: solo 9 dígitos, no puede empezar por 0
+    if (input.id === "telefono") {
+      const value = input.value.replace(/\D/g, "");
+      if (value.length !== 9) {
+        setError(input, "El teléfono debe tener exactamente 9 dígitos.");
+        return false;
+      }
+      if (value[0] === "0") {
+        setError(input, "El teléfono no puede empezar por 0.");
+        return false;
+      }
+      if (!/^\d{9}$/.test(value)) {
+        setError(input, "El teléfono debe contener solo números.");
+        return false;
+      }
+    }
+
+    // Validación profesional para fecha de nacimiento: formato dd/mm/yyyy, año entre 1900 y actual, fecha real
+    if (input.id === "fechaNacimiento" && input.value) {
+      // Espera formato dd/mm/yyyy
+      const dateParts = input.value.split("/");
+      if (dateParts.length !== 3) {
+        setError(input, "La fecha debe tener el formato DD/MM/AAAA.");
+        return false;
+      }
+      const [day, month, year] = dateParts;
+      const yearNum = parseInt(year, 10);
+      const monthNum = parseInt(month, 10);
+      const dayNum = parseInt(day, 10);
+      const currentYear = new Date().getFullYear();
+      if (
+        isNaN(yearNum) ||
+        year.length !== 4 ||
+        yearNum < 1900 ||
+        yearNum > currentYear
+      ) {
+        setError(
+          input,
+          `El año debe tener 4 dígitos y estar entre 1900 y ${currentYear}.`
+        );
+        return false;
+      }
+      if (isNaN(monthNum) || monthNum < 1 || monthNum > 12) {
+        setError(input, "El mes debe estar entre 01 y 12.");
+        return false;
+      }
+      if (isNaN(dayNum) || dayNum < 1 || dayNum > 31) {
+        setError(input, "El día debe estar entre 01 y 31.");
+        return false;
+      }
+      // Validar fecha real
+      const dateObj = new Date(`${year}-${month}-${day}`);
+      if (
+        isNaN(dateObj.getTime()) ||
+        dateObj.getFullYear() !== yearNum ||
+        dateObj.getMonth() + 1 !== monthNum ||
+        dateObj.getDate() !== dayNum
+      ) {
+        setError(input, "La fecha de nacimiento no es válida.");
+        return false;
+      }
+    }
 
     if (!input.checkValidity()) {
       if (input.validity.valueMissing) {
@@ -69,6 +212,12 @@ document.addEventListener("DOMContentLoaded", function () {
       setError(form.confirmarEmail, "Los correos electrónicos no coinciden.");
       valid = false;
     } else {
+      if (typeof API_BASE_URL === "undefined") {
+        alert(
+          "Error de configuración: API_BASE_URL no está definida. Asegúrate de que auth.js se carga antes que este archivo."
+        );
+        return;
+      }
       clearError(form.confirmarEmail);
     }
 
@@ -113,7 +262,9 @@ document.addEventListener("DOMContentLoaded", function () {
         return res.json();
       })
       .then((data) => {
-        alert(data.message || data.mensaje || "Usuario registrado correctamente.");
+        alert(
+          data.message || data.mensaje || "Usuario registrado correctamente."
+        );
         form.reset();
         campos.forEach((campo) => clearError(campo));
       })
