@@ -39,7 +39,7 @@
     "username": "Keyliany",
     "password": "$2b$10$vUZ4wJcF.VkJisJLaSqKDOk/Cj7xqK0a1wjwCJgBRiNu3iU5B2jfO",
     "email": "koliver@email.com",
-    "isLogged": true,
+    "isLogged": false,
     "apellidos": "Oliver",
     "telefono": "600000004",
     "pais": "España",
