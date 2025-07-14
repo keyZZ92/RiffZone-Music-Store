@@ -352,31 +352,22 @@
     align-items: center;
     justify-content: center;
     color: #222;
-    font-size: 0.95rem;
-    font-weight: 600;
+    font-size: 0.80rem;
+    font-weight: 400;
     transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
     gap: 0.5rem;
   }
 
   /* Tamaño de los iconos de usuario y carrito */
   .login-button i,
-  #logoutBtn i,
   .cart-link i {
     font-size: 1.7rem !important; /* Tamaño grande y consistente */
     color: #e89229 !important;
     transition: color 0.3s;
   }
 
-  /* Unificación del hover del botón de iniciar sesión en móvil y escritorio */
-  .login-button:hover,
-  #logoutBtn:hover {
-    background-color: #e89229 !important;
-    color: #fff !important;
-    border-color: #e89229 !important;
-  }
 
-  .login-button:hover i,
-  #logoutBtn:hover i,
+ 
   .cart-link:hover i {
     color: #fff !important;
     opacity: 1;
@@ -391,8 +382,8 @@
   border-radius: 8px;
   padding: 0.5rem 1rem;
   font-family: "Oswald", sans-serif;
-  font-size: 0.95rem;
-  font-weight: 600;
+  font-size: 0.90rem;
+  font-weight: 500;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
   display: flex;
@@ -427,7 +418,7 @@
   border-color: transparent;
 }
 
-#logoutBtn:hover {
+logoutBtn:hover {
   background-color: #d6831a; /* Naranja más oscuro */
   border-color: #c57615;
 }
@@ -970,29 +961,6 @@
   .search-toggle {
     display: flex !important;
   }
-    /* Botón cerrar sesión */
-  #logoutBtn {
-    grid-area: logout;
-    display: flex !important;
-    align-items: center;
-    background-color: #e89229;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    padding: 0.38rem 0.9rem;
-    font-family: "Oswald", sans-serif;
-    font-size: 0.40rem;
-    font-weight: 400;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-    margin: 0 0.2rem;
-    height: 32px;
-  }
-  #logoutBtn:hover,
-  #logoutBtn:focus {
-    background-color: #c57615;
-    color: #fff;
-    outline: none;
-  }
+
 }
 
