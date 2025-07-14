@@ -1,0 +1,124 @@
+/* Botón de filtros en responsive con color corporativo */
+.btn-outline-primary {
+  color: #d88c23 !important;
+  border-color: #d88c23 !important;
+  background-color: #fff !important;
+}
+/* Solo hover, sin estilos de foco duplicados */
+.btn-outline-primary:hover {
+  background-color: #d88c23 !important;
+  color: #fff !important;
+  border-color: #d88c23 !important;
+}
+/* Botón aplicar filtros en responsive con color corporativo */
+button#apply-filters-btn,
+button#apply-filters-btn-mobile {
+  color: #fff !important;
+  background-color: #d88c23 !important;
+  border-color: #d88c23 !important;
+}
+button#apply-filters-btn:hover,
+button#apply-filters-btn-mobile:hover {
+  background-color: #c97a1c !important;
+  border-color: #c97a1c !important;
+  color: #fff !important;
+}
+/* --- */
+
+/* Personalizar color de selección de texto en el input del buscador */
+#advanced-filters {
+  margin-top: 32px;
+}
+
+/* Foco naranja con máxima especificidad y !important */
+.buscador-box input:focus,
+.buscador-box select:focus,
+.buscador-box textarea:focus,
+.buscador-box .form-control:focus,
+.buscador-box .form-select:focus {
+  outline: none !important;
+  border-color: #e89229 !important;
+  box-shadow: 0 0 0 3px rgba(232, 146, 41, 0.25) !important;
+}
+
+/* Alinear filtros con las cards de productos */
+/* Layout principal con flexbox: filtros 30%, productos 70% */
+.buscador-main-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 40px auto 0 auto;
+  width: 100%;
+}
+
+.buscador-filtros {
+  flex: 0 0 30%;
+  max-width: 30%;
+  min-width: 320px;
+}
+.buscador-productos {
+  flex: 1 1 70%;
+  max-width: 70%;
+  min-height: 500px;
+}
+
+@media (max-width: 991px) {
+  .buscador-main-row {
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+  }
+  .buscador-filtros,
+  .buscador-productos {
+    max-width: 100%;
+    min-width: 100%;
+  }
+}
+/* --- */
+
+/* Clase para centrar productos cuando hay pocos (1-2) */
+.centered-products {
+  display: flex !important;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.centered-products .col-12.col-md-6.col-lg-4 {
+  width: 350px !important;
+  max-width: 350px;
+  flex: 0 0 auto !important;
+}
+
+/* Mejorar layout para filtros y productos */
+.buscador-filtros {
+  min-width: 350px;
+  max-width: 400px;
+  flex: 0 0 350px;
+}
+.buscador-productos {
+  flex: 1 1 0;
+  min-width: 400px;
+}
+
+@media (max-width: 991px) {
+  .buscador-main-row {
+    flex-direction: column !important;
+    align-items: center !important;
+    max-width: 100%;
+    overflow: visible !important;
+  }
+  .buscador-filtros {
+    min-width: 100%;
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
+  .buscador-productos {
+    min-width: 100%;
+    margin-bottom: 80px; /* Espacio extra para el prefooter/footer */
+    min-height: unset !important;
+    overflow: visible !important;
+  }
+}
