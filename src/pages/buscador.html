@@ -38,107 +38,246 @@
       </button>
       <h1 id="products-title" class="main-title">Buscador de Productos</h1>
       <!-- Filtros avanzados para el buscador -->
-      <div id="advanced-filters" class="advanced-filters mb-4" tabindex="-1">
-        <select
-          id="category-filter"
-          class="form-select mb-2"
-          aria-label="Filtrar por categoría"
+      <div class="row buscador-main-row">
+        <aside
+          id="advanced-filters"
+          class="col-lg-3 col-md-4 mb-4 d-none d-md-block"
+          tabindex="-1"
         >
-          <option value="">Todas las categorías</option>
-          <option value="acoustic-guitars">Guitarras acústicas</option>
-          <option value="electric-guitars">Guitarras eléctricas</option>
-          <option value="basses">Bajos</option>
-          <option value="drums">Baterías</option>
-          <option value="keyboard">Teclados</option>
-          <option value="amplifiers">Amplificadores</option>
-          <option value="effect-pedals">Pedales</option>
-          <option value="classical-guitars">Guitarras clásicas</option>
-        </select>
-        <input
-          type="number"
-          id="min-price"
-          class="form-control mb-2"
-          placeholder="Precio mínimo"
-          aria-label="Precio mínimo"
-          min="0"
-        />
-        <input
-          type="number"
-          id="max-price"
-          class="form-control mb-2"
-          placeholder="Precio máximo"
-          aria-label="Precio máximo"
-          min="0"
-        />
-        <select
-          id="brand-filter"
-          class="form-select mb-2"
-          aria-label="Filtrar por marca"
-        >
-          <option value="">Todas las marcas</option>
-          <option value="Yamaha">Yamaha</option>
-          <option value="Fender">Fender</option>
-          <option value="Ibanez">Ibanez</option>
-          <option value="Alhambra">Alhambra</option>
-          <option value="Martin">Martin</option>
-          <option value="Gibson">Gibson</option>
-          <option value="Cordoba">Cordoba</option>
-          <option value="Jackson">Jackson</option>
-          <option value="Marshall">Marshall</option>
-          <option value="Boss">Boss</option>
-          <option value="Electro-Harmonix">Electro-Harmonix</option>
-          <option value="Pearl">Pearl</option>
-          <option value="Roland">Roland</option>
-          <option value="Zildjian">Zildjian</option>
-          <option value="Mapex">Mapex</option>
-          <option value="DW">DW</option>
-          <option value="Tama">Tama</option>
-          <option value="Casio">Casio</option>
-          <option value="Korg">Korg</option>
-          <option value="Hammond">Hammond</option>
-        </select>
-        <select
-          id="offer-filter"
-          class="form-select mb-2"
-          aria-label="Filtrar por ofertas"
-        >
-          <option value="">Todas</option>
-          <option value="on-offer">Solo en oferta</option>
-        </select>
-        <select
-          id="sort-filter"
-          class="form-select mb-2"
-          aria-label="Ordenar por"
-        >
-          <option value="relevance">Relevancia</option>
-          <option value="price-asc">Precio: menor a mayor</option>
-          <option value="price-desc">Precio: mayor a menor</option>
-          <option value="popularity">Popularidad</option>
-          <option value="newest">Novedades</option>
-        </select>
-        <button
-          type="button"
-          id="apply-filters-btn"
-          class="btn btn-primary w-100 mt-3"
-          aria-label="Aplicar filtros seleccionados"
-        >
-          <i
-            class="bi bi-check-circle me-2"
-            aria-hidden="true"
-            title="aplicar filtros"
-          ></i>
-          Aplicar filtros
-        </button>
+          <!-- Filtros siempre visibles en desktop -->
+          <form id="catalog-search-form" autocomplete="off">
+            <select
+              id="category-filter"
+              class="form-select mb-2"
+              aria-label="Filtrar por categoría"
+            >
+              <option value="">Todas las categorías</option>
+              <option value="acoustic-guitars">Guitarras acústicas</option>
+              <option value="electric-guitars">Guitarras eléctricas</option>
+              <option value="basses">Bajos</option>
+              <option value="drums">Baterías</option>
+              <option value="keyboard">Teclados</option>
+              <option value="amplifiers">Amplificadores</option>
+              <option value="effect-pedals">Pedales</option>
+              <option value="classical-guitars">Guitarras clásicas</option>
+            </select>
+            <input
+              type="number"
+              id="min-price"
+              class="form-control mb-2"
+              placeholder="Precio mínimo"
+              aria-label="Precio mínimo"
+              min="0"
+            />
+            <input
+              type="number"
+              id="max-price"
+              class="form-control mb-2"
+              placeholder="Precio máximo"
+              aria-label="Precio máximo"
+              min="0"
+            />
+            <select
+              id="brand-filter"
+              class="form-select mb-2"
+              aria-label="Filtrar por marca"
+            >
+              <option value="">Todas las marcas</option>
+              <option value="Yamaha">Yamaha</option>
+              <option value="Fender">Fender</option>
+              <option value="Ibanez">Ibanez</option>
+              <option value="Alhambra">Alhambra</option>
+              <option value="Martin">Martin</option>
+              <option value="Gibson">Gibson</option>
+              <option value="Cordoba">Cordoba</option>
+              <option value="Jackson">Jackson</option>
+              <option value="Marshall">Marshall</option>
+              <option value="Boss">Boss</option>
+              <option value="Electro-Harmonix">Electro-Harmonix</option>
+              <option value="Pearl">Pearl</option>
+              <option value="Roland">Roland</option>
+              <option value="Zildjian">Zildjian</option>
+              <option value="Mapex">Mapex</option>
+              <option value="DW">DW</option>
+              <option value="Tama">Tama</option>
+              <option value="Casio">Casio</option>
+              <option value="Korg">Korg</option>
+              <option value="Hammond">Hammond</option>
+            </select>
+            <select
+              id="offer-filter"
+              class="form-select mb-2"
+              aria-label="Filtrar por ofertas"
+            >
+              <option value="">Todas</option>
+              <option value="on-offer">Solo en oferta</option>
+            </select>
+            <select
+              id="sort-filter"
+              class="form-select mb-2"
+              aria-label="Ordenar por"
+            >
+              <option value="relevance">Relevancia</option>
+              <option value="price-asc">Precio: menor a mayor</option>
+              <option value="price-desc">Precio: mayor a menor</option>
+              <option value="popularity">Popularidad</option>
+              <option value="newest">Novedades</option>
+            </select>
+            <button
+              type="button"
+              id="apply-filters-btn"
+              class="btn btn-primary w-100 mt-3"
+              aria-label="Aplicar filtros seleccionados"
+            >
+              <i
+                class="bi bi-check-circle me-2"
+                aria-hidden="true"
+                title="aplicar filtros"
+              ></i>
+              Aplicar filtros
+            </button>
+          </form>
+        </aside>
+        <!-- Offcanvas para móvil -->
+        <div class="d-md-none mb-4">
+          <button
+            class="btn btn-outline-primary w-100"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#filtersOffcanvas"
+            aria-controls="filtersOffcanvas"
+          >
+            <i class="bi bi-funnel me-2"></i>Filtros
+          </button>
+          <div
+            class="offcanvas offcanvas-start"
+            tabindex="-1"
+            id="filtersOffcanvas"
+            aria-labelledby="filtersOffcanvasLabel"
+          >
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="filtersOffcanvasLabel">
+                Filtros
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Cerrar"
+              ></button>
+            </div>
+            <div class="offcanvas-body">
+              <!-- Reutiliza el mismo formulario de filtros -->
+              <form id="catalog-search-form-mobile" autocomplete="off">
+                <!-- ...mismos campos de filtro que arriba... -->
+                <select
+                  id="category-filter-mobile"
+                  class="form-select mb-2"
+                  aria-label="Filtrar por categoría"
+                >
+                  <option value="">Todas las categorías</option>
+                  <option value="acoustic-guitars">Guitarras acústicas</option>
+                  <option value="electric-guitars">Guitarras eléctricas</option>
+                  <option value="basses">Bajos</option>
+                  <option value="drums">Baterías</option>
+                  <option value="keyboard">Teclados</option>
+                  <option value="amplifiers">Amplificadores</option>
+                  <option value="effect-pedals">Pedales</option>
+                  <option value="classical-guitars">Guitarras clásicas</option>
+                </select>
+                <input
+                  type="number"
+                  id="min-price-mobile"
+                  class="form-control mb-2"
+                  placeholder="Precio mínimo"
+                  aria-label="Precio mínimo"
+                  min="0"
+                />
+                <input
+                  type="number"
+                  id="max-price-mobile"
+                  class="form-control mb-2"
+                  placeholder="Precio máximo"
+                  aria-label="Precio máximo"
+                  min="0"
+                />
+                <select
+                  id="brand-filter-mobile"
+                  class="form-select mb-2"
+                  aria-label="Filtrar por marca"
+                >
+                  <option value="">Todas las marcas</option>
+                  <option value="Yamaha">Yamaha</option>
+                  <option value="Fender">Fender</option>
+                  <option value="Ibanez">Ibanez</option>
+                  <option value="Alhambra">Alhambra</option>
+                  <option value="Martin">Martin</option>
+                  <option value="Gibson">Gibson</option>
+                  <option value="Cordoba">Cordoba</option>
+                  <option value="Jackson">Jackson</option>
+                  <option value="Marshall">Marshall</option>
+                  <option value="Boss">Boss</option>
+                  <option value="Electro-Harmonix">Electro-Harmonix</option>
+                  <option value="Pearl">Pearl</option>
+                  <option value="Roland">Roland</option>
+                  <option value="Zildjian">Zildjian</option>
+                  <option value="Mapex">Mapex</option>
+                  <option value="DW">DW</option>
+                  <option value="Tama">Tama</option>
+                  <option value="Casio">Casio</option>
+                  <option value="Korg">Korg</option>
+                  <option value="Hammond">Hammond</option>
+                </select>
+                <select
+                  id="offer-filter-mobile"
+                  class="form-select mb-2"
+                  aria-label="Filtrar por ofertas"
+                >
+                  <option value="">Todas</option>
+                  <option value="on-offer">Solo en oferta</option>
+                </select>
+                <select
+                  id="sort-filter-mobile"
+                  class="form-select mb-2"
+                  aria-label="Ordenar por"
+                >
+                  <option value="relevance">Relevancia</option>
+                  <option value="price-asc">Precio: menor a mayor</option>
+                  <option value="price-desc">Precio: mayor a menor</option>
+                  <option value="popularity">Popularidad</option>
+                  <option value="newest">Novedades</option>
+                </select>
+                <button
+                  type="button"
+                  id="apply-filters-btn-mobile"
+                  class="btn btn-primary w-100 mt-3"
+                  aria-label="Aplicar filtros seleccionados"
+                >
+                  <i
+                    class="bi bi-check-circle me-2"
+                    aria-hidden="true"
+                    title="aplicar filtros"
+                  ></i>
+                  Aplicar filtros
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- Fin filtros responsive -->
+        <div class="col-lg-9 col-md-8">
+          <!-- Aquí solo va el contenedor de productos -->
+          <!-- Fin filtros avanzados -->
+          <!-- Contenedor para los productos filtrados -->
+          <div
+            id="catalog-products"
+            class="row row-cols-1 row-cols-md-3 g-4 mt-4"
+            role="region"
+            aria-live="polite"
+            aria-label="Resultados de productos"
+          ></div>
+        </div>
       </div>
-      <!-- Fin filtros avanzados -->
-      <!-- Contenedor para los productos filtrados -->
-      <div
-        id="catalog-products"
-        class="row row-cols-1 row-cols-md-3 g-4 mt-4"
-        role="region"
-        aria-live="polite"
-        aria-label="Resultados de productos"
-      ></div>
     </main>
 
     <!-- Pre-footer -->
