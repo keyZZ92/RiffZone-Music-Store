@@ -60,22 +60,13 @@ main {
 /* =========================
   titulos
 ========================= */
-.title-page {
-  text-align: center;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  background-color: white;
-  width: 80%;
-  padding: 2rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
 
-.title-page h2 {
+.title-page h1{
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-family: "Oswald", sans-serif;
   margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
   color: #333;
 }
 
