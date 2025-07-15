@@ -47,6 +47,9 @@
   transform: scale(1.1);
 }
 
+.dark-mode .secondary-nav li a {
+  color: #e89229;
+}
 
 /* =========================
    media query
@@ -75,7 +78,7 @@
     gap: 1rem;
     justify-content: center;
   }
-  
+
   .secondary-nav li a {
     font-size: 0.95rem;
     text-align: center;

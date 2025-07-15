@@ -1,3 +1,7 @@
+.dark-mode .catalog-search-form .buscador-input-modern.form-control {
+  border: none !important;
+  box-shadow: none !important;
+}
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&display=swap");
 /* =========================
    Header y navegación principal
@@ -209,8 +213,6 @@
   .logo-section h1 {
     font-size: 1.05rem;
     white-space: nowrap;
-  }
-  .logo-section h1 {
     display: none !important;
   }
   .nav-header {
@@ -241,6 +243,7 @@
     /* Ya no se necesita margin-left: auto con Grid */
     display: flex;
     align-items: center;
+    gap: 0.8rem; /* Espacio entre iconos de usuario y carrito */
   }
   .mobile-nav {
     display: block;
@@ -287,9 +290,6 @@
     vertical-align: middle;
     transition: color 0.3s;
   }
-  .mobile-nav ul li a {
-    color: #000;
-  }
   .mobile-nav ul li a:hover,
   .mobile-nav ul li a:focus {
     color: #e89229; /* El texto se vuelve naranja en hover/focus */
@@ -298,17 +298,43 @@
   .mobile-nav ul li a:focus i {
     color: #e89229 !important; /* El icono mantiene el color naranja */
   }
-}
-
-/* Estilos para el icono hamburguesa (¡CORPORATIVO NARANJA!) */
-.hamburger .bar {
-  width: 24px;
-  height: 3px;
-  background: #e89229 !important; /* Naranja corporativo, visible SIEMPRE */
-  margin: 3px 0;
-  border-radius: 2px;
-  transition: all 0.3s;
-  display: block;
+  .greeting {
+    display: none;
+  }
+  /* Ocultar texto y dejar solo icono en botones de usuario */
+  .login-button .login-text,
+  #logoutBtn .login-text {
+    display: none;
+  }
+  /* Estilo de botones de usuario como iconos */
+  .login-button,
+  #logoutBtn {
+    background: transparent;
+    border: 2px solid #e89229;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    min-width: unset;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #222;
+    font-size: 0.8rem;
+    font-weight: 400;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+    gap: 0.5rem;
+  }
+  /* Tamaño de los iconos de usuario y carrito */
+  .login-button i,
+  .cart-link i {
+    font-size: 1.7rem !important; /* Tamaño grande y consistente */
+    color: #e89229 !important;
+    transition: color 0.3s;
+  }
+  .cart-link:hover i {
+    color: #fff !important;
+    opacity: 1;
+  }
 }
 
 @media (min-width: 901px) {
@@ -352,7 +378,7 @@
     align-items: center;
     justify-content: center;
     color: #222;
-    font-size: 0.80rem;
+    font-size: 0.8rem;
     font-weight: 400;
     transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
     gap: 0.5rem;
@@ -366,8 +392,6 @@
     transition: color 0.3s;
   }
 
-
- 
   .cart-link:hover i {
     color: #fff !important;
     opacity: 1;
@@ -382,14 +406,14 @@
   border-radius: 8px;
   padding: 0.5rem 1rem;
   font-family: "Oswald", sans-serif;
-  font-size: 0.80rem !important;
+  font-size: 0.8rem !important;
   font-weight: 400;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-   width: 100px;
+  width: 100px;
   height: 50px;
 }
 
@@ -418,12 +442,11 @@
   background-color: #e89229; /* Naranja corporativo */
   color: #fff;
   border-color: transparent;
-  font-size: 0.80rem !important;
+  font-size: 0.8rem !important;
   font-weight: 400;
-   width: 100px;
+  width: 100px;
   height: 50px;
 }
-
 
 #logoutBtn:focus {
   outline: none;
@@ -915,6 +938,122 @@
 }
 
 /* Fin del archivo header.css */
+.dark-mode .header-container,
+.dark-mode .header-container-guitar {
+  background-color: rgba(44, 41, 41, 0.92) !important;
+  box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.45);
+}
+.dark-mode .header {
+  background-color: #222 !important;
+}
+.dark-mode .logo-section h1 {
+  color: #fff !important;
+}
+.dark-mode .nav-list a {
+  color: #e89229 !important;
+  background-color: transparent !important;
+  font-weight: 500 !important;
+  transition: background-color 0.3s, color 0.3s;
+}
+.dark-mode .nav-list a:hover,
+.dark-mode .nav-list a:focus {
+  color: #fff !important;
+  background-color: #e89229 !important;
+  border-radius: 0.5rem !important;
+  box-shadow: 0 2px 8px rgba(232, 146, 41, 0.1);
+}
+.dark-mode .nav-list a.active {
+  color: #fff !important;
+  background-color: #e89229 !important;
+  border-radius: 0.5rem !important;
+  box-shadow: 0 2px 8px rgba(232, 146, 41, 0.1);
+}
+.dark-mode .nav-list i {
+  color: #e89229 !important;
+  transition: color 0.3s;
+}
+.dark-mode .nav-list a:hover i,
+.dark-mode .nav-list a:focus i,
+.dark-mode .nav-list a.active i {
+  color: #fff !important;
+}
+.dark-mode .cart-counter {
+  background-color: #e53935 !important;
+  transition: color 0.3s;
+  color: #fff !important;
+}
+.dark-mode .greeting {
+  color: #fff !important;
+}
+.dark-mode .login-button {
+  background-color: transparent !important;
+  color: #fff !important;
+  border-color: #e89229 !important;
+}
+.dark-mode .login-button:hover,
+.dark-mode .login-button:focus {
+  background-color: #e89229 !important;
+  color: #222 !important;
+}
+.dark-mode #logoutBtn {
+  background-color: #e89229 !important;
+  color: #222 !important;
+  border-color: transparent !important;
+}
+.dark-mode #logoutBtn:hover,
+.dark-mode #logoutBtn:focus {
+  background-color: #c57615 !important;
+  color: #fff !important;
+}
+.dark-mode .search-bar-header {
+  background: #222 !important;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.45) !important;
+}
+.dark-mode .buscador-row,
+.dark-mode .catalog-search-bar-global {
+  background: transparent !important;
+}
+.dark-mode .buscador-input,
+.dark-mode .buscador-input-modern {
+  background: #222 !important;
+  color: #fff !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+.dark-mode .buscador-input-modern::placeholder {
+  color: #e89229 !important;
+  opacity: 0.8 !important;
+}
+.dark-mode .buscador-boton,
+.dark-mode .buscador-boton-modern.buscador-boton-glass {
+  background: #e89229 !important;
+  color: #222 !important;
+  border-color: #e89229 !important;
+}
+.dark-mode .buscador-boton:hover,
+.dark-mode .buscador-boton:focus,
+.dark-mode .buscador-boton-modern.buscador-boton-glass:hover,
+.dark-mode .buscador-boton-modern.buscador-boton-glass:focus {
+  background: #c57615 !important;
+  color: #fff !important;
+}
+.dark-mode .buscador-filtros-btn {
+  background: #222 !important;
+  color: #fff !important;
+  border-color: #e89229 !important;
+}
+.dark-mode .buscador-filtros-btn:hover,
+.dark-mode .buscador-filtros-btn:focus {
+  background: #e89229 !important;
+  color: #222 !important;
+}
+
+.dark-mode .catalog-search-form .buscador-row-modern.buscador-glass {
+  background: #222 !important;
+  border: 2px solid #e89229 !important;
+  border-radius: 2rem !important;
+  box-shadow: none !important;
+}
 @media (max-width: 900px) {
   .header-container {
     display: grid;
@@ -924,8 +1063,12 @@
     gap: 0.2rem;
     padding: 0.2rem 0.3rem;
   }
-  .hamburger { grid-area: menu; }
-  .logo-section { grid-area: logo; }
+  .hamburger {
+    grid-area: menu;
+  }
+  .logo-section {
+    grid-area: logo;
+  }
   .search-toggle {
     grid-area: search;
     display: flex !important;
@@ -963,12 +1106,11 @@
   .search-toggle {
     display: flex !important;
   }
-
 }
 
 @media (max-width: 900px) {
   .header {
-   min-height: 5rem;
+    min-height: 5rem;
     background-size: cover;
     background-position: center top;
   }

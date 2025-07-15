@@ -437,6 +437,156 @@ main {
   box-shadow: 0 2px 8px rgba(194, 90, 0, 0.07);
 }
 
+/* =========================
+   MODO OSCURO
+========================= */
+.dark-mode {
+  background-color: #181818 !important;
+  color: #f1f1f1 !important;
+}
+
+.dark-mode header,
+.dark-mode .header {
+  background-color: #222 !important;
+  color: #e89229 !important;
+}
+
+.dark-mode header *,
+.dark-mode .header *,
+.dark-mode header svg,
+.dark-mode .header svg {
+  color: #fff !important;
+  fill: #e89229 !important;
+}
+
+.dark-mode .products-nav,
+.dark-mode .products-nav * {
+  background-color: #222 !important;
+  color: #e89229 !important;
+  .dark-mode .header-container,
+  .dark-mode .header-content,
+  .dark-mode .header-nav,
+  .dark-mode .header-menu,
+  .dark-mode .header-bar,
+  .dark-mode .header-barra,
+  .dark-mode .products-nav,
+  .dark-mode .products-nav *,
+  .dark-mode .products-nav svg {
+    background-color: #222 !important;
+    color: #e89229 !important;
+    fill: #e89229 !important;
+    border-color: #e89229 !important;
+  }
+  .dark-mode .header-container,
+  .dark-mode .header-content,
+  .dark-mode .header-nav,
+  .dark-mode .header-menu,
+  .dark-mode .header-bar,
+  .dark-mode .header-barra,
+  .dark-mode .products-nav {
+    box-shadow: none !important;
+  }
+  .dark-mode .header-logo img {
+    filter: brightness(0.8) sepia(1) hue-rotate(10deg) saturate(2);
+  }
+  fill: #e89229 !important;
+}
+
+.dark-mode html,
+.dark-mode body {
+  background-color: #181818 !important;
+  color: #f1f1f1 !important;
+}
+
+.dark-mode main {
+  background-color: #222 !important;
+  color: #f1f1f1 !important;
+}
+
+.dark-mode .title-page {
+  background-color: #222 !important;
+  color: #e89229 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .title-page h2 {
+  color: #e89229 !important;
+}
+
+.dark-mode .volver-button {
+  background-color: #222 !important;
+  color: #e89229 !important;
+  border-color: #e89229 !important;
+}
+
+.dark-mode .volver-button:hover {
+  background-color: #e89229 !important;
+  color: #222 !important;
+}
+
+.dark-mode .carousel,
+.dark-mode .testimonials-carousel {
+  background-color: #222 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .testimonial-card {
+  background: #222 !important;
+  color: #f1f1f1 !important;
+  border: 1px solid #444 !important;
+}
+
+.dark-mode .testimonial-card h3 {
+  color: #e89229 !important;
+}
+
+.dark-mode .testimonial-card .profession {
+  color: #bbb !important;
+}
+
+.dark-mode .testimonial-card blockquote {
+  color: #e89229 !important;
+}
+
+.dark-mode .testimonial-dot {
+  background: #444 !important;
+}
+.dark-mode .testimonial-dot.active,
+.dark-mode .testimonial-dot:focus {
+  background: #e89229 !important;
+}
+
+.dark-mode .carousel-dots .testimonial-dot {
+  background: #444 !important;
+}
+.dark-mode .carousel-dots .testimonial-dot.active,
+.dark-mode .carousel-dots .testimonial-dot:focus {
+  background: #e89229 !important;
+}
+
+.dark-mode .pre-footer {
+  background-color: #181818 !important;
+  color: #e89229 !important;
+}
+.dark-mode .pre-footer-column2 li {
+  color: #e89229 !important;
+}
+.dark-mode .pre-footer-column2 li:hover {
+  color: #fff !important;
+}
+
+.dark-mode .footer-principal {
+  background-color: #111 !important;
+  color: #e89229 !important;
+}
+.dark-mode .footer-logo span,
+.dark-mode .store-name {
+  color: #e89229 !important;
+}
+.dark-mode .footer-derechos small {
+  color: #e89229 !important;
+}
+
 /* ============================
    Media queries
 ============================= */
