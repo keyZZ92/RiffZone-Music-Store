@@ -163,7 +163,7 @@
   justify-content: center;
   gap: 0.4rem;
   white-space: nowrap;
-    height: 45px;
+  height: 45px;
 }
 .product-card .btn-detail:hover {
   background: #e89229;
@@ -224,6 +224,23 @@
 .dark-mode .product-card .btn-detail:hover {
   background: #e89229 !important;
   color: #222 !important;
+}
+
+/* =========================
+   ACCESIBILIDAD: Estilos de foco
+========================= */
+.product-card .btn-add:focus,
+.product-card .btn-primary:focus,
+.product-card .btn-detail:focus {
+  outline: 2px solid #e89229;
+  outline-offset: 2px;
+}
+
+.dark-mode .product-card .btn-add:focus,
+.dark-mode .product-card .btn-primary:focus,
+.dark-mode .product-card .btn-detail:focus {
+  outline: 2px solid #e89229;
+  outline-offset: 2px;
 }
 
 @media (max-width: 768px) {
