@@ -509,12 +509,10 @@ main {
 }
 
 .dark-mode main {
-  background-color: #222 !important;
   color: #f1f1f1 !important;
 }
 
 .dark-mode .title-page {
-  background-color: #222 !important;
   color: #e89229 !important;
 }
 
