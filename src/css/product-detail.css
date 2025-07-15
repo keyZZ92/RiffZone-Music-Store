@@ -29,42 +29,41 @@
 /* ===================================
    Categoría texto
 =================================== */
-  #product-detail p.text-muted {
-    text-transform: capitalize;
-    font-style: "Oswald", sans-serif;
-    color: #333;
-    letter-spacing: 0.5px;
-  }
-  
-  /* Precio */
-  #product-detail p.h4 {
-    font-weight: 700;
-    font-size: 1.75rem;
-    margin-top: 0.3rem;
-    margin-bottom: 1rem;
-    font-style: "Oswald", sans-serif;
-  }
-  
-  /* Precio tachado */
-  #product-detail del.text-secondary {
-    opacity: 0.7;
-  }
-  
-  /* Descripción */
-  #product-detail p.my-3 {
-    font-size: 1.1rem;
-    line-height: 1.5;
-    margin-bottom: 2rem;
-    color: #333;
-     font-style: "Oswald", sans-serif;
-  }
-  
-  /* Contenedor botones (añadir y volver) */
-  #product-detail .d-flex.justify-content-between {
-    gap: 1rem;
-  }
-  /* Botones generales SOLO dentro del detalle de producto */
-#product-detail .product-btn {
+#product-detail p.text-muted {
+  text-transform: capitalize;
+  font-style: "Oswald", sans-serif;
+  color: #333;
+  letter-spacing: 0.5px;
+}
+
+/* Precio */
+#product-detail p.h4 {
+  font-weight: 700;
+  font-size: 1.75rem;
+  margin-top: 0.3rem;
+  margin-bottom: 1rem;
+  font-style: "Oswald", sans-serif;
+}
+
+/* Precio tachado */
+#product-detail del.text-secondary {
+  opacity: 0.7;
+}
+
+/* Descripción */
+#product-detail p.my-3 {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+  color: #333;
+  font-style: "Oswald", sans-serif;
+}
+
+/* Contenedor botones (añadir y volver) */
+#product-detail .d-flex.justify-content-between {
+  gap: 1rem;
+}
+/* Botones generales SOLO dentro del detalle de producto */
 #product-detail p.text-muted {
   text-transform: capitalize;
   font-style: "Oswald", sans-serif;

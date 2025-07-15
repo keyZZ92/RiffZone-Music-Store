@@ -189,12 +189,12 @@
     min-height: 200px; /* Altura mínima para móvil */
     padding: 0.5rem 0 0.5rem 0;
   }
-  
+
   /* Ocultar la capa oscura en móvil para mostrar el color naranja puro */
   .header::before {
     display: none;
   }
-  
+
   .header-container {
     background-color: #fff;
     border-radius: 0;
@@ -237,6 +237,24 @@
     z-index: 20;
     grid-column: 1 / 2; /* El menú va en la primera columna */
     justify-self: start; /* Alinear a la izquierda */
+  }
+  /* Líneas del icono hamburguesa SIEMPRE visibles y naranja */
+  .hamburger .bar {
+    display: none !important;
+  }
+  /* Icono hamburguesa Bootstrap SIEMPRE visible y naranja */
+  .hamburger i.bi-list {
+    color: #e89229 !important;
+    font-size: 2rem !important;
+    background: transparent !important;
+    border-radius: 4px;
+    opacity: 1 !important;
+    transition: color 0.2s;
+    box-shadow: none;
+    border: none;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: inline-block !important;
   }
   .header-icons {
     grid-column: 3 / 4; /* Los iconos van en la tercera columna */
@@ -1149,12 +1167,10 @@
 }
 
 /* MODO OSCURO: Icono hamburguesa visible */
-.dark-mode .hamburger span,
-.dark-mode .hamburger i,
-.dark-mode .hamburger svg {
-  background: #e89229 !important;
+/* MODO OSCURO: Icono hamburguesa bi-list visible y naranja */
+.dark-mode .hamburger i.bi-list {
   color: #e89229 !important;
-  border-color: #e89229 !important;
+  background: transparent !important;
   opacity: 1 !important;
 }
 
