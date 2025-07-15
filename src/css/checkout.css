@@ -1,3 +1,166 @@
+.dark-mode {
+  --bs-secondary-color: #d1d1d1 !important;
+}
+.dark-mode
+  .checkout-summary
+  .checkout-summary-card
+  .checkout-product-description.text-muted,
+.dark-mode .checkout-summary .checkout-summary-card small.text-muted {
+  color: #fff !important;
+}
+.dark-mode .checkout-summary-card .checkout-product-description.text-muted {
+  color: #fff !important;
+}
+.dark-mode .checkout-summary-card .checkout-product-description {
+  color: #fff !important;
+  font-weight: 400;
+}
+.dark-mode .checkout-summary {
+  background: #181818 !important;
+  color: #fff !important;
+  border-radius: 18px !important;
+  box-shadow: none !important;
+}
+.dark-mode .checkout-summary h2 {
+  color: #e89229 !important;
+}
+.dark-mode .checkout-summary-card {
+  background: #232323 !important;
+  color: #fff !important;
+  border-radius: 14px !important;
+  border: 2px solid #e89229 !important;
+  box-shadow: none !important;
+}
+.dark-mode .checkout-summary-card .checkout-product-title {
+  color: #fff !important;
+}
+.dark-mode .checkout-summary-card .checkout-product-precio {
+  color: #e89229 !important;
+}
+.dark-mode .checkout-summary-card .bi-trash {
+  color: #e89229 !important;
+}
+.dark-mode .btn-sumar,
+.dark-mode .btn-restar,
+.dark-mode .btn-sumar-producto,
+.dark-mode .btn-restar-producto,
+.dark-mode .btn-cart-action {
+  background: #232323 !important;
+  color: #e89229 !important;
+  border: 2px solid #e89229 !important;
+  border-radius: 10px !important;
+  font-weight: 700 !important;
+  box-shadow: 0 2px 8px rgba(232, 146, 41, 0.1) !important;
+  transition: background 0.2s, color 0.2s;
+}
+.dark-mode .btn-sumar:hover,
+.dark-mode .btn-restar:hover,
+.dark-mode .btn-sumar-producto:hover,
+.dark-mode .btn-restar-producto:hover,
+.dark-mode .btn-cart-action:hover {
+  background: #e89229 !important;
+  color: #fff !important;
+  border-color: #e89229 !important;
+}
+.dark-mode .cart-product-total,
+.dark-mode .checkout-product-total,
+.dark-mode .cart-total,
+.dark-mode .checkout-total {
+  color: #fff !important;
+  text-shadow: 0 2px 8px rgba(232, 146, 41, 0.18);
+}
+/* =========================
+   MODO OSCURO: Carrito y Checkout homogéneo
+========================= */
+.dark-mode .cart-product-row,
+.dark-mode .checkout-product-row {
+  background: #181818 !important;
+  border-radius: 14px !important;
+  box-shadow: 0 2px 12px rgba(232, 146, 41, 0.08) !important;
+  border: 1.5px solid #e89229 !important;
+}
+.dark-mode .cart-product-title,
+.dark-mode .checkout-product-title {
+  color: #e89229 !important;
+}
+.dark-mode .cart-product-price,
+.dark-mode .checkout-product-price,
+.dark-mode .checkout-product-precio {
+  color: #e89229 !important;
+}
+.dark-mode .cart-product-total,
+.dark-mode .checkout-product-total {
+  color: #fff !important;
+}
+.dark-mode .cart-cantidad,
+.dark-mode .cart-product-quantity,
+.dark-mode .product-quantity {
+  background: #232323 !important;
+  color: #fff !important;
+  border: 2px solid #e89229 !important;
+}
+.dark-mode .cart-cantidad-label,
+.dark-mode .cart-cantidad-num {
+  color: #e89229 !important;
+}
+.dark-mode .checkout-container {
+  background: #181818 !important;
+  border-radius: 18px !important;
+  box-shadow: 0 2px 12px rgba(232, 146, 41, 0.08) !important;
+}
+.dark-mode .checkout-form {
+  background: #232323 !important;
+  border-radius: 14px !important;
+  color: #fff !important;
+  border: 1.5px solid #e89229 !important;
+  box-shadow: 0 2px 12px rgba(232, 146, 41, 0.08) !important;
+}
+.dark-mode .checkout-form label {
+  color: #e89229 !important;
+}
+.dark-mode .checkout-form input,
+.dark-mode .checkout-form select,
+.dark-mode .checkout-form textarea {
+  background: #232323 !important;
+  color: #fff !important;
+  border: 2px solid #e89229 !important;
+  border-radius: 8px !important;
+  font-family: "Oswald", sans-serif;
+  padding: 0.7rem 1rem !important;
+  margin-bottom: 0.7rem !important;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.dark-mode .checkout-form input:focus,
+.dark-mode .checkout-form select:focus,
+.dark-mode .checkout-form textarea:focus {
+  border-color: #e89229 !important;
+  box-shadow: 0 0 0 2px #e89229 !important;
+}
+.dark-mode .checkout-form input::placeholder {
+  color: #e89229 !important;
+  opacity: 0.8 !important;
+  font-family: "Oswald", sans-serif;
+}
+.dark-mode .checkout-actions .checkout-cancel {
+  background: #232323 !important;
+  color: #e89229 !important;
+  border: 2px solid #e89229 !important;
+  border-radius: 8px !important;
+}
+.dark-mode .checkout-actions .checkout-cancel:hover {
+  background: #e89229 !important;
+  color: #232323 !important;
+}
+.dark-mode .checkout-actions .checkout-confirm {
+  background: #e89229 !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 8px !important;
+  font-weight: 700 !important;
+}
+.dark-mode .checkout-actions .checkout-confirm:hover {
+  background: #d97d19 !important;
+}
 /* =========================
    Estilos específicos del carrito (movidos desde styles.css)
 ========================= */
@@ -72,14 +235,14 @@
     padding: 1.5rem 1rem !important;
     text-align: center !important;
   }
-  
+
   /* Imagen centrada arriba */
   .cart-product-img,
   .checkout-product-img {
     margin: 0 auto 1rem auto !important;
     align-self: center !important;
   }
-  
+
   /* Información del producto centrada */
   .checkout-product-info-col {
     flex-direction: column !important;
@@ -87,14 +250,14 @@
     width: 100% !important;
     align-items: center !important;
   }
-  
+
   /* Información izquierda (título, precio) centrada */
   .checkout-product-info-left {
     text-align: center !important;
     width: 100% !important;
     gap: 0.5rem !important;
   }
-  
+
   /* Precio individual centrado debajo del nombre en móviles */
   .cart-product-price {
     text-align: center !important;
@@ -103,7 +266,7 @@
     margin: 0.5rem auto !important;
     order: 2 !important;
   }
-  
+
   /* Información derecha (controles) con espacio suficiente */
   .checkout-product-info-right {
     min-width: 280px !important; /* Espacio suficiente para los botones */
@@ -117,7 +280,7 @@
     align-items: center !important;
     order: 2 !important;
   }
-  
+
   /* Controles de botones con espacio garantizado */
   .cart-product-controls,
   .checkout-product-controls,
@@ -131,9 +294,13 @@
     flex-wrap: nowrap !important;
     padding: 0.5rem !important;
   }
-  
+
   /* Los botones mantienen su tamaño fijo */
-  .btn-sumar, .btn-restar, .btn-sumar-producto, .btn-restar-producto, .btn-cart-action {
+  .btn-sumar,
+  .btn-restar,
+  .btn-sumar-producto,
+  .btn-restar-producto,
+  .btn-cart-action {
     width: 100px !important;
     height: 50px !important;
     min-width: 100px !important;
@@ -142,7 +309,7 @@
     max-height: 50px !important;
     flex-shrink: 0 !important;
   }
-  
+
   /* Contador con tamaño apropiado */
   .cart-cantidad,
   .cart-product-quantity,
@@ -153,7 +320,7 @@
     font-size: 1rem !important;
     flex-shrink: 0 !important;
   }
-  
+
   /* Total del producto centrado */
   .checkout-product-total,
   .cart-product-total {
@@ -212,7 +379,7 @@
     background: #fff;
     border-radius: 10px;
     padding: 1.2rem 0.7rem 1.2rem 0.7rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   }
   .cart-product-img {
     margin-right: 0;
@@ -267,7 +434,7 @@
     box-sizing: border-box !important;
     flex-shrink: 0 !important; /* No se comprimen */
   }
-  
+
   /* Asegurar que los símbolos y texto se vean bien en móvil */
   .btn-sumar-producto .btn-text,
   .btn-restar-producto .btn-text {
@@ -276,7 +443,7 @@
     text-align: center !important;
     margin-bottom: 0.2em !important;
   }
-  
+
   .btn-sumar-producto .btn-symbol,
   .btn-restar-producto .btn-symbol {
     font-size: 1.4rem !important;
@@ -284,7 +451,7 @@
     text-align: center !important;
     margin-top: 0.1em !important;
   }
-  
+
   /* Efectos hover para móvil */
   .btn-sumar-producto:hover,
   .btn-restar-producto:hover {
@@ -368,7 +535,7 @@
   margin-bottom: 2.5rem;
   background: #fff;
   border-radius: 14px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
   padding: 1.7rem 1.2rem;
   transition: box-shadow 0.2s;
 }
@@ -447,7 +614,7 @@
   margin-right: 2.2rem;
   border-radius: 10px;
   background: #f8f9fa;
-  box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.04);
   transition: width 0.2s, height 0.2s;
 }
 
@@ -545,8 +712,6 @@
   text-align: right;
 }
 
-
-
 .cart-product-total,
 .checkout-product-total {
   display: block;
@@ -603,13 +768,13 @@
 
 @media (max-width: 600px) {
   /* LAYOUT CONSOLIDADO PARA 600PX - VERTICAL CENTRADO CON BOTONES PROTEGIDOS */
-  
+
   /* Contenedor principal */
   .checkout-container {
     padding: 1rem 0.5rem !important;
     gap: 1.5rem !important;
   }
-  
+
   /* Cards de producto en layout vertical */
   .checkout-product-row {
     display: flex !important;
@@ -619,7 +784,7 @@
     padding: 1.5rem 1rem !important;
     text-align: center !important;
   }
-  
+
   /* Imagen centrada */
   .checkout-product-img {
     width: 120px !important;
@@ -627,7 +792,7 @@
     margin: 0 auto 1rem auto !important;
     display: block !important;
   }
-  
+
   /* Información del producto */
   .checkout-product-info-col {
     flex-direction: column !important;
@@ -635,7 +800,7 @@
     width: 100% !important;
     align-items: center !important;
   }
-  
+
   /* Información izquierda (título, precio) centrada y ordenada */
   .checkout-product-info-left {
     text-align: center !important;
@@ -645,7 +810,7 @@
     gap: 0.5rem !important;
     order: 1 !important;
   }
-  
+
   /* Título primero */
   .checkout-product-title {
     font-size: 1.1rem !important;
@@ -653,7 +818,7 @@
     order: 1 !important;
     margin-bottom: 0.3rem !important;
   }
-  
+
   /* Precio individual debajo del título en móvil */
   .checkout-product-price,
   .checkout-container .product-price,
@@ -669,11 +834,11 @@
     font-weight: bold !important;
     color: #e89229 !important;
   }
-  
+
   .checkout-product-info {
     gap: 0.5rem !important;
   }
-  
+
   /* Controles de botones con orden correcto: RESTAR - CONTADOR - AÑADIR */
   .checkout-product-controls {
     min-width: 260px !important;
@@ -690,13 +855,13 @@
     /* Sin fondo para que no se distinga */
     background: transparent !important;
   }
-  
+
   /* ORDEN CORRECTO DE ELEMENTOS EN LOS CONTROLES */
   .btn-restar,
   .btn-restar-producto {
     order: 1 !important; /* Botón RESTAR primero (izquierda) */
   }
-  
+
   .cart-cantidad,
   .cart-product-quantity,
   .product-quantity {
@@ -713,12 +878,12 @@
     border-radius: 6px !important;
     padding: 0.3rem !important;
   }
-  
+
   .btn-sumar,
   .btn-sumar-producto {
     order: 3 !important; /* Botón AÑADIR último (derecha) */
   }
-  
+
   /* Cantidad */
   .checkout-product-qty {
     display: block !important;
@@ -727,7 +892,7 @@
     margin: 0.2rem 0 !important;
     order: 2 !important;
   }
-  
+
   /* Total centrado */
   .checkout-product-total {
     display: block !important;
@@ -741,7 +906,7 @@
     min-width: auto !important;
     padding-right: 0 !important;
   }
-  
+
   /* Asegurar que no hay overflow */
   .checkout-product-row > * {
     min-width: 0 !important;
@@ -769,7 +934,7 @@
   gap: 2.5rem;
   border-radius: 14px;
   background: #fff;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
   margin-bottom: 2.5rem;
   padding: 2.2rem 2rem;
   border: 1.5px solid #ececec;
@@ -786,7 +951,7 @@
   border-radius: 12px;
   background: #f8f9fa;
   margin-right: 2.2rem;
-  box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.04);
   flex-shrink: 0;
   display: block;
 }
@@ -832,7 +997,7 @@
   border-radius: 6px;
   padding: 0.7rem 2rem;
   font-size: 1.1rem;
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   transition: background 0.2s;
 }
 .checkout-confirm:hover {
@@ -842,7 +1007,7 @@
   border-radius: 6px;
   padding: 0.7rem 2rem;
   font-size: 1.1rem;
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   transition: background 0.2s, color 0.2s;
 }
 .checkout-cancel:hover {
@@ -856,7 +1021,7 @@
   color: #28a745;
   background: #fff;
   border-radius: 1rem;
-  box-shadow: 0 4px 32px rgba(0,0,0,0.10);
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.1);
   padding: 2.5rem 2rem;
   margin: 2rem auto;
   animation: fadeIn 0.7s;
@@ -872,7 +1037,7 @@
   flex: 1 1 350px;
   background: #fff;
   border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
   padding: 2rem 1.5rem;
   min-width: 320px;
   max-width: 480px;
@@ -894,20 +1059,37 @@
   }
 }
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 @keyframes fadeInLeft {
-  from { opacity: 0; transform: translateX(-40px); }
-  to { opacity: 1; transform: translateX(0); }
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 @keyframes fadeInRight {
-  from { opacity: 0; transform: translateX(40px); }
-  to { opacity: 1; transform: translateX(0); }
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 /* Estilos para los botones de acción del carrito (Seguir Comprando, Pagar) */
-.checkout-cancel, .checkout-confirm {
+.checkout-cancel,
+.checkout-confirm {
   background: #fff !important;
   border: 2px solid #e89229 !important;
   color: #111 !important;
@@ -923,7 +1105,8 @@
   text-align: center;
 }
 
-.checkout-cancel:hover, .checkout-confirm:hover {
+.checkout-cancel:hover,
+.checkout-confirm:hover {
   background: #e89229 !important;
   color: #fff !important;
   border-color: #e89229 !important;
@@ -942,7 +1125,8 @@
 
 /* Responsive para móvil */
 @media (max-width: 600px) {
-  .checkout-cancel, .checkout-confirm {
+  .checkout-cancel,
+  .checkout-confirm {
     width: 100%;
     padding: 14px 16px;
     margin-bottom: 0.5rem;
@@ -977,7 +1161,7 @@
   margin-right: 2rem;
   border-radius: 10px;
   background: #f8f9fa;
-  box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.04);
 }
 
 .checkout-product-img {
@@ -1036,7 +1220,7 @@
     justify-content: center !important;
     gap: 0.8rem !important;
   }
-  
+
   /* Los botones mantienen su tamaño fijo de 140x50px */
   .cart-cantidad,
   .cart-product-quantity {
@@ -1052,7 +1236,7 @@
     justify-content: center !important;
     gap: 0.8rem !important;
   }
-  
+
   /* Los botones mantienen su tamaño fijo de 140x50px */
   .cart-cantidad,
   .cart-product-quantity {
@@ -1071,7 +1255,7 @@
     gap: 0.8rem !important;
     width: 100% !important;
   }
-  
+
   /* Los botones mantienen su tamaño fijo de 140x50px */
   .cart-cantidad,
   .cart-product-quantity {
@@ -1079,25 +1263,25 @@
     min-width: 60px !important;
     order: 2; /* Contador en el medio */
   }
-  
+
   .btn-sumar-producto {
     order: 1; /* Botón + primero */
   }
-  
+
   .btn-restar-producto {
     order: 3; /* Botón - último */
   }
-  
+
   /* Centrar todo el contenido en móvil */
   .cart-product-info {
     text-align: center !important;
   }
-  
+
   .cart-product-title {
     text-align: center !important;
     font-size: 1.05rem !important;
   }
-  
+
   .cart-product-total {
     text-align: center !important;
     font-size: 1.2rem !important;
@@ -1105,7 +1289,7 @@
     color: #e89229 !important;
     margin-top: 1rem !important;
   }
-  
+
   /* Mejorar el fondo del contenedor de controles */
   .cart-product-controls {
     padding: 1rem !important;
@@ -1124,7 +1308,7 @@
     min-width: 60px !important;
     font-size: 0.9rem !important;
   }
-  
+
   .cart-product-controls {
     gap: 0.6rem !important;
     padding: 0.8rem !important;
@@ -1140,7 +1324,7 @@
     user-select: none !important;
     transition: all 0.2s ease !important;
   }
-  
+
   /* Feedback visual al tocar */
   .btn-sumar-producto:active,
   .btn-restar-producto:active {
@@ -1148,14 +1332,14 @@
     background: #d6831a !important;
     color: #fff !important;
   }
-  
+
   /* Mejorar visibilidad del contador */
   .cart-cantidad,
   .cart-product-quantity {
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
     font-weight: bold !important;
   }
-  
+
   /* Asegurar que el layout de la fila no se rompa */
   .cart-product-row {
     padding: 1rem 0.5rem !important;
@@ -1195,7 +1379,7 @@ button.btn-cart-action,
   max-width: 100px !important;
   min-height: 50px !important;
   max-height: 50px !important;
-  
+
   /* Estilos de diseño consistentes */
   background: #fff !important;
   border: 2px solid #e89229 !important;
@@ -1239,7 +1423,7 @@ button.btn-cart-action:hover,
   border-color: #e89229 !important;
   transform: translateY(-1px) !important;
   box-shadow: 0 4px 8px rgba(232, 146, 41, 0.3) !important;
-  
+
   /* MANTENER TAMAÑO FIJO INCLUSO EN HOVER */
   width: 100px !important;
   height: 50px !important;
@@ -1279,7 +1463,11 @@ button.btn-cart-action:hover,
 
 /* Tablet */
 @media (max-width: 768px) {
-  .btn-sumar, .btn-restar, .btn-sumar-producto, .btn-restar-producto, .btn-cart-action {
+  .btn-sumar,
+  .btn-restar,
+  .btn-sumar-producto,
+  .btn-restar-producto,
+  .btn-cart-action {
     width: 100px !important;
     height: 50px !important;
     min-width: 100px !important;
@@ -1291,7 +1479,11 @@ button.btn-cart-action:hover,
 
 /* Móvil grande */
 @media (max-width: 600px) {
-  .btn-sumar, .btn-restar, .btn-sumar-producto, .btn-restar-producto, .btn-cart-action {
+  .btn-sumar,
+  .btn-restar,
+  .btn-sumar-producto,
+  .btn-restar-producto,
+  .btn-cart-action {
     width: 100px !important;
     height: 50px !important;
     min-width: 100px !important;
@@ -1299,14 +1491,18 @@ button.btn-cart-action:hover,
     min-height: 50px !important;
     max-height: 50px !important;
   }
-  .checkout-product-precio{
+  .checkout-product-precio {
     text-align: center;
   }
 }
 
 /* Móvil pequeño */
 @media (max-width: 480px) {
-  .btn-sumar, .btn-restar, .btn-sumar-producto, .btn-restar-producto, .btn-cart-action {
+  .btn-sumar,
+  .btn-restar,
+  .btn-sumar-producto,
+  .btn-restar-producto,
+  .btn-cart-action {
     width: 100px !important;
     height: 50px !important;
     min-width: 100px !important;
@@ -1318,7 +1514,11 @@ button.btn-cart-action:hover,
 
 /* Móvil muy pequeño */
 @media (max-width: 360px) {
-  .btn-sumar, .btn-restar, .btn-sumar-producto, .btn-restar-producto, .btn-cart-action {
+  .btn-sumar,
+  .btn-restar,
+  .btn-sumar-producto,
+  .btn-restar-producto,
+  .btn-cart-action {
     width: 100px !important;
     height: 50px !important;
     min-width: 100px !important;
@@ -1330,7 +1530,11 @@ button.btn-cart-action:hover,
 
 /* Desktop grande */
 @media (min-width: 1200px) {
-  .btn-sumar, .btn-restar, .btn-sumar-producto, .btn-restar-producto, .btn-cart-action {
+  .btn-sumar,
+  .btn-restar,
+  .btn-sumar-producto,
+  .btn-restar-producto,
+  .btn-cart-action {
     width: 100px !important;
     height: 50px !important;
     min-width: 100px !important;
@@ -1375,7 +1579,7 @@ button.btn-cart-action:hover,
     gap: 0.3rem !important;
     align-items: center !important;
   }
-  
+
   .cart-product-controls > *,
   .checkout-product-controls > *,
   .product-controls > * {
@@ -1406,7 +1610,11 @@ button.btn-cart-action:hover,
 
 /* Regla universal para TODOS los breakpoints posibles */
 @media screen {
-  .btn-sumar, .btn-restar, .btn-sumar-producto, .btn-restar-producto, .btn-cart-action {
+  .btn-sumar,
+  .btn-restar,
+  .btn-sumar-producto,
+  .btn-restar-producto,
+  .btn-cart-action {
     /* TAMAÑO FIJO UNIVERSAL E INQUEBRANTABLE */
     width: 100px !important;
     height: 50px !important;
@@ -1414,20 +1622,20 @@ button.btn-cart-action:hover,
     max-width: 100px !important;
     min-height: 50px !important;
     max-height: 50px !important;
-    
+
     /* EVITAR DESBORDAMIENTO */
     box-sizing: border-box !important;
     flex-shrink: 0 !important;
     flex-grow: 0 !important;
     overflow: hidden !important;
-    
+
     /* CENTRADO Y POSICIONAMIENTO */
     margin: 0 auto !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
   }
-  
+
   /* Los contenedores siempre deben acomodar los botones */
   .cart-product-controls,
   .checkout-product-controls,
@@ -1453,21 +1661,25 @@ button.btn-cart-action:hover,
     gap: 0.5rem !important;
     background: transparent !important;
   }
-  
-  .btn-sumar, .btn-restar, .btn-sumar-producto, .btn-restar-producto, .btn-cart-action {
+
+  .btn-sumar,
+  .btn-restar,
+  .btn-sumar-producto,
+  .btn-restar-producto,
+  .btn-cart-action {
     margin: 0 !important;
     width: 90px !important; /* Reducir un poco el ancho en pantallas muy pequeñas */
     height: 50px !important;
     min-width: 90px !important;
     max-width: 90px !important;
   }
-  
+
   /* Mantener orden correcto incluso en pantallas muy pequeñas */
   .btn-restar,
   .btn-restar-producto {
     order: 1 !important;
   }
-  
+
   .cart-cantidad,
   .cart-product-quantity,
   .product-quantity {
@@ -1477,7 +1689,7 @@ button.btn-cart-action:hover,
     background: transparent !important;
     border: 1px solid #e0e0e0 !important;
   }
-  
+
   .btn-sumar,
   .btn-sumar-producto {
     order: 3 !important;
@@ -1500,7 +1712,7 @@ button.btn-cart-action:hover,
     margin: 0.3rem auto !important;
     order: 2 !important;
   }
-  
+
   /* Eliminar cualquier fondo distinguible del contador */
   .cart-cantidad,
   .cart-product-quantity,
@@ -1509,7 +1721,7 @@ button.btn-cart-action:hover,
     box-shadow: none !important;
     border: 1px solid #e0e0e0 !important;
   }
-  
+
   /* Eliminar fondos de los contenedores de controles */
   .cart-product-controls,
   .checkout-product-controls,
@@ -1518,7 +1730,7 @@ button.btn-cart-action:hover,
     box-shadow: none !important;
     border: none !important;
   }
-  
+
   /* Forzar orden correcto de botones en todas las variantes */
   .checkout-product-controls > .btn-restar,
   .checkout-product-controls > .btn-restar-producto,
@@ -1528,7 +1740,7 @@ button.btn-cart-action:hover,
   .product-controls > .btn-restar-producto {
     order: 1 !important; /* RESTAR siempre primero */
   }
-  
+
   .checkout-product-controls > .cart-cantidad,
   .checkout-product-controls > .cart-product-quantity,
   .checkout-product-controls > .product-quantity,
@@ -1540,7 +1752,7 @@ button.btn-cart-action:hover,
   .product-controls > .product-quantity {
     order: 2 !important; /* CONTADOR siempre en el medio */
   }
-  
+
   .checkout-product-controls > .btn-sumar,
   .checkout-product-controls > .btn-sumar-producto,
   .cart-product-controls > .btn-sumar,

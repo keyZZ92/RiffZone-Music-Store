@@ -15,7 +15,7 @@
 ========================= */
 .registro-contenedor {
   width: 100%;
-  max-width: 1000px; 
+  max-width: 1000px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -27,7 +27,7 @@
    Caja del formulario
 ========================= */
 .registro-box {
-   border: 1px solid #ddd;
+  border: 1px solid #ddd;
   border-radius: 14px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   padding: 2.5rem 2rem;
@@ -73,9 +73,9 @@
 .registro-box input:focus,
 .registro-box select:focus,
 .registro-box textarea:focus {
-  outline: none ;
-  border-color: #e89229 ;
-  box-shadow: 0 0 0 3px rgba(232, 146, 41, 0.25) ;
+  outline: none;
+  border-color: #e89229;
+  box-shadow: 0 0 0 3px rgba(232, 146, 41, 0.25);
 }
 
 /* Checkbox */
@@ -114,9 +114,9 @@
 .registro-box input[type="submit"],
 button[type="submit"].registro-btn,
 button[type="submit"].btn-primary {
-  background-color: #e89229 ;
-  color: #fff ;
-  border: none ;
+  background-color: #e89229;
+  color: #fff;
+  border: none;
   border-radius: 0.5rem;
   padding: 0.7rem 2.2rem;
   font-size: 1.1rem;
@@ -132,7 +132,7 @@ button[type="submit"].btn-primary {
 .registro-box input[type="submit"]:hover,
 button[type="submit"].registro-btn:hover,
 button[type="submit"].btn-primary:hover {
-  background-color: #d97d19 ;
+  background-color: #d97d19;
 }
 
 /* =========================
@@ -152,16 +152,16 @@ button[type="submit"].btn-primary:hover {
 }
 
 .btn-detail {
-  background: transparent ;
+  background: transparent;
   color: #e89229;
-  border: 2px solid #e89229 ;
+  border: 2px solid #e89229;
   font-weight: 600;
 }
 
 .btn-detail:hover,
 .btn-detail:focus {
-  background: #e89229 ;
-  color: #fff ;
+  background: #e89229;
+  color: #fff;
 }
 
 /* =========================
@@ -220,4 +220,85 @@ button[type="submit"].btn-primary:hover {
   .registro-contenedor {
     padding: 0;
   }
+}
+
+/* =========================
+   MODO OSCURO: Registro homogéneo
+========================= */
+.dark-mode .zona-registro {
+  background: #232323 !important;
+  color: #e89229 !important;
+}
+.dark-mode .registro-contenedor {
+  background: none !important;
+}
+.dark-mode .registro-box {
+  background: #181818 !important;
+  border: 1.5px solid #e89229 !important;
+  color: #fff !important;
+  box-shadow: 0 2px 12px rgba(232, 146, 41, 0.08);
+}
+.dark-mode .registro-titulo {
+  color: #e89229 !important;
+  border-left: 4px solid #e89229 !important;
+}
+.dark-mode .registro-titulo span {
+  color: #fff !important;
+}
+.dark-mode .registro-box label {
+  color: #e89229 !important;
+}
+.dark-mode .registro-box input,
+.dark-mode .registro-box select,
+.dark-mode .registro-box textarea {
+  background: #232323 !important;
+  color: #fff !important;
+  border: 2px solid #e89229 !important;
+}
+.dark-mode .registro-box input:focus,
+.dark-mode .registro-box select:focus,
+.dark-mode .registro-box textarea:focus {
+  border-color: #e89229 !important;
+  box-shadow: 0 0 0 2px #e89229 !important;
+}
+.dark-mode .registro-box input[type="checkbox"] {
+  accent-color: #e89229 !important;
+  background: #232323 !important;
+  border: 2px solid #e89229 !important;
+}
+.dark-mode .registro-box input[type="checkbox"]:checked {
+  background: #e89229 !important;
+  border-color: #e89229 !important;
+  box-shadow: 0 0 0 2px #ffd6a8 !important;
+}
+.dark-mode .registro-box input[type="checkbox"]:focus {
+  outline: 2px solid #e89229 !important;
+  outline-offset: 2px !important;
+}
+.dark-mode .registro-box input[type="checkbox"]:hover {
+  box-shadow: 0 0 0 2px #ffd6a8 !important;
+  border-color: #d97d19 !important;
+}
+.dark-mode .registro-btn,
+.dark-mode .registro-box button,
+.dark-mode .registro-box input[type="submit"],
+.dark-mode button[type="submit"].registro-btn,
+.dark-mode button[type="submit"].btn-primary {
+  background-color: #e89229 !important;
+  color: #fff !important;
+  border: none !important;
+  box-shadow: 0 2px 8px rgba(232, 146, 41, 0.18) !important;
+}
+.dark-mode .registro-btn:hover,
+.dark-mode .registro-box button:hover,
+.dark-mode .registro-box input[type="submit"]:hover,
+.dark-mode button[type="submit"].registro-btn:hover,
+.dark-mode button[type="submit"].btn-primary:hover {
+  background-color: #d97d19 !important;
+}
+.dark-mode .registro-box .invalid-feedback {
+  color: #ffb366 !important;
+}
+.dark-mode .registro-box .form-text {
+  color: #e89229 !important;
 }
