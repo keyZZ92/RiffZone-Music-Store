@@ -55,11 +55,14 @@ function initializeLogin() {
               if (!msg) {
                 msg = document.createElement("div");
                 msg.id = "login-success-msg";
-                msg.className = "alert alert-success mt-2 corporate-success";
-                msg.setAttribute("role", "alert");
+                msg.className = "login-success-message";
+                msg.setAttribute("role", "status");
+                msg.classList.add("visually-hidden");
                 loginForm.prepend(msg);
               }
+              msg.className = "login-success-message";
               msg.textContent = "¡Login exitoso! Redirigiendo...";
+              msg.classList.remove("visually-hidden");
             }
             // Redirección inteligente: si estamos en carrito, recarga carrito; si no, recarga la página actual
             const currentPath = window.location.pathname;
