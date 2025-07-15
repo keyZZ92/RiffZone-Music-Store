@@ -41,12 +41,14 @@ main {
   cursor: pointer;
   transition: background-color 0.3s, box-shadow 0.3s, color 0.3s;
   margin: 2rem 0 0 0;
+  text-align: left !important;
+  align-self: flex-start !important;
 }
 
 @media (min-width: 577px) and (max-width: 991px) {
   .volver-button {
     display: block;
-    margin: 2rem auto 1.5rem auto !important;
+    margin: 2rem 0 1.5rem 0 !important;
     width: fit-content;
     max-width: 90vw;
   }
@@ -614,7 +616,7 @@ main {
   }
 
   .volver-button {
-    margin: 1rem auto;
+    margin: 1rem 0;
     display: block;
   }
 }
