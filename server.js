@@ -461,10 +461,74 @@ app.post("/api/logout", (req, res) => {
     );
   });
 });
-module.exports = app; // Exportar la app para pruebas
-// Esto permite que se pueda importar en tests u otros módulos si es necesario
+const REVIEWS_PATH = path.join(__dirname, "backend", "data", "reviews.json");
 
-// Para ejecutar el servidor directamente desde este archivo
+function readReviews() {
+  try {
+    const raw = fs.readFileSync(REVIEWS_PATH, "utf8");
+    return JSON.parse(raw);
+  } catch (e) {
+    return {}; 
+  }
+}
+
+function saveReviews(reviews) {
+  fs.writeFileSync(REVIEWS_PATH, JSON.stringify(reviews, null, 2));
+}
+
+// Obtener reseñas de un producto
+app.get("/api/products/:id/reviews", (req, res) => {
+  const { id } = req.params;
+  const allReviews = readReviews();
+  const productReviews = allReviews[id] || [];
+  res.json(productReviews);
+});
+
+// Añadir una nueva reseña
+app.post("/api/products/:id/reviews", (req, res) => {
+  const { id } = req.params;
+  const { name, comment, rating } = req.body;
+
+  if (!name?.trim() || !comment?.trim() || typeof rating !== "number") {
+    return res.status(400).json({ error: "Faltan campos obligatorios" });
+  }
+
+  const allReviews = readReviews();
+  if (!allReviews[id]) allReviews[id] = [];
+
+  const reviewId = Date.now().toString(36) + Math.random().toString(36).slice(2);
+  const newReview = { id: reviewId, name: name.trim(), comment: comment.trim(), rating };
+
+  allReviews[id].push(newReview);
+  saveReviews(allReviews);
+
+  res.status(201).json(newReview);
+});
+
+// Eliminar una reseña específica
+app.delete("/api/products/:productId/reviews/:reviewId", (req, res) => {
+  const { productId, reviewId } = req.params;
+  const allReviews = readReviews();
+
+  const reviews = allReviews[productId];
+  if (!reviews) {
+    return res.status(404).json({ error: "Producto no encontrado" });
+  }
+
+  const index = reviews.findIndex(r => r.id === reviewId);
+  if (index === -1) {
+    return res.status(404).json({ error: "Reseña no encontrada" });
+  }
+
+  reviews.splice(index, 1);
+  saveReviews(allReviews);
+
+  res.json({ success: true });
+});
+
+
+module.exports = app;
+
 if (require.main === module) {
   const PORT = process.env.PORT || 3000;
   app.listen(PORT, () => {

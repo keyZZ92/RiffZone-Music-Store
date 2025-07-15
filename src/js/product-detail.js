@@ -1,5 +1,5 @@
 // product-detail.js
-// Este archivo muestra el detalle de un producto y permite añadirlo al carrito
+// Este archivo muestra el detalle de un producto, permite añadirlo al carrito y muestra/crea reseñas del producto
 
 (function () {
   'use strict';
@@ -8,14 +8,147 @@
   const PRODUCT_CONTAINER_ID = '#product-detail';
   const DATA_URL = '../assets/data/products.json';
 
+  // --- Funciones para cargar, renderizar y crear reseñas ---
+  function renderReviewsSection(productId) {
+    const section = document.createElement('section');
+    section.id = 'detail-reviews';
+    section.className = 'mt-5';
+    section.innerHTML = `
+      <h3>Reseñas del producto</h3>
+      <div id="detail-review-list">Cargando reseñas…</div>
 
+      <!-- Formulario para nueva reseña -->
+      <form id="detail-review-form" class="mt-4">
+        <div class="mb-2">
+          <label for="detail-name" class="form-label">Nombre:</label>
+          <input type="text" id="detail-name" class="form-control" required />
+        </div>
+        <div class="mb-2">
+          <label for="detail-comment" class="form-label">Comentario:</label>
+          <textarea id="detail-comment" class="form-control" required></textarea>
+        </div>
+        <div class="mb-2">
+          <label class="form-label">Valoración:</label>
+          <div id="detail-rating">
+            <i data-value="1" class="star">𝄞</i>
+            <i data-value="2" class="star">𝄞</i>
+            <i data-value="3" class="star">𝄞</i>
+            <i data-value="4" class="star">𝄞</i>
+            <i data-value="5" class="star">𝄞</i>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary mt-2">Enviar reseña</button>
+      </form>
+    `;
+    const container = document.querySelector(PRODUCT_CONTAINER_ID);
+    container.appendChild(section);
 
+    const listContainer = section.querySelector('#detail-review-list');
+    const form = section.querySelector('#detail-review-form');
+    const stars = section.querySelectorAll('#detail-rating .star');
+    let selectedRating = 0;
+
+    // 1) Carga inicial de reseñas
+    fetch(`/api/products/${productId}/reviews`)
+      .then(res => res.ok ? res.json() : Promise.reject(res.statusText))
+      .then(renderList)
+      .catch(() => listContainer.innerHTML = '<p>Error al cargar reseñas.</p>');
+
+    // Función actualizada para renderizar reseñas con botón eliminar
+    function renderList(reviews) {
+      if (reviews.length === 0) {
+        listContainer.innerHTML = '<p>No hay reseñas aún.</p>';
+        return;
+      }
+      listContainer.innerHTML = '';
+      reviews.forEach(({ id, name, comment, rating }) => {
+        const div = document.createElement('div');
+        div.className = 'review mb-3 p-3 bg-light rounded d-flex flex-column';
+
+        div.innerHTML = `
+          <strong>${name}</strong>
+          <div class="stars">${'𝄞'.repeat(rating)}</div>
+          <p>${comment}</p>
+        `;
+
+        // Crear botón eliminar
+        const deleteBtn = document.createElement('button');
+        deleteBtn.textContent = 'Eliminar';
+        deleteBtn.className = 'btn btn-sm btn-danger align-self-end mt-2';
+        deleteBtn.style.cursor = 'pointer';
+
+        // Añadir evento para eliminar la reseña
+        deleteBtn.addEventListener('click', () => {
+          if (!confirm('¿Seguro que quieres eliminar esta reseña?')) return;
+
+          fetch(`/api/products/${productId}/reviews/${id}`, { method: 'DELETE' })
+            .then(res => {
+              if (!res.ok) throw new Error('Error al eliminar la reseña');
+              // Recargar lista de reseñas tras borrar
+              return fetch(`/api/products/${productId}/reviews`);
+            })
+            .then(res => res.json())
+            .then(renderList)
+            .catch(err => {
+              console.error(err);
+              alert('No se pudo eliminar la reseña.');
+            });
+        });
+
+        div.appendChild(deleteBtn);
+        listContainer.appendChild(div);
+      });
+    }
+
+    // 2) Lógica de selección de estrellas
+    stars.forEach(icon => {
+      icon.style.cursor = 'pointer';
+      icon.style.color = 'gray';
+      icon.addEventListener('click', () => {
+        selectedRating = parseInt(icon.dataset.value, 10);
+        stars.forEach(i =>
+          i.style.color = (parseInt(i.dataset.value,10) <= selectedRating) ? 'goldenrod' : 'gray'
+        );
+      });
+    });
+
+    // 3) Envío del formulario
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const name    = section.querySelector('#detail-name').value.trim();
+      const comment = section.querySelector('#detail-comment').value.trim();
+      if (!name || !comment || selectedRating === 0) {
+        return alert('Completa todos los campos y selecciona una valoración.');
+      }
+      fetch(`/api/products/${productId}/reviews`, {
+        method: 'POST',
+        headers: { 'Content-Type':'application/json' },
+        body: JSON.stringify({ name, comment, rating: selectedRating })
+      })
+        .then(res => res.ok ? res.json() : Promise.reject(res.statusText))
+        .then(() => {
+          // limpiar formulario
+          form.reset();
+          selectedRating = 0;
+          stars.forEach(i => i.style.color = 'gray');
+          // recargar lista de reseñas
+          return fetch(`/api/products/${productId}/reviews`);
+        })
+        .then(res => res.json())
+        .then(renderList)
+        .catch(err => {
+          console.error(err);
+          alert('Error al enviar la reseña.');
+        });
+    });
+  }
+
+  // Función para añadir al carrito
   if (typeof window.addToCart !== 'function') {
     window.addToCart = function addToCart(product, options = { showToast: true }) {
       if (typeof window.requireLogin === 'function' && !window.requireLogin()) return;
 
       let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-
       const existente = carrito.find((item) => item.id === product.id);
       if (existente) {
         existente.cantidad += 1;
@@ -28,13 +161,10 @@
           cantidad: 1,
         });
       }
-
       localStorage.setItem('carrito', JSON.stringify(carrito));
-
       if (typeof window.actualizarContadorCarrito === 'function') {
         window.actualizarContadorCarrito();
       }
-
       if (options.showToast && typeof bootstrap !== 'undefined') {
         const toast = document.createElement('div');
         toast.className =
@@ -80,24 +210,28 @@
           <p class="my-3">${product.description}</p>
 
           <!-- Sección Envío y entrega -->
-      <div class="mt-3 mb-4 p-3 bg-light rounded border">
-        <p class="mb-1"><strong>🚚 Envío:</strong> Gratis a domicilio</p>
-        <p class="mb-0"><strong>⏰ Entrega estimada:</strong> 24-48h</p>
-      </div>
+          <div class="mt-3 mb-4 p-3 bg-light rounded border">
+            <p class="mb-1"><strong>🚚 Envío:</strong> Gratis a domicilio</p>
+            <p class="mb-0"><strong>⏰ Entrega estimada:</strong> 24-48h</p>
+          </div>
 
-        <div class="d-flex justify-content-between align-items-center mt-3">
-          <button id="add-to-cart-btn" class="btn btn-primary btn-sm">
-            <i class="bi bi-cart-plus me-1"></i>Añadir al carrito
-          </button>
-          <button id="back-btn" class="btn btn-outline-secondary btn-sm">
-            <i class="bi bi-arrow-left"></i> Volver
-          </button>
+          <div class="d-flex justify-content-between align-items-center mt-3">
+            <button id="add-to-cart-btn" class="btn btn-primary btn-sm">
+              <i class="bi bi-cart-plus me-1"></i>Añadir al carrito
+            </button>
+            <button id="back-btn" class="btn btn-outline-secondary btn-sm">
+              <i class="bi bi-arrow-left"></i> Volver
+            </button>
+          </div>
         </div>
       </div>
     `;
-
+    // Botones de carrito y volver
     $('#add-to-cart-btn').addEventListener('click', () => window.addToCart(product));
     $('#back-btn').addEventListener('click', () => history.back());
+
+    // Insertar sección de reseñas
+    renderReviewsSection(product.id);
   }
 
   async function loadProducts() {
