@@ -8,7 +8,7 @@
 ========================= */
 
 .header {
-  background-image: url("../assets/images/imagen1.png");
+  background-image: url("../assets/images/imagen1.jpg");
   background-size: cover;
   background-position: center;
   position: relative;
@@ -325,7 +325,7 @@
   .greeting {
     display: none;
   }
- 
+
   /* Tamaño de los icono carrito */
   .cart-link i {
     font-size: 1.7rem !important; /* Tamaño grande y consistente */
@@ -401,7 +401,7 @@
 
 /* Estilos mejorados para el botón de Iniciar Sesión */
 .login-button {
- background-color: transparent;
+  background-color: transparent;
   color: #222;
   border: 2px solid #e89229;
   border-radius: 8px;
