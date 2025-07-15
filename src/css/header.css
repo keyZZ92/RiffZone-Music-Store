@@ -183,12 +183,18 @@
 /* Responsive: header */
 @media (max-width: 900px) {
   .header {
-    /* Mantener la imagen de fondo en móvil */
-    background-size: cover;
-    background-position: center;
+    /* Ocultar la imagen de fondo en móvil */
+    background-image: none;
+    background-color: #e89229;
     min-height: 200px; /* Altura mínima para móvil */
     padding: 0.5rem 0 0.5rem 0;
   }
+  
+  /* Ocultar la capa oscura en móvil para mostrar el color naranja puro */
+  .header::before {
+    display: none;
+  }
+  
   .header-container {
     background-color: #fff;
     border-radius: 0;
