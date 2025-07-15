@@ -101,11 +101,32 @@ fetch("../assets/data/products.json")
         }, 1000);
       });
     });
+
+    // Accesibilidad: navegación por teclado para botones "Añadir al carrito"
+    document.querySelectorAll(".btn-add-cart").forEach((btn) => {
+      btn.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          this.click();
+        }
+      });
+    });
+
     // Añadir funcionalidad al botón Ver detalle
     document.querySelectorAll(".btn-detail").forEach((btn) => {
       btn.addEventListener("click", function () {
         const id = this.getAttribute("data-id");
         window.location.href = `product-detail.html?id=${id}`;
+      });
+    });
+
+    // Accesibilidad: navegación por teclado para botones "Ver detalle"
+    document.querySelectorAll(".btn-detail").forEach((btn) => {
+      btn.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          this.click();
+        }
       });
     });
   });
