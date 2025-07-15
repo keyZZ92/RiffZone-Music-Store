@@ -211,16 +211,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (form.email.value.trim() !== form.confirmarEmail.value.trim()) {
       setError(form.confirmarEmail, "Los correos electrónicos no coinciden.");
       valid = false;
-    } else {
-      if (typeof API_BASE_URL === "undefined") {
-        alert(
-          "Error de configuración: API_BASE_URL no está definida. Asegúrate de que auth.js se carga antes que este archivo."
-        );
-        return;
-      }
-      clearError(form.confirmarEmail);
-    }
-
+    } 
     if (form.password.value !== form.confirmarPassword.value) {
       setError(form.confirmarPassword, "Las contraseñas no coinciden.");
       valid = false;
@@ -261,23 +252,8 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!res.ok) throw res;
         return res.json();
       })
-      .then((data) => {
-        alert(
-          data.message || data.mensaje || "Usuario registrado correctamente."
-        );
-        form.reset();
-        campos.forEach((campo) => clearError(campo));
-      })
-      .catch(async (err) => {
-        let errorMsg = "Error al registrar usuario.";
-        if (err.json) {
-          const errorData = await err.json();
-          errorMsg = errorData.error || errorMsg;
-        }
-        alert(errorMsg);
       });
   });
-});
 
 // Mostrar/ocultar contraseña
 document.querySelectorAll(".toggle-password").forEach((btn) => {

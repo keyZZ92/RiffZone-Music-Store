@@ -11,11 +11,6 @@ function initializeLogin() {
       const email = emailInput ? emailInput.value.trim() : "";
       const password = passwordInput ? passwordInput.value.trim() : "";
 
-      if (!email || !password) {
-        alert("Por favor completa todos los campos.");
-        return;
-      }
-
       fetch(`${API_BASE_URL}/api/login`, {
         method: "POST",
         headers: {
@@ -73,14 +68,8 @@ function initializeLogin() {
                 window.location.href = window.location.href;
               }
             }, 1200);
-          } else {
-            alert(data.error || "Usuario o contraseña incorrectos.");
           }
         })
-        .catch((error) => {
-          console.error("Error al iniciar sesión:", error);
-          alert("Error al conectar con el servidor.");
-        });
     });
   }
 }
