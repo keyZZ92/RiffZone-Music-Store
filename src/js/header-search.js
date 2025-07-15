@@ -413,8 +413,8 @@ function renderProducts(products) {
             </button>
             <button class="btn btn-primary btn-add-cart flex-fill" data-product='${JSON.stringify(
               product
-            )}' aria-label="Añadir ${product.name} a la cesta">
-              <i class="bi bi-cart-plus me-2"></i>Añadir a la cesta
+            )}' aria-label="Añadir ${product.name} al carrito">
+              <i class="bi bi-cart-plus me-2"></i>Añadir al carrito
             </button>
           </div>
         </div>
