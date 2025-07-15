@@ -64,7 +64,6 @@
     gap: 1rem;
   }
   /* Botones generales SOLO dentro del detalle de producto */
-#product-detail .product-btn {
 #product-detail p.text-muted {
   text-transform: capitalize;
   font-style: "Oswald", sans-serif;
