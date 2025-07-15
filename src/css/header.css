@@ -397,6 +397,18 @@
     color: #fff !important;
     opacity: 1;
   }
+  #logoutBtn {
+    min-width: unset;
+    width: auto;
+    padding: 0.5rem 0.7rem;
+    font-size: 0.95rem;
+    margin: 0;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap: 0.5rem;
+  }
 }
 
 /* Estilos mejorados para el botón de Iniciar Sesión */
@@ -975,7 +987,7 @@
   border-radius: 8px;
   padding: 0.5rem 1rem;
   font-weight: bold;
-  box-shadow: 0 2px 8px rgba(232,146,41,0.15);
+  box-shadow: 0 2px 8px rgba(232, 146, 41, 0.15);
 }
 .dark-mode .header-container,
 .dark-mode .header-container-guitar {
@@ -1186,7 +1198,7 @@
 }
 
 /* MODO OSCURO: Icono hamburguesa visible */
-/* MODO OSCURO: Icono hamburguesa bi-list visible y naranja */
+/* MODO OSCURO: Icono hamburguesa bi-list visible */
 .dark-mode .hamburger i.bi-list {
   color: #e89229 !important;
   background: transparent !important;
@@ -1235,6 +1247,29 @@
   }
 }
 
+@media (max-width: 480px) {
+  #logoutBtn {
+    min-width: 0 !important;
+    max-width: 44px !important;
+    width: 44px !important;
+    height: 44px !important;
+    padding: 0 !important;
+    font-size: 0 !important;
+    justify-content: center !important;
+    align-items: center !important;
+    display: flex !important;
+    gap: 0 !important;
+    border-radius: 8px !important;
+  }
+  #logoutBtn .login-text {
+    display: none !important;
+  }
+  #logoutBtn i {
+    font-size: 2rem !important;
+    margin: 0 !important;
+    color: #e89229 !important;
+  }
+}
 
 /* Mostrar texto desde tablets en adelante */
 @media (min-width: 577px) {
