@@ -74,7 +74,7 @@
         // Crear botón eliminar
         const deleteBtn = document.createElement('button');
         deleteBtn.textContent = 'Eliminar';
-        deleteBtn.className = 'btn btn-sm btn-danger align-self-end mt-2';
+        deleteBtn.className = 'delete-review-btn mt-2';
         deleteBtn.style.cursor = 'pointer';
 
         // Añadir evento para eliminar la reseña

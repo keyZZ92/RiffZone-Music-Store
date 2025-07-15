@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <p>${comment}</p>
         ${
           id
-            ? `<button class="btn btn-sm btn-outline-danger delete-review-btn mt-2" data-id="${id}">Eliminar</button>`
+            ? `<button class="delete-review-btn mt-2" data-id="${id}">Eliminar</button>`
             : ""
         }
       `;
