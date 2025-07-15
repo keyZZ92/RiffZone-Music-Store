@@ -968,6 +968,15 @@
 }
 
 /* Fin del archivo header.css */
+/* MODO OSCURO: Mensaje de login exitoso visible */
+.dark-mode .login-success-message {
+  color: #222 !important;
+  background: #e89229 !important;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(232,146,41,0.15);
+}
 .dark-mode .header-container,
 .dark-mode .header-container-guitar {
   background-color: rgba(44, 41, 41, 0.92) !important;

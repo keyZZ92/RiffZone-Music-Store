@@ -1,3 +1,15 @@
+/* MODO CLARO: Mensaje de login exitoso visible en el modal */
+.login-success-message {
+  color: #232323 !important;
+  background: #ffe1b3 !important;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(232, 146, 41, 0.1);
+  text-align: center;
+  margin: 1rem 0;
+  border: 1px solid #e89229;
+}
 .dark-mode .modal-title {
   color: #e89229 !important;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
@@ -26,6 +38,17 @@
   background: #232323 !important;
   color: #fff !important;
   box-shadow: 0 2px 12px rgba(232, 146, 41, 0.08);
+}
+/* MODO OSCURO: Mensaje de login exitoso visible en el modal */
+.dark-mode .login-success-message {
+  color: #232323 !important;
+  background: #e89229 !important;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(232, 146, 41, 0.15);
+  text-align: center;
+  margin: 1rem 0;
 }
 .dark-mode .modal-header {
   background-image: url("../assets/images/imagen1.png");
