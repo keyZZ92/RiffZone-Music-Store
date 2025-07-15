@@ -3,7 +3,7 @@
 /* Estructura principal */
 main {
   padding: 0.5rem;
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
 }
 
 .servicio-contenedor {
@@ -63,7 +63,7 @@ main {
   background-color: #fff;
   padding: 2rem;
   border-radius: 10px;
-  margin-top: 0.5rem  ;
+  margin-top: 0.5rem;
 }
 
 .container-servicios {
@@ -129,7 +129,6 @@ main {
 .icono-rotar.girado {
   transform: rotate(180deg);
 }
-
 
 /* ===========================
    MEDIA QUERIES RESPONSIVE
@@ -203,4 +202,42 @@ main {
   .container-servicios h2 {
     font-size: 1.5rem;
   }
+}
+
+/* =========================
+   MODO OSCURO (hereda de body.dark-mode)
+========================= */
+.dark-mode main,
+.dark-mode .texto-central-servicios,
+.dark-mode .section-servicios,
+.dark-mode .container-servicios,
+.dark-mode .servicio,
+.dark-mode .servicio-body {
+  background-color: #232323 !important;
+  color: #e89229 !important;
+}
+.dark-mode .about-title,
+.dark-mode .container-servicios h2,
+.dark-mode .texto-central-servicios h3,
+.dark-mode .about-store-name {
+  color: #e89229 !important;
+}
+.dark-mode .about-description,
+.dark-mode .servicio-body,
+.dark-mode .servicio-desplegable span {
+  color: #fff !important;
+}
+.dark-mode .servicio-desplegable {
+  background: #222 !important;
+  color: #e89229 !important;
+}
+.dark-mode .servicio-desplegable i {
+  color: #e89229 !important;
+}
+.dark-mode .servicio-desplegable span:hover {
+  color: #fff !important;
+}
+.dark-mode .servicio {
+  background: #222 !important;
+  border-color: #e89229 !important;
 }
