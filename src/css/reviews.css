@@ -1,46 +1,97 @@
-/* Estilos para la sección de reseñas */
-#review-list {
-  margin-bottom: 20px;
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap");
+
+body {
+  font-family: 'Oswald', sans-serif;
+  background-color: #fffdfb;
+  color: #2a2a2a;
 }
 
-.review {
-  border: 1px solid #ddd;
-  padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 5px;
+.zona-reseñas {
+  margin-top: 3rem;
 }
 
-.stars {
-  color: goldenrod;
-  font-size: 1.5em;
-  margin-bottom: 5px;
+.reseñas-contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
 }
 
-.star {
-  cursor: pointer;
-  font-size: 2em;
-  color: gray;
-  user-select: none;
+/* FORMULARIO A LA IZQUIERDA */
+.formulario-reseña {
+  flex: 1 1 45%;
+  min-width: 300px;
+  max-height: 500px;
+  overflow-y: auto;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
 }
 
-.star:hover,
-.star.selected {
-  color: goldenrod;
+.titulo-formulario {
+  color: #e89229;
+  font-size: 1.75rem;
+  text-align: center;
 }
 
-form label {
+/* BOTÓN FORMULARIO */
+.btn-enviar-reseña {
+  background-color: #e89229;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+}
+
+.btn-enviar-reseña:hover {
+  background-color: #d67d1f;
+}
+
+/* BLOQUE DE RESEÑAS A LA DERECHA */
+.bloque-reseñas {
+  flex: 1 1 45%;
+  min-width: 300px;
+  max-height: 500px;
+  overflow-y: auto;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+}
+
+.titulo-reseñas {
+  color: #e89229;
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.lista-reseñas {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.lista-reseñas .review {
+  background-color: #fff8f0;
+  border: 1px solid #f0e6dc;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+}
+
+.review strong {
   display: block;
-  margin-top: 10px;
-  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #222;
 }
 
-form input,
-form textarea {
-  width: 100%;
-  padding: 8px;
-  margin-top: 5px;
-  box-sizing: border-box;
+.review .stars {
+  color: goldenrod;
+  margin-bottom: 0.5rem;
 }
+
 
 .reviews-section button,
 #reviews-container button {
@@ -51,6 +102,8 @@ form textarea {
   color: white;
   font-weight: bold;
   cursor: pointer;
+  user-select: none;
+  margin-right: 0.2rem;
 }
 
 .reviews-section button:hover,
