@@ -247,7 +247,7 @@
 
         <div class="d-flex justify-content-between align-items-center mt-3">
           <button id="add-to-cart-btn" class="product-btn product-btn-primary">
-            <i class="bi bi-cart-plus me-1"></i>Añadir a la carrito
+            <i class="bi bi-cart-plus me-1"></i>Añadir al carrito
           </button>
           <button id="back-btn" class="product-btn product-btn-secondary">
             <i class="bi bi-arrow-left"></i> Volver
