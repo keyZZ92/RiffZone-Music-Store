@@ -74,8 +74,8 @@
           <h1 class="mb-2">${product.name}</h1>
           <p class="mb-1 text-muted text-capitalize">${product.category.replace(/-/g, ' ')}</p>
           <p class="h4">
-            <del class="text-secondary me-2">€${product.price.toFixed(2)}</del>
-            <span class="text-danger fw-bold">€${(product.offerPrice ?? product.price).toFixed(2)}</span>
+            <del class="text-secondary me-2">${product.price.toFixed(2)}€</del>
+            <span class="text-danger fw-bold">${(product.offerPrice ?? product.price).toFixed(2)}€</span>
           </p>
           <p class="my-3">${product.description}</p>
 
@@ -86,10 +86,10 @@
       </div>
 
         <div class="d-flex justify-content-between align-items-center mt-3">
-          <button id="add-to-cart-btn" class="btn btn-primary btn-sm">
-            <i class="bi bi-cart-plus me-1"></i>Añadir al carrito
+          <button id="add-to-cart-btn" class="product-btn product-btn-primary">
+            <i class="bi bi-cart-plus me-1"></i>Añadir a la carrito
           </button>
-          <button id="back-btn" class="btn btn-outline-secondary btn-sm">
+          <button id="back-btn" class="product-btn product-btn-secondary">
             <i class="bi bi-arrow-left"></i> Volver
           </button>
         </div>
