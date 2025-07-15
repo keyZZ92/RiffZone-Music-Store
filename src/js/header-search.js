@@ -1,3 +1,43 @@
+// Event listener para el botón "Aplicar filtros" en el offcanvas móvil
+const applyFiltersBtnMobile = document.getElementById(
+  "apply-filters-btn-mobile"
+);
+if (applyFiltersBtnMobile) {
+  applyFiltersBtnMobile.addEventListener("click", function (e) {
+    e.preventDefault();
+    // Copiar valores de los filtros móviles a los principales
+    const map = [
+      ["category-filter-mobile", "category-filter"],
+      ["min-price-mobile", "min-price"],
+      ["max-price-mobile", "max-price"],
+      ["brand-filter-mobile", "brand-filter"],
+      ["offer-filter-mobile", "offer-filter"],
+      ["sort-filter-mobile", "sort-filter"],
+    ];
+    map.forEach(([mobileId, mainId]) => {
+      const mobile = document.getElementById(mobileId);
+      const main = document.getElementById(mainId);
+      if (mobile && main) main.value = mobile.value;
+    });
+    hasSearched = true;
+    applyFilters();
+    // Cerrar el offcanvas
+    const filtersOffcanvas = document.getElementById("filtersOffcanvas");
+    if (filtersOffcanvas) {
+      const bsOffcanvas = bootstrap.Offcanvas.getInstance(filtersOffcanvas);
+      if (bsOffcanvas) bsOffcanvas.hide();
+    }
+    // Feedback visual temporal
+    const originalText = applyFiltersBtnMobile.innerHTML;
+    applyFiltersBtnMobile.innerHTML =
+      '<i class="bi bi-check-circle-fill me-2"></i>¡Filtros aplicados!';
+    applyFiltersBtnMobile.disabled = true;
+    setTimeout(() => {
+      applyFiltersBtnMobile.innerHTML = originalText;
+      applyFiltersBtnMobile.disabled = false;
+    }, 1500);
+  });
+}
 // header-search.js
 // Lógica de búsqueda y filtrado para el nuevo buscador del header
 
@@ -269,9 +309,7 @@ function applyFilters() {
   const sort = document.getElementById("sort-filter")?.value || "";
 
   filteredProducts = products.filter((p) => {
-    const matchesSearch =
-      p.name.toLowerCase().includes(search) ||
-      (p.category && p.category.toLowerCase().includes(search));
+    const matchesSearch = p.name && p.name.toLowerCase().includes(search);
     const matchesCategory =
       !category || (p.category && p.category === category);
     const matchesBrand = !brand || (p.brand && p.brand === brand);
@@ -375,8 +413,8 @@ function renderProducts(products) {
             </button>
             <button class="btn btn-primary btn-add-cart flex-fill" data-product='${JSON.stringify(
               product
-            )}' aria-label="Añadir ${product.name} a la cesta">
-              <i class="bi bi-cart-plus me-2"></i>Añadir a la cesta
+            )}' aria-label="Añadir ${product.name} al carrito">
+              <i class="bi bi-cart-plus me-2"></i>Añadir al carrito
             </button>
           </div>
         </div>

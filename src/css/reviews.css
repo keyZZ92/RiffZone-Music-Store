@@ -92,35 +92,21 @@ body {
   margin-bottom: 0.5rem;
 }
 
-.review p {
-  margin: 0;
-  font-size: 0.95rem;
-}
 
-/* VALORACIÓN INTERACTIVA */
-#detail-rating .star {
-  font-size: 1.5rem;
-  color: #ccc;
+.reviews-section button,
+#reviews-container button {
+  margin-top: 15px;
+  padding: 10px 15px;
+  background-color: goldenrod;
+  border: none;
+  color: white;
+  font-weight: bold;
   cursor: pointer;
   user-select: none;
   margin-right: 0.2rem;
 }
 
-#detail-rating .star.selected,
-#detail-rating .star:hover {
-  color: goldenrod;
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .reseñas-contenedor {
-    flex-direction: column;
-  }
-
-  .formulario-reseña,
-  .bloque-reseñas {
-    flex: 1 1 100%;
-    max-height: none;
-    overflow: visible;
-  }
+.reviews-section button:hover,
+#reviews-container button:hover {
+  background-color: darkgoldenrod;
 }

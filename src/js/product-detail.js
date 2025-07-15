@@ -146,9 +146,11 @@
   // Función para añadir al carrito
   if (typeof window.addToCart !== 'function') {
     window.addToCart = function addToCart(product, options = { showToast: true }) {
-      if (typeof window.requireLogin === 'function' && !window.requireLogin()) return;
+      if (!requireLogin()) return;
 
-      let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+      const carritoKey = getCarritoKey();
+      let carrito = JSON.parse(localStorage.getItem(carritoKey)) || [];
+
       const existente = carrito.find((item) => item.id === product.id);
       if (existente) {
         existente.cantidad += 1;
@@ -161,7 +163,11 @@
           cantidad: 1,
         });
       }
-      localStorage.setItem('carrito', JSON.stringify(carrito));
+
+
+      localStorage.setItem(carritoKey, JSON.stringify(carrito));
+
+
       if (typeof window.actualizarContadorCarrito === 'function') {
         window.actualizarContadorCarrito();
       }
@@ -180,6 +186,30 @@
         bsToast._element.addEventListener('hidden.bs.toast', () => toast.remove());
       }
     };
+  }
+
+  // Funciones auxiliares para el carrito por usuario
+  function getCurrentUsername() {
+    return localStorage.getItem("username");
+  }
+
+  function getCarritoKey() {
+    const username = getCurrentUsername();
+    return username ? `carrito_${username}` : "carrito";
+  }
+
+  function requireLogin() {
+    if (!localStorage.getItem("user") && !localStorage.getItem("username")) {
+      const modalEl = document.getElementById("loginModal");
+      if (modalEl && typeof bootstrap !== "undefined") {
+        const modal = new bootstrap.Modal(modalEl);
+        modal.show();
+      } else {
+        alert("¿Tienes cuenta? Inicia sesión para continuar.");
+      }
+      return false;
+    }
+    return true;
   }
 
   function calcularFechaEntrega() {
@@ -204,8 +234,8 @@
           <h1 class="mb-2">${product.name}</h1>
           <p class="mb-1 text-muted text-capitalize">${product.category.replace(/-/g, ' ')}</p>
           <p class="h4">
-            <del class="text-secondary me-2">€${product.price.toFixed(2)}</del>
-            <span class="text-danger fw-bold">€${(product.offerPrice ?? product.price).toFixed(2)}</span>
+            <del class="text-secondary me-2">${product.price.toFixed(2)}€</del>
+            <span class="text-danger fw-bold">${(product.offerPrice ?? product.price).toFixed(2)}€</span>
           </p>
           <p class="my-3">${product.description}</p>
 
@@ -215,19 +245,33 @@
             <p class="mb-0"><strong>⏰ Entrega estimada:</strong> 24-48h</p>
           </div>
 
-          <div class="d-flex justify-content-between align-items-center mt-3">
-            <button id="add-to-cart-btn" class="btn btn-primary btn-sm">
-              <i class="bi bi-cart-plus me-1"></i>Añadir al carrito
-            </button>
-            <button id="back-btn" class="btn btn-outline-secondary btn-sm">
-              <i class="bi bi-arrow-left"></i> Volver
-            </button>
-          </div>
+        <div class="d-flex justify-content-between align-items-center mt-3">
+          <button id="add-to-cart-btn" class="product-btn product-btn-primary">
+            <i class="bi bi-cart-plus me-1"></i>Añadir a la carrito
+          </button>
+          <button id="back-btn" class="product-btn product-btn-secondary">
+            <i class="bi bi-arrow-left"></i> Volver
+          </button>
         </div>
       </div>
     `;
-    // Botones de carrito y volver
-    $('#add-to-cart-btn').addEventListener('click', () => window.addToCart(product));
+
+    $('#add-to-cart-btn').addEventListener('click', () => {
+      const button = $('#add-to-cart-btn');
+      window.addToCart(product, { showToast: false }); // Desactivar el toast verde
+      
+      // Cambiar el texto del botón a "Añadido" con el estilo del hover
+      button.innerHTML = '<i class="bi bi-check-circle me-1"></i>Añadido';
+      button.style.backgroundColor = '#d67d1f'; // Mismo color que el hover
+      button.style.boxShadow = '0 6px 12px rgba(232, 146, 41, 0.7)'; // Mismo shadow que el hover
+      
+      // Restaurar el texto original después de 2 segundos
+      setTimeout(() => {
+        button.innerHTML = '<i class="bi bi-cart-plus me-1"></i>Añadir a la carrito';
+        button.style.backgroundColor = '#c77619';
+        button.style.boxShadow = '0 3px 6px rgba(232, 146, 41, 0.7)';
+      }, 2000);
+    });
     $('#back-btn').addEventListener('click', () => history.back());
 
     // Insertar sección de reseñas

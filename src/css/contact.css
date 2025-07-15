@@ -1,7 +1,106 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap");
 
-
 /*css de contacto*/
+/* =========================
+   MODO OSCURO (hereda de body.dark-mode)
+========================= */
+.dark-mode .social-links img {
+  filter: none !important;
+}
+.dark-mode .zona-contacto {
+  background: #232323 !important;
+  color: #e89229 !important;
+}
+.dark-mode .contacto-contenedor {
+  background: none !important;
+}
+.dark-mode .formulario-box {
+  background: #181818 !important;
+  border: 1.5px solid #e89229 !important;
+  color: #fff !important;
+  box-shadow: 0 2px 12px rgba(232, 146, 41, 0.08);
+}
+.dark-mode .formulario-box h1,
+.dark-mode .formulario-box h2 {
+  color: #e89229 !important;
+  border-left: 4px solid #e89229 !important;
+}
+.dark-mode .formulario-box label {
+  color: #e89229 !important;
+}
+.dark-mode .formulario-box input,
+.dark-mode .formulario-box select,
+.dark-mode .formulario-box textarea {
+  background: #232323 !important;
+  color: #fff !important;
+  border: 2px solid #e89229 !important;
+}
+.dark-mode .formulario-box input:focus,
+.dark-mode .formulario-box select:focus,
+.dark-mode .formulario-box textarea:focus {
+  border-color: #e89229 !important;
+  box-shadow: 0 0 0 2px #e89229 !important;
+}
+.dark-mode .formulario-box button,
+.dark-mode .formulario-box input[type="submit"] {
+  background-color: #e89229 !important;
+  color: #fff !important;
+  border: none !important;
+  box-shadow: 0 2px 8px rgba(232, 146, 41, 0.18) !important;
+}
+.dark-mode .formulario-box button:hover,
+.dark-mode .formulario-box input[type="submit"]:hover {
+  background-color: #d97d19 !important;
+}
+.dark-mode .formulario-box button:focus,
+.dark-mode .formulario-box input[type="submit"]:focus {
+  background-color: #d97d19 !important;
+  outline: none !important;
+}
+.dark-mode .formulario-box .invalid-feedback {
+  color: #ffb366 !important;
+}
+.dark-mode .formulario-box .form-text {
+  color: #e89229 !important;
+}
+.dark-mode .horario-box {
+  background: #181818 !important;
+  border: 1.5px solid #e89229 !important;
+  color: #fff !important;
+}
+.dark-mode .horario-box h3 {
+  color: #e89229 !important;
+  border-left: 4px solid #e89229 !important;
+}
+.dark-mode .horario-box p {
+  color: #fff !important;
+}
+
+.dark-mode .pre-footer {
+  background: #181818 !important;
+  color: #e89229 !important;
+  border-top: 2px solid #e89229 !important;
+}
+.dark-mode .pre-footer-container,
+.dark-mode .pre-footer-column1,
+.dark-mode .pre-footer-column2 {
+  background: none !important;
+  color: #e89229 !important;
+}
+.dark-mode .pre-footer h3,
+.dark-mode .pre-footer-column1 h3,
+.dark-mode .pre-footer-column2 h3 {
+  color: #e89229 !important;
+}
+.dark-mode .pre-footer ul,
+.dark-mode .pre-footer li {
+  color: #fff !important;
+}
+.dark-mode .payment-methods img {
+  background: none !important;
+  filter: none !important;
+  opacity: 1 !important;
+}
 .zona-contacto {
   padding: 2rem;
 }
@@ -13,7 +112,7 @@
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: center;
-   margin-top: 1.5rem;
+  margin-top: 1.5rem;
 }
 
 /*formulario*/
@@ -27,8 +126,8 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-.formulario-box h1 {
-  border-left: 4px solid #e89229;
+.formulario-box h2 {
+  border-left: 4px solid #c77619;
   padding-left: 0.5rem;
   margin-bottom: 1rem;
   text-align: left;
@@ -73,7 +172,7 @@
 /*boton de enviar*/
 .formulario-box button,
 .formulario-box input[type="submit"] {
-  background-color: #e89229;
+  background-color: #c77619;
   color: #fff;
   border: none;
   padding: 0.75rem 1.5rem;
@@ -109,7 +208,7 @@
 }
 
 .horario-box h3 {
-  border-left: 4px solid #e89229;
+  border-left: 4px solid #c77619;
   padding-left: 0.5rem;
   margin-bottom: 1rem;
   text-align: left;
@@ -139,9 +238,9 @@
   }
 }
 @media (min-width: 992px) {
-.contacto-contenedor{
-  flex-wrap: nowrap;
-  width: 70%;
-  justify-content: space-between;
+  .contacto-contenedor {
+    flex-wrap: nowrap;
+    width: 70%;
+    justify-content: space-between;
   }
 }

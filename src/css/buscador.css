@@ -1,0 +1,223 @@
+/* Botón de filtros en responsive con color corporativo */
+.btn-outline-primary {
+  color: #d88c23 !important;
+  border-color: #d88c23 !important;
+  background-color: #fff !important;
+}
+/* Solo hover, sin estilos de foco duplicados */
+.btn-outline-primary:hover {
+  background-color: #d88c23 !important;
+  color: #fff !important;
+  border-color: #d88c23 !important;
+}
+/* Botón aplicar filtros en responsive con color corporativo */
+button#apply-filters-btn,
+button#apply-filters-btn-mobile {
+  color: #fff !important;
+  background-color: #d88c23 !important;
+  border-color: #d88c23 !important;
+}
+button#apply-filters-btn:hover,
+button#apply-filters-btn-mobile:hover {
+  background-color: #c97a1c !important;
+  border-color: #c97a1c !important;
+  color: #fff !important;
+}
+/* --- */
+
+/* Personalizar color de selección de texto en el input del buscador */
+#advanced-filters {
+  margin-top: 32px;
+}
+
+/* Foco naranja con máxima especificidad y !important */
+.buscador-box input:focus,
+.buscador-box select:focus,
+.buscador-box textarea:focus,
+.buscador-box .form-control:focus,
+.buscador-box .form-select:focus {
+  outline: none !important;
+  border-color: #e89229 !important;
+  box-shadow: 0 0 0 3px rgba(232, 146, 41, 0.25) !important;
+}
+
+/* Alinear filtros con las cards de productos */
+/* Layout principal con flexbox: filtros 30%, productos 70% */
+.buscador-main-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 40px auto 0 auto;
+  width: 100%;
+}
+
+.buscador-filtros {
+  flex: 0 0 30%;
+  max-width: 30%;
+  min-width: 320px;
+}
+.buscador-productos {
+  flex: 1 1 70%;
+  max-width: 70%;
+  min-height: 500px;
+}
+
+@media (max-width: 991px) {
+  .buscador-main-row {
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+  }
+  .buscador-filtros,
+  .buscador-productos {
+    max-width: 100%;
+    min-width: 100%;
+  }
+}
+/* --- */
+
+/* Clase para centrar productos cuando hay pocos (1-2) */
+.centered-products {
+  display: flex !important;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.centered-products .col-12.col-md-6.col-lg-4 {
+  width: 350px !important;
+  max-width: 350px;
+  flex: 0 0 auto !important;
+}
+
+/* Mejorar layout para filtros y productos */
+.buscador-filtros {
+  min-width: 350px;
+  max-width: 400px;
+  flex: 0 0 350px;
+}
+.buscador-productos {
+  flex: 1 1 0;
+  min-width: 400px;
+}
+
+/* =========================
+   MODO OSCURO: Buscador homogéneo
+========================= */
+.dark-mode body {
+  background: #232323 !important;
+  color: #e89229 !important;
+}
+.dark-mode .buscador-main-row {
+  background: none !important;
+}
+.dark-mode .buscador-filtros {
+  background: #181818 !important;
+  border: 1.5px solid #e89229 !important;
+  color: #fff !important;
+  box-shadow: 0 2px 12px rgba(232, 146, 41, 0.08);
+  border-radius: 16px !important;
+  padding: 2.2rem 0.5rem 1.2rem 0.5rem !important;
+}
+.dark-mode .buscador-box {
+  background: #181818 !important;
+  border: none !important;
+  color: #fff !important;
+  border-radius: 16px !important;
+  box-shadow: 0 2px 12px rgba(232, 146, 41, 0.08);
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+}
+.dark-mode .buscador-box label {
+  color: #e89229 !important;
+  font-weight: 500 !important;
+}
+.dark-mode .buscador-box input,
+.dark-mode .buscador-box select,
+.dark-mode .buscador-box textarea {
+  background: #232323 !important;
+  color: #fff !important;
+  border: 2px solid #e89229 !important;
+  border-radius: 12px !important;
+  font-weight: 500 !important;
+  display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: 85% !important;
+  padding: 1rem 1.2rem !important;
+  margin-bottom: 1.1rem !important;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box !important;
+}
+.dark-mode .buscador-box input::placeholder {
+  color: #e89229 !important;
+  opacity: 0.8 !important;
+  font-weight: 500 !important;
+  font-family: "Oswald", sans-serif;
+  font-size: 1rem !important;
+}
+.dark-mode .buscador-box input:focus,
+.dark-mode .buscador-box select:focus,
+.dark-mode .buscador-box textarea:focus {
+  border-color: #e89229 !important;
+  box-shadow: 0 0 0 2px #e89229 !important;
+}
+.dark-mode .btn-outline-primary {
+  color: #e89229 !important;
+  border-color: #e89229 !important;
+  background-color: #232323 !important;
+}
+.dark-mode .btn-outline-primary:hover {
+  background-color: #e89229 !important;
+  color: #232323 !important;
+  border-color: #e89229 !important;
+}
+.dark-mode button#apply-filters-btn,
+.dark-mode button#apply-filters-btn-mobile {
+  color: #fff !important;
+  background-color: #e89229 !important;
+  border-color: #e89229 !important;
+  width: 85% !important;
+  border-radius: 12px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: block !important;
+  font-size: 1.15rem !important;
+  font-family: "Oswald", sans-serif !important;
+  font-weight: 700 !important;
+  padding: 1rem 0 !important;
+}
+.dark-mode button#apply-filters-btn:hover,
+.dark-mode button#apply-filters-btn-mobile:hover {
+  background-color: #c97a1c !important;
+  border-color: #c97a1c !important;
+  color: #fff !important;
+}
+.dark-mode .buscador-box .invalid-feedback {
+  color: #ffb366 !important;
+}
+.dark-mode .buscador-box .form-text {
+  color: #e89229 !important;
+}
+
+@media (max-width: 991px) {
+  .buscador-main-row {
+    flex-direction: column !important;
+    align-items: center !important;
+    max-width: 100%;
+    overflow: visible !important;
+  }
+  .buscador-filtros {
+    min-width: 100%;
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
+  .buscador-productos {
+    min-width: 100%;
+    margin-bottom: 80px; /* Espacio extra para el prefooter/footer */
+    min-height: unset !important;
+    overflow: visible !important;
+  }
+}

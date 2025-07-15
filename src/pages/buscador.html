@@ -17,8 +17,9 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
     />
     <link rel="stylesheet" href="../css/styles.css" />
-    <link rel="stylesheet" href="../css/product-card.css" />
     <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/buscador.css" />
+    <link rel="stylesheet" href="../css/product-card.css" />
     <link rel="stylesheet" href="../css/checkout.css" />
     <link rel="stylesheet" href="../css/cookies-banner.css" />
     <link rel="stylesheet" href="../css/login.css" />
@@ -38,14 +39,14 @@
       </button>
       <h1 id="products-title" class="main-title">Buscador de Productos</h1>
       <!-- Filtros avanzados para el buscador -->
-      <div class="row buscador-main-row">
+      <div class="buscador-main-row">
         <aside
           id="advanced-filters"
-          class="col-lg-3 col-md-4 mb-4 d-none d-md-block"
+          class="buscador-filtros d-none d-md-block"
           tabindex="-1"
         >
           <!-- Filtros siempre visibles en desktop -->
-          <form id="catalog-search-form" autocomplete="off">
+          <form id="filters-form" autocomplete="off" class="buscador-box">
             <select
               id="category-filter"
               class="form-select mb-2"
@@ -168,7 +169,11 @@
             </div>
             <div class="offcanvas-body">
               <!-- Reutiliza el mismo formulario de filtros -->
-              <form id="catalog-search-form-mobile" autocomplete="off">
+              <form
+                id="catalog-search-form-mobile"
+                autocomplete="off"
+                class="buscador-box"
+              >
                 <!-- ...mismos campos de filtro que arriba... -->
                 <select
                   id="category-filter-mobile"
@@ -265,7 +270,7 @@
           </div>
         </div>
         <!-- Fin filtros responsive -->
-        <div class="col-lg-9 col-md-8">
+        <div class="buscador-productos">
           <!-- Aquí solo va el contenedor de productos -->
           <!-- Fin filtros avanzados -->
           <!-- Contenedor para los productos filtrados -->
@@ -284,20 +289,17 @@
     <section class="pre-footer" aria-label="Información de contacto">
       <div class="pre-footer-container">
         <!-- Columna 1: Ventajas -->
-        <div
-          class="pre-footer-column2"
-          aria-labelledby="ventajas de usar RiffZone Music Store"
-        >
+        <section class="pre-footer-column2" aria-labelledby="ventajas-title">
           <h3 id="ventajas-title">
             Ventajas de comprar en RiffZone Music Store
           </h3>
           <ul>
-            <li>Garantía de calidad</li>
-            <li>Devolución fácil y rápida</li>
-            <li>Servicio técnico</li>
-            <li>Asesoramiento personalizado</li>
+            <li tabindex="0">Garantía de calidad</li>
+            <li tabindex="0">Devolución fácil y rápida</li>
+            <li tabindex="0">Servicio técnico</li>
+            <li tabindex="0">Asesoramiento personalizado</li>
           </ul>
-        </div>
+        </section>
         <!-- Columna 2: Métodos de pago y redes sociales de contacto-->
         <div class="pre-footer-column1" aria-label="Redes sociales">
           <h3 id="metodos-pagos">Métodos de pago</h3>
@@ -428,5 +430,6 @@
     <script src="../js/login.js"></script>
     <script src="../js/loadComponents.js"></script>
     <script src="../js/cookies-banner.js"></script>
+    <script src="../js/darkmode.js"></script>
   </body>
 </html>

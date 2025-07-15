@@ -1,3 +1,35 @@
+/* MODO OSCURO: fondo naranja y texto blanco SOLO para el header y título de la barra lateral de servicios */
+.dark-mode .offcanvas-header {
+  background: linear-gradient(135deg, #e89229 0%, #d4841f 100%) !important;
+  color: #fff !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+.dark-mode .offcanvas-header .offcanvas-title,
+.dark-mode .offcanvas-header h5,
+.dark-mode .offcanvas-header > div {
+  background: transparent !important;
+  color: #fff !important;
+  font-weight: 700 !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+}
+.dark-mode .offcanvas-header .btn-close {
+  color: #fff !important;
+  opacity: 0.95 !important;
+  filter: drop-shadow(0 0 2px #fff);
+}
+/* MODO OSCURO: fondo naranja SOLO para el header de la barra lateral de servicios */
+.dark-mode .offcanvas-header {
+  background: linear-gradient(135deg, #e89229 0%, #d4841f 100%) !important;
+  color: #fff !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+.dark-mode .offcanvas-header .offcanvas-title {
+  color: #e89229 !important;
+}
+.dark-mode .offcanvas-header .btn-close {
+  color: #fff !important;
+  opacity: 1 !important;
+}
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap");
 /* ============================
    menu lateral (offcanvas)
@@ -7,7 +39,7 @@
   width: 260px;
   padding: 1.5rem 1rem;
   box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -132,6 +164,64 @@
   font-family: "Oswald", sans-serif;
 }
 
+/* =========================
+   MODO OSCURO (hereda de body.dark-mode)
+========================= */
+.dark-mode .offcanvas.offcanvas-start,
+.dark-mode .offcanvas-header,
+.dark-mode .offcanvas-title,
+.dark-mode .offcanvas-body,
+.dark-mode .menu-lateral,
+.dark-mode .pre-footer-barra {
+  background-color: #181818 !important;
+  color: #e89229 !important;
+}
+.dark-mode .offcanvas-header {
+  background-color: #e89229 !important;
+  color: #222 !important;
+}
+.dark-mode .offcanvas-title {
+  color: #222 !important;
+}
+.dark-mode .offcanvas-header .btn-close {
+  color: #fff !important;
+  opacity: 1 !important;
+  mix-blend-mode: normal !important;
+}
+.dark-mode .offcanvas-header {
+  background: linear-gradient(135deg, #222 0%, #181818 100%) !important;
+  border-bottom: 1px solid #e89229 !important;
+}
+.dark-mode .offcanvas-title,
+.dark-mode .pre-footer-barra h3 {
+  color: #e89229 !important;
+}
+.dark-mode .menu-lateral a,
+.dark-mode .menu-lateral a i {
+  color: #e89229 !important;
+}
+.dark-mode .menu-lateral a:hover,
+.dark-mode .menu-lateral a:focus {
+  background-color: #e89229 !important;
+  color: #fff !important;
+}
+.dark-mode .menu-lateral a:hover i,
+.dark-mode .menu-lateral a:focus i {
+  color: #fff !important;
+}
+.dark-mode .btn-close {
+  color: #fff !important;
+  opacity: 1 !important;
+}
+.dark-mode .social-links-barra a i,
+.dark-mode .social-links-barra a svg {
+  color: #fff !important;
+  fill: #fff !important;
+}
+.dark-mode .footer-derechos-barra {
+  color: #e89229 !important;
+}
+
 /* ============================
    Media queries
 ============================= */
@@ -139,7 +229,7 @@
 /* Móvil (≤576px) */
 @media (max-width: 576px) {
   .offcanvas.offcanvas-start {
-    width: 50%;
+    width: 100%;
     padding: 1rem;
     box-shadow: none;
   }

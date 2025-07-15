@@ -1,3 +1,28 @@
+.dark-mode .product-card-body,
+.dark-mode .product-card .card-body {
+  background: #222 !important;
+  color: #eee !important;
+}
+.dark-mode .product-card .btn-add,
+.dark-mode .product-card .btn-primary {
+  background-color: #e89229 !important;
+  color: #222 !important;
+  border: none !important;
+}
+.dark-mode .product-card .btn-add:hover,
+.dark-mode .product-card .btn-primary:hover {
+  background-color: #c57615 !important;
+  color: #fff !important;
+}
+.dark-mode .product-card .btn-detail {
+  background: transparent !important;
+  color: #e89229 !important;
+  border: 2px solid #e89229 !important;
+}
+.dark-mode .product-card .btn-detail:hover {
+  background: #e89229 !important;
+  color: #222 !important;
+}
 /* =========================
    Product Card Styles (Global)
 ========================= */
@@ -104,6 +129,7 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+  height: 45px;
 }
 .product-card .btn-add:hover,
 .product-card .btn-primary:hover {
@@ -137,11 +163,67 @@
   justify-content: center;
   gap: 0.4rem;
   white-space: nowrap;
+    height: 45px;
 }
 .product-card .btn-detail:hover {
   background: #e89229;
   color: #fff;
   box-shadow: 0 4px 16px rgba(232, 146, 41, 0.15);
+}
+
+/* =========================
+   MODO OSCURO: Tarjetas de producto
+========================= */
+.dark-mode .product-card {
+  background: #222 !important;
+  border-color: #e89229 !important;
+  box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.45);
+}
+.dark-mode .product-card:hover {
+  border-color: #c57615 !important;
+}
+.dark-mode .product-card img,
+.dark-mode .product-card .card-img-top {
+  border-bottom: 1px solid #e89229 !important;
+  background: #222 !important;
+}
+.dark-mode .product-card-title,
+.dark-mode .product-card h5,
+.dark-mode .product-card .card-title {
+  color: #e89229 !important;
+}
+.dark-mode .product-card-text,
+.dark-mode .product-card p,
+.dark-mode .product-card .card-text {
+  color: #eee !important;
+}
+.dark-mode .product-card .price-regular,
+.dark-mode .product-card .text-decoration-line-through {
+  color: #999 !important;
+}
+.dark-mode .product-card .price-offer,
+.dark-mode .product-card .fw-bold.text-danger {
+  color: #e53935 !important;
+}
+.dark-mode .product-card .btn-add,
+.dark-mode .product-card .btn-primary {
+  background-color: #e89229 !important;
+  color: #222 !important;
+  border: none !important;
+}
+.dark-mode .product-card .btn-add:hover,
+.dark-mode .product-card .btn-primary:hover {
+  background-color: #c57615 !important;
+  color: #fff !important;
+}
+.dark-mode .product-card .btn-detail {
+  background: transparent !important;
+  color: #e89229 !important;
+  border: 2px solid #e89229 !important;
+}
+.dark-mode .product-card .btn-detail:hover {
+  background: #e89229 !important;
+  color: #222 !important;
 }
 
 @media (max-width: 768px) {
