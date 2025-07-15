@@ -1199,25 +1199,33 @@
    Responsive para botones .login-button y #logoutBtn
 ======================== */
 @media (max-width: 576px) {
-  .login-button .button-text,
-  #logoutBtn .button-text {
-    display: none;
-  }
-
   .login-button,
   #logoutBtn {
-    min-width: auto;
     width: 44px;
     height: 44px;
-    padding: 0.5rem;
-    gap: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    overflow: hidden;
   }
 
   .login-button i,
   #logoutBtn i {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
+    line-height: 1;
+    vertical-align: middle;
+    display: inline-block;
+    margin: 0;
+  }
+
+  .login-button span,
+  #logoutBtn span {
+    display: none;
   }
 }
+
 
 /* Mostrar texto desde tablets en adelante */
 @media (min-width: 577px) {
