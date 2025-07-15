@@ -576,7 +576,7 @@ main {
 }
 
 .dark-mode .pre-footer {
-  background-color: #181818 !important;
+  background-color: #333 !important;
   color: #e89229 !important;
 }
 .dark-mode .pre-footer-column2 li {
@@ -628,6 +628,7 @@ main {
     margin: 1rem 0;
     display: block;
   }
+
 }
 
 /* TABLETS  */
@@ -686,6 +687,8 @@ main {
     flex-direction: column;
     align-items: center;
     text-align: center;
+
+    
   }
 
   .payment-methods,
@@ -796,6 +799,13 @@ main {
   .testimonial-card {
     width: 90vw;
     max-width: 450px;
+  }
+}
+@media (max-width: 768px) {
+  .dark-mode .pre-footer-column1,
+  .dark-mode .pre-footer-column2,
+  .dark-mode .pre-footer-column3 {
+    background-color: #333 !important;
   }
 }
 
