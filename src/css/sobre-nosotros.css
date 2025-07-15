@@ -30,9 +30,8 @@
   color: #fff !important;
 }
 .dark-mode .map-section {
-  background: #181818 !important;
+  background: #232323;
   color: #fff !important;
-  box-shadow: 0 2px 12px rgba(232, 146, 41, 0.08);
 }
 .dark-mode #map {
   background: #232323 !important;
@@ -41,11 +40,11 @@
 .dark-mode .info-contacto {
   background: #232323 !important;
   color: #fff !important;
-  border-left: none !important;
-  box-shadow: 0 2px 12px rgba(232, 146, 41, 0.08);
+
 }
 .dark-mode .about-title-map {
   color: #e89229 !important;
+  
 }
 .dark-mode .col-md-5 a {
   color: #e89229 !important;
@@ -61,14 +60,12 @@
   color: #e89229 !important;
 }
 .dark-mode .about-section {
-  background: #181818 !important;
+  background: #232323 !important;
   color: #fff !important;
-  box-shadow: 0 2px 12px rgba(232, 146, 41, 0.08);
 }
 .dark-mode .about-title,
 .dark-mode .about-section h1 {
   color: #e89229 !important;
-  border-left: 4px solid #e89229 !important;
 }
 .dark-mode .about-description {
   color: #fff !important;

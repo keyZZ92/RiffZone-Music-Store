@@ -129,6 +129,7 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+  height: 45px;
 }
 .product-card .btn-add:hover,
 .product-card .btn-primary:hover {
@@ -162,6 +163,7 @@
   justify-content: center;
   gap: 0.4rem;
   white-space: nowrap;
+    height: 45px;
 }
 .product-card .btn-detail:hover {
   background: #e89229;
