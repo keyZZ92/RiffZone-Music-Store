@@ -445,18 +445,25 @@
 
 /* Estilo para el botón de Cerrar Sesión */
 #logoutBtn {
-  background-color: #e89229; /* Naranja corporativo */
-  color: #fff;
-  border-color: transparent;
+  background-color: #e89229 !important; /* Naranja corporativo */
+  color: #fff !important;
+  border-color: transparent !important;
   font-size: 0.8rem !important;
-  font-weight: 400;
-  width: 100px;
-  height: 50px;
+  font-weight: 400 !important;
+  width: 100px !important;
+  height: 50px !important;
+  margin-top: 0 !important;
+  padding: 10px 15px !important;
 }
 
 #logoutBtn:focus {
   outline: none;
   box-shadow: 0 0 0 3px rgba(232, 146, 41, 0.4); /* Resplandor naranja */
+}
+
+#logoutBtn:hover {
+  background-color: #d67d1f !important;
+  color: #fff !important;
 }
 
 /* Nav de productos: texto blanco en hover/focus */
