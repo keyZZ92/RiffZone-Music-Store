@@ -1,4 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // Definir API_BASE_URL por defecto si no existe
+  if (typeof API_BASE_URL === "undefined") {
+    window.API_BASE_URL =
+      "https://music-store-node-2-484977869651.europe-southwest1.run.app";
+  }
   // Validación en tiempo real para teléfono
   const telefonoInput = document.getElementById("telefono");
   if (telefonoInput) {
@@ -211,7 +216,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (form.email.value.trim() !== form.confirmarEmail.value.trim()) {
       setError(form.confirmarEmail, "Los correos electrónicos no coinciden.");
       valid = false;
-    } 
+    }
     if (form.password.value !== form.confirmarPassword.value) {
       setError(form.confirmarPassword, "Las contraseñas no coinciden.");
       valid = false;
@@ -226,6 +231,23 @@ document.addEventListener("DOMContentLoaded", function () {
         firstError.focus();
       }
       return;
+    }
+
+    // Mostrar error en el formulario si la URL no está definida
+    if (typeof API_BASE_URL === "undefined") {
+      let errorDiv = document.getElementById("apiBaseUrlError");
+      if (!errorDiv) {
+        errorDiv = document.createElement("div");
+        errorDiv.id = "apiBaseUrlError";
+        errorDiv.className = "text-danger mb-2";
+        form.prepend(errorDiv);
+      }
+      errorDiv.textContent =
+        "Error de configuración: API_BASE_URL no está definida. Contacta con soporte o recarga la página.";
+      return;
+    } else {
+      const errorDiv = document.getElementById("apiBaseUrlError");
+      if (errorDiv) errorDiv.textContent = "";
     }
 
     const usuario = {
@@ -247,13 +269,12 @@ document.addEventListener("DOMContentLoaded", function () {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(usuario),
-    })
-      .then((res) => {
-        if (!res.ok) throw res;
-        return res.json();
-      })
-      });
+    }).then((res) => {
+      if (!res.ok) throw res;
+      return res.json();
+    });
   });
+});
 
 // Mostrar/ocultar contraseña
 document.querySelectorAll(".toggle-password").forEach((btn) => {
