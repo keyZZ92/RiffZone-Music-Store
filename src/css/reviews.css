@@ -42,7 +42,8 @@ form textarea {
   box-sizing: border-box;
 }
 
-button {
+.reviews-section button,
+#reviews-container button {
   margin-top: 15px;
   padding: 10px 15px;
   background-color: goldenrod;
@@ -52,6 +53,7 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.reviews-section button:hover,
+#reviews-container button:hover {
   background-color: darkgoldenrod;
 }

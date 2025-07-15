@@ -59,30 +59,12 @@
      font-style: "Oswald", sans-serif;
   }
   
-  /* Botón añadir al carrito */
-  #add-to-cart-btn {
-    font-family: "Oswald", sans-serif;
-    font-weight: 600;
-    border-radius: 12px;
-    padding: 0.35rem 0.9rem;
-    font-size: 0.9rem;
-    box-shadow: 0 4px 10px rgba(232, 146, 41, 0.4);
-    transition: background-color 0.3s, box-shadow 0.3s;
-  }
-  
-  #add-to-cart-btn:hover,
-  #add-to-cart-btn:focus {
-    background-color: #d67d1f;
-    box-shadow: 0 6px 14px rgba(232, 146, 41, 0.7);
-    outline: none;
-  }
-  
   /* Contenedor botones (añadir y volver) */
   #product-detail .d-flex.justify-content-between {
     gap: 1rem;
   }
-  /* Botones generales */
-.product-btn {
+  /* Botones generales SOLO dentro del detalle de producto */
+#product-detail .product-btn {
   font-family: "Oswald", sans-serif;
   font-weight: 600;
   border-radius: 12px;
@@ -94,8 +76,9 @@
   align-items: center;
   justify-content: center;
   gap: 6px;
-  width: 120px;
+  min-width: 120px;
   height: 60px;
+  white-space: nowrap;
 }
 
 /* Botón añadir */
@@ -104,15 +87,17 @@
   color: white;
   box-shadow: 0 3px 6px rgba(232, 146, 41, 0.7);
   border: none;
+  width: 180px !important; /* Ancho fijo para evitar cambios de tamaño */
+  white-space: nowrap; /* Evita que el texto se corte */
 }
 
 #add-to-cart-btn:hover,
 #add-to-cart-btn:focus {
-  background-color: transparent;
-  color: #c77619;
-  border: 2px solid #c77619;
+  background-color: #d67d1f;
+  color: white;
   box-shadow: 0 6px 12px rgba(232, 146, 41, 0.7);
   outline: none;
+  border: none;
 }
 
 /* Botón volver */
