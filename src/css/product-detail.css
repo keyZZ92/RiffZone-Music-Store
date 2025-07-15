@@ -81,44 +81,62 @@
   #product-detail .d-flex.justify-content-between {
     gap: 1rem;
   }
-  
-  /* Botón volver */
-  #back-btn {
-    font-family: "Oswald", sans-serif;
-    font-weight: 600;
-    border-radius: 12px;
-    padding: 0.35rem 0.9rem;
-    font-size: 0.9rem;
-    background-color: #c77619;
-    color: #fff;
-    box-shadow: 0 3px 6px rgba(232, 146, 41, 0.25);
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-  
-  #back-btn:hover,
-  #back-btn:focus {
-    box-shadow: 0 6px 12px rgba(232, 146, 41, 0.8);
-    outline: none;
-    border: 2px solid #c77619;
-    color:#c77619;
-    background-color: transparent;
-  }
-  
-  /* Iconos dentro de botones (Bootstrap Icons) */
-  #add-to-cart-btn i,
-  #back-btn i {
-    font-size: 1.2rem;
-  }
-  
-  /* Icono de camión */
-  i.bi-truck {
-    font-size: 1.3rem;
-  }
-  
+  /* Botones generales */
+.product-btn {
+  font-family: "Oswald", sans-serif;
+  font-weight: 600;
+  border-radius: 12px;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 120px;
+  height: 60px;
+}
+
+/* Botón añadir */
+#add-to-cart-btn {
+  background-color: #c77619; 
+  color: white;
+  box-shadow: 0 3px 6px rgba(232, 146, 41, 0.7);
+  border: none;
+}
+
+#add-to-cart-btn:hover,
+#add-to-cart-btn:focus {
+  background-color: transparent;
+  color: #c77619;
+  border: 2px solid #c77619;
+  box-shadow: 0 6px 12px rgba(232, 146, 41, 0.7);
+  outline: none;
+}
+
+/* Botón volver */
+#back-btn {
+  background-color: #c77619;
+  color: #fff;
+  box-shadow: 0 3px 6px rgba(232, 146, 41, 0.25);
+  border: none;
+}
+
+#back-btn:hover,
+#back-btn:focus {
+  background-color: transparent;
+  color: #c77619;
+  border: 2px solid #c77619;
+  box-shadow: 0 6px 12px rgba(232, 146, 41, 0.8);
+  outline: none;
+}
+
+/* Iconos dentro de botones */
+#add-to-cart-btn i,
+#back-btn i {
+  font-size: 1rem;
+}
   /* Texto "Entrega en 24 horas" y otros dentro de la lista */
   li.mt-2 {
     font-family: "Oswald", sans-serif;
@@ -208,3 +226,4 @@ Media queries
     font-size: 1rem;
   }
 }
+
