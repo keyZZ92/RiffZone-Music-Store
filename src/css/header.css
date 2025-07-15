@@ -1061,6 +1061,25 @@
   color: #222 !important;
 }
 
+/* MODO OSCURO: Hamburguesa y menú desplegable */
+.dark-mode .search-toggle {
+  color: #e89229 !important;
+}
+.dark-mode .search-toggle:hover,
+.dark-mode .search-toggle:focus {
+  color: #fff !important;
+  outline: none;
+}
+.dark-mode .mobile-nav {
+  background: #222 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18) !important;
+}
+.dark-mode .mobile-nav ul li a {
+  color: #fff !important;
+}
+.dark-mode .mobile-nav ul li i {
+  color: #e89229 !important;
+}
 .dark-mode .catalog-search-form .buscador-row-modern.buscador-glass {
   background: #222 !important;
   border: 2px solid #e89229 !important;
@@ -1127,4 +1146,26 @@
     background-size: cover;
     background-position: center top;
   }
+}
+
+/* MODO OSCURO: Icono hamburguesa visible */
+.dark-mode .hamburger span,
+.dark-mode .hamburger i,
+.dark-mode .hamburger svg {
+  background: #e89229 !important;
+  color: #e89229 !important;
+  border-color: #e89229 !important;
+  opacity: 1 !important;
+}
+
+/* MODO OSCURO: Líneas del icono hamburguesa visibles */
+.dark-mode .hamburger .bar {
+  background: #e89229 !important;
+  border-radius: 2px !important;
+  height: 4px !important;
+  width: 28px !important;
+  display: block !important;
+  margin: 4px 0 !important;
+  opacity: 1 !important;
+  transition: background 0.2s;
 }
