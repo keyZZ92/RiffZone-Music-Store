@@ -21,13 +21,13 @@ main {
 /* encabezado de sección */
 .texto-central-servicios {
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   background-color: #fff;
   padding: 2rem;
   border-radius: 10px;
 }
 
-.about-title {
+.texto-central-servicios h1 {
   font-size: 3rem;
   margin-bottom: 1.5rem;
   color: #333;
