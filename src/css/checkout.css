@@ -1762,3 +1762,35 @@ button.btn-cart-action:hover,
     order: 3 !important; /* AÑADIR siempre último */
   }
 }
+
+/* =========================
+   Estilos para formulario de checkout en modo claro
+========================= */
+.checkout-form input,
+.checkout-form select,
+.checkout-form textarea {
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 0.7rem 1rem;
+  margin-bottom: 0.7rem;
+  font-family: "Oswald", sans-serif;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.checkout-form input:focus,
+.checkout-form select:focus,
+.checkout-form textarea:focus {
+  border-color: #e89229 !important;
+  box-shadow: 0 0 0 2px rgba(232, 146, 41, 0.2) !important;
+  outline: none !important;
+}
+
+.checkout-form label {
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+/* =========================
+   MODO OSCURO: Carrito y Checkout homogéneo
+========================= */
