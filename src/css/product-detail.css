@@ -138,7 +138,6 @@
 #add-to-cart-btn {
   background-color: #c77619;
   color: white;
-  box-shadow: 0 3px 6px rgba(232, 146, 41, 0.7);
   border: none;
   width: 180px !important; /* Ancho fijo para evitar cambios de tamaño */
   white-space: nowrap; /* Evita que el texto se corte */
@@ -263,4 +262,87 @@ Media queries
   li.mt-2 {
     font-size: 1rem;
   }
+}
+
+/* =========================
+   MODO OSCURO: Detalle de producto
+========================= */
+.dark-mode #product-detail {
+  background: #222 !important;
+  border: 1.5px solid #e89229 !important;
+  box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.45) !important;
+  color: #eee !important;
+}
+
+.dark-mode #product-detail img {
+  background: #222 !important;
+  box-shadow: 0 4px 8px rgba(232, 146, 41, 0.25) !important;
+}
+
+.dark-mode #product-detail h1 {
+  color: #e89229 !important;
+}
+
+.dark-mode #product-detail p.text-muted {
+  color: #eee !important;
+}
+
+.dark-mode #product-detail p.my-3 {
+  color: #eee !important;
+}
+
+.dark-mode #product-detail del.text-secondary {
+  color: #999 !important;
+}
+
+.dark-mode #product-detail .text-danger {
+  color: #e53935 !important;
+}
+
+.dark-mode #product-detail .btn-primary {
+  background-color: #e89229 !important;
+  color: #222 !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.dark-mode #product-detail .btn-primary:hover {
+  background-color: #c57615 !important;
+  color: #fff !important;
+  box-shadow: none !important;
+}
+
+.dark-mode #product-detail .btn-secondary {
+  background: transparent !important;
+  color: #e89229 !important;
+  border: 2px solid #e89229 !important;
+  box-shadow: none !important;
+}
+
+.dark-mode #product-detail .btn-secondary:hover {
+  background: #e89229 !important;
+  color: #222 !important;
+  box-shadow: none !important;
+}
+
+.dark-mode #product-detail .list-unstyled li {
+  color: #eee !important;
+}
+
+.dark-mode #product-detail .fw-bold {
+  color: #e89229 !important;
+}
+
+/* Texto de envío y entrega en negro en modo oscuro */
+.dark-mode #product-detail .bg-light {
+  background-color: #f8f9fa !important;
+  color: #000 !important;
+}
+
+.dark-mode #product-detail .bg-light p {
+  color: #000 !important;
+}
+
+.dark-mode #product-detail .bg-light strong {
+  color: #000 !important;
 }
