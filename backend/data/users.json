@@ -15,7 +15,7 @@
     "username": "José Manuel",
     "password": "$2b$10$qTSWB6vbkIPmK79BWRTeiujJ5.ByP47QdlgGAnF3HVndjUt1OiNzm",
     "email": "jmmartos@email.com",
-    "isLogged": true,
+    "isLogged": false,
     "apellidos": "Martínez",
     "telefono": "600000002",
     "pais": "España",
