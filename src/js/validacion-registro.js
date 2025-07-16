@@ -269,10 +269,50 @@ document.addEventListener("DOMContentLoaded", function () {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(usuario),
-    }).then((res) => {
-      if (!res.ok) throw res;
-      return res.json();
-    });
+    })
+      .then(async (res) => {
+        if (res.status === 409) {
+          // Usuario o email ya existe
+          let errorDiv = document.getElementById("registroError");
+          if (!errorDiv) {
+            errorDiv = document.createElement("div");
+            errorDiv.id = "registroError";
+            errorDiv.className = "text-danger mb-2";
+            form.prepend(errorDiv);
+          }
+          errorDiv.textContent = "El usuario o email ya está registrado.";
+          return;
+        }
+        if (!res.ok) {
+          let errorDiv = document.getElementById("registroError");
+          if (!errorDiv) {
+            errorDiv = document.createElement("div");
+            errorDiv.id = "registroError";
+            errorDiv.className = "text-danger mb-2";
+            form.prepend(errorDiv);
+          }
+          errorDiv.textContent =
+            "Error inesperado al registrar. Intenta de nuevo más tarde.";
+          return;
+        }
+        // Si todo va bien, limpiar errores y redirigir o mostrar éxito
+        const data = await res.json();
+        let errorDiv = document.getElementById("registroError");
+        if (errorDiv) errorDiv.textContent = "";
+        // Redirigir o mostrar mensaje de éxito
+        window.location.href = "login.html";
+      })
+      .catch((err) => {
+        let errorDiv = document.getElementById("registroError");
+        if (!errorDiv) {
+          errorDiv = document.createElement("div");
+          errorDiv.id = "registroError";
+          errorDiv.className = "text-danger mb-2";
+          form.prepend(errorDiv);
+        }
+        errorDiv.textContent =
+          "Error de red o del servidor. Intenta de nuevo más tarde.";
+      });
   });
 });
 
