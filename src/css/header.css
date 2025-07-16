@@ -3,21 +3,6 @@
   .catalog-search-bar-global {
     display: none !important;
   }
-  .search-toggle {
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.7rem;
-    color: #e89229;
-    background: none;
-    border: none;
-    cursor: pointer;
-    margin-left: 0.5rem;
-  }
-  .search-toggle i {
-    font-size: 1.7rem;
-    color: #e89229;
-  }
 }
 .dark-mode .catalog-search-form .buscador-input-modern.form-control {
   border: none !important;
@@ -1302,3 +1287,48 @@
     display: inline;
   }
 }
+
+/* =========================
+   Lupa de búsqueda: solo visible en móvil
+========================= */
+
+/* Ocultar la lupa en escritorio por defecto */
+.search-toggle {
+  display: none;
+}
+
+/* Mostrar la lupa solo en móvil */
+@media (max-width: 768px) {
+  .search-toggle {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.7rem;
+    color: #e89229;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 0.5rem;
+    text-decoration: none;
+  }
+  
+  .search-toggle i {
+    font-size: 1.7rem;
+    color: #e89229;
+  }
+  
+  .search-toggle:hover,
+  .search-toggle:focus {
+    color: #d6831a;
+    text-decoration: none;
+  }
+  
+  .search-toggle:hover i,
+  .search-toggle:focus i {
+    color: #d6831a;
+  }
+}
+
+/* =========================
+   Header y navegación principal
+========================= */
