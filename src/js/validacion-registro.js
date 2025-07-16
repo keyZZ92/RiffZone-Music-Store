@@ -299,8 +299,29 @@ document.addEventListener("DOMContentLoaded", function () {
         const data = await res.json();
         let errorDiv = document.getElementById("registroError");
         if (errorDiv) errorDiv.textContent = "";
-        // Redirigir o mostrar mensaje de éxito
-        window.location.href = "index.html";
+        // Mostrar mensaje de éxito antes de redirigir
+        let successDiv = document.getElementById("registroSuccess");
+        if (!successDiv) {
+          successDiv = document.createElement("div");
+          successDiv.id = "registroSuccess";
+          successDiv.className =
+            "mb-3 p-3 border border-2 rounded-3 d-flex align-items-center justify-content-center";
+          successDiv.style.background = "#fff5e6";
+          successDiv.style.borderColor = "#e89229";
+          successDiv.style.color = "#c25a00";
+          successDiv.style.fontWeight = "600";
+          successDiv.style.fontFamily = "Oswald, sans-serif";
+          successDiv.style.fontSize = "1.15rem";
+          successDiv.innerHTML =
+            '<i class="bi bi-check-circle-fill me-2" style="color:#e89229;font-size:1.5rem;"></i><span>¡Registro completado con éxito! Redirigiendo a la página principal...</span>';
+          form.prepend(successDiv);
+        } else {
+          successDiv.innerHTML =
+            '<i class="bi bi-check-circle-fill me-2" style="color:#e89229;font-size:1.5rem;"></i><span>¡Registro completado con éxito! Redirigiendo a la página principal...</span>';
+        }
+        setTimeout(() => {
+          window.location.href = "index.html";
+        }, 1800);
       })
       .catch((err) => {
         let errorDiv = document.getElementById("registroError");
