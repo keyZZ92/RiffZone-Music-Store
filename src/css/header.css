@@ -1,3 +1,24 @@
+/* --- Ajuste forzado para buscador responsive --- */
+@media (max-width: 600px) {
+  .catalog-search-bar-global {
+    display: none !important;
+  }
+  .search-toggle {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.7rem;
+    color: #e89229;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 0.5rem;
+  }
+  .search-toggle i {
+    font-size: 1.7rem;
+    color: #e89229;
+  }
+}
 .dark-mode .catalog-search-form .buscador-input-modern.form-control {
   border: none !important;
   box-shadow: none !important;
@@ -528,7 +549,7 @@
   justify-content: center;
 }
 .catalog-search-bar-global.buscador-header-rediseñado {
-  max-width: 150px;
+  max-width: 200px;
   margin: 0 auto 0 auto;
   padding: 0;
   background: none;
