@@ -300,7 +300,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let errorDiv = document.getElementById("registroError");
         if (errorDiv) errorDiv.textContent = "";
         // Redirigir o mostrar mensaje de éxito
-        window.location.href = "login.html";
+        window.location.href = "index.html";
       })
       .catch((err) => {
         let errorDiv = document.getElementById("registroError");

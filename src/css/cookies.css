@@ -1,3 +1,27 @@
+/* ===== MODO OSCURO para política de cookies ===== */
+.dark-mode .cookies-section,
+.dark-mode .team-section {
+  background-color: #232323 !important;
+  color: #f1f1f1 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.dark-mode .cookies-title,
+.dark-mode .cookies-subtitle {
+  color: #e89229 !important;
+}
+
+.dark-mode .cookies-description {
+  color: #e0e0e0 !important;
+}
+
+.dark-mode .cookies-store-name {
+  color: #ffb347 !important;
+}
+
+.dark-mode .cookies-section h3 {
+  color: #ffb347 !important;
+}
 /* Estilos específicos para la página de cookies y legales */
 
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap");
