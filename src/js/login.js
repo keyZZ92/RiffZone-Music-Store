@@ -21,6 +21,13 @@ function initializeLogin() {
       })
         .then((res) => res.json())
         .then((data) => {
+          // Eliminar mensajes previos
+          const loginForm = document.getElementById("loginForm");
+          let msgSuccess = document.getElementById("login-success-msg");
+          if (msgSuccess) msgSuccess.remove();
+          let msgError = document.getElementById("login-error-msg");
+          if (msgError) msgError.remove();
+
           if (data.user) {
             // Guardar usuario en localStorage
             localStorage.setItem(
@@ -44,20 +51,13 @@ function initializeLogin() {
             }
 
             // Mostrar mensaje de login exitoso en el formulario del modal
-            const loginForm = document.getElementById("loginForm");
             if (loginForm) {
-              let msg = document.getElementById("login-success-msg");
-              if (!msg) {
-                msg = document.createElement("div");
-                msg.id = "login-success-msg";
-                msg.className = "login-success-message";
-                msg.setAttribute("role", "status");
-                msg.classList.add("visually-hidden");
-                loginForm.prepend(msg);
-              }
+              let msg = document.createElement("div");
+              msg.id = "login-success-msg";
               msg.className = "login-success-message";
+              msg.setAttribute("role", "status");
               msg.textContent = "¡Login exitoso! Redirigiendo...";
-              msg.classList.remove("visually-hidden");
+              loginForm.prepend(msg);
             }
             // Redirección inteligente: si estamos en carrito, recarga carrito; si no, recarga la página actual
             const currentPath = window.location.pathname;
@@ -68,8 +68,19 @@ function initializeLogin() {
                 window.location.href = window.location.href;
               }
             }, 1200);
+          } else {
+            // Mostrar mensaje de error de credenciales
+            if (loginForm) {
+              let msg = document.createElement("div");
+              msg.id = "login-error-msg";
+              msg.className = "login-error-message";
+              msg.setAttribute("role", "alert");
+              msg.textContent =
+                "Credenciales incorrectas. Por favor, revisa tu email y contraseña.";
+              loginForm.prepend(msg);
+            }
           }
-        })
+        });
     });
   }
 }

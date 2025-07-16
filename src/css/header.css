@@ -1,3 +1,14 @@
+/* Mensaje de error en login */
+.login-error-message {
+  color: #fff !important;
+  background: #e53935 !important;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(229, 57, 53, 0.15);
+  margin-bottom: 1rem;
+  text-align: center;
+}
 /* --- Ajuste forzado para buscador responsive --- */
 @media (max-width: 600px) {
   .catalog-search-bar-global {
@@ -1311,18 +1322,18 @@
     margin-left: 0.5rem;
     text-decoration: none;
   }
-  
+
   .search-toggle i {
     font-size: 1.7rem;
     color: #e89229;
   }
-  
+
   .search-toggle:hover,
   .search-toggle:focus {
     color: #d6831a;
     text-decoration: none;
   }
-  
+
   .search-toggle:hover i,
   .search-toggle:focus i {
     color: #d6831a;
