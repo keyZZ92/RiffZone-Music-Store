@@ -1,9 +1,9 @@
+// Inicializa el login
 function initializeLogin() {
   const loginForm = document.getElementById("loginForm");
   const emailInput = document.getElementById("loginEmail");
   const passwordInput = document.getElementById("loginPassword");
 
-  // Lógica para login
   if (loginForm) {
     loginForm.addEventListener("submit", (event) => {
       event.preventDefault();
@@ -22,14 +22,13 @@ function initializeLogin() {
         .then((res) => res.json())
         .then((data) => {
           // Eliminar mensajes previos
-          const loginForm = document.getElementById("loginForm");
           let msgSuccess = document.getElementById("login-success-msg");
           if (msgSuccess) msgSuccess.remove();
           let msgError = document.getElementById("login-error-msg");
           if (msgError) msgError.remove();
 
           if (data.user) {
-            // Guardar usuario en localStorage
+            // Guardar datos en localStorage
             localStorage.setItem(
               "user",
               JSON.stringify({
@@ -37,10 +36,9 @@ function initializeLogin() {
                 username: data.user.username,
               })
             );
-            // Guardar username plano para el carrito por usuario
             localStorage.setItem("username", data.user.username);
 
-            // Migrar carrito temporal si existe
+            // Migrar carrito temporal
             const tempCarrito = localStorage.getItem("carrito");
             if (tempCarrito) {
               localStorage.setItem(
@@ -50,16 +48,15 @@ function initializeLogin() {
               localStorage.removeItem("carrito");
             }
 
-            // Mostrar mensaje de login exitoso en el formulario del modal
-            if (loginForm) {
-              let msg = document.createElement("div");
-              msg.id = "login-success-msg";
-              msg.className = "login-success-message";
-              msg.setAttribute("role", "status");
-              msg.textContent = "¡Login exitoso! Redirigiendo...";
-              loginForm.prepend(msg);
-            }
-            // Redirección inteligente: si estamos en carrito, recarga carrito; si no, recarga la página actual
+            // Mensaje de éxito
+            let msg = document.createElement("div");
+            msg.id = "login-success-msg";
+            msg.className = "login-success-message";
+            msg.setAttribute("role", "status");
+            msg.textContent = "¡Login exitoso! Redirigiendo...";
+            loginForm.prepend(msg);
+
+            // Redirección según página
             const currentPath = window.location.pathname;
             setTimeout(() => {
               if (currentPath.includes("carrito.html")) {
@@ -69,29 +66,26 @@ function initializeLogin() {
               }
             }, 1200);
           } else {
-            // Mostrar mensaje de error de credenciales
-            if (loginForm) {
-              let msg = document.createElement("div");
-              msg.id = "login-error-msg";
-              msg.className = "login-error-message";
-              msg.setAttribute("role", "alert");
-              msg.textContent =
-                "Credenciales incorrectas. Por favor, revisa tu email y contraseña.";
-              loginForm.prepend(msg);
-            }
+            // Error de credenciales
+            let msg = document.createElement("div");
+            msg.id = "login-error-msg";
+            msg.className = "login-error-message";
+            msg.setAttribute("role", "alert");
+            msg.textContent =
+              "Credenciales incorrectas. Por favor, revisa tu email y contraseña.";
+            loginForm.prepend(msg);
           }
         });
     });
   }
 }
 
-// Mostrar/ocultar contraseña en el login (ojito)
+// Mostrar/ocultar contraseña
 function setupPasswordToggle() {
   var toggleBtn = document.getElementById("togglePassword");
   var passwordInput = document.getElementById("loginPassword");
   var icon = document.getElementById("togglePasswordIcon");
   if (toggleBtn && passwordInput && icon) {
-    // Elimina listeners previos para evitar duplicados
     toggleBtn.replaceWith(toggleBtn.cloneNode(true));
     toggleBtn = document.getElementById("togglePassword");
     toggleBtn.addEventListener("click", function () {
@@ -108,10 +102,39 @@ function setupPasswordToggle() {
   }
 }
 
-// Ejecutar al cargar y tras cargar el header dinámico
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", setupPasswordToggle);
-} else {
-  setupPasswordToggle();
+// Mostrar botones login/logout y saludo
+function updateSessionUI() {
+  const loginBtn = document.getElementById("loginBtn");
+  const logoutBtn = document.getElementById("logoutBtn");
+  const userWelcome = document.getElementById("userWelcome");
+  const userName = document.getElementById("userName");
+
+  const userData = JSON.parse(localStorage.getItem("user"));
+
+  if (userData && userData.username) {
+    if (loginBtn) loginBtn.style.display = "none";
+    if (logoutBtn) logoutBtn.style.display = "inline-flex";
+    if (userWelcome) userWelcome.style.display = "inline-flex";
+    if (userName) userName.textContent = userData.username;
+  } else {
+    if (loginBtn) loginBtn.style.display = "inline-flex";
+    if (logoutBtn) logoutBtn.style.display = "none";
+    if (userWelcome) userWelcome.style.display = "none";
+  }
+
+  // Lógica de cierre de sesión
+  if (logoutBtn) {
+    logoutBtn.addEventListener("click", () => {
+      localStorage.removeItem("user");
+      localStorage.removeItem("username");
+      window.location.href = "/pages/index.html";
+    });
+  }
 }
-document.addEventListener("headerLoaded", setupPasswordToggle);
+
+// Ejecutar todo al cargar
+document.addEventListener("DOMContentLoaded", () => {
+  setupPasswordToggle();
+  initializeLogin();
+  updateSessionUI();
+});
