@@ -1245,7 +1245,6 @@
     width: 44px;
     height: 44px;
     padding: 0;
-    display: flex;
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
@@ -1277,7 +1276,6 @@
     font-size: 0 !important;
     justify-content: center !important;
     align-items: center !important;
-    display: flex !important;
     gap: 0 !important;
     border-radius: 8px !important;
   }
